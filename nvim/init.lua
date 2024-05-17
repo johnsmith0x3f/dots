@@ -1,4 +1,4 @@
 -- print("Hello Neovim!")
 
--- Load configs.
-require("john/configs")
+-- Load options.
+require("john/options")
