@@ -5,10 +5,10 @@ return {
     end,
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = { 
+            ensure_installed = {
                 -- The following should always be installed.
-                "bash", "c", "cpp", "lua", "markdown", "markdown_inline",
-                "query", "vim", "vimdoc"
+                "bash", "bibtex", "c", "cpp", "latex", "lua",
+                "markdown", "markdown_inline", "python", "query", "toml", "vim", "vimdoc"
             },
             highlight = { enabled = true },
             indent = { enabled = true }
