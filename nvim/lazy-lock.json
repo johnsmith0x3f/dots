@@ -1,4 +1,5 @@
 {
+  "alpha-nvim": { "branch": "main", "commit": "41283fb402713fc8b327e60907f74e46166f4cfd" },
   "bufferline": { "branch": "main", "commit": "73540cb95f8d95aa1af3ed57713c6720c78af915" },
   "catppuccin": { "branch": "main", "commit": "d97387aea8264f484bb5d5e74f2182a06c83e0d8" },
   "competitest": { "branch": "master", "commit": "c3cb0e2b0916a879c4d3dcb5737e6c046dd0afc5" },
