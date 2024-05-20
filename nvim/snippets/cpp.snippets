@@ -1,0 +1,9 @@
+snippet fastread "Read integers fast."
+    inline int read() {
+        int x = 0, f = 1; char c = getchar();
+        while(isdigit(c)^1) f &= (c != 45), c = getchar();
+        while(isdigit(c)) x = (x<<1) + (x<<3) + (c^48), c = getchar();
+        return f ? x : -x;
+    }
+# This is the end.
+
