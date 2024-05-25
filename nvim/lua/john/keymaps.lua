@@ -1,6 +1,7 @@
 -- Use comma as leader key.
 -- Because '\' is too far away.
 vim.g.mapleader = ","
+vim.g.localmapleader = ","
 
 local set = vim.keymap.set
 local opt = { noremap = true, silent = true }
