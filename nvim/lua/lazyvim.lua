@@ -12,4 +12,4 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("john/plugins")
+require("lazy").setup("plugins")

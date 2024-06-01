@@ -10,8 +10,13 @@ return {
                 "bash", "bibtex", "c", "cpp", "ini", "latex", "lua",
                 "markdown", "markdown_inline", "python", "query", "toml", "vim", "vimdoc"
             },
-            highlight = { enabled = true },
-            indent = { enabled = true }
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false
+            },
+            indent = {
+                enable = true
+            },
         })
     end
 }

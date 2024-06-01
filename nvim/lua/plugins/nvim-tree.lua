@@ -1,5 +1,5 @@
 return {
-    "nvim-tree/nvim-tree.lua", name = "NvimTree",
+    name = "NvimTree", "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         -- Disable netrw. One file explorer is enough.

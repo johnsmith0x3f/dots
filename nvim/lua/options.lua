@@ -10,5 +10,14 @@ vim.opt.cursorline = true
 vim.opt.tabstop = 4
 -- and the width of indentations to always be the same.
 vim.opt.shiftwidth = 0
+
+vim.opt.softtabstop = -1
 -- Use spaces instead of tabs when indenting.
 vim.opt.expandtab = true
+
+-- Add additional filetypes.
+vim.filetype.add({
+    extension = {
+        rasi = "rasi",
+    }
+})

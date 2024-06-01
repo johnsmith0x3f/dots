@@ -1,10 +1,10 @@
 -- print("Hello Neovim!")
 
 -- Load options.
-require("john/options")
+require("options")
 
 -- Load keymaps.
-require("john/keymaps")
+require("keymaps")
 
 -- Load plugins.
-require("john/lazyvim")
+require("lazyvim")
