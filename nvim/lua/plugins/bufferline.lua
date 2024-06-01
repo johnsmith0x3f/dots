@@ -1,9 +1,11 @@
 return {
-    "akinsho/bufferline.nvim", name = "bufferline",
+    name = "BufferLine", "akinsho/bufferline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+
+    keys = {
+        { mode = "n", "<Leader>bp", ":BufferLinePick<CR>" }
+    },
     config = function()
-        vim.opt.termguicolors = true
-        vim.keymap.set("n", "gb", ":BufferLinePick<CR>", {})
         require("bufferline").setup({
             options = {
                 indicator = { style = "none" },
