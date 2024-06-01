@@ -12,8 +12,9 @@ fi
 
 # set alias
 alias eza="eza --color=always --icons=always"
-alias ls="ls --color=always"
 alias grep="grep --color=auto"
+alias ls="ls --color=always"
+alias neofetch="neofetch --gtk2 off --gtk3 off"
 
 # import my functions
 source "$ZDOTDIR/fun.zsh"
