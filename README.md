@@ -1,3 +1,0 @@
-# Dot
-
-My dotfiles.
