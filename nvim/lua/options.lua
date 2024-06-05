@@ -1,3 +1,5 @@
+-- Do not show modes.
+vim.opt.showmode = false
 -- Enable 24-bit RGB color in the TUI.
 vim.opt.termguicolors = true
 
