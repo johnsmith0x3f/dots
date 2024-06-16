@@ -1,8 +1,13 @@
 return {
-	name = "LuaSnip", "L3MON4D3/LuaSnip",
+    name = "LuaSnip", "L3MON4D3/LuaSnip",
 
+    lazy = false,
     keys = {
-        -- TODO
+        { mode = { "i", "s" }, "<C-e>", function()
+            if require("luasnip").expand_or_jumpable() then
+                require("luasnip").expand_or_jump()
+            end
+        end, { silent = true } }
     },
 
     config = function()
