@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# enable auto update
+zgenom autoupdate
+# load plugins with zgenom
+if ! zgenom saved; then
+    echo "Creating a zgenom save"
+
+    # load basic zsh plugins
+    zgenom load zsh-users/zsh-autosuggestions
+    zgenom load zsh-users/zsh-completions
+    zgenom load zsh-users/zsh-syntax-highlighting
+    
+    # load powerlevel10k prompt
+    zgenom load romkatv/powerlevel10k powerlevel10k
+
+    # save all to init script
+    zgenom save
+    # compile zsh scripts
+    zgenom compile "$ZDOTDIR"
+fi
