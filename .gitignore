@@ -1,3 +1,8 @@
+# Ignore zsh histfile.
+/zsh/.histfile
+
+#Ignore zgenom folder.
 /zsh/.zgenom
+
 /polybar/polybar-themes
 /firefox/themes

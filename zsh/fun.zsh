@@ -1,10 +1,11 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Marco? Polo!
 function marco() {
-    export MARCO="$(pwd)"
-    echo "marco is at $MARCO"
+    export marco="$(pwd)"
+    echo "marco is at $marco"
 }
 function polo() {
-    cd "$MARCO"
+    cd "$marco"
 }
+
