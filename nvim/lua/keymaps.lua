@@ -22,3 +22,5 @@ set("n", "<C-l>", "<C-w>l", opt)
 -- Better indenting.
 set("v", "<", "<gv", opt)
 set("v", ">", ">gv", opt)
+
+set("n", "<leader>s", "<Cmd>source<CR>")
