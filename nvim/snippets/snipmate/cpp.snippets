@@ -1,4 +1,4 @@
-snippet fastread
+snippet fastread "Read numbers fast."
 	template<typename T = int>
 	inline T read() {
 		T x = 0; bool f = 1; char c = getchar();
@@ -7,7 +7,7 @@ snippet fastread
 		return f ? x : -x;
 	}
 
-snippet fastwrite
+snippet fastwrite "Write numbers fast."
 	template<typename T = int>
 	void write(T x) {
 		if(x < 0) putchar(45), x = -x;
