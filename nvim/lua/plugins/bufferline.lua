@@ -1,10 +1,13 @@
 return {
     name = "BufferLine", "akinsho/bufferline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+
     lazy = false,
     keys = {
-        { mode = "n", "<Leader>bp", ":BufferLinePick<CR>" }
+        -- Goto buffer.
+        { mode = "n", "<Leader>gb", "<Cmd>BufferLinePick<CR>" }
     },
+
     config = function()
         require("bufferline").setup({
             options = {
