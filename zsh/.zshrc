@@ -18,10 +18,10 @@ alias ls="ls --color=always"
 # import my functions
 source "$ZDOTDIR/fun.zsh"
 
-# load scripts
+# Load scripts.
 source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
 source "$XDG_CONFIG_HOME/zoxide/zoxide.zsh"
 
-# load plugins with zgenom
+# Load plugins with zgenom.
 source "$ZDOTDIR/.zgenom/zgenom.zsh"
 source "$ZDOTDIR/.zgenomrc"
