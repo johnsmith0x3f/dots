@@ -1,8 +1,9 @@
 # Ignore zsh histfile.
 /zsh/.histfile
 
-#Ignore zgenom folder.
+#Ignore plugin managers.
 /zsh/.zgenom
+/zsh/.zprezto
 
 /polybar/polybar-themes
 
