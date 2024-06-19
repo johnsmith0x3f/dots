@@ -5,4 +5,7 @@
 /zsh/.zgenom
 
 /polybar/polybar-themes
+
+# Ignore firefox configurations.
 /firefox/themes
+/firefox/homepage
