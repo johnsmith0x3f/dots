@@ -20,7 +20,7 @@ source "$ZDOTDIR/fun.zsh"
 
 # Load scripts.
 source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
-source "$XDG_CONFIG_HOME/zoxide/zoxide.zsh"
+eval "$(zoxide init zsh)"
 
 # Load plugins with zgenom.
 source "$ZDOTDIR/.zgenom/zgenom.zsh"
