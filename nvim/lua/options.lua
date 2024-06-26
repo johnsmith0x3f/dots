@@ -16,8 +16,8 @@ vim.opt.cursorline = true
 vim.opt.tabstop = 4
 -- and the width of indentations to always be the same.
 vim.opt.shiftwidth = 0
--- Use spaces instead of tabs when indenting.
-vim.opt.expandtab = true
+-- Do not use spaces instead of tabs when indenting.
+vim.opt.expandtab = false
 
 -- Add additional filetypes.
 vim.filetype.add({

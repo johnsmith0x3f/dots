@@ -27,6 +27,11 @@ return {
             paths = { "~/.config/nvim/snippets/luasnip" }
         })
 
+--      -- Load snipmate-style snippets.
+--      require("luasnip.loaders.from_snipmate").load({
+--          paths = { "~/.config/nvim/snippets/snipmate" }
+--      })
+
         require("luasnip").config.setup({
             -- Enable autotriggered snippets.
             enable_autosnippets = true,
@@ -34,10 +39,5 @@ return {
             -- Use Tab to trigger visual selection.
             store_selection_keys = "<Tab>"
         })
-
---      -- Load snipmate-style snippets.
---      require("luasnip.loaders.from_snipmate").load({
---          paths = { "~/.config/nvim/snippets/snipmate" }
---      })
     end
 }
