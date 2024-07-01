@@ -5,7 +5,7 @@ local helpers = {}
 
 helpers.colorizeText = function(txt, fg)
 	if fg == "" then
-		fg = "#ffffff"
+		fg = "#FFFFFF"
 	end
 
 	return "<span foreground='" .. fg .. "'>" .. txt .. "</span>"
