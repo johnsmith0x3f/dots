@@ -8,7 +8,7 @@ return function(s)
 
 	-- Create the wibox
 	s.mywibox = awful.wibar({
-		position = 'top',
+		position = "top",
 		height   = 50,
 		screen	 = s,
 		widget	 = {
@@ -19,8 +19,22 @@ return function(s)
 			},
 			nil,
 			{
-				widget = wibox.container.place,
-				valign = "center",
+				{
+					{
+						module.time,
+						spacing = 10,
+						layout = wibox.layout.fixed.horizontal,
+					},
+					widget = wibox.container.place,
+					valign = "center"
+				},
+				widget = wibox.container.margin,
+				margins = {
+					top    = 3,
+					bottom = 3,
+					left   = 15,
+					right  = 15
+				}
 			}
 		}
 	})
