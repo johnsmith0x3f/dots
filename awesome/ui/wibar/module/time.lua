@@ -4,7 +4,7 @@ local helpers   = require("helpers")
 
 return wibox.widget {
 	{
-		font = beautiful.sans .. "12",
+		font = beautiful.sans .. "Light 15",
 		format = "%H : %M",
 		widget = wibox.widget.textclock,
 	},
