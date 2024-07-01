@@ -5,12 +5,12 @@ local gears     = require("gears")
 
 -- Themes define colors, icons, font and wallpapers.
 
-local theme = {}
-theme.wallpaper = gears.filesystem.get_configuration_dir() .. "theme/wall.jpg"
 local theme       = {}
+theme.wallpaper   = gears.filesystem.get_configuration_dir() .. "theme/wall.png"
 
-theme.sans        = "Lexend"
+-- Set default font options.
 theme.font        = "Lexend"
+theme.sans        = "Lexend"
 theme.mono        = "Iosevka Nerd Font"
 
 theme.bg          = "#181818"
