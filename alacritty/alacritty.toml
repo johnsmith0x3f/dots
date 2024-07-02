@@ -18,3 +18,4 @@ bold_italic = { family = "OperatorMono Nerd Font Mono", style = "Bold Italic" }
 
 size = 15
 offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
