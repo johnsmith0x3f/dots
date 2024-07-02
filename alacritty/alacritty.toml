@@ -17,3 +17,4 @@ bold_italic = { family = "OperatorMono Nerd Font Mono", style = "Bold Italic" }
 #normal.family = "MesloLGS Nerd Font Mono"
 
 size = 15
+offset = { x = 0, y = 0 }
