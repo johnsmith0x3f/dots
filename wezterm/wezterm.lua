@@ -9,6 +9,6 @@ config.enable_tab_bar = false
 
 -- Fonts.
 config.font = wezterm.font("OperatorMono Nerd Font Mono")
-config.font_size = 15
+config.font_size = 18
 
 return config
