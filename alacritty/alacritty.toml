@@ -1,0 +1,19 @@
+# alacritty configuration file
+
+import = [
+    "~/.config/alacritty/themes/tokyo-night-storm.toml"
+]
+
+[window]
+dimensions = { columns = 144, lines = 36 }
+dynamic_padding = true
+
+[font]
+normal      = { family = "OperatorMono Nerd Font Mono", style = "Regular" }
+italic      = { family = "OperatorMono Nerd Font Mono", style = "Italic" }
+bold        = { family = "OperatorMono Nerd Font Mono", style = "Bold" }
+bold_italic = { family = "OperatorMono Nerd Font Mono", style = "Bold Italic" }
+
+#normal.family = "MesloLGS Nerd Font Mono"
+
+size = 15
