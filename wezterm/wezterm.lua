@@ -8,9 +8,9 @@ config.color_scheme = "Tokyo Night Storm"
 config.enable_tab_bar = false
 
 config.window_padding = {
-	left = "32px",
-	right = "32px",
-	top = "32px",
+	left   = "32px",
+	right  = "32px",
+	top    = "32px",
 	bottom = "32px"
 }
 
