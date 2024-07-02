@@ -4,8 +4,8 @@ local wibox = require("wibox")
 
 return wibox.widget {
 	{
-		font = beautiful.sans .. "Light 15",
-		format = "<b>" .. helpers.colorizeText("%H", beautiful.blue) .. " : " .. helpers.colorizeText("%M", beautiful.fg) .. "</b>",
+		font = beautiful.sans .. "Black 15",
+		format = "<span foreground='" .. beautiful.blue .. "'>%H</span> : %M",
 		widget = wibox.widget.textclock,
 	},
 	widget = wibox.container.place,

@@ -23,6 +23,7 @@ theme.green       = "#A1B56C"
 theme.yellow      = "#F7CA88"
 theme.magenta     = "#BA8BAF"
 theme.cyan        = "#86C1B9"
+theme.honolulu    = "#0077B6"
 
 theme.useless_gap = 5
 
