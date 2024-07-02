@@ -12,7 +12,7 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-syntax-highlighting
     
     # load powerlevel10k prompt
-    zgenom load romkatv/powerlevel10k powerlevel10k
+    #zgenom load romkatv/powerlevel10k powerlevel10k
 
     # save all to init script
     zgenom save
