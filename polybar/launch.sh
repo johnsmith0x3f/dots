@@ -2,9 +2,9 @@
 
 polybar-msg cmd quit
 
-config="~/.dots/polybar/themes/$1/config.ini"
+config="$XDG_CONFIG_HOME/polybar/themes/$1/config.ini"
 
-if [[ -f $config ]]; then
+if [[ -n $1 ]] && [[ -f $config ]]; then
 	polybar -c $config -q &
 else
 	echo "Fuck!"
