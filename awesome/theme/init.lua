@@ -7,6 +7,7 @@ local gears = require("gears")
 
 local theme = {}
 theme.wallpaper = gears.filesystem.get_configuration_dir() .. "theme/wall.png"
+theme.iconpath = gears.filesystem.get_configuration_dir() .. "theme/icons/"
 
 -- Set default font options.
 theme.font = "Lexend"
