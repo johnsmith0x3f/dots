@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
-killall polybar
+polybar-msg cmd quit
 
-polybar -c ~/.dots/polybar/themes/$1/config.ini -q &
+config="~/.dots/polybar/themes/$1/config.ini"
+
+if [[ -f $config ]]; then
+	polybar -c $config -q &
+else
+	echo "Fuck!"
+fi
