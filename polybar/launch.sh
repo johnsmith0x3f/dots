@@ -2,4 +2,4 @@
 
 killall polybar
 
-polybar -c ~/.dots/polybar/themes/$1/config.ini &
+polybar -c ~/.dots/polybar/themes/$1/config.ini -q &
