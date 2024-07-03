@@ -16,8 +16,8 @@ end
 -------------
 gears.timer {
 	timeout   = 2,
-	call_now  = true,
 	autostart = true,
+	call_now  = true,
 	callback  = function()
 		emit_network_status()
 	end
