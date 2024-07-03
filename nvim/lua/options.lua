@@ -19,6 +19,8 @@ vim.opt.shiftwidth = 0
 -- Do not use spaces instead of tabs when indenting.
 vim.opt.expandtab = false
 
+vim.opt.foldmethod = "marker" 
+
 -- Add additional filetypes.
 vim.filetype.add({
     extension = {
