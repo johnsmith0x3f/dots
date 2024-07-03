@@ -1,12 +1,13 @@
 return {
-    name = "NvimColorizer", "norcalli/nvim-colorizer.lua",
+	name = "NvimColorizer", "norcalli/nvim-colorizer.lua",
 
-    config = function()
-        require("colorizer").setup({}, {
-            RGB         = true,
-            RRGGBB      = true,
-            RRGGBBAA    = true,
-            mode        = "background"
-        })
-    end
+	config = function()
+		require("colorizer").setup({}, {
+			RGB      = true,
+			RRGGBB   = true,
+			RRGGBBAA = true,
+			names    = false,
+			mode     = "background"
+		})
+	end
 }
