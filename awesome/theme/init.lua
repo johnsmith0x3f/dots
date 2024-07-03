@@ -1,13 +1,14 @@
 -- Theme handling library
-local beautiful                                 = require('beautiful')
+local beautiful = require("beautiful")
 -- Standard awesome library
-local gears                                     = require('gears')
+local gears = require("gears")
 
-local theme                                     = {}
+local theme = {}
 
-theme.sans                                      = "Lexend"
-theme.font                                      = "Lexend"
-theme.mono                                      = "Iosevka Nerd Font"
+-- Set default fonts.
+theme.font = "Lexend"
+theme.sans = "Lexend"
+theme.mono = "Iosevka Nerd Font"
 
 theme.bg                                        = "#141414"
 theme.altbg                                     = "#222222"
@@ -27,10 +28,13 @@ theme.taglist_bg_urgent                         = theme.red
 
 theme.useless_gap                               = 5
 
-theme.wallpaper                                 = gears.filesystem.get_configuration_dir() .. 'theme/wall.jpg'
-theme.pfp                                       = gears.filesystem.get_configuration_dir() .. 'theme/pfp.jpeg'
+local theme_path = gears.filesystem.get_configuration_dir() .. "theme/"
 
-theme.iconpath                                  = gears.filesystem.get_configuration_dir() .. "theme/icons/"
+-- The Great Wallpaper
+theme.wallpaper = theme_path .. "wall.png"
+theme.pfp = gears.filesystem.get_configuration_dir() .. 'theme/pfp.jpeg'
+
+theme.iconpath = gears.filesystem.get_configuration_dir() .. "theme/icons/"
 
 theme.layout_floating                           = theme.iconpath .. "floating.png"
 theme.layout_tile                               = theme.iconpath .. "tile.png"
