@@ -6,5 +6,6 @@ if [[ -f "$config" ]]; then
 	polybar-msg cmd quit
 	polybar -c "$config" &
 else
-	echo "Fuck!"
+	echo "Please choose a valid theme:"
+	echo "$(ls $XDG_CONFIG_HOME/polybar/themes)"
 fi
