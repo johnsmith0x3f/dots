@@ -4,7 +4,7 @@ config="$XDG_CONFIG_HOME/polybar/themes/$1/config.ini"
 
 if [[ -f "$config" ]]; then
 	polybar-msg cmd quit
-	polybar -c "$config" -q &
+	polybar -c "$config" &
 else
 	echo "Fuck!"
 fi
