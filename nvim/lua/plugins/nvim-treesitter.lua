@@ -7,7 +7,7 @@ return {
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 -- The following should always be installed.
-                "bash", "bibtex", "c", "cpp", "ini", "latex", "lua",
+                "bash", "c", "cpp", "ini", "lua",
                 "markdown", "markdown_inline", "python", "query", "toml", "vim", "vimdoc"
             },
             highlight = {
