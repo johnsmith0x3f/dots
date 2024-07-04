@@ -19,6 +19,6 @@ config.font = wezterm.font_with_fallback({
 	"OperatorMono Nerd Font Mono",
 	"WenQuanYi Micro Hei"
 })
-config.font_size = 18
+config.font_size = 15
 
 return config
