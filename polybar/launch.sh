@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-polybar-msg cmd quit
+config="$HOME/.dots/polybar/themes/$1/config.ini"
 
-config="$XDG_CONFIG_HOME/polybar/themes/$1/config.ini"
-
-if [[ -n $1 ]] && [[ -f $config ]]; then
-	polybar -c $config -q &
+if [[ -f "$config" ]]; then
+	polybar-msg cmd quit
+	polybar -c "$config" -q &
 else
 	echo "Fuck!"
 fi
