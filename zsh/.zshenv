@@ -4,12 +4,7 @@
 
 export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
 
-if [[ -d "$HOME/.dots" ]]; then
-	export XDG_CONFIG_HOME="$HOME/.dots"
-else
-	export XDG_CONFIG_HOME="$HOME/.config"
-fi
-
+export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export ALACRITTY_DIR="$XDG_CONFIG_HOME/alacritty"
