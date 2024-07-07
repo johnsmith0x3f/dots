@@ -1,7 +1,5 @@
 return {
-	name = "Telescope", "nvim-telescope/telescope.nvim",
-	dependencies = { "nvim-lua/plenary.nvim" },
-	-- dependencies = { "Plenary" },
+	name = "Telescope", "nvim-telescope/telescope.nvim", tag = "0.1.8",
 
 	-- Lazy-load options.
 	lazy = false,
@@ -10,6 +8,5 @@ return {
 		{ mode = "n", "<Leader>fa", "<Cmd>Telescope find_files hidden=true<CR>" },
 		-- Find files.
 		{ mode = "n", "<Leader>ff", "<Cmd>Telescope find_files<CR>" }
-	},
-	config = function() require("telescope").setup({}) end
+	}
 }
