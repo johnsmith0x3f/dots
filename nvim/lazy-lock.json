@@ -2,9 +2,11 @@
   "Alpha": { "branch": "main", "commit": "41283fb402713fc8b327e60907f74e46166f4cfd" },
   "BufferLine": { "branch": "main", "commit": "81820cac7c85e51e4cf179f8a66d13dbf7b032d9" },
   "Catppuccin": { "branch": "main", "commit": "1d76b57bb22069a6477030edd68b52f3b07a9e48" },
+  "CompetiTest": { "branch": "master", "commit": "c3cb0e2b0916a879c4d3dcb5737e6c046dd0afc5" },
   "LuaLine": { "branch": "master", "commit": "e20896769ca3cd7e623f0d9f0f68c2155e1eeee2" },
   "LuaSnip": { "branch": "master", "commit": "ce0a05ab4e2839e1c48d072c5236cce846a387bc" },
   "MarkdownPreview": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
+  "NUI": { "branch": "main", "commit": "61574ce6e60c815b0a0c4b5655b8486ba58089a1" },
   "NvimColorizer": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },
   "NvimTree": { "branch": "master", "commit": "12a9a995a455d2c2466e47140663275365a5d2fc" },
   "NvimTreesitter": { "branch": "master", "commit": "a8c082b4f5b3b70bde2ffb08cc112dfd7e515fb3" },
@@ -12,12 +14,9 @@
   "Telescope": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "TokyoNight": { "branch": "main", "commit": "9714c1143287ecb9ca895a7eef0df7b67e8abcb3" },
   "VimTeX": { "branch": "master", "commit": "2dc2a5435809c13f6f4aa07964be4ef19a7864f5" },
-  "competitest": { "branch": "master", "commit": "c3cb0e2b0916a879c4d3dcb5737e6c046dd0afc5" },
   "lazy.nvim": { "branch": "main", "commit": "c771cf4928d1a1428ac7461658ab2916ed48adf5" },
   "mason": { "branch": "main", "commit": "0950b15060067f752fde13a779a994f59516ce3d" },
   "mason-lspconfig": { "branch": "main", "commit": "37a336b653f8594df75c827ed589f1c91d91ff6c" },
-  "nui": { "branch": "main", "commit": "61574ce6e60c815b0a0c4b5655b8486ba58089a1" },
   "nvim-lspconfig": { "branch": "master", "commit": "cf97d2485fc3f6d4df1b79a3ea183e24c272215e" },
-  "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
-  "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" }
+  "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" }
 }

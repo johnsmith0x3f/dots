@@ -1,6 +1,5 @@
 return {
-    "xeluxee/competitest.nvim", name = "competitest",
-    dependencies = { "nui" },
+    "xeluxee/competitest.nvim", name = "CompetiTest",
     config = function()
         vim.keymap.set("n", "<F1>", ":CompetiTest add_testcase<CR>", {})
         vim.keymap.set("n", "<F2>", ":CompetiTest edit_testcase ", {})

@@ -1,4 +1,4 @@
 return {
-    "MunifTanjim/nui.nvim", name = "nui",
-    lazy = true
+	name = "NUI", "MunifTanjim/nui.nvim",
+	lazy = true
 }
