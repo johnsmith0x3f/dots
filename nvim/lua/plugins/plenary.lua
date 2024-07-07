@@ -1,4 +1,8 @@
 return {
-    "nvim-lua/plenary.nvim", name = "plenary",
-    lazy = true
+	"nvim-lua/plenary.nvim", name = "Plenary",
+	lazy = true,
+
+	config = function()
+		opts.rocks.enabled = false
+	end,
 }
