@@ -1,6 +1,5 @@
 return {
     name = "NvimTree", "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
 
     -- Lazy-load options.
     lazy = false,

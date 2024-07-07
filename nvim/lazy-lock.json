@@ -18,5 +18,6 @@
   "mason": { "branch": "main", "commit": "0950b15060067f752fde13a779a994f59516ce3d" },
   "mason-lspconfig": { "branch": "main", "commit": "37a336b653f8594df75c827ed589f1c91d91ff6c" },
   "nvim-lspconfig": { "branch": "master", "commit": "cf97d2485fc3f6d4df1b79a3ea183e24c272215e" },
-  "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" }
+  "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
+  "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" }
 }

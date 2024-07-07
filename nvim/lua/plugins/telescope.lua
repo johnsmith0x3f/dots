@@ -1,5 +1,5 @@
 return {
-	name = "Telescope", "nvim-telescope/telescope.nvim", tag = "0.1.8",
+	name = "Telescope", "nvim-telescope/telescope.nvim",
 
 	-- Lazy-load options.
 	lazy = false,
