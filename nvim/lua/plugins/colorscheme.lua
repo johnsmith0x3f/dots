@@ -9,9 +9,10 @@ local tokyonight = {
 	"folke/tokyonight.nvim", name = "TokyoNight",
 	priority = 1000,
 
-	opts = {
-		style = "storm"
-	}
+	opts = {},
+	config = function()
+		vim.cmd("colorscheme tokyonight-storm")
+	end
 }
 
 return { catppuccin, tokyonight }
