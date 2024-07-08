@@ -11,9 +11,10 @@ fi
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # set alias
-alias eza="eza --color=always --icons=always"
+alias eza="eza --color=auto --icons=auto"
 alias grep="grep --color=auto"
-alias ls="ls --color=always"
+alias ls="ls --color=auto"
+alias pacman="pacman --color=auto"
 
 # import my functions
 source "$ZDOTDIR/fun.zsh"
