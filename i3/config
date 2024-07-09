@@ -137,4 +137,7 @@ bindsym $mod+Shift+l move right
 bindsym $mod+Control+h split h
 bindsym $mod+Control+v split v
 
+bindsym $mod+Shift+s exec maim "$HOME/Pictures/Screenshots/$(date +%F-%H%M%S).png"
+
 ### }}}
+
