@@ -28,4 +28,5 @@ eval "$(zoxide init zsh)"
 source "$ZDOTDIR/.zgenom/zgenom.zsh"
 source "$ZDOTDIR/.zgenomrc"
 
-#eval "$(starship init zsh)"
+# Created by `pipx` on 2024-07-10 15:26:40
+export PATH="$PATH:/home/john/.local/bin"
