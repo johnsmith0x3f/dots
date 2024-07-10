@@ -15,6 +15,7 @@ alias eza="eza --color=auto --icons=auto"
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
 alias pacman="pacman --color=auto"
+alias yay="yay --color=auto"
 
 # import my functions
 source "$ZDOTDIR/fun.zsh"
