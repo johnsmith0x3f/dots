@@ -13,7 +13,7 @@ vim.opt.cursorline = true
 -- vim.opt.mouse = "a"
 
 -- Set the width of tab characters...
-vim.opt.tabstop = 4
+vim.opt.tabstop = 2
 -- and the width of indentations to always be the same.
 vim.opt.shiftwidth = 0
 -- Do not use spaces instead of tabs when indenting.
