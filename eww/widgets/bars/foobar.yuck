@@ -29,7 +29,7 @@
   (box :class "bardatebox"
        :orientation "h"
        :space-evenly true
-    (button :onclick "eww -c ~/.config/dk/eww open --toggle date" date)))
+    (button :onclick "eww open --toggle date" date)))
   
 
 
@@ -99,7 +99,7 @@
   
 
 
-(defwindow bar
+(defwindow foobar
   :geometry (geometry :x "0px"
                       :y "0px"
                       :width "100%"

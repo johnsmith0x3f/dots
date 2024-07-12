@@ -1,0 +1,7 @@
+; Date and time.
+(defwidget datime []
+  (box :class "datime"
+       :orientation "horizontal"
+       :space-evenly true
+    (button :onclick "eww -c ~/.config/dk/eww open --toggle date"
+      date)))

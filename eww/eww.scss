@@ -2,5 +2,5 @@
 	all: unset; // Unsets everything so you can style everything from scratch.
 }
 
-@import "colors.scss"
-@import "modules/bars/bar.scss"
+@import "envs/colors.scss"
+@import "widgets/bars/foobar.scss"

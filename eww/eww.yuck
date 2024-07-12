@@ -1,1 +1,2 @@
-(include "modules/bars/bar.yuck")
+(include "envs/vars.yuck")
+(include "widgets/bars/foobar.yuck")
