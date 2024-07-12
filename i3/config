@@ -2,6 +2,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+include "bindsym.config"
+
 # Set the modkeys.
 set $alt Mod1
 set $mod Mod4
@@ -9,12 +11,11 @@ set $mod Mod4
 # Font for window titles.
 font pango:Sasara Mono SC 15
 
+### Startups {{{
+
 # Start XDG autostart *.desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart.
 exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
 
 # The xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -27,10 +28,13 @@ exec --no-startup-id nm-applet
 # Use blueman to manage bluetooth.
 exec --no-startup-id blueman-applet
 
-include "bindsym.config"
+# Use iBus as input method.
+exec --no-startup-id ibus-daemon
+
+### }}}
 
 # Use picom as X compositor.
-exec_always picom
+exec_always --no-startup-id picom
 
 # Use polybar as status bar.
 exec_always ~/.dots/polybar/launch.sh darktide
