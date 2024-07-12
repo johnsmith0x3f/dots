@@ -99,7 +99,7 @@
   
 
 
-(defwindow foobar
+(defwindow bar
   :geometry (geometry :x "0px"
                       :y "0px"
                       :width "100%"
