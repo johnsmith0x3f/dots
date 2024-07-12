@@ -138,6 +138,7 @@ bindsym $mod+Shift+l move right
 bindsym $mod+Control+h split h
 bindsym $mod+Control+v split v
 
+# Print screen with maim.
 bindsym $mod+Shift+s exec maim --hidecursor "$HOME/Pictures/Screenshots/$(date +%F-%H%M%S).png"
 
 ### }}}
