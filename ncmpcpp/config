@@ -3,38 +3,38 @@
 ## $XDG_CONFIG_HOME/ncmpcpp/config or $HOME/.ncmpcpp/config ##
 ## and set up your preferences.                             ##
 ##############################################################
+
+#### directories ######
 #
-##### directories ######
-##
-## Directory for storing ncmpcpp related files.  Changing it is useful if you
-## want to store everything somewhere else and provide command line setting for
-## alternative location to config file which defines that while launching
-## ncmpcpp.
-##
+# Directory for storing ncmpcpp related files. Changing it is useful if you
+# want to store everything somewhere else and provide command line setting for
+# alternative location to config file which defines that while launching
+# ncmpcpp.
 #
-#ncmpcpp_directory = ~/.config/ncmpcpp
+
+ncmpcpp_directory = ~/.config/ncmpcpp
+
 #
-##
-## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
-## MPD clients (eg. ncmpc) also use that location.
-##
+# Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
+# MPD clients (eg. ncmpc) also use that location.
 #
-#lyrics_directory = ~/.lyrics
+
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+
+#### connection settings #####
+
+mpd_host = localhost
+
+mpd_port = 6600
+
+mpd_connection_timeout = 5
+
+# Needed for tag editor and file operations to work.
 #
-##### connection settings #####
-#
-#mpd_host = localhost
-#
-#mpd_port = 6600
-#
-#mpd_connection_timeout = 5
-#
-## Needed for tag editor and file operations to work.
-##
-#mpd_music_dir = ~/music
-#
-#mpd_crossfade_time = 5
-#
+mpd_music_dir = ~/Music
+
+mpd_crossfade_time = 5
+
 # Exclude pattern for random song action
 # http://www.boost.org/doc/libs/1_46_1/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
 #random_exclude_pattern = "^(temp|midi_songs).*"
@@ -596,3 +596,62 @@
 #
 #active_window_border = red
 #
+
+# behaviour
+external_editor                  = nvim
+message_delay_time               = 1
+playlist_disable_highlight_delay = 2
+autocenter_mode                  = "yes"
+centered_cursor                  = "yes"
+ignore_leading_the               = "yes"
+allow_for_physical_item_deletion = "no"
+lines_scrolled = "1"
+follow_now_playing_lyrics = "yes"
+lyrics_fetchers = musixmatch
+
+# visualizer
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = "mpd_visualizer"
+visualizer_type        = "ellipse"
+visualizer_look       = "●●" 
+visualizer_color      = "3, 7, 5"
+
+# appearance
+colors_enabled        = "yes"
+playlist_display_mode = "classic"
+user_interface        = "classic"
+volume_color          = "white"
+
+# window
+song_window_title_format = "Music"
+statusbar_visibility     = "no"
+header_visibility        = "no"
+titles_visibility        = "no"
+
+# progress bar
+progressbar_look = "  "
+progressbar_color = "black"
+progressbar_elapsed_color = "blue"
+
+# song list
+song_status_format= "$7%t"
+song_list_format = "$(008)%t$R  $(247)%a$R$5  %l$8"
+song_columns_list_format = "(53)[blue]{tr} (45)[blue]{a}"
+
+current_item_prefix = "$b$2| "
+current_item_suffix = "$/b$5"
+
+now_playing_prefix = "$b$5| "
+now_playing_suffix = "$/b$5"
+
+song_library_format = {{%a - %t} (%b)}|{%f}
+
+# colors
+main_window_color = "blue"
+
+current_item_inactive_column_prefix = "$b$5"
+current_item_inactive_column_suffix = "$/b$5"
+
+
+color1 = "white"
+color2 = "blue"
