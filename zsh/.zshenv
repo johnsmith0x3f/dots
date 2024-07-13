@@ -11,9 +11,9 @@ export ALACRITTY_DIR="$XDG_CONFIG_HOME/alacritty"
 export BAT_THEME="tokyonight_storm"
 export EDITOR="nvim"
 
-# Save command history.
+# Save command history, 1000 is far from enough.
 export HISTFILE="$ZDOTDIR/.histfile"
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=10000
+export SAVEHIST=10000
 
 export ZLE_RPROMPT_INDENT=0 # might cause problems, use with care
