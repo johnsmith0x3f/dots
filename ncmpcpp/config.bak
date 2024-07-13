@@ -5,27 +5,18 @@
 ##############################################################
 
 #### directories ######
-#
-# Directory for storing ncmpcpp related files. Changing it is useful if you
-# want to store everything somewhere else and provide command line setting for
-# alternative location to config file which defines that while launching
-# ncmpcpp.
-#
 
+# Directory for storing ncmpcpp configuration files.
 ncmpcpp_directory = ~/.config/ncmpcpp
 
-#
-# Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
-# MPD clients (eg. ncmpc) also use that location.
-#
-
+# Directory for storing downloaded lyrics.
 lyrics_directory = ~/.config/ncmpcpp/lyrics
 
 #### connection settings #####
 
-mpd_host = localhost
+mpd_host = "localhost"
 
-mpd_port = 6600
+mpd_port = "6600"
 
 mpd_connection_timeout = 5
 
@@ -312,36 +303,20 @@ mpd_crossfade_time = 5
 ##
 #
 #song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-#
-##### various settings #####
-#
-##
-## Note: Custom command that will be executed each time song changes. Useful for
-## notifications etc.
-##
-#execute_on_song_change = ""
-#
-##
-## Note: Custom command that will be executed each time player state
-## changes. The environment variable MPD_PLAYER_STATE is set to the current
-## state (either unknown, play, pause, or stop) for its duration.
-##
-#
-#execute_on_player_state_change = ""
-#
-#playlist_show_mpd_host = no
-#
-#playlist_show_remaining_time = no
-#
-#playlist_shorten_total_times = no
-#
-#playlist_separate_albums = no
-#
-##
-## Note: Possible display modes: classic, columns.
-##
-#playlist_display_mode = columns
-#
+
+#### various settings #####
+
+# Custom command that will be executed each time song changes.
+execute_on_song_change = ""
+# Custom command that will be executed each time player state changes.
+execute_on_player_state_change = ""
+
+# Available values: classic, alternative.
+user_interface = "alternative"
+
+# Possible display modes: classic, columns.
+playlist_display_mode = "classic"
+
 #browser_display_mode = classic
 #
 #search_engine_display_mode = classic
@@ -372,10 +347,6 @@ mpd_crossfade_time = 5
 ##
 #default_place_to_search_in = database
 #
-## Available values: classic, alternative.
-##
-#user_interface = classic
-#
 #data_fetching_delay = yes
 #
 ## Available values: artist, album_artist, date, genre, composer, performer.
@@ -391,11 +362,11 @@ mpd_crossfade_time = 5
 #default_find_mode = wrapped
 #
 #default_tag_editor_pattern = %n - %t
-#
-#header_visibility = yes
-#
-#statusbar_visibility = yes
-#
+
+header_visibility = "no"
+
+statusbar_visibility = "no"
+
 ## Show the "Connected to ..." message on startup
 #connected_message_on_startup = yes
 #
@@ -579,11 +550,12 @@ mpd_crossfade_time = 5
 #color1 = white
 #
 #color2 = green
-#
-#progressbar_color = black:b
-#
-#progressbar_elapsed_color = green:b
-#
+
+# Progress bar.
+progressbar_look            = "━━━"
+progressbar_color           = "black"
+progressbar_elapsed_color   = "yellow"
+
 #statusbar_color = default
 #
 #statusbar_time_color = default:b
@@ -596,62 +568,3 @@ mpd_crossfade_time = 5
 #
 #active_window_border = red
 #
-
-# behaviour
-external_editor                  = nvim
-message_delay_time               = 1
-playlist_disable_highlight_delay = 2
-autocenter_mode                  = "yes"
-centered_cursor                  = "yes"
-ignore_leading_the               = "yes"
-allow_for_physical_item_deletion = "no"
-lines_scrolled = "1"
-follow_now_playing_lyrics = "yes"
-lyrics_fetchers = musixmatch
-
-# visualizer
-visualizer_data_source = /tmp/mpd.fifo
-visualizer_output_name = "mpd_visualizer"
-visualizer_type        = "ellipse"
-visualizer_look       = "●●" 
-visualizer_color      = "3, 7, 5"
-
-# appearance
-colors_enabled        = "yes"
-playlist_display_mode = "classic"
-user_interface        = "classic"
-volume_color          = "white"
-
-# window
-song_window_title_format = "Music"
-statusbar_visibility     = "no"
-header_visibility        = "no"
-titles_visibility        = "no"
-
-# progress bar
-progressbar_look = "  "
-progressbar_color = "black"
-progressbar_elapsed_color = "blue"
-
-# song list
-song_status_format= "$7%t"
-song_list_format = "$(008)%t$R  $(247)%a$R$5  %l$8"
-song_columns_list_format = "(53)[blue]{tr} (45)[blue]{a}"
-
-current_item_prefix = "$b$2| "
-current_item_suffix = "$/b$5"
-
-now_playing_prefix = "$b$5| "
-now_playing_suffix = "$/b$5"
-
-song_library_format = {{%a - %t} (%b)}|{%f}
-
-# colors
-main_window_color = "blue"
-
-current_item_inactive_column_prefix = "$b$5"
-current_item_inactive_column_suffix = "$/b$5"
-
-
-color1 = "white"
-color2 = "blue"
