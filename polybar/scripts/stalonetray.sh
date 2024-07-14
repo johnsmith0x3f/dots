@@ -1,19 +1,14 @@
 #!/bin/sh
 
-hidden="/tmp/stalonetrayhide.lock"
-
-# Requires stalonetray and xdo.
+# Requires stalonetray.
 if [[ $(pidof stalonetray) ]]; then
-	if [[ -e $hidden ]]; then
-		polybar-msg action "#droptray.hook.1"
-		xdo show -n stalonetray
-		rm "$hidden"
-	else
-		polybar-msg action "#droptray.hook.0"
-		xdo hide -n stalonetray
-		touch "$hidden"
-	fi
+	polybar-msg action "#droptray.hook.0"
+	killall stalonetray
 else
-	stalonetray --background=#313131 --geometry=1x1+10+55 --slot-size=32 --window-type=normal &
-
+	polybar-msg action "#droptray.hook.1"
+	stalonetray --background=#313131 \
+	            --geometry=1x1+10+55 \
+	            --grow-gravity=W \
+	            --slot-size=32 \
+	            --window-type=toolbar &
 fi
