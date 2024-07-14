@@ -132,24 +132,25 @@ execute_on_song_change = ""
 # Custom command that will be executed each time player state changes.
 execute_on_player_state_change = ""
 
-
-
 ###### UI ######
+
+# Format to display on the window title.
+song_window_title_format = "{%a - }{%t}|{%f}"
 
 # General settings.
 user_interface = "alternative" # 
-alternative_ui_separator_color = "blue"
+alternative_ui_separator_color = "green"
 alternative_header_first_line_format = "$b{%t}|{%f}$/b"
 alternative_header_second_line_format = "$7$b%b$/b$9"
 header_text_scrolling = "no"
 
 colors_enabled = "yes"
-main_window_color = "white"
+main_window_color = "blue"
 
 # Progress bar
 progressbar_look = "━━━"
 progressbar_color = "black"
-progressbar_elapsed_color = "yellow"
+progressbar_elapsed_color = "green"
 
 statusbar_visibility = "yes"
 # Hide the current playlist header: "Playlist: ...".
@@ -159,11 +160,19 @@ titles_visibility = "no"
 
 # Playlist settings.
 playlist_display_mode = "columns"
-song_columns_list_format = "(30)[yellow]{a} (60)[]{t|f:Title} (5f)[magenta]{l}"
+song_columns_list_format = "(40)[yellow]{a} (60)[]{t|f:Title}"
+
+song_list_format = "{%a - }{%t}|{%f}$R{$6%l$9}"
+song_status_format = "{{%a{ %b{ (%y)}} - }{%t}}|{%f}"
+song_library_format = "{%n - }{%t}|{%f}"
+
+now_playing_prefix = "$(red)$b"
+now_playing_suffix = "$/b$(end)"
 
 current_item_prefix = "$(blue)$r"
 current_item_suffix = "$/r$(end)"
 
-now_playing_prefix = "$(red)$b"
+current_item_inactive_column_prefix = "$(red)"
+current_item_inactive_column_suffix = "$(end)"
 
-now_playing_suffix = "$/b$(end)"
+centered_cursor = "yes"
