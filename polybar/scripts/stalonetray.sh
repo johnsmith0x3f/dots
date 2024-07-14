@@ -15,4 +15,5 @@ if [[ $(pidof stalonetray) ]]; then
 	fi
 else
 	stalonetray --background=#313131 --geometry=1x1+10+55 --slot-size=32 --window-type=normal &
+
 fi
