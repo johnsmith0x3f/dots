@@ -9,7 +9,7 @@ mpd_port 		  	= "6600"
 mpd_crossfade_time 	= "2"
 
 ### Script ###
-execute_on_song_change="~/.ncmpcpp/scripts/album-art"
+execute_on_song_change="wezterm imgcat --position 3,5 --resize 320x320 /home/john/Music/Albums/The_Earth_Is_Not_a_Cold_Dead_Place.Explosions_In_The_Sky/cover.jpg"
 
 ### Behaviour ###
 message_delay_time 				 = 1

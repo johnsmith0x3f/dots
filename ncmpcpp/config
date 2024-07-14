@@ -1,64 +1,178 @@
-## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+# Config for ncmpcpp, using version 0.9.2.
+# Based on https://github.com/archcraft-os/archcraft-skeleton/blob/main/archcraft-config-music/files/.ncmpcpp/config.
 
-### Directories ###
-ncmpcpp_directory   = ~/.ncmpcpp
-lyrics_directory    = ~/.ncmpcpp/lyrics
-mpd_music_dir       = ~/Music
-mpd_host         = "localhost"
-mpd_port         = "6600"
-mpd_crossfade_time   = "2"
+### Notes {{{
 
-### Script ###
-#execute_on_song_change = "kunst --size 60x60 --silent"
+# For a song format you can use:
+#
+# %l - length
+# %f - filename
+# %D - directory
+# %a - artist
+# %A - album artist
+# %t - title
+# %b - album
+# %y - date
+# %n - track number (01/12 -> 01)
+# %N - full track info (01/12 -> 01/12)
+# %g - genre
+# %c - composer
+# %p - performer
+# %d - disc
+# %C - comment
+# %P - priority
+# $R - begin right alignment
+#
+# If you want to make sure that a part of the format is displayed only when
+# certain tags are present, you can archieve it by grouping them with brackets,
+# e.g. '{%a - %t}' will be evaluated to 'ARTIST - TITLE' if both tags are
+# present or '' otherwise.  It is also possible to define a list of
+# alternatives by providing several groups and separating them with '|',
+# e.g. '{%t}|{%f}' will be evaluated to 'TITLE' or 'FILENAME' if the former is
+# not present.
+#
+# Note: If you want to set limit on maximal length of a tag, just put the
+# appropriate number between % and character that defines tag type, e.g. to
+# make album take max. 20 terminal cells, use '%20b'.
+#
+# In addition, formats support markers used for text attributes.  They are
+# followed by character '$'. After that you can put:
+#
+# - 0 - default window color (discards all other colors)
+# - 1 - black
+# - 2 - red
+# - 3 - green
+# - 4 - yellow
+# - 5 - blue
+# - 6 - magenta
+# - 7 - cyan
+# - 8 - white
+# - 9 - end of current color
+# - b - bold text
+# - u - underline text
+# - r - reverse colors
+# - a - use alternative character set
+#
+# If you don't want to use a non-color attribute anymore, just put it again,
+# but this time insert character '/' between '$' and attribute character,
+# e.g. {$b%t$/b}|{$r%f$/r} will display bolded title tag or filename with
+# reversed colors.
+#
+# If you want to use 256 colors and/or background colors in formats (the naming
+# scheme is described below in section about color definitions), it can be done
+# with the syntax $(COLOR), e.g. to set the artist tag to one of the
+# non-standard colors and make it have yellow background, you need to write
+# $(197_yellow)%a$(end). Note that for standard colors this is interchangable
+# with attributes listed above.
+#
+# Note: colors can be nested.
 
-### Behaviour ###
-message_delay_time          = 1
-autocenter_mode          = "yes"
-centered_cursor          = "yes"
-ignore_leading_the          = "yes"
-playlist_disable_highlight_delay = 2
-allow_for_physical_item_deletion = "no"
+# syntax of song columns list format is "column column etc."
+#
+# - syntax for each column is:
+#
+# (width of the column)[color of the column]{displayed tag}
+#
+# Note: Width is by default in %, if you want a column to have fixed size, add
+# 'f' after the value, e.g. (10)[white]{a} will be the column that take 10% of
+# screen (so the real width will depend on actual screen size), whereas
+# (10f)[white]{a} will take 10 terminal cells, no matter how wide the screen
+# is.
+#
+# - color is optional (if you want the default one, leave the field empty).
+#
+# Note: You can give a column additional attributes by putting appropriate
+# character after displayed tag character. Available attributes are:
+#
+# - r - column will be right aligned
+# - E - if tag is empty, empty tag marker won't be displayed
+#
+# You can also:
+#
+# - give a column custom name by putting it after attributes, separated with
+#   character ':', e.g. {lr:Length} gives you right aligned column of lengths
+#   named "Length".
+#
+# - define sequence of tags, that have to be displayed in case predecessor is
+#   empty in a way similar to the one in classic song format, i.e. using '|'
+#   character, e.g. {a|c|p:Owner} creates column named "Owner" that tries to
+#   display artist tag and then composer and performer if previous ones are not
+#   available.
+#
 
-### Visualizer ###
-visualizer_data_source = /tmp/mpd.fifo
-visualizer_output_name = "mpd_visualizer"
-visualizer_in_stereo   = "yes"
-visualizer_look      = ●●
-visualizer_type      = "ellipse"
 
-### Appearance ###
-playlist_display_mode = "columns"
-colors_enabled       = "yes"
-user_interface       = alternative
-volume_color       = "white"
+### }}}
 
-### Window ###
+###### Directories ######
+
+# Directory for storing ncmpcpp config files.
+ncmpcpp_directory = ~/.config/ncmpcpp
+# Directory for storing downloaded lyrics.
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+# Directory for storing music.
+mpd_music_dir = ~/Music
+
+
+
+###### MPD Server ######
+
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_connection_timeout = 5
+mpd_crossfade_time = 5
+
+
+
+###### Actions ######
+
+# Show the "Connected to ..." message on startup.
+connected_message_on_startup = "yes"
+# Custom command that will be executed each time song changes.
+execute_on_song_change = ""
+# Custom command that will be executed each time player state changes.
+execute_on_player_state_change = ""
+
+###### UI ######
+
+# Format to display on the window title.
 song_window_title_format = "{%a - }{%t}|{%f}"
-statusbar_visibility    = "no"
-header_visibility      = "no"
-titles_visibility      = "no"
 
-# Progress bar.
-progressbar_look            = "━━━"
-progressbar_color           = "black"
-progressbar_elapsed_color   = "yellow"
+# General settings.
+user_interface = "alternative" # 
+alternative_ui_separator_color = "green"
+alternative_header_first_line_format = "$b{%t}|{%f}$/b"
+alternative_header_second_line_format = "$7$b%b$/b$9"
+header_text_scrolling = "no"
 
-### Alternative UI ###
-alternative_ui_separator_color       = "black"
-alternative_header_first_line_format  = $b$5$/b  $b$8{%t}|{%f}$/b $/b 
-alternative_header_second_line_format = {$b{$2  %a$9}{ - $7  %b$9}{ ($2%y$9)}}|{%D}
+colors_enabled = "yes"
+main_window_color = "blue"
 
-### Song list ###
-song_status_format     = "$7%t"
-song_list_format      = "  %t $R%a %l  "
-song_library_format    = {{%a - %t} (%b)}|{%f}
-song_columns_list_format = "(53)[white]{tr} (45)[blue]{a}"
+# Progress bar
+progressbar_look = "━━━"
+progressbar_color = "black"
+progressbar_elapsed_color = "green"
 
-### Colors ###
-main_window_color           = "blue"
-current_item_prefix         = "$(blue)$r"
-current_item_suffix         = "$/r$(end)"
-current_item_inactive_column_prefix = red
-current_item_inactive_column_suffix = red
-color1 = "white"
-color2 = "red"
+statusbar_visibility = "yes"
+# Hide the current playlist header: "Playlist: ...".
+header_visibility = "no"
+# Hide the column titles: "Artist", "Track", "Title"... etc.
+titles_visibility = "no"
+
+# Playlist settings.
+playlist_display_mode = "columns"
+song_columns_list_format = "(40)[yellow]{a} (60)[]{t|f:Title}"
+
+song_list_format = "{%a - }{%t}|{%f}$R{$6%l$9}"
+song_status_format = "{{%a{ %b{ (%y)}} - }{%t}}|{%f}"
+song_library_format = "{%n - }{%t}|{%f}"
+
+now_playing_prefix = "$(red)$b"
+now_playing_suffix = "$/b$(end)"
+
+current_item_prefix = "$(blue)$r"
+current_item_suffix = "$/r$(end)"
+
+current_item_inactive_column_prefix = "$(red)"
+current_item_inactive_column_suffix = "$(end)"
+
+centered_cursor = "yes"
