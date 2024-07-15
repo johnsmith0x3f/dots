@@ -1,7 +1,0 @@
-; Define const values with "defvar".
-(defvar foo "custom value")
-
-(defpoll date :interval "1s"
-  "date +%F")
-(defpoll time :interval "1s"
-  "date +%H:%M:%S")

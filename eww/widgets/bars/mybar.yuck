@@ -3,8 +3,7 @@
   (box :class "datime"
        :orientation "horizontal"
        :space-evenly true
-    (button :onclick "eww -c ~/.config/dk/eww open --toggle date"
-      date)))
+    (button :onclick "eww -c ~/.config/eww open --toggle date" date)))
 
 (defwindow mybar
            :geometry (geometry :x "50%"
@@ -15,4 +14,4 @@
            :type "dock"
            :wm-ignore false
            :reserve (struts :distance "46px" :side "top")
-  (bar))
+  (datime))
