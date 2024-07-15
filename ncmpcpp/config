@@ -147,7 +147,7 @@ header_text_scrolling = "no"
 colors_enabled = "yes"
 main_window_color = "blue"
 
-# Progress bar
+# Progress bar settings.
 progressbar_look = "━━━"
 progressbar_color = "black"
 progressbar_elapsed_color = "green"
@@ -161,6 +161,7 @@ titles_visibility = "no"
 # Playlist settings.
 playlist_display_mode = "columns"
 song_columns_list_format = "(40)[yellow]{a} (60)[]{t|f:Title}"
+playlist_disable_highlight_delay = 2
 
 song_list_format = "{%a - }{%t}|{%f}$R{$6%l$9}"
 song_status_format = "{{%a{ %b{ (%y)}} - }{%t}}|{%f}"
@@ -175,4 +176,6 @@ current_item_suffix = "$/r$(end)"
 current_item_inactive_column_prefix = "$(red)"
 current_item_inactive_column_suffix = "$(end)"
 
-centered_cursor = "yes"
+centered_cursor = "yes" # ?
+
+# Visualizer settings.
