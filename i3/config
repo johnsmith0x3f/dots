@@ -18,7 +18,7 @@ tiling_drag off
 # No window borders.
 default_border pixel 0px
 
-# Inner gaps for all windows .
+# Inner gaps for all windows.
 gaps inner 10px 
 # Outer gaps for all windows (desktop margins).
 gaps outer 0px
