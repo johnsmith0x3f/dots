@@ -1,0 +1,14 @@
+configuration {
+    modes:                  [ drun, window, run ];
+
+    display-drun:           "";
+    display-window:         "";
+    display-run:            "";
+
+    show-icons:             true;
+}
+
+// Always disable default themes!
+@theme      "/dev/null"
+
+@import     "/home/john/.config/rofi/themes/bleu.rasi"
