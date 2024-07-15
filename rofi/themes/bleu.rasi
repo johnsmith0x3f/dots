@@ -1,191 +1,191 @@
 /*
-    The world is made up with boxes.
-    The properties of boxes, if exist, should be listed from the outside to the inside.
+	The   world is made up with boxes.
+	The   properties of boxes, if exist, should be listed from the outside to the inside.
 */
 
-// Global properties.
+// Global   properties.
 * {
-    // Foreground colors.
-    foreground:         #F9F7F7;
-    foreground-alt:     #DBE2EF;
+	// Foreground   colors.
+	foreground:         #F9F7F7;
+	foreground-alt:     #DBE2EF;
 
-    // Background colors.
-//  background:         #112D4E;
-//  background-alt:     #3F72AF;
-    background:         #1E2127FF;
-    background-alt:     #282B31FF;
+	// Background   colors.
+//    background:         #112D4E;
+//    background-alt:     #3F72AF;
+	background:         #1E2127FF;
+	background-alt:     #282B31FF;
 
-    selected:           #61AFEFFF;
+	selected:           #61AFEFFF;
 }
 
 window {
-    enabled:                true;
-    location:               center;
-    anchor:                 center;
-    fullscreen:             false;
-    width:                  600px;
-    x-offset:               0px;
-    y-offset:               0px;
-    padding:                0px;
-    margin:                 0px;
-    border:                 0px;
-    border-radius:          0px;
-    transparency:           "real";
-    background-color:       @background;
-    font:                   "OperatorMono Nerd Font Mono 15";
+	enabled:                  true;
+	location:                 center;
+	anchor:                   center;
+	fullscreen:               false;
+	width:                    600px;
+	x-offset:                 0px;
+	y-offset:                 0px;
+	padding:                  0px;
+	margin:                   0px;
+	border:                   0px;
+	border-radius:            0px;
+	transparency:           "real";
+	background-color:         @background;
+	font:                   "OperatorMono Nerd Font Mono   15";
 }
 
 mainbox {
-    enabled:                true;
+	enabled:                  true;
 
-    margin:                 0px;
-    border:                 0px;
-    padding:                30px;
+	margin:                   0px;
+	border:                   0px;
+	padding:                  30px;
 
-    text-color:             @foreground;
-    background-color:       transparent;
+	text-color:               @foreground;
+	background-color:         transparent;
 
-    children:               [ "inputbar", "message", "listview" ];
+	children:                 [ "inputbar", "message", "listview" ];
 }
 
 inputbar {
-    enabled:                true;
+	enabled:                  true;
 
-    margin:                 0px;
-    border:                 0px;
-    padding:                0px;
+	margin:                   0px;
+	border:                   0px;
+	padding:                  0px;
 
-    text-color:             inherit;
-    background-color:       inherit;
+	text-color:               inherit;
+	background-color:         inherit;
 
-    spacing:                10px;
+	spacing:                  10px;
 
-    children:               [ "textbox-prompt-icon", "entry", "mode-switcher" ];
+	children:                 [ "textbox-prompt-icon", "entry", "mode-switcher" ];
 }
 
 prompt {
-    enabled:                false;
+	enabled:                  false;
 
-    text-color:             inherit;
-    background-color:       inherit;
+	text-color:               inherit;
+	background-color:         inherit;
 }
 
 textbox-prompt-icon {
-    enabled:                true;
+	enabled:                  true;
 
-    margin:                 0px;
-    border:                 0px;
-    padding:                5px 0px;
+	margin:                   0px;
+	border:                   0px;
+	padding:                  5px 0px;
 
-    expand:                 false;
+	expand:                   false;
 
-    content:                "";
-    text-color:             inherit;
-    background-color:       inherit;
+	content:                "";
+	text-color:               inherit;
+	background-color:         inherit;
 }
 
 entry {
-    enabled:                true;
+	enabled:                  true;
 
-    margin:                 0px;
-    border:                 0px;
-    padding:                5px 0px;
+	margin:                   0px;
+	border:                   0px;
+	padding:                  5px 0px;
 
-    text-color:             inherit;
-    background-color:       inherit;
+	text-color:               inherit;
+	background-color:         inherit;
 
-    placeholder:            "Search...";
-    placeholder-color:      @foreground-alt;
+	placeholder:              "Search...";
+	placeholder-color:        @foreground-alt;
 }
 
 mode-switcher{
-    enabled:                true;
+	enabled:                  true;
 
-    margin:                 0px;
-    border:                 0px;
-    padding:                0px;
+	margin:                   0px;
+	border:                   0px;
+	padding:                  0px;
 
-    text-color:             @foreground;
-    background-color:       transparent;
+	text-color:               @foreground;
+	background-color:         transparent;
 
-    spacing:                10px;
+	spacing:                  10px;
 }
 
 button {
-    enabled:                true;
+	enabled:                  true;
 
-    border:                 0px;
-    border-radius:          10px;
-    padding:                5px 12px;
+	border:                   0px;
+	border-radius:            10px;
+	padding:                  5px 12px;
 
-    text-color:             inherit;
-    background-color:       inherit;
+	text-color:               inherit;
+	background-color:         inherit;
 
-    cursor:                 pointer;
+	cursor:                   pointer;
 }
 
 button.selected {
-    text-color:             @background;
-    background-color:       @selected;
+	text-color:               @background;
+	background-color:         @selected;
 }
 
 listview {
-    enabled:                true;
+	enabled:                  true;
 
-    margin:                 0px;
-    border:                 0px;
-    padding:                0px;
+	margin:                   0px;
+	border:                   0px;
+	padding:                  0px;
 
-    text-color:             @foreground;
-    background-color:       transparent;
+	text-color:               @foreground;
+	background-color:         transparent;
 
-    scrollbar:              true;
+	scrollbar:                true;
 
-    layout:                 vertical;
-    spacing:                5px;
-    lines:                  8;
+	layout:                   vertical;
+	spacing:                  5px;
+	lines:                    8;
 
-    cursor:                 default;
+	cursor:                   default;
 }
 
 scrollbar {
-    enabled:                true;
+	enabled:                  true;
 
-    handle-width:           5px;
-    handle-color:           @background-alt;
+	handle-width:             5px;
+	handle-color:             @background-alt;
 }
 
 element {
-    enabled:                true;
+	enabled:                  true;
 
-    margin:                 0px;
-    border:                 0px;
-    border-radius:          10px;
-    padding:                5px 10px;
+	margin:                   0px;
+	border:                   0px;
+	border-radius:            10px;
+	padding:                  5px 10px;
 
-    spacing:                10px;
+	spacing:                  10px;
 
-    cursor:                 pointer;
+	cursor:                   pointer;
 }
 element.normal {
-    text-color:             @foreground;
-    background-color:       @background;
+	text-color:               @foreground;
+	background-color:         @background;
 }
 element.selected {
-    text-color:             @background;
-    background-color:       @selected;
+	text-color:               @background;
+	background-color:         @selected;
 }
 element.alternate {
-    text-color:             @foreground;
-    background-color:       @background;
+	text-color:               @foreground;
+	background-color:         @background;
 }
 
 element-icon {
-    size:                   24px;
-    background-color:       inherit;
+	size:                     24px;
+	background-color:         inherit;
 }
 
 element-text {
-    text-color:             inherit;
-    background-color:       inherit;
+	text-color:               inherit;
+	background-color:         inherit;
 }
