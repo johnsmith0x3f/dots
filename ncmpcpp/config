@@ -127,6 +127,8 @@ mpd_crossfade_time = 5
 
 # Show the "Connected to ..." message on startup.
 connected_message_on_startup = "yes"
+# Defines how long messages are supposed to be visible.
+message_delay_time = 1
 # Custom command that will be executed each time song changes.
 execute_on_song_change = ""
 # Custom command that will be executed each time player state changes.
@@ -179,3 +181,8 @@ current_item_inactive_column_suffix = "$(end)"
 centered_cursor = "yes" # ?
 
 # Visualizer settings.
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_in_stereo = "yes"
+
+visualizer_look = ""
+visualizer_color = "blue"
