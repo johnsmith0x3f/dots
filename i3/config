@@ -21,6 +21,18 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# Configure display.
+#exec_always --no-startup-id xrandr --output eDP-1-1 --auto
+
+# Display wallpaper.
+exec_always --no-startup-id feh --bg-fill --no-fehbg "$HOME/.config/i3/wall.png"
+
+# Use picom as X compositor.
+exec_always --no-startup-id picom
+
+# Use polybar as status bar.
+exec_always --no-startup-id ~/.dots/polybar/launch.sh darktide
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -31,25 +43,10 @@ exec --no-startup-id blueman-applet
 # Use iBus as input method.
 exec --no-startup-id ibus-daemon
 
-### }}}
-
-# Use picom as X compositor.
-exec_always --no-startup-id picom
-
-# Use polybar as status bar.
-exec_always ~/.dots/polybar/launch.sh darktide
-
-# Configure display.
-#exec_always xrandr --output eDP-1-1 --auto
-
-# Display wallpaper.
-exec_always feh --bg-fill --no-fehbg "$HOME/.config/i3/wall.png"
-
-# Use fcitx as input method.
-#exec --no-startup-id fcitx5
-
 # Host firefox homepage.
 exec --no-startup-id http-server "$HOME/.config/firefox/homepages/Chevron"
+
+### }}}
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
