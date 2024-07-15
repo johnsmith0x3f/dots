@@ -10,3 +10,5 @@
 # Ignore firefox configurations.
 /firefox/themes
 /firefox/homepages
+
+/mpd/pid
