@@ -1,14 +1,12 @@
-#
-# wm independent hotkeys
-#
+# WM independent hotkeys.
 
-# terminal emulator
+# Wezterm as terminal emulator.
 super + Return
-	urxvt
+	wezterm
 
-# program launcher
+# Rofi as program launcher.
 super + @space
-	dmenu_run
+	rofi -show
 
 # make sxhkd reload its configuration files:
 super + Escape
