@@ -2,10 +2,11 @@ local wezterm = require("wezterm")
 
 local config = {}
 
+-- No tab bar, simplicity is the best.
+config.enable_tab_bar = false
+
 -- Colors & Appearance.
 config.color_scheme = "Tokyo Night Storm"
-
-config.enable_tab_bar = false
 
 config.window_padding = {
 	left   = "32px",
@@ -17,7 +18,7 @@ config.window_padding = {
 -- Fonts.
 config.font = wezterm.font_with_fallback({
 	"OperatorMono Nerd Font Mono",
-	"WenQuanYi Micro Hei"
+	"Noto Sans CJK SC"
 })
 config.font_size = 18
 
