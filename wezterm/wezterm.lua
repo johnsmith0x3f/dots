@@ -10,9 +10,9 @@ config.color_scheme = "Tokyo Night Storm"
 
 config.window_padding = {
 	left   = "32px",
-	right  = "32px",
+	bottom = "32px",
 	top    = "32px",
-	bottom = "32px"
+	right  = "32px",
 }
 
 -- Fonts.
