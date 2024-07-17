@@ -1,5 +1,8 @@
 " Turn on syntax highlighting by default.
 syntax on
 
+set tabstop=4
+set shiftwidth=0
+
 " Compile and run cpp script.
 autocmd FileType cpp nnoremap <F5> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>
