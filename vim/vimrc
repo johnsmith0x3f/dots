@@ -1,9 +1,11 @@
 " Turn on syntax highlighting by default.
 syntax on
 
-set smarttab
 set tabstop=4
 set shiftwidth=0
+
+set smarttab
+set autoindent
 
 " Compile and run cpp script.
 autocmd FileType cpp nnoremap <F5> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>
