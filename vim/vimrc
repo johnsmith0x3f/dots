@@ -1,0 +1,3 @@
+" Vim config for competitive programming.
+
+nnoremap <F5> :wq<CR>
