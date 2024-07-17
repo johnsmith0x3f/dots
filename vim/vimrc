@@ -1,8 +1,6 @@
 " Turn on syntax highlighting by default.
 syntax on
 
-set clipboard=unnamedplus
-
 set number
 set relativenumber
 
