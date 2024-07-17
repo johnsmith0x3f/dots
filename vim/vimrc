@@ -1,3 +1,5 @@
-" Vim config for competitive programming.
+" Turn on syntax highlighting by default.
+syntax on
 
-nnoremap <F5> :wq<CR>
+" Compile and run cpp script.
+nnoremap <F5> :w<CR> | :!g++ %:r -o %:r && ./%:r < %r.in > %r.out<CR>
