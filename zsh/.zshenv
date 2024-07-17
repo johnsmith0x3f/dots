@@ -9,7 +9,10 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 export ALACRITTY_DIR="$XDG_CONFIG_HOME/alacritty"
 export BAT_THEME="tokyonight_storm"
+
+# Default applications.
 export EDITOR="nvim"
+export TERMINAL="wezterm"
 
 # Save command history, 1000 is far from enough.
 export HISTFILE="$ZDOTDIR/.histfile"
