@@ -1,8 +1,8 @@
 # WM independent hotkeys.
 
-# Wezterm as terminal emulator.
+# Terminal Emulator
 super + Return
-	wezterm
+	$TERMINAL
 
 # Rofi as program launcher.
 super + @space
