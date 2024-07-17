@@ -1,6 +1,9 @@
 " Turn on syntax highlighting by default.
 syntax on
 
+set number
+set relativenumber
+
 set tabstop=4
 set shiftwidth=0
 
