@@ -15,6 +15,3 @@ bspc config gapless_monocle      true
 
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
-
-# Picom compositor.
-picom
