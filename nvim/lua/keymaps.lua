@@ -1,6 +1,6 @@
 -- Use space as leader key, '\' is too far away.
 vim.g.mapleader = " "
-vim.g.localmapleader = " "
+vim.g.localmapleader = ";"
 
 local map = vim.keymap.set
 
