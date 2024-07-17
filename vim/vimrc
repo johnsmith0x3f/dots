@@ -2,4 +2,4 @@
 syntax on
 
 " Compile and run cpp script.
-autocmd FileType cpp nnoremap <F5> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r < %r.in > %r.out<CR>
+autocmd FileType cpp nnoremap <F5> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r < %:r.in > %:r.out<CR>
