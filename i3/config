@@ -170,10 +170,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id feh --bg-fill --no-fehbg "$HOME/.config/i3/wall.png"
 
 # Use picom as X compositor.
-exec_always --no-startup-id picom
+exec_always --no-startup-id pgrep -x picom && killall picom || picom
 
 # Use polybar as status bar.
-exec_always --no-startup-id ~/.dots/polybar/launch.sh darktide
+exec_always --no-startup-id bash "$XDG_CONFIG_HOME/polybar/launch.sh" darktide
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
