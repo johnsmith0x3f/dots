@@ -109,8 +109,11 @@ bindsym $mod+Control+v split v
 # Launch apps with rofi.
 bindsym $alt+space exec --no-startup-id rofi -show
 
-# Print screen with maim.
+# Take screenshot with maim.
 bindsym $mod+Shift+s exec --no-startup-id maim --hidecursor "$HOME/Pictures/Screenshots/$(date +%F-%H%M%S).png"
+
+# Lock screen with i3lock.
+bindsym $mod+Control+l i3lock
 
 # PulseAudio controls.
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute  @DEFAULT_SINK@ toggle
