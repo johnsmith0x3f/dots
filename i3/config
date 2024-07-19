@@ -113,7 +113,7 @@ bindsym $alt+space exec --no-startup-id rofi -show
 bindsym $mod+Shift+s exec --no-startup-id maim --hidecursor "$HOME/Pictures/Screenshots/$(date +%F-%H%M%S).png"
 
 # Lock screen with i3lock.
-bindsym $mod+Control+l i3lock
+bindsym $mod+Control+l exec --no-startup-id betterlockscreen -l
 
 # PulseAudio controls.
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute  @DEFAULT_SINK@ toggle
