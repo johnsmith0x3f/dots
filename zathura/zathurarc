@@ -1,3 +1,5 @@
+set font                        "Noto Sans CJK SC"
+
 set default-bg                  "#1a1b26"
 set default-fg                  "#a9b1d6"
 
