@@ -6,12 +6,14 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # Set monitor numbers & names.
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
-bspc config border_width         2
-bspc config window_gap          12
+bspc config split_ratio         0.50
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
 
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+# Size of the gap that separates windows.
+bspc config window_gap 10
+# Window border width.
+bspc config border_width 0
 
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
