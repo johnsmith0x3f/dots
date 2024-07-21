@@ -8,3 +8,4 @@ require("keymaps")
 
 -- Load plugins.
 require("lazyvim")
+
