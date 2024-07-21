@@ -12,15 +12,10 @@ map({ "n", "i" }, "<Right>", '<Cmd>echo "Use l"<CR>')
 
 local opt = { noremap = true, silent = true }
 
--- Better window navigations.
--- Whenever you can use hjkl, use them.
+-- Better window navigations. Whenever you can use hjkl, use them.
 map("n", "<C-h>", "<C-w>h", opt)
 map("n", "<C-j>", "<C-w>j", opt)
 map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<C-l>", "<C-w>l", opt)
-
--- Better indenting.
---map("v", "<", "<gv", opt)
---map("v", ">", ">gv", opt)
 
 map("n", "<leader>s", "<Cmd>source<CR>")
