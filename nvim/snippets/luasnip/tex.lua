@@ -58,7 +58,17 @@ local M = {
 		{ i(1), i(2) }
 	)),
 
-	s("mm", fmta("$<>$",
+	-- Inline Math
+	s("mi", fmta("$<>$",
+		{ d(1, get_visual) }
+	)),
+	-- Display Math
+	s("md", fmta(
+		[[
+			\[
+				<>
+			\]
+		]],
 		{ d(1, get_visual) }
 	)),
 	
