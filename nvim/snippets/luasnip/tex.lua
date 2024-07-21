@@ -49,13 +49,17 @@ local M = {
 		fmta(
 			"\\mathrm{<>}",
 			{
-				i(1)
+				d(1, get_visual)
 			}
 		)
 	),
 
 	s("ff", fmta("\\frac{<>}{<>}",
 		{ i(1), i(2) }
+	)),
+
+	s("mm", fmta("$<>$",
+		{ d(1, get_visual) }
 	)),
 	
 	s({ trig="env", snippetType="autosnippet" },
@@ -65,7 +69,11 @@ local M = {
 					<>
 				\end{<>}
 			]],
-			{ i(1), i(2), rep(1) }
+			{
+				i(1, "environment"),
+				i(2, "body"),
+				rep(1)
+			}
 		)
 	),
 
