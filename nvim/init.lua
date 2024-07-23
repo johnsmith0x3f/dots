@@ -11,7 +11,7 @@ require("lazyvim")
 
 
 
-local templates = nvim_create_augroup("templates", {
+local templates = vim.api.nvim_create_augroup("templates", {
 	clear = false
 })
 
