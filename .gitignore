@@ -12,3 +12,6 @@
 /firefox/homepages
 
 /mpd/pid
+
+# Vim
+/vim/.netrwhist
