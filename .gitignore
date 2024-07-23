@@ -1,3 +1,6 @@
+# Ignore ALL log files.
+*.log
+
 # Ignore zsh histfile.
 /zsh/.histfile
 
