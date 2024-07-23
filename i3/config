@@ -15,8 +15,6 @@ floating_modifier $mod
 # No titlebars, no tiling drag needed.
 tiling_drag off
 
-for_window [all] border pixel 0
-
 # No window borders.
 default_border pixel 0px
 
