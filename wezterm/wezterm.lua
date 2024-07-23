@@ -22,4 +22,6 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 18
 
+config.audible_bell = "Disabled"
+
 return config
