@@ -24,6 +24,18 @@ local M = {
 		{ d(1, get_visual) }
 	)),
 
+	-- Sub/Sup-scripts
+	s({ trig = "^", wordTrig = false, snippetType = "autosnippet" },
+		fmta("^{<>}",
+			{ i(1) }
+		)
+	),
+	s({ trig = "_", wordTrig = false, snippetType = "autosnippet" },
+		fmta("_{<>}",
+			{ i(1) }
+		)
+	),
+
 	-- Text Styles
 	s("mb", fmta("\\mathbf{<>}",
 		{ d(1, get_visual) }
