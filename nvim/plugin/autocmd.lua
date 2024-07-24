@@ -22,5 +22,5 @@ vim.api.nvim_create_autocmd({ "BufNewFile" }, {
 -- })
 
 vim.cmd([[
-	autocmd BufEnter *.cpp nnoremap <F11> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>
+	autocmd FileType cpp nnoremap <F11> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>
 ]])
