@@ -17,3 +17,6 @@ bspc config border_width 0
 
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
+
+# Composite X windows with picom.
+pgrep -x picom > /dev/null || picom &
