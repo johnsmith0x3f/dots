@@ -173,7 +173,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id feh --bg-fill --no-fehbg "$HOME/.config/i3/wall.png"
 
 # Use picom as X compositor.
-exec_always --no-startup-id pgrep -x picom && killall picom; picom &
+exec_always --no-startup-id pgrep -x picom || picom &
 
 # Use polybar as status bar.
 exec_always --no-startup-id bash "$XDG_CONFIG_HOME/polybar/launch.sh" darktide
