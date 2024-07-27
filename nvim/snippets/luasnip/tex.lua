@@ -78,13 +78,15 @@ local M = {
 	s("ff", fmta("\\frac{<>}{<>}",
 		{ i(1), i(2) }
 	)),
-	s("sum", fmta("\\frac{<>}{<>}",
+
+	-- Sums
+	s("sum", fmta("\\sum_{<>}^{<>}",
 		{ i(1), i(2) }
 	)),
-	s("prd", fmta("\\frac{<>}{<>}",
+	s("prd", fmta("\\prod_{<>}^{<>}",
 		{ i(1), i(2) }
 	)),
-	s("int", fmta("\\frac{<>}{<>}",
+	s("int", fmta("\\int_{<>}^{<>}",
 		{ i(1), i(2) }
 	)),
 
