@@ -1,11 +1,14 @@
 # alacritty configuration file
 
 import = [
-    "~/.config/alacritty/themes/tokyo-night-storm.toml"
+	"~/.config/alacritty/themes/tokyo-night-storm.toml"
 ]
 
+shell = "/usr/bin/bash"
+
 [window]
-dimensions = { columns = 144, lines = 36 }
+dimensions = { columns = 80, lines = 24 }
+padding = { x = 32, y = 32 }
 dynamic_padding = true
 
 [font]
@@ -14,8 +17,9 @@ italic      = { family = "OperatorMono Nerd Font Mono", style = "Italic" }
 bold        = { family = "OperatorMono Nerd Font Mono", style = "Bold" }
 bold_italic = { family = "OperatorMono Nerd Font Mono", style = "Bold Italic" }
 
-#normal.family = "MesloLGS Nerd Font Mono"
-
 size = 15
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
+
+builtin_box_drawing = true
+
