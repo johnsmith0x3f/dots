@@ -48,30 +48,44 @@ local M = {
 	)),
 
 	-- Greek Letters
-	s({ trig = ";ga", snippetType = "autosnippet" },
-		{
-			t("\\alpha")
-		}
+	s({ trig = ";a", snippetType = "autosnippet" },
+		{ t("\\alpha") }
 	),
-	s({ trig = ";gb", snippetType = "autosnippet" },
-		{
-			t("\\beta")
-		}
+	s({ trig = ";b", snippetType = "autosnippet" },
+		{ t("\\beta") }
 	),
-	s({ trig = ";gg", snippetType = "autosnippet" },
-		{
-			t("\\gamma")
-		}
+	s({ trig = ";G", snippetType = "autosnippet" },
+		{ t("\\Gamma") }
 	),
-	s({ trig = ";gd", snippetType = "autosnippet" },
-		{
-			t("\\delta")
-		}
+	s({ trig = ";g", snippetType = "autosnippet" },
+		{ t("\\gamma") }
 	),
-	s({ trig = ";ge", snippetType = "autosnippet" },
-		{
-			t("\\epsilon")
-		}
+	s({ trig = ";d", snippetType = "autosnippet" },
+		{ t("\\delta") }
+	),
+	s({ trig = ";D", snippetType = "autosnippet" },
+		{ t("\\Delta") }
+	),
+	s({ trig = ";e", snippetType = "autosnippet" },
+		{ t("\\epsilon") }
+	),
+	s({ trig = ";ve", snippetType = "autosnippet" },
+		{ t("\\varepsilon") }
+	),
+	s({ trig = ";z", snippetType = "autosnippet" },
+		{ t("\\zeta") }
+	),
+	s({ trig = ";t", snippetType = "autosnippet" },
+		{ t("\\theta") }
+	),
+	s({ trig = ";l", snippetType = "autosnippet" },
+		{ t("\\lambda") }
+	),
+	s({ trig = ";s", snippetType = "autosnippet" },
+		{ t("\\sigma") }
+	),
+	s({ trig = ";vp", snippetType = "autosnippet" },
+		{ t("\\varphi") }
 	),
 
 	-- Fraction
@@ -100,7 +114,7 @@ local M = {
 		{ d(1, get_visual) }
 	)),
 		
-	s({ trig=";env", snippetType="autosnippet" },
+	s({ trig="env", snippetType="autosnippet" },
 		fmta(
 			[[
 				\begin{<>}
