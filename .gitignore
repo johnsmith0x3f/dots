@@ -16,6 +16,7 @@
 
 /mpd/database
 /mpd/pid
+/mpd/playlists
 
 # Vim
 /vim/.netrwhist
