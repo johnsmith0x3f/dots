@@ -75,7 +75,10 @@ local M = {
 	),
 
 	-- Fraction
-	s("ff", fmta("\\frac{<>}{<>}",
+	s("fr", fmta("\\frac{<>}{<>}",
+		{ i(1), i(2) }
+	)),
+	s("sq", fmta("\\sqrt[<>]{<>}",
 		{ i(1), i(2) }
 	)),
 
