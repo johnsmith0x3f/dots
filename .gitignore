@@ -1,22 +1,19 @@
 # Ignore ALL log files.
 *.log
 
-# Ignore zsh histfile.
-/zsh/.histfile
+/.config/zsh/.histfile
+/.config/zsh/.zgenom
+/.config/zsh/.zprezto
 
-#Ignore plugin managers.
-/zsh/.zgenom
-/zsh/.zprezto
-
-/polybar/polybar-themes
+/.config/polybar/polybar-themes
 
 # Ignore firefox configurations.
-/firefox/themes
-/firefox/homepages
+/.config/firefox/themes
+/.config/firefox/homepages
 
-/mpd/database
-/mpd/pid
-/mpd/playlists
+/.config/mpd/database
+/.config/mpd/pid
+/.config/mpd/playlists
 
 # Vim
-/vim/.netrwhist
+/.config/vim/.netrwhist
