@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-# Map keys with sxhkd.
-pgrep -x sxhkd > /dev/null || sxhkd &
-
 # Set monitor numbers & names.
 bspc monitor -d 1 2 3 4 5 6 7 8 9
+
+bspc config border_width        0
+bspc config window_gap          20
+bspc config border_radius       15
 
 bspc config split_ratio         0.50
 bspc config borderless_monocle  true
@@ -15,11 +16,27 @@ bspc config window_gap 10
 # Window border width.
 bspc config border_width 0
 
+# Rules.
+bspc rule -a Rofi state=floating
+
+
+# Map keys with sxhkd.
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# Manage networks with nm-applet.
+nm-applet
+
+# Manage bluetooth with blueman-applet.
+blueman-applet
+
 # Composite X windows with picom.
 pgrep -x picom > /dev/null || picom &
 
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
 
-# Render bar with polybar.
+# Render taskbar with polybar.
 bash "${XDG_CONFIG_HOME:-$HOME/.config}/polybar/launch.sh" darktide
+
+# Host firefox homepage with http-server.
+http-server "${XDG_CONFIG_HOME:-$HOME/.config}/firefox/homepages/Chevron"
