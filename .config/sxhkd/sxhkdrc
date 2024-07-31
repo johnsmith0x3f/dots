@@ -1,20 +1,20 @@
-# WM independent hotkeys.
+### WM independent hotkeys.
 
-# Terminal Emulator
+# Run favorite terminal.
 super + Return
 	$TERMINAL
 
-# Rofi as program launcher.
+# Launch programs with rofi.
 super + @space
 	rofi -show
 
-# make sxhkd reload its configuration files:
+# Reload sxhkd configurations.
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
+
+
 # bspwm hotkeys
-#
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -79,8 +79,10 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {1-9}
+	bspc desktop -f "^{1-9}"
+super + shift + {1-9}
+	bspc node -d "^{1-9}"
 
 #
 # preselect
@@ -117,3 +119,13 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+
+# Control media with keyboard.
+XF86Audio{Prev,Next,Play}
+	playerctl {previous,next,play-pause}
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86Audio{Lower,Raise}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
