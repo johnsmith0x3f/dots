@@ -16,9 +16,13 @@ super + Escape
 
 # bspwm hotkeys
 
-# quit/restart bspwm
+# Quit/Restart bspwm.
 super + alt + {q,r}
 	bspc {quit,wm -r}
+
+# Lock screen with betterlockscreen.
+super + alt + l
+	betterlockscreen -l
 
 # Close/Kill a window.
 super + {q,k}
