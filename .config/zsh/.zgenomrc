@@ -1,21 +1,26 @@
 #!/bin/zsh
 
-# enable auto update
+# Enable auto update.
 zgenom autoupdate
-# load plugins with zgenom
+
+# Load plugins with zgenom.
 if ! zgenom saved; then
     echo "Creating a zgenom save"
 
-    # load basic zsh plugins
+    # Load basic zsh plugins
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load zsh-users/zsh-completions
     zgenom load zsh-users/zsh-syntax-highlighting
     
-    # load powerlevel10k prompt
+    # Load powerlevel10k prompt.
     zgenom load romkatv/powerlevel10k powerlevel10k
 
-    # save all to init script
+		# K is the new L, yo.
+		zgenom load supercrabtree/k
+
+    # Save all to init script.
     zgenom save
-    # compile zsh scripts
+
+    # Compile zsh scripts.
     zgenom compile "$ZDOTDIR"
 fi
