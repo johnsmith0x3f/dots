@@ -8,9 +8,10 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 
 # Size of the gap that separates windows.
-bspc config window_gap 10
+bspc config window_gap          10
+
 # Window border width.
-bspc config border_width 0
+bspc config border_width        0
 
 # Rules.
 bspc rule -a Rofi state=floating
