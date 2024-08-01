@@ -16,6 +16,7 @@ else
 	stalonetray --background=#313131 \
 	            --geometry=1x1+10+60 \
 	            --grow-gravity=W \
+	            --kludges=force_icons_size \
 	            --slot-size=32 \
 	            --window-type=toolbar &
 fi
