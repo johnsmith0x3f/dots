@@ -2,3 +2,18 @@
 (include "widgets/bars/mybar.yuck")
 
 (include "player.yuck")
+
+(defwidget powermenu []
+  (box :class "main-box" :orientation "v" :space-evenly "false"
+    (label :class "greeting" :text "I'm outta here!" :space-evenly "false")
+    (box :class "main-buttons-box" :orientation "h" :space-evenly "false"
+      (button :tooltip "Shutdown your PC." :class "shutdown" :onclick "shutdown now" "󰐥")
+      (button :tooltip "Reboot your PC." :class "reboot" :onclick "reboot" "󰜉")
+      (button :tooltip "Exit BSPWM." :class "exit" :onclick "bspc quit" "󰍃")
+      (button :tooltip "Lock" :class "lock" "󰌾"))))
+
+(defwindow powermenu
+  :monitor 0
+  :wm-ignore true
+  :geometry (geometry :anchor "center" :width "400px" :height "100px")
+  (powermenu))
