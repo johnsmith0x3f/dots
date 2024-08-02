@@ -25,7 +25,7 @@ super + alt + l
 	betterlockscreen -l
 
 # Close/Kill a window.
-super + {x,k}
+super + {x,q}
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
