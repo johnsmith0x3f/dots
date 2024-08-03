@@ -13,14 +13,9 @@ vim.api.nvim_create_autocmd({ "BufNewFile" }, {
 	command = "0r $HOME/.config/nvim/templates/skeleton.sh"
 })
 
--- vim.api.nvim_create_autocmd({ "FileType" }, {
--- 	pattern = { "cpp" },
--- 	callback = function()
--- 		vim.keymap.set("n", "<F11>", "<Cmd>w<CR> | <Cmd>!g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>")
--- 	end
--- --	command = "nnoremap <F11> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>"
--- })
-
-vim.cmd([[
-	autocmd FileType cpp nnoremap <F11> :w<CR> :!g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>
-]])
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "cpp" },
+	callback = function()
+		vim.keymap.set({ "n", "i" }, "<F11>", "<Cmd>write<CR> | <Cmd>terminal g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>")
+	end
+})
