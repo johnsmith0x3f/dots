@@ -26,6 +26,7 @@ return {
 			lualine_z = {
 				{ "location", separator = { left = "", right = "" } }
 			}
-		}
+		},
+		winbar = {}
 	}
 }
