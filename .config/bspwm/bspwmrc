@@ -14,6 +14,7 @@ bspc config window_gap          10
 bspc config border_width        0
 
 # Rules.
+bspc rule -a kooha state=floating
 bspc rule -a Rofi state=floating
 
 
