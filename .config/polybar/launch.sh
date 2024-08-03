@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dir="$XDG_CONFIG_HOME/polybar/themes"
-config="themes/$1/config.ini"
+config="$dir/$1/config.ini"
 
 if [[ -f "$config" ]]; then
 	polybar-msg cmd quit
