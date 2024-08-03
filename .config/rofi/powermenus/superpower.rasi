@@ -2,6 +2,8 @@
 
 configuration {}
 
+@theme "/dev/null"
+
 * {
 	backgr:                  black/5%;
 }
