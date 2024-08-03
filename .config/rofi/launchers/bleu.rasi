@@ -4,8 +4,10 @@
 configuration {
 	modes:                   [ "drun", "run" ];
 
-	display-drun:            "";
+	display-drun:            ""; // 
 	display-run:             "";
+
+	show-icons:              true;
 }
 
 @theme "/dev/null"
