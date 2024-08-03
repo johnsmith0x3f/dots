@@ -1,0 +1,75 @@
+// Rofi v1.7.5.
+
+configuration {}
+
+* {
+	backgr:                  black/5%;
+}
+
+window {
+	fullscreen:              true;
+ 
+	background-color:        var(backgr, black/5%);
+}
+
+mainbox {
+	margin:                  0px 400px;
+
+	background-color:        transparent;
+
+	children:                [ "dummy", "inputbar", "listview", "dummy" ];
+	spacing:                 50px;
+}
+
+avatar {
+	border:                  2px;
+	border-radius:           100%;
+
+	background-color:        transparent;
+	background-image:        url("../assets/avatars/Madeline.png", both);
+}
+
+inputbar {
+	background-color:        transparent;
+	children:                [ "dummy", "prompt", "dummy" ];
+}
+prompt {
+	font:                    "Scriptina 64";
+	text-color:              var(foregr, white);
+	background-color:        transparent;
+}
+
+listview {
+	margin:                  0px 200px;
+
+	layout:                  horizontal;
+	columns:                 3;
+	spacing:                 100px;
+
+	background-color:        transparent;
+}
+element {
+	border:                  100px 160px;
+	border-radius:           200px;
+
+	text-color:              var(foregr, white);
+	background-color:        var(bg-alt, white/20%);
+	
+	children:                [ "element-text" ];
+}
+element-text {
+	vertical-align:          0.5;
+	horizontal-align:        0.5;
+	font:                    "FiraMono Nerd Font Mono 72";
+	text-color:              inherit;
+	background-color:        transparent;
+}
+element.selected {
+	text-color:              var(foregr, white);
+	background-color:        var(primry, white/30%);
+}
+
+dummy {
+	background-color:        transparent;
+}
+

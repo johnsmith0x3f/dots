@@ -2,12 +2,10 @@
 // Based on https://github.com/adi1090x/rofi.
 
 configuration {
-	modes:                   [ drun, run ];
+	modes:                   [ "drun", "run" ];
 
 	display-drun:            "";
 	display-run:             "";
-
-	show-icons:              true;
 }
 
 @theme "/dev/null"
@@ -22,176 +20,117 @@ configuration {
 }
 
 window {
-	enabled:                 true;
-	location:                center;
-	anchor:                  center;
-	fullscreen:              false;
-	width:                   600px;
-	x-offset:                0px;
-	y-offset:                0px;
-	padding:                 0px;
-	margin:                  0px;
-	border:                  0px;
-	border-radius:           0px;
-	transparency:            "real";
-	background-color:        @backgr;
-	font:                    "OperatorMono Nerd Font Mono 15";
+	width:                   800px;
+
+	font:                    "OperatorMono Nerd Font Mono 21";
+	text-color:              var(foregr, white);
+	background-color:        var(backgr, black);
 }
 
 mainbox {
-	enabled:                 true;
-
-	margin:                  0px;
-	border:                  0px;
 	padding:                 30px;
 
-	text-color:              @foregr;
+	text-color:              inherit;
 	background-color:        transparent;
 
 	children:                [ "inputbar", "message", "listview" ];
 }
 
 inputbar {
-	enabled:                 true;
-
-	margin:                  0px;
-	border:                  0px;
-	padding:                 0px;
+	margin:                  10px;
 
 	text-color:              inherit;
-	background-color:        inherit;
+	background-color:        transparent;
 
 	spacing:                 10px;
-
 	children:                [ "textbox-prompt-icon", "entry", "mode-switcher" ];
 }
 
-prompt {
-	enabled:                 false;
-
-	text-color:              inherit;
-	background-color:        inherit;
-}
-
 textbox-prompt-icon {
-	enabled:                 true;
-
-	margin:                  0px;
-	border:                  0px;
-	padding:                 5px 0px;
-
 	expand:                  false;
 
-	content:                 "";
+	padding:                 8px 0px;
+
+	content:                 " ";
 	text-color:              inherit;
-	background-color:        inherit;
+	background-color:        transparent;
 }
 
 entry {
-	enabled:                 true;
-
-	margin:                  0px;
-	border:                  0px;
-	padding:                 5px 0px;
+	padding:                 8px 0px;
 
 	text-color:              inherit;
-	background-color:        inherit;
+	background-color:        transparent;
 
 	placeholder:             "Search...";
-	placeholder-color:       @fg-alt;
+	placeholder-color:       var(fg-alt, white/50%);
 }
 
-mode-switcher{
-	enabled:                 true;
-
-	margin:                  0px;
-	border:                  0px;
-	padding:                 0px;
-
-	text-color:              @foregr;
+mode-switcher {
+	text-color:              var(foregr, white);
 	background-color:        transparent;
 
 	spacing:                 10px;
 }
 
 button {
-	enabled:                 true;
-
-	border:                  0px;
-	border-radius:           10px;
-	padding:                 5px 12px;
+	border-radius:           40px;
+	padding:                 8px 18px;
 
 	text-color:              inherit;
-	background-color:        inherit;
-
-	cursor:                  pointer;
+	background-color:        transparent;
 }
-
 button.selected {
-	text-color:              @backgr;
-	background-color:        @primry;
+	text-color:              var(backgr, black);
+	background-color:        var(primry, white);
 }
 
 listview {
-	enabled:                 true;
-
-	margin:                  0px;
-	border:                  0px;
-	padding:                 0px;
-
-	text-color:              @foregr;
-	background-color:        transparent;
-
 	scrollbar:               true;
 
+	lines:                   8;
 	layout:                  vertical;
 	spacing:                 5px;
-	lines:                   8;
 
-	cursor:                  default;
+	text-color:              var(foregr, white);
+	background-color:        transparent;
 }
 
 scrollbar {
-	enabled:                 true;
-
+	margin:                  5px;
 	border-radius:           5px;
-	background-color:        @bg-alt;
+
+	background-color:        var(bg-alt, black/50%);
 
 	handle-width:            5px;
-	handle-color:            @primry;
+	handle-color:            var(primry, white);
 }
 
 element {
-	enabled:                 true;
-
-	margin:                  0px;
-	border:                  0px;
 	border-radius:           10px;
 	padding:                 5px 10px;
 
 	spacing:                 10px;
-
-	cursor:                  pointer;
 }
 element.normal {
-	text-color:              @foregr;
-	background-color:        @backgr;
+	text-color:              var(foregr, white);
+	background-color:        var(backgr, black);
 }
 element.selected {
-	text-color:              @backgr;
-	background-color:        @primry;
+	text-color:              var(backgr, black);
+	background-color:        var(primry, white);
 }
 element.alternate {
-	text-color:              @foregr;
-	background-color:        @backgr;
+	text-color:              var(foregr, white);
+	background-color:        var(backgr, white);
 }
 
 element-icon {
-	size:                    24px;
-	background-color:        inherit;
+	size:                    32px;
+	background-color:        transparent;
 }
 
 element-text {
 	text-color:              inherit;
-	background-color:        inherit;
+	background-color:        transparent;
 }
