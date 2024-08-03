@@ -45,8 +45,11 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t}
+	bspc node -t {tiled,pseudo_tiled}
+
+super + {f,F}
+	bspc node -t {"~floating","~fullscreen"}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -56,7 +59,7 @@ super + ctrl + {m,x,y,z}
 # focus/swap
 #
 
-# focus the node in the given direction
+# Focus/Shift the node in the given direction.
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
@@ -82,7 +85,7 @@ super + {o,i}
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
+# Focus or send to the given desktop.
 super + {1-9}
 	bspc desktop -f "^{1-9}"
 super + shift + {1-9}
@@ -124,12 +127,14 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# Take screenshot with maim.
+super + shift + s
+	maim --hidecursor "$HOME/Pictures/Screenshots/$(date +%F-%H%M%S).png"
 
-
-# Control media with keyboard.
-XF86Audio{Prev,Next,Play}
-	playerctl {previous,next,play-pause}
+# Control media with pactl and playerctl.
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86Audio{Lower,Raise}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+XF86Audio{Prev,Next,Play}
+	playerctl {previous,next,play-pause}
