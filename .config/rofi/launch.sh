@@ -1,27 +1,43 @@
 #!/usr/bin/env bash
 
 launchr() {
-	echo "TODO"
+	dir="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/launchers"
+	config="$dir/$1.rasi"
+
+	if [[ -f "$config" ]]; then
+		rofi -config "$config" -show
+	else
+		echo "Avaliable themes:"
+		for theme in $dir/*; do
+			theme="${theme%.*}"
+			echo "${theme##*/}"
+		done
+	fi
 }
 
 powmenu() {
-	config="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/powermenus/${1}.rasi"
+	dir="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/powermenus"
+	config="$dir/$1.rasi"
 
 	if [[ -f "$config" ]]; then
-		choice="$(echo -e "\n\n" | rofi -dmenu -p "${USER}" -theme "${config}")"
-	else
-		exit 1
-	fi
+		choice="$(echo -e "\n\n" | rofi -dmenu -p "$USER" -theme "$config")"
 
-	case ${choice} in
-		"") ;;
-		"") ;;
-		"") betterlockscreen -l;;
-	esac
+		case "$choice" in
+			"") ;;
+			"") ;;
+			"") betterlockscreen -l;;
+		esac
+	else
+		echo "Avaliable themes:"
+		for theme in $dir/*; do
+			theme="${theme%.*}"
+			echo "${theme##*/}"
+		done
+	fi
 }
 
-case ${1} in
-	"-l") launchr ${2};;
-	"-p") powmenu ${2};;
+case "$1" in
+	"-l") launchr $2;;
+	"-p") powmenu $2;;
 	*) echo "Syntax: launch.sh <-l|-p> <theme>";;
 esac
