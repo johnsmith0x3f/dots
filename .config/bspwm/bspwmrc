@@ -14,18 +14,13 @@ bspc config window_gap          10
 bspc config border_width        0
 
 # Rules.
-bspc rule -a kooha state=floating
+bspc rule -a Celeste state=floating
 bspc rule -a Rofi state=floating
+bspc rule -a kooha state=floating
 
 
 # Map keys with sxhkd.
 pgrep -x sxhkd > /dev/null || sxhkd &
-
-# Manage networks with nm-applet.
-# nm-applet
-
-# Manage bluetooth with blueman-applet.
-# blueman-applet
 
 # Composite X windows with picom.
 pgrep -x picom > /dev/null || picom &
