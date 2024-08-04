@@ -27,6 +27,7 @@ return {
 				{ "location", separator = { left = "", right = "" } }
 			}
 		},
+		tabline = {},
 		winbar = {}
 	}
 }

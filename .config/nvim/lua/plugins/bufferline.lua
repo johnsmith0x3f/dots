@@ -13,6 +13,14 @@ return {
 		},
 		options = {
 			indicator = { style = "icon" },
+			offsets = {
+				{
+					filetype = "NvimTree",
+					text = "File Explorer",
+					highlight = "Directory",
+					separator = true
+				}
+			},
 			separator_style = "thin"
 		}
 	}

@@ -1,5 +1,7 @@
 -- Do not show modes.
 vim.opt.showmode = false
+-- But do show tablines.
+vim.opt.showtabline = 2
 -- Enable 24-bit RGB color in the TUI.
 vim.opt.termguicolors = true
 
