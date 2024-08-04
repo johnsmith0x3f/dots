@@ -16,6 +16,6 @@ vim.api.nvim_create_autocmd({ "BufNewFile" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "cpp" },
 	callback = function()
-		vim.keymap.set({ "n", "i" }, "<F11>", "<Cmd>write<CR> | <Cmd>terminal g++ -std=c++11 -Wall -o %:r % && ./%:r<CR>")
+		vim.keymap.set({ "n", "i" }, "<F11>", "<Cmd>write<CR> | <Cmd>terminal g++ -std=c++17 -Wall -o %:r.out % && ./%:r.out<CR>")
 	end
 })
