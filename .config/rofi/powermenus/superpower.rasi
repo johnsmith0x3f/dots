@@ -8,7 +8,7 @@
 window {
 	fullscreen:              true;
  
-	background-color:        var(backgr, black/5%);
+	background-color:        var(backgr, black/30%);
 }
 
 mainbox {
