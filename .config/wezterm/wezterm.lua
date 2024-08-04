@@ -18,7 +18,7 @@ config.window_padding = {
 -- Fonts.
 config.font = wezterm.font_with_fallback({
 	"OperatorMono Nerd Font Mono",
-	"LXGW WenKai Mono"
+	"Source Han Sans CN Medium"
 })
 config.font_size = 18
 
