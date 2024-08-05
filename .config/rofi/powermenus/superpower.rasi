@@ -12,7 +12,7 @@ window {
 }
 
 mainbox {
-	margin:                  0px 400px;
+	margin:                  0px 100px;
 
 	background-color:        transparent;
 
@@ -31,11 +31,11 @@ prompt {
 }
 
 listview {
-	margin:                  0px 200px;
+	margin:                  0px 125px;
 
 	layout:                  horizontal;
-	columns:                 3;
-	spacing:                 100px;
+	columns:                 5;
+	spacing:                 50px;
 
 	background-color:        transparent;
 }

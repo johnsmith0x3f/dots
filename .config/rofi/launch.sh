@@ -20,12 +20,14 @@ powmenu() {
 	config="$dir/$1.rasi"
 
 	if [[ -f "$config" ]]; then
-		choice="$(echo -e "\n\n" | rofi -dmenu -p "$USER" -theme "$config")"
+		choice="$(echo -e "\n\n\n\n" | rofi -dmenu -p "$USER" -theme "$config")"
 
 		case "$choice" in
-			"") ;;
-			"") ;;
 			"") betterlockscreen -l;;
+			"") systemctl suspend;;
+			"") systemctl hibernate;;
+			"") ;;
+			"") ;;
 		esac
 	else
 		echo "Avaliable themes:"
