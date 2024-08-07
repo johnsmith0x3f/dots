@@ -4,9 +4,7 @@ polybar-msg cmd quit
 
 dir="${0%/*}"
 
-polybar -c "$dir/config.ini" ubar &
-
+polybar -q -c "$dir/config.ini" ubar &
 sleep 0.1
-
-polybar -c "$dir/config.ini" mbar &
-polybar -c "$dir/config.ini" rbar &
+polybar -q -c "$dir/config.ini" mbar &
+polybar -q -c "$dir/config.ini" rbar &
