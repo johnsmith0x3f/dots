@@ -18,7 +18,7 @@ return {
 					filetype = "NvimTree",
 					text = "File Explorer",
 					highlight = "Directory",
-					separator = true
+					separator = false
 				}
 			},
 			separator_style = "thin"

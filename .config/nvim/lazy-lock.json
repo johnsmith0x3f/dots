@@ -2,7 +2,6 @@
   "Alpha": { "branch": "main", "commit": "41283fb402713fc8b327e60907f74e46166f4cfd" },
   "BufferLine": { "branch": "main", "commit": "81820cac7c85e51e4cf179f8a66d13dbf7b032d9" },
   "Catppuccin": { "branch": "main", "commit": "2d3419c2aead379b7d1854d32458f20ffaa58562" },
-  "CompetiTest": { "branch": "master", "commit": "c3cb0e2b0916a879c4d3dcb5737e6c046dd0afc5" },
   "Lang.yuck": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" },
   "LuaLine": { "branch": "master", "commit": "6a40b530539d2209f7dc0492f3681c8c126647ad" },
   "LuaSnip": { "branch": "master", "commit": "ce0a05ab4e2839e1c48d072c5236cce846a387bc" },
