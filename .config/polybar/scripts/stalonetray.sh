@@ -13,8 +13,8 @@ if pgrep -x stalonetray; then
 	fi
 else
 	polybar-msg action "#droptray.hook.1"
-	stalonetray --background=#313131 \
-	            --geometry=1x1+10+60 \
+	stalonetray --background="${1:-#777777}" \
+	            --geometry="${2:-1x1+0+0}" \
 	            --grow-gravity=W \
 	            --kludges=force_icons_size \
 	            --slot-size=32 \
