@@ -14,9 +14,9 @@ if pgrep -x stalonetray; then
 else
 	polybar-msg action "#droptray.hook.1"
 	stalonetray --background="#24283B" \
-	            --geometry="1x1-348+60" \
-	            --grow-gravity="S" \
+	            --geometry="1x1+332+60" \
 	            --kludges="force_icons_size" \
-	            --slot-size="32" \
-	            --window-type="toolbar" &
+	            --slot-size=32 \
+	            --window-type="toolbar" \
+							--vertical=true &
 fi
