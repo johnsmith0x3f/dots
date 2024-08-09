@@ -4,10 +4,9 @@
 configuration {
 	modes:                   [ "drun", "run" ];
 
-	display-drun:            ""; // 
-	display-run:             "";
+	display-drun:           "";
+	display-run:            "";
 
-	icon-theme:              "Tela-circle-blue-dark";
 	show-icons:              true;
 }
 
