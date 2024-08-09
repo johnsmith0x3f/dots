@@ -8,6 +8,37 @@ local M = {
 		"\treturn f ? x : -x;",
 		"}"
 	})),
+	s("modint", t({
+		"template <typename T = int, const T p = P>",
+		"class ModInt {",
+		"\tprivate:",
+		"\t\tT v;",
+		"\tpublic:",
+		"\t\tModInt(): v(0) {}",
+		"\t\tModInt(const int &x): v(x) { assert(0 <= x && x < p); }",
+		"\t\tModInt operator + (const ModInt &o) const {",
+		"\t\t\treturn v + o.v < p ? v + o.v : v + o.v - p;",
+		"\t\t}",
+		"\t\tModInt operator - (const ModInt &o) const {",
+		"\t\t\treturn v - o.v < 0 ? v + o.v + p : v + o.v;",
+		"\t\t}",
+		"\t\tModInt operator * (const ModInt &o) const {",
+		"\t\t\treturn 1ll * v * o.v % p;",
+		"\t\t}",
+		"\t\tModInt operator += (const ModInt &o) {",
+		"\t\t\treturn (v += o.v) < p ? v : (v -= p);",
+		"\t\t}",
+		"\t\tModInt operator -= (const ModInt &o) {",
+		"\t\t\treturn (v -= o.v) < 0 ? (v += p) : v;",
+		"\t\t}",
+		"\t\tModInt operator *= (const ModInt &o) {",
+		"\t\t\treturn (v *= 1ll * o.v) %= p;",
+		"\t\t}",
+		"\t\tT operator () (void) const {",
+		"\t\t\treturn v;",
+		"\t\t}",
+		"};",
+	}))
 }
 
 return M
