@@ -17,3 +17,5 @@
 
 # Vim
 /.config/vim/.netrwhist
+
+/.local
