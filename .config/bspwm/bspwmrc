@@ -34,7 +34,7 @@ pgrep -x picom > /dev/null || picom &
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
 
 # Render taskbar with polybar.
-bash "${XDG_CONFIG_HOME:-$HOME/.config}/polybar/launch.sh" darktide
+bash "${XDG_CONFIG_HOME:-$HOME/.config}/polybar/themes/tokyonight/launch.sh"
 
 # Host firefox homepage with http-server.
 http-server "${XDG_CONFIG_HOME:-$HOME/.config}/firefox/homepages/Chevron"
