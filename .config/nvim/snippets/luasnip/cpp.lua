@@ -1,4 +1,5 @@
 local M = {
+	-- Fast Read
 	s("fastread", t({
 		"template <typename T = int>",
 		"constexpr T read() {",
@@ -7,6 +8,17 @@ local M = {
 		"\twhile(isdigit(c)) x = (x<<1) + (x<<3) + (c^48), c = getchar();",
 		"\treturn f ? x : -x;",
 		"}"
+	})),
+
+	-- Binary Exponent
+	s("binexp", t({
+		"template <typename T = int>",
+		"constexpr T binExp(const T &a, T b = P - 2, const T p = P) {",
+		"\tT res = 1;",
+		"\tfor(T x = a; b; x = x * x % p, b >>= 1)",
+		"\t\tif(b & 1) res = res * x % p;",
+		"\treturn res;",
+		"}",
 	})),
 	s("modint", t({
 		"template <typename T = int, const T p = P>",
