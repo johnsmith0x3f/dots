@@ -1,5 +1,5 @@
 local M = {
-	-- Fast Read
+	-- Fast Read/Write
 	s("fastread", t({
 		"template <typename T = int>",
 		"constexpr T read() {",
@@ -9,11 +9,19 @@ local M = {
 		"\treturn f ? x : -x;",
 		"}"
 	})),
+	s("fastwrite", t({
+		"template <typename T = int>",
+		"constexpr void write(const T &x) {",
+		"\tif(x < 0) return write(-x);",
+		"\tif(x > 9) write(x/10);",
+		"\tputchar(x % 10 + 48);",
+		"}",
+	})),
 
 	-- Binary Exponent
 	s("binexp", t({
-		"template <typename T = int>",
-		"constexpr T binExp(const T &a, T b = P - 2, const T p = P) {",
+		"template <typename T = int, const T p = P>",
+		"constexpr T binExp(const T &a, T b = p - 2) {",
 		"\tT res = 1;",
 		"\tfor(T x = a; b; x = x * x % p, b >>= 1)",
 		"\t\tif(b & 1) res = res * x % p;",
