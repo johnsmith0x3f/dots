@@ -1,5 +1,6 @@
 (include "envs/vars.yuck")
 (include "widgets/bars/mybar.yuck")
+(include "widgets/test.yuck")
 
 (include "player.yuck")
 
