@@ -10,9 +10,17 @@
   (greeter :text "Say hello!"
            :name "John"))
 
-(defwidget greeter [?text name]
+(defwidget greeter [name]
   (box :orientation "h"
        :halign "center"
-    text
+    date
     (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
       "Greet")))
+
+(defvar foo "initial value")
+
+(defpoll date :interval "1s"
+  `date +%y-%m-%d`)
+
+(defpoll time :interval "1s"
+  `date +%H:%M:%S`)
