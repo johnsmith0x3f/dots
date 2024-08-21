@@ -1,3 +1,0 @@
-(defpoll date :interval "1s" "date +%F")
-(defpoll completeday :interval "1h" "date '+%A, %d %B'")
-; (defpoll time :interval "1s" "date +%H:%M:%S"
