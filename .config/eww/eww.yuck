@@ -2,3 +2,39 @@
 (include "calendar/calendar.yuck")
 (include "profilecard/profilecard.yuck")
 (include "player/player.yuck")
+
+
+; Vars
+(defpoll user :interval "24h" "whoami")
+(defpoll host :interval "24h" "cat /etc/hostname")
+
+; Widgets
+(defwidget dashboard []
+  (box :class "dashboard"
+       :orientation "v"
+       :space-evenly false
+    (xbutton)
+    (profile)))
+
+(defwidget xbutton []
+  (box :halign "end"
+    (eventbox :class "xbutton"
+              :cursor "pointer"
+              :onclick "eww close dashboard"
+      "󰅙")))
+
+(defwidget profile []
+  (box :class "profile"
+       :orientation "h"
+       :space-evenly false
+    (box :class "avatar" :halign "center")
+    (box :orientation "v"
+      (label :text "${user}@${host}")
+      (label :text "${uptime}"))))
+
+  
+
+; Windows
+(defwindow dashboard :geometry (geometry :anchor "center left" :x "80px" :y "0px")
+                     :wm-ignore false
+  (dashboard))
