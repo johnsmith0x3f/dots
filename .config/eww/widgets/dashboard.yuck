@@ -1,0 +1,76 @@
+; Vars
+(defpoll user :interval "1h" "whoami")
+(defpoll host :interval "1h" "cat /etc/hostname")
+
+(defpoll OprSys :interval "1h" "awk -F '\"' '/PRETTY_NAME/ { print $2 }' /etc/os-release")
+(defpoll WinMan :interval "1h" "echo $DESKTOP_SESSION")
+(defpoll PacNum :interval "1h" "pacman -Q | wc -l")
+
+; Widgets
+(defwidget dashboard []
+  (box :class "dashboard"
+       :orientation "v"
+       :space-evenly false
+       :spacing 8
+    (xbutton)
+    (profile)
+    (sysinfo)))
+
+(defwidget xbutton []
+  (box :halign "end"
+    (eventbox :class "xbutton"
+              :cursor "pointer"
+              :onclick "eww close dashboard"
+      "󰅙")))
+
+(defwidget profile []
+  (box :class "profile"
+       :orientation "h"
+       :space-evenly false
+    (box :class "avatar" :halign "center")
+    (box :orientation "v"
+      (label :text "${user}@${host}"))))
+
+(defwidget sysinfo []
+  (box :orientation "h"
+       :space-evenly false
+       :spacing 8
+    (box :class "card"
+         :orientation "h"
+         :space-evenly false
+      (label :style "padding: 0 24px 0 0; font-size: 60; color: #1793D1;" :text "󰣇")
+      (box :orientation "v"
+        (box :orientation "h"
+             :space-evenly false
+          (label :style "font-size: 24; color: #1793D1;" :text "󰣇")
+          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${OprSys}"))
+        (box :orientation "h"
+             :space-evenly false
+          (label :style "font-size: 24; color: #FFC777;" :text "󰮯")
+          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${PacNum}"))
+        (box :orientation "h"
+             :space-evenly false
+          (label :style "font-size: 24; color: #9D7CD8;" :text "󱪳")
+          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${WinMan}"))))
+    (box :class "card"
+         :orientation "h"
+         :hexpand true
+      (label :style "font-size: 60; color: #FFC777;" :text "󰮯")
+      (box :orientation "v"
+        (label :text "some")
+        (eventbox :class "button-text"
+                  :cursor "pointer"
+                  :tooltip "Click to Update"
+                  :onclick "echo fuck"
+          "Update")))))
+      
+    
+  
+  
+
+; Windows
+(defwindow dashboard :geometry (geometry :anchor "center left"
+                                         :x "80px"
+                                         :y "0px")
+                     :wm-ignore false
+  (dashboard))

@@ -16,36 +16,7 @@ tooltip {
 @import "profilecard/profilecard.scss";
 @import "player/player.scss";
 
-.dashboard {
-  background: #24283B;
-  border-radius: 12px;
-  font-family: "Inconsolata", "FiraMono Nerd Font Mono";
-  font-size: 15pt;
-  margin: 0.8em;
-  min-width: 18em;
-}
 
-.xbutton {
-  color: #FF757F;
-  font-size: 18pt;
-  padding: 0 4px;
-}
-.xbutton:hover {
-  color: #BB9AF7;
-}
 
-.profile {
-  background: #3B4261;
-  border-radius: 12px;
-}
-.avatar {
-  min-width: 80px;
-  min-height: 80px;
-  border-radius: 100%;
-  margin: 10px;
+@import "widgets/dashboard.scss";
 
-  background-image: url("/home/john/.config/eww/assets/avatar.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
