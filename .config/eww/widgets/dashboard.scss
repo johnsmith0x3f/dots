@@ -10,17 +10,6 @@
   background-color:     #24283B;
 }
 
-.xbutton {
-  // Shapes
-  padding:              0 4px;
-  // Foreground
-  font-size:            18pt;
-  color:                #FF757F;
-}
-.xbutton:hover {
-  color:                #BB9AF7;
-}
-
 .profile {
   background-color:     #292E42;
   border-radius:        12px;
@@ -38,14 +27,22 @@
 }
 
 .card {
+  border-radius:        12px;
   padding:              12px;
   background-color:     #292E42;
-  border-radius:        12px;
 }
 
 .icon-arch {
   font-size:            72pt;
   color:                #1793D1;
+}
+
+.button-close {
+  font-size:            28;
+  color:                #FF757F;
+}
+.button-close:hover {
+  color:                #9D7CD8;
 }
 
 .button-text {

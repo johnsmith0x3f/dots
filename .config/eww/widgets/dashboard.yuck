@@ -5,23 +5,14 @@
 (defpoll OprSys :interval "1h" "awk -F '\"' '/PRETTY_NAME/ { print $2 }' /etc/os-release")
 (defpoll WinMan :interval "1h" "echo $DESKTOP_SESSION")
 (defpoll PacNum :interval "1h" "pacman -Q | wc -l")
+(defpoll PkgUpd :interval "1h" )
 
 ; Widgets
-(defwidget dashboard []
-  (box :class "dashboard"
-       :orientation "v"
-       :space-evenly false
-       :spacing 8
-    (xbutton)
-    (profile)
-    (sysinfo)))
-
 (defwidget xbutton []
-  (box :halign "end"
-    (eventbox :class "xbutton"
-              :cursor "pointer"
-              :onclick "eww close dashboard"
-      "󰅙")))
+  (eventbox :class "button-close" :halign "end"
+            :cursor "pointer"
+            :onclick "eww close dashboard"
+    "󰅙"))
 
 (defwidget profile []
   (box :class "profile"
@@ -63,10 +54,15 @@
                   :tooltip "Click to Update"
                   :onclick "echo fuck"
           "Update")))))
-      
-    
-  
-  
+
+(defwidget dashboard []
+  (box :class "dashboard"
+       :orientation "v"
+       :space-evenly false
+       :spacing 8
+    (xbutton)
+    (profile)
+    (sysinfo)))
 
 ; Windows
 (defwindow dashboard :geometry (geometry :anchor "center left"
