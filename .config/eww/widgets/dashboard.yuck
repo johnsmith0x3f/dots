@@ -5,7 +5,7 @@
 (defpoll OprSys :interval "1h" "awk -F '\"' '/PRETTY_NAME/ { print $2 }' /etc/os-release")
 (defpoll WinMan :interval "1h" "echo $DESKTOP_SESSION")
 (defpoll PacNum :interval "1h" "pacman -Q | wc -l")
-(defpoll PkgUpd :interval "1h" )
+(defpoll PkgUpd :interval "1h" "echo fuck")
 
 ; Widgets
 (defwidget xbutton []
@@ -22,7 +22,7 @@
     (box :orientation "v"
       (label :text "${user}@${host}"))))
 
-(defwidget sysinfo []
+(defwidget nofetch []
   (box :orientation "h"
        :space-evenly false
        :spacing 8
@@ -55,6 +55,34 @@
                   :onclick "echo fuck"
           "Update")))))
 
+(defwidget sysinfo []
+  (box :style "font-family: 'Material Design Icons Desktop'; font-weight: normal;"
+       :orientation "h"
+       :spacing 8
+    (box :class "card"
+         :tooltip "CPU ${round(EWW_CPU.avg, 2)}%"
+      (circular-progress :style "color: #FF757F; background-color: #414868;"
+                         :value {EWW_CPU.avg}
+                         :thickness 8
+        (overlay :valign "center"
+            (label :style "padding: 20; font-size: 32;" :text "󰍛"))))
+    (box :class "card"
+         :tooltip "RAM ${round(EWW_RAM.used_mem / 1048576, 2)}MB"
+      (circular-progress :style "color: #C3E88D; background-color: #414868;"
+                         :value {EWW_RAM.used_mem_perc}
+                         :thickness 8
+        (overlay :valign "center"
+            (label :style "padding: 20; font-size: 32;" :text "󰆌"))))
+    (box :class "card"
+         :tooltip "SSD ${round(EWW_DISK["/"].free / 1073741824, 2)}GB free"
+      (circular-progress :style "color: #7AA2F7; background-color: #414868;"
+                         :value {EWW_DISK["/"].used_perc}
+                         :thickness 8
+        (overlay :valign "center"
+            (label :style "padding: 20; font-size: 32;" :text "󱊟"))))))
+
+
+
 (defwidget dashboard []
   (box :class "dashboard"
        :orientation "v"
@@ -62,11 +90,12 @@
        :spacing 8
     (xbutton)
     (profile)
+    (nofetch)
     (sysinfo)))
 
 ; Windows
-(defwindow dashboard :geometry (geometry :anchor "center left"
-                                         :x "80px"
+(defwindow dashboard :geometry (geometry :anchor "center center"
+                                         :x "0px"
                                          :y "0px")
                      :wm-ignore false
   (dashboard))

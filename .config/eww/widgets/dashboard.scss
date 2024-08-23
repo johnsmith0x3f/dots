@@ -4,7 +4,8 @@
   border-radius:        12px;
   min-width:            20em;
   // Foreground
-  font-family:          "Operator Mono", "FiraMono Nerd Font Mono";
+  font-family:          "Inconsolata", "FiraMono Nerd Font Mono";
+  font-weight:          bold;
   font-size:            15pt;
   // Background
   background-color:     #24283B;
@@ -50,4 +51,9 @@
 }
 .button-text:hover {
   color:                #FFFFFF;
+}
+
+.cpu {
+  color:                #FF757F;
+  background-color:     #414868;
 }
