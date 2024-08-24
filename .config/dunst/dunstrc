@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = 10x60
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -81,7 +81,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 0
+    transparency = 30
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -90,7 +90,7 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 12
 
     # Horizontal padding.
     horizontal_padding = 8
