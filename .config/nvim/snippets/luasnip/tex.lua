@@ -84,6 +84,9 @@ local M = {
 	s({ trig = ";s", snippetType = "autosnippet" },
 		{ t("\\sigma") }
 	),
+	s({ trig = ";p", snippetType = "autosnippet" },
+		{ t("\\phi") }
+	),
 	s({ trig = ";vp", snippetType = "autosnippet" },
 		{ t("\\varphi") }
 	),
@@ -92,8 +95,8 @@ local M = {
 	s("fr", fmta("\\frac{<>}{<>}",
 		{ i(1), i(2) }
 	)),
-	s("sq", fmta("\\sqrt[<>]{<>}",
-		{ i(1), i(2) }
+	s("sq", fmta("\\sqrt<>{<>}",
+		{ i(2), i(1) }
 	)),
 
 	-- Sums
@@ -114,20 +117,18 @@ local M = {
 		{ d(1, get_visual) }
 	)),
 		
-	s({ trig="env", snippetType="autosnippet" },
-		fmta(
-			[[
-				\begin{<>}
-					<>
-				\end{<>}
-			]],
-			{
-				i(1, "environment"),
-				i(2, "body"),
-				rep(1)
-			}
-		)
-	),
+	s("env", fmta(
+		[[
+			\begin{<>}
+				<>
+			\end{<>}
+		]],
+		{
+			i(1, "environment"),
+			i(2, "body"),
+			rep(1)
+		}
+	)),
 
 }
 
