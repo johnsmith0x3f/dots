@@ -18,8 +18,8 @@ config.window_padding = {
 -- Fonts.
 config.font = wezterm.font_with_fallback({
 	"Operator Mono",
-	"MesloLGS Nerd Font Mono",
-	"Source Han Sans CN Medium"
+	"FiraMono Nerd Font Mono",
+	"KingHwa_OldSong"
 })
 config.font_size = 18
 
