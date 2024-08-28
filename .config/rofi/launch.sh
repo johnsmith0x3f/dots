@@ -26,8 +26,8 @@ powmenu() {
 			"") betterlockscreen -l;;
 			"") systemctl suspend;;
 			"") systemctl hibernate;;
-			"") ;;
-			"") ;;
+			"") notify-send "Reboot" "DO IT YOURSELF\!";;
+			"") notify-send "Shutdown" "DO IT YOURSELF\!";;
 		esac
 	else
 		echo "Avaliable themes:"
