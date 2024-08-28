@@ -18,6 +18,7 @@ alias ls="ls --color=auto"
 alias pacman="pacman --color=auto"
 alias yay="yay --color=auto"
 
+# Load nnn.
 source "$ZDOTDIR/nnn.zsh"
 
 # import my functions
