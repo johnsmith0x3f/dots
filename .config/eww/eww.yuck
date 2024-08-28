@@ -4,5 +4,5 @@
 (include "player/player.yuck")
 
 ; Widgets
+(include "widgets/closer.yuck")
 (include "widgets/dashboard.yuck")
-
