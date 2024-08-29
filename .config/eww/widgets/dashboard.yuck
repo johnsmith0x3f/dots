@@ -2,10 +2,10 @@
 (defpoll user :interval "1h" "whoami")
 (defpoll host :interval "1h" "cat /etc/hostname")
 
-(defpoll OprSys :interval "1h" "awk -F '\"' '/PRETTY_NAME/ { print $2 }' /etc/os-release")
-(defpoll WinMan :interval "1h" "echo $DESKTOP_SESSION")
-(defpoll PacNum :interval "1h" "pacman -Q | wc -l")
-(defpoll PkgUpd :interval "1h" "echo fuck")
+(defpoll oprSys :interval "1h" "awk -F '\"' '/PRETTY_NAME/ { print $2 }' /etc/os-release")
+(defpoll winMan :interval "1h" "echo $DESKTOP_SESSION")
+(defpoll pacNum :interval "1h" "pacman -Q | wc -l")
+(defpoll pkgUpd :interval "1h" "echo fuck")
 
 ; Widgets
 (defwidget xbutton []
@@ -28,21 +28,22 @@
        :spacing 8
     (box :class "card"
          :orientation "h"
+         :hexpand true
          :space-evenly false
       (label :style "padding: 0 24px 0 0; font-size: 60; color: #1793D1;" :text "󰣇")
       (box :orientation "v"
         (box :orientation "h"
              :space-evenly false
           (label :style "font-size: 24; color: #1793D1;" :text "󰣇")
-          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${OprSys}"))
+          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${oprSys}"))
         (box :orientation "h"
              :space-evenly false
           (label :style "font-size: 24; color: #FFC777;" :text "󰮯")
-          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${PacNum}"))
+          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${pacNum}"))
         (box :orientation "h"
              :space-evenly false
           (label :style "font-size: 24; color: #9D7CD8;" :text "󱪳")
-          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${WinMan}"))))
+          (label :style "padding: 0 0 0 8px; font-size: 16;" :text "${winMan}"))))
     (box :class "card"
          :orientation "h"
          :hexpand true
