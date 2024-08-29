@@ -12,7 +12,7 @@ local M = {
 -- Math {{{
 	
 	-- Inline/Display Math
-	s("mi", fmta("$<>$",
+	s("mi", fmta("\\( <> \\)",
 		{ d(1, get_visual) }
 	)),
 	s("md", fmta(
