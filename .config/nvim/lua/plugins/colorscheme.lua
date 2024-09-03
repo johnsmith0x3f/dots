@@ -1,12 +1,17 @@
 local catppuccin = {
-	"catppuccin/nvim", name = "Catppuccin",
+	name = "Catppuccin", "catppuccin/nvim",
 	priority = 1000,
 	
 	opts = {}
 }
 
+local nord = {
+	name = "Nord", "shaunsingh/nord.nvim",
+	priority = 1000
+}
+
 local tokyonight = {
-	"folke/tokyonight.nvim", name = "TokyoNight",
+	name = "Tokyo Night", "folke/tokyonight.nvim",
 	priority = 1000,
 
 	opts = {},
@@ -15,4 +20,4 @@ local tokyonight = {
 	end
 }
 
-return { catppuccin, tokyonight }
+return { catppuccin, nord, tokyonight }
