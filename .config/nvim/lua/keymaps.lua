@@ -12,6 +12,10 @@ map({ "n", "i" }, "<Right>", '<Cmd>echo "Use l"<CR>')
 
 local opt = { noremap = true, silent = true }
 
+-- Better line navigations.
+map("n", "j", "gj", opt);
+map("n", "k", "gk", opt);
+
 -- Better window navigations. Whenever you can use hjkl, use them.
 map("n", "<C-h>", "<C-w>h", opt)
 map("n", "<C-j>", "<C-w>j", opt)
