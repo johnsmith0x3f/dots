@@ -110,6 +110,11 @@ local M = {
 		{ i(1), i(2) }
 	)),
 
+	s("sb", { t("\\subseteq") }),
+	s("sp", { t("\\supseteq") }),
+	s("ssb", { t("\\subset") }),
+	s("ssp", { t("\\supset") }),
+
 	-- }}}
 
 	-- Text styles.
