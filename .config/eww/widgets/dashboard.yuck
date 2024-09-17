@@ -95,8 +95,10 @@
     (sysinfo)))
 
 ; Windows
-(defwindow dashboard :geometry (geometry :anchor "center center"
-                                         :x "0px"
-                                         :y "0px")
-                     :wm-ignore false
+(defwindow dashboard :monitor 0
+                     :wm-ignore true
+                     :windowtype "normal"
+                     :geometry (geometry :anchor "center center"
+                                      :x "0px"
+                                      :y "0px")
   (dashboard))
