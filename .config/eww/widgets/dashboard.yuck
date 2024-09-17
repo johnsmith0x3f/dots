@@ -96,7 +96,7 @@
 
 ; Windows
 (defwindow dashboard :monitor 0
-                     :wm-ignore true
+                     :wm-ignore false
                      :windowtype "normal"
                      :geometry (geometry :anchor "center center"
                                       :x "0px"
