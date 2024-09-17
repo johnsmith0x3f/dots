@@ -24,6 +24,8 @@ bspc rule -a mpv desktop="^8" state="floating"
 bspc rule -a steam desktop="^9"
 bspc rule -a zenity state="floating"
 
+bspc rule -a "Eww" layer="below"
+
 # Map keys with sxhkd.
 pgrep -x sxhkd > /dev/null || sxhkd &
 
