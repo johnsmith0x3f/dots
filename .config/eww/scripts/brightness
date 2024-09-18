@@ -1,0 +1,13 @@
+#!/bin/sh
+
+bget() {
+
+}
+
+bset() {
+}
+
+case "$1" in
+	"--get-brightness") bget;;
+	"--set-brightness") bset;;
+esac
