@@ -20,7 +20,7 @@
   (box :class "brightness-main"
        :orientation "h"
        :space-evenly false
-    (button :style "padding: 0 16px 0 0;"
+    (button :style ""
             :onclick "echo fuck"
       "󰃠")
     (scale :class "brightness-slider"
@@ -39,7 +39,7 @@
 (defwindow control :monitor 0
                    :wm-ignore true
                    :windowtype "utility"
-                   :geometry (geometry :x "72%"
-                                       :y "60px"
-                                       :width "300px")
+                   :geometry (geometry :x "28.5%" :y "60px"
+                                       :anchor "top center"
+                                       :width "720px")
   (control))

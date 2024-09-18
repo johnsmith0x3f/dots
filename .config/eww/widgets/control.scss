@@ -1,6 +1,6 @@
 .control-main {
 	border-radius:        12px;
-	padding:              12px;
+	padding:              12px 20px;
 
 	font-family:          "Inconsolata", "FiraMono Nerd Font Mono";
 	font-weight:          bold;
@@ -11,47 +11,39 @@
 }
 
 .volume-main {
-	border-radius:        12px;
-	// Fonts
-	font-family:          inherit;
-	font-weight:          inherit;
-	font-size:            18pt;
-	// Colors
+	font-size:            24pt;
 	color:                #C3E88D;
-	background-color:     inherit;
 }
 .volume-slider {
   padding:              0 0 0 16px;
 }
 .volume-slider trough {
-	border-radius:        0.4em;
-	padding:              0.2em;
+	border-radius:        0.2em;
+	padding:              0.1em;
 	background-color:     #3B4261;
 }
 .volume-slider highlight {
-	border-radius:        0.2em;
-	padding:              0.2em;
+	border-radius:        0.1em;
+	padding:              0.1em;
 	background-color:     #C3E88D;
 }
 
 
 
 .brightness-main {
-	// Fonts
-	font-family:          inherit;
-	font-weight:          inherit;
-	font-size:            18pt;
-	// Colors
+	font-size:            24pt;
 	color:                #FFC777;
-	background-color:     inherit;
+}
+.brightness-slider {
+  padding:              0 0 0 16px;
 }
 .brightness-slider trough {
-	border-radius:        0.4em;
-	padding:              0.2em;
+	border-radius:        0.2em;
+	padding:              0.1em;
 	background-color:     #3B4261;
 }
 .brightness-slider highlight {
-	border-radius:        0.2em;
-	padding:              0.2em;
+	border-radius:        0.1em;
+	padding:              0.1em;
 	background-color:     #FFC777;
 }
