@@ -7,7 +7,6 @@ dir="${0%/*}"
 
 # The order matters.
 polybar -c "$dir/config.ini" mbar -q &
-polybar -c "$dir/config.ini" nbar -q &
 polybar -c "$dir/config.ini" rbar -q &
 
 sleep 0.2
