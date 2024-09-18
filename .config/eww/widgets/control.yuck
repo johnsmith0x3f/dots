@@ -1,5 +1,5 @@
 
-(deflisten volume-mute "scripts/volume --get-mute")
+(deflisten volume-mute "scripts/volume --status-mute")
 (deflisten volume-value "scripts/volume --get-volume")
 (deflisten brightness-value "echo 0")
 
@@ -7,7 +7,7 @@
   (box :class "volume-main"
        :orientation "h"
        :space-evenly false
-    (button :style "padding: 0 16px 0 0;"
+    (button :style "color: ${volume-mute == "false" ? "inherit" : "#FF757F"};"
             :onclick "scripts/volume --toggle-mute"
       {volume-mute == "false" ? "󰕾" : "󰖁"})
     (scale :class "volume-slider"
@@ -32,16 +32,14 @@
 (defwidget control []
   (box :class "control-main"
        :orientation "v"
-       :space-evenly false
-       :spacing 8
+       :space-evenly false :spacing 8
     (volume)
     (brightness)))
 
 (defwindow control :monitor 0
-                   :wm-ignore false
-                   :windowtype "dock"
+                   :wm-ignore true
+                   :windowtype "utility"
                    :geometry (geometry :x "72%"
                                        :y "60px"
-                                       :width "300px"
-                                       :height "300px")
+                                       :width "300px")
   (control))

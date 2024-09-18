@@ -27,6 +27,6 @@ case "$1" in
 	"--get-volume") getvol;;
 	"--set-volume") setvol $2;;
 
-	"--get-mute") status;;
+	"--status-mute") status;;
 	"--toggle-mute") toggle;;
 esac
