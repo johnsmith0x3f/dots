@@ -38,7 +38,7 @@
 
 (defwindow control :monitor 0
                    :wm-ignore true
-                   :windowtype "utility"
+                   :windowtype "toolbar"
                    :geometry (geometry :x "28.5%" :y "60px"
                                        :anchor "top center"
                                        :width "720px")
