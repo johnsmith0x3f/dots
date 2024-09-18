@@ -1,0 +1,22 @@
+
+(defwidget volume
+  (box :class "volume-main"
+       :orientation "h"
+    (scale :class "volume-slider"
+           :orientation "h"
+           :min 0
+           :max 100
+           :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%")))
+      
+           
+  
+
+(defwidget controlsurface
+  (box :class "controlsurface"
+       :orientation "v"
+       :space-evenly false
+       :spacing 8
+    (volume)))
+
+(defwindow controlsurface :monitor 0
+  (controlsurface))
