@@ -11,12 +11,12 @@
            
   
 
-(defwidget controlsurface
-  (box :class "controlsurface"
+(defwidget control
+  (box :class "control"
        :orientation "v"
        :space-evenly false
        :spacing 8
     (volume)))
 
-(defwindow controlsurface :monitor 0
-  (controlsurface))
+(defwindow control :monitor 0
+  (control))

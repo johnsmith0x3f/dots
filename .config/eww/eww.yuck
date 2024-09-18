@@ -5,4 +5,5 @@
 
 ; Widgets
 (include "widgets/closer.yuck")
+(include "widgets/control.yuck")
 (include "widgets/dashboard.yuck")
