@@ -1,7 +1,6 @@
 
 (deflisten volume-mute "scripts/volume --status-mute")
 (deflisten volume-value "scripts/volume --get-volume")
-(deflisten brightness-value "scripts/brightness --get-brightness")
 
 (defwidget volume []
   (box :class "volume-main"
@@ -21,14 +20,13 @@
   (box :class "brightness-main"
        :orientation "h"
        :space-evenly false
-    (button :style ""
-            :onclick "echo fuck"
+    (button :onclick "notify-send 'TODO'"
       "󰃠")
     (scale :class "brightness-slider"
            :orientation "h"
            :hexpand true
-           :min 0 :max 100 :value brightness-value
-           :onchange "echo fuck")))
+           :min 0 :max 100 :value 100
+           :onchange "notify-send 'TODO'")))
 
 (defwidget control []
   (box :class "control-main"
