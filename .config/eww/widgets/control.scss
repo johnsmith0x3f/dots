@@ -20,7 +20,6 @@
 	color:                #C3E88D;
 	background-color:     inherit;
 }
-
 .volume-slider trough {
 	border-radius:        0.4em;
 	padding:              0.2em;
@@ -30,4 +29,26 @@
 	border-radius:        0.2em;
 	padding:              0.2em;
 	background-color:     #C3E88D;
+}
+
+
+
+.brightness-main {
+	// Fonts
+	font-family:          inherit;
+	font-weight:          inherit;
+	font-size:            18pt;
+	// Colors
+	color:                #FFC777;
+	background-color:     inherit;
+}
+.brightness-slider trough {
+	border-radius:        0.4em;
+	padding:              0.2em;
+	background-color:     #3B4261;
+}
+.brightness-slider highlight {
+	border-radius:        0.2em;
+	padding:              0.2em;
+	background-color:     #FFC777;
 }

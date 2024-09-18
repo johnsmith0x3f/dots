@@ -1,12 +1,12 @@
 
 (deflisten volume-value "pamixer --get-volume")
+(deflisten brightness-value "echo 0")
 
 (defwidget volume []
   (box :class "volume-main"
        :orientation "h"
        :space-evenly false
-       :spacing 8
-    (button :style "padding: 0 12px 0 0;"
+    (button :style "padding: 0 16px 0 0;"
             :onclick "pamixer --toggle-mute"
       "󰕾")
     (scale :class "volume-slider"
@@ -15,14 +15,26 @@
            :min 0 :max 100 :value volume-value
            :onchange "pamixer --set-volume {}")))
 
-
+(defwidget brightness []
+  (box :class "brightness-main"
+       :orientation "h"
+       :space-evenly false
+    (button :style "padding: 0 16px 0 0;"
+            :onclick "echo fuck"
+      "󰃠")
+    (scale :class "brightness-slider"
+           :orientation "h"
+           :hexpand true
+           :min 0 :max 100 :value brightness-value
+           :onchange "echo fuck")))
 
 (defwidget control []
   (box :class "control-main"
        :orientation "v"
        :space-evenly false
        :spacing 8
-    (volume)))
+    (volume)
+    (brightness)))
 
 (defwindow control :monitor 0
                    :wm-ignore false
