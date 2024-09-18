@@ -7,6 +7,7 @@
   (box :class "volume-main"
        :orientation "h"
        :space-evenly false
+       :tooltip "Volume: ${volume-value}%"
     (button :style "color: ${volume-mute == "false" ? "inherit" : "#FF757F"};"
             :onclick "scripts/volume --toggle-mute"
       {volume-mute == "false" ? "󰕾" : "󰖁"})

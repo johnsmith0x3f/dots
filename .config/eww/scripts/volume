@@ -5,7 +5,10 @@ getvol() {
 }
 
 setvol() {
-	pamixer --set-volume $1
+	# Set volume.
+	pamixer --set-volume "$1"
+	# Update eww.
+	eww update volume-value="$(getvol)"
 }
 
 status() {
@@ -13,8 +16,8 @@ status() {
 }
 
 toggle() {
+	# Toggle mute.
 	pamixer --toggle-mute
-
 	# Update eww.
 	if [[ $(eww get volume-mute) == "false" ]]; then
 		eww update volume-mute="true"
