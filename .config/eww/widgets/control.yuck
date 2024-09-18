@@ -1,5 +1,6 @@
 
-(deflisten volume-value "pamixer --get-volume")
+(deflisten volume-mute "scripts/volume --get-mute")
+(deflisten volume-value "scripts/volume --get-volume")
 (deflisten brightness-value "echo 0")
 
 (defwidget volume []
@@ -7,13 +8,13 @@
        :orientation "h"
        :space-evenly false
     (button :style "padding: 0 16px 0 0;"
-            :onclick "pamixer --toggle-mute"
-      "󰕾")
+            :onclick "scripts/volume --toggle-mute"
+      {volume-mute == "false" ? "󰕾" : "󰖁"})
     (scale :class "volume-slider"
            :orientation "h"
            :hexpand true
            :min 0 :max 100 :value volume-value
-           :onchange "pamixer --set-volume {}")))
+           :onchange "scripts/volume --set-volume {}")))
 
 (defwidget brightness []
   (box :class "brightness-main"
