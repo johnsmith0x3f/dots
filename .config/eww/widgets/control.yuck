@@ -1,7 +1,7 @@
 
 (deflisten volume-mute "scripts/volume --status-mute")
 (deflisten volume-value "scripts/volume --get-volume")
-(deflisten brightness-value "echo 0")
+(deflisten brightness-value "scripts/brightness --get-brightness")
 
 (defwidget volume []
   (box :class "volume-main"
