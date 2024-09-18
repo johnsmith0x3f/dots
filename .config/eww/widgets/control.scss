@@ -1,4 +1,33 @@
 .control-main {
-  border-radius:        12px;
-  background-color:     #24283B;
+	border-radius:        12px;
+	padding:              12px;
+
+	font-family:          "Inconsolata", "FiraMono Nerd Font Mono";
+	font-weight:          bold;
+	font-size:            15pt;
+
+	color:                #C0CAF5;
+	background-color:     #24283B;
+}
+
+.volume-main {
+	border-radius:        12px;
+	// Fonts
+	font-family:          inherit;
+	font-weight:          inherit;
+	font-size:            18pt;
+	// Colors
+	color:                #C3E88D;
+	background-color:     inherit;
+}
+
+.volume-slider trough {
+	border-radius:        0.4em;
+	padding:              0.2em;
+	background-color:     #3B4261;
+}
+.volume-slider highlight {
+	border-radius:        0.2em;
+	padding:              0.2em;
+	background-color:     #C3E88D;
 }
