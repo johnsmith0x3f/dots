@@ -1,12 +1,12 @@
 ### WM independent hotkeys.
 
-# Run favorite terminal.
-super + Return
-	$TERMINAL
-
 # Reload sxhkd configurations.
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# Run favorite terminal.
+super + Return
+	$TERMINAL
 
 # bspwm hotkeys
 
@@ -112,7 +112,7 @@ super + {Left,Down,Up,Right}
 
 # Resize Mode
 super + r : {h,j,k,l}
-	step=20; sh "${scripts}/resize" {x -,y +,y -,x +} $step
+	step=20; sh "${HOME}/.config/bspwm/scripts/resize" {x -,y +,y -,x +} $step
 
 # Launch applications with rofi.
 super + space
