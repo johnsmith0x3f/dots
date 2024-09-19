@@ -1,0 +1,5 @@
+return {
+	{
+		"baskerville/vim-sxhkdrc"
+	}
+}
