@@ -26,11 +26,13 @@ bspc rule -a zenity state="floating"
 
 # bspc rule -a "Eww" layer="below" state="floating"
 
+dir="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm"
+
 # Map keys with sxhkd.
-pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x sxhkd >/dev/null || sxhkd -c "${dir}/sxhkdrc" &
 
 # Composite X windows with picom.
-pgrep -x picom > /dev/null || picom &
+pgrep -x picom >/dev/null || picom &
 
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
