@@ -8,8 +8,6 @@ super + Return
 super + Escape
 	pkill -USR1 -x sxhkd
 
-
-
 # bspwm hotkeys
 
 # Quit/Restart bspwm.
@@ -112,13 +110,9 @@ super + ctrl + shift + space
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# # Resize Mode
-# super + r : {h,j,k,l}
-# 	step=20; select={1,2,3,4}; \
-# 	bspc node focused.!floating -z $(echo "left -$step 0,bottom 0 $step,top 0 -$step,right $step 0" | cut -d ',' -f $select) || \
-# 	bspc node focused.!floating -z $(echo "right -$step 0,top 0 $step,bottom 0 -$step,left $step 0" | cut -d ',' -f $select)
-
 # Resize Mode
+super + r : {h,j,k,l}
+	step=20; sh "${scripts}/resize" {x -,y +,y -,x +} $step
 
 # Launch applications with rofi.
 super + space
