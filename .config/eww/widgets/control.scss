@@ -14,9 +14,6 @@
 	font-size:            24pt;
 	color:                #C3E88D;
 }
-.volume-slider {
-  padding:              0 0 0 16px;
-}
 .volume-slider trough {
 	border-radius:        0.2em;
 	padding:              0.1em;
@@ -46,4 +43,13 @@
 	border-radius:        0.1em;
 	padding:              0.1em;
 	background-color:     #FFC777;
+}
+
+.butts-main {
+  font-size:            32pt;
+  color:                #414868;
+}
+.butts-kids {
+  border-radius:        0.5em;
+  background-color:     #7AA2F7;
 }

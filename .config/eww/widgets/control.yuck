@@ -2,11 +2,27 @@
 (deflisten volume-mute "scripts/volume --status-mute")
 (deflisten volume-value "scripts/volume --get-volume")
 
+(defwidget butt [icon]
+  (button :class "butts-kids"
+          :orientation "h"
+          :onclick "notify-send fuck"
+    icon))
+
+(defwidget butts []
+  (box :class "butts-main"
+       :orientation "h"
+       :space-evenly true
+       :spacing 16
+    (butt :icon "󰖩")
+    (butt :icon "󰂯")
+    (butt :icon "󰀝")))
+
 (defwidget volume []
   (box :class "volume-main"
+       :tooltip "Volume: ${volume-value}%"
        :orientation "h"
        :space-evenly false
-       :tooltip "Volume: ${volume-value}%"
+       :spacing 16
     (button :style "color: ${volume-mute == "false" ? "inherit" : "#FF757F"};"
             :onclick "scripts/volume --toggle-mute"
       {volume-mute == "false" ? "󰕾" : "󰖁"})
@@ -32,6 +48,7 @@
   (box :class "control-main"
        :orientation "v"
        :space-evenly false :spacing 8
+    (butts)
     (volume)
     (brightness)))
 
