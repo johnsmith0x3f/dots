@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ "$direction" == "x" ]; then
+	bspc node --resize "left" "${sign}${step}" "0" || bspc node --resize "right" "${sign}${step}" "0"
+else
+	bspc node --resize "top" "0" "${sign}${step}" || bspc node --resize "bottom" "0" "${sign}${step}"
+fi
