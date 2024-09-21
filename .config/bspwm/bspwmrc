@@ -21,7 +21,10 @@ bspc rule -a Rofi state="floating"
 bspc rule -a lxappearance state="floating"
 bspc rule -a kooha state="floating"
 bspc rule -a mpv desktop="^8" state="floating"
-bspc rule -a steam desktop="^9"
+
+# All steam windows launch on desktop 9 floating.
+bspc rule -a "steam" desktop="^9" state="floating"
+
 bspc rule -a zenity state="floating"
 
 # bspc rule -a "Eww" layer="below" state="floating"
