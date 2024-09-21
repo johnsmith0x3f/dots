@@ -16,7 +16,6 @@
   "NvimTree": { "branch": "master", "commit": "12a9a995a455d2c2466e47140663275365a5d2fc" },
   "NvimTreesitter": { "branch": "master", "commit": "53c79ddc28b0df3263d629f5e20c9283b05841ca" },
   "NvimWebDevicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
-  "Plenary": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "Telescope": { "branch": "master", "commit": "bfcc7d5c6f12209139f175e6123a7b7de6d9c18a" },
   "Tokyo Night": { "branch": "main", "commit": "4b386e66a9599057587c30538d5e6192e3d1c181" },
   "VimTeX": { "branch": "master", "commit": "2dc2a5435809c13f6f4aa07964be4ef19a7864f5" },
