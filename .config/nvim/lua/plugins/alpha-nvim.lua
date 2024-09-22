@@ -35,9 +35,9 @@ return {
             "                                                                       ",
         }
         dashboard.section.buttons.val = {
-            dashboard.button("e", "  New file" ,   "<Cmd>ene | startinsert<CR>"),
-            dashboard.button("f", "  Find file",   "<Cmd>Telescope find_files<CR>"),
-            dashboard.button("q", "  Quit NeoVim", "<Cmd>qa<CR>"),
+            dashboard.button("e", "  New file" ,   "<CMD>ene | startinsert<CR>"),
+            dashboard.button("f", "  Find file",   "<CMD>Telescope find_files<CR>"),
+            dashboard.button("q", "  Quit NeoVim", "<CMD>qa<CR>"),
         }
         require("alpha").setup(dashboard.opts)
     end
