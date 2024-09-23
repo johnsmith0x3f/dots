@@ -19,6 +19,7 @@
   "Tokyo Night": { "branch": "main", "commit": "817bb6ffff1b9ce72cdd45d9fcfa8c9cd1ad3839" },
   "VimTeX": { "branch": "master", "commit": "a61db58f39b7ef3060bc9c60bbc813436f414bac" },
   "WhichKey": { "branch": "main", "commit": "fb070344402cfc662299d9914f5546d840a22126" },
+  "alpha-nvim": { "branch": "main", "commit": "b6f4129302db197a7249e67a90de3f2b676de13e" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "lazy.nvim": { "branch": "main", "commit": "460e1cd8f24e364d54543a4b0e83f6f4ec1f65fb" },
   "mason": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
