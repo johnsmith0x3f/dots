@@ -71,9 +71,9 @@ local options = {
 	buttons = {
 		type = "group",
 		val = {
-			button("e", "  New File", "<CMD>ene | startinsert<CR>"),
-			button("f", "  Find File", "<CMD>Telescope find_files<CR>"),
-			button("q", "  Quit NeoVim", "<CMD>qa<CR>"),
+--			button("e", "  New File", "<CMD>ene | startinsert<CR>"),
+--			button("f", "  Find File", "<CMD>Telescope find_files<CR>"),
+--			button("q", "  Quit NeoVim", "<CMD>qa<CR>"),
 		},
 		opts = {
 			spacing = 1
