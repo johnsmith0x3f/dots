@@ -1,19 +1,3 @@
-local M = {
-	[[  ███       ███  ]],
-	[[  ████      ████ ]],
-	[[  ████     █████ ]],
-	[[ █ ████    █████ ]],
-	[[ ██ ████   █████ ]],
-	[[ ███ ████  █████ ]],
-	[[ ████ ████ ████ ]],
-	[[ █████  ████ ███ ]],
-	[[ █████   ████ ██ ]],
-	[[ █████    ████ █ ]],
-	[[ █████     ████  ]],
-	[[ ████      ████  ]],
-	[[  ███       ███  ]],
-}
-
 local function button(keys, desc, comm)
 	-- Return a "button" type to alpha.
 	return {
@@ -23,24 +7,22 @@ local function button(keys, desc, comm)
 		val = desc,
 
 		-- Actions to perform when pressed.
-		on_press = vim.cmd(comm),
+		on_press = function() vim.cmd(comm) end,
 
 		opts = {
 			-- Define a temporary keymap.
-			-- keymap = { {}, { noremap = true, silent = true } },
-
+			keymap = { "n", keys, comm, { noremap = true, silent = true } },
+			-- Position to put at.
 			position = "center",
 			hl = "AlphaButtons",
-
 			-- Shortcut to display.
 			shortcut = keys,
-			align_shortcut = "left",
+			align_shortcut = "right",
 			hl_shortcut = "AlphaShortcuts",
-
 			-- The column to place the cursor.
-			cursor = 0,
+			cursor = 5,
 			-- Padding around the button.
-			width = 50,
+			width = 36,
 		}
 	}
 end
@@ -71,9 +53,9 @@ local options = {
 	buttons = {
 		type = "group",
 		val = {
---			button("e", "  New File", "<CMD>ene | startinsert<CR>"),
---			button("f", "  Find File", "<CMD>Telescope find_files<CR>"),
---			button("q", "  Quit NeoVim", "<CMD>qa<CR>"),
+			button("e", "  New File", "<CMD>ene | startinsert<CR>"),
+			button("f", "  Find File", "<CMD>Telescope find_files<CR>"),
+			button("q", "  Quit NeoVim", "<CMD>qa<CR>"),
 		},
 		opts = {
 			spacing = 1
@@ -82,30 +64,12 @@ local options = {
 }
 
 return {
-    "goolord/alpha-nvim",
-
-    config = function()
-        local dashboard = require("alpha.themes.dashboard")
-        dashboard.section.header.val = {
-            "                                                                       ",
-            "                                                                       ",
-            "                                                                     ",
-            "       ████ ██████           █████      ██                     ",
-            "      ███████████             █████                             ",
-            "      █████████ ███████████████████ ███   ███████████   ",
-            "     █████████  ███    █████████████ █████ ██████████████   ",
-            "    █████████ ██████████ █████████ █████ █████ ████ █████   ",
-            "  ███████████ ███    ███ █████████ █████ █████ ████ █████  ",
-            " ██████  █████████████████████ ████ █████ █████ ████ ██████ ",
-            "                                                                       ",
-            "                                                                       ",
-            "                                                                       ",
-        }
-        dashboard.section.buttons.val = {
-            dashboard.button("e", "  New file" ,   "<CMD>ene | startinsert<CR>"),
-            dashboard.button("f", "  Find file",   "<CMD>Telescope find_files<CR>"),
-            dashboard.button("q", "  Quit NeoVim", "<CMD>qa<CR>"),
-        }
-        require("alpha").setup(dashboard.opts)
-    end
+	"goolord/alpha-nvim",
+	opts = {
+		layout = {
+			options.header,
+			options.buttons
+		},
+		opts = {}
+	}
 }
