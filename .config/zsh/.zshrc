@@ -12,9 +12,8 @@ fi
 
 
 # Set alias.
-alias eza="eza --color=auto --icons=auto"
 alias grep="grep --color=auto"
-alias ls="ls --color=auto"
+alias ls="eza --color=auto --icons=auto"
 alias pacman="pacman --color=auto"
 alias yay="yay --color=auto"
 
