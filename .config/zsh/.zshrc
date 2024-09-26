@@ -12,6 +12,7 @@ fi
 
 
 # Set alias.
+alias cat="bat"
 alias grep="grep --color=auto"
 alias ls="eza --color=auto --icons=auto"
 alias pacman="pacman --color=auto"
