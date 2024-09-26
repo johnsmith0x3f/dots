@@ -1,5 +1,5 @@
 return {
-	name = "Noice", "folke/noice.nvim",
+	"folke/noice.nvim",
 
 	event = "VeryLazy",
 
