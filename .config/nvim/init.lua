@@ -9,7 +9,8 @@ require("keymaps")
 -- Load plugins.
 require("lazyvim")
 
--- if vim.g.neovide then
--- 	-- Set fonts.
--- 	vim.o.guifont = "Operator Mono Medium:h15"
--- end
+
+
+-- Set colorscheme.
+vim.cmd("colorscheme tokyonight-storm")
+
