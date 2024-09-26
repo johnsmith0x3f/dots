@@ -1,23 +1,6 @@
-local catppuccin = {
-	name = "Catppuccin", "catppuccin/nvim",
-	priority = 1000,
-	
-	opts = {}
+return {
+	-- One Dark Pro
+	{ "olimorris/onedarkpro.nvim", priority = 1000 },
+	-- Tokyo Night
+	{ "folke/tokyonight.nvim", priority = 1000 }
 }
-
-local nord = {
-	name = "Nord", "shaunsingh/nord.nvim",
-	priority = 1000
-}
-
-local tokyonight = {
-	name = "Tokyo Night", "folke/tokyonight.nvim",
-	priority = 1000,
-
-	opts = {},
-	config = function()
-		vim.cmd("colorscheme tokyonight-storm")
-	end
-}
-
-return { catppuccin, nord, tokyonight }
