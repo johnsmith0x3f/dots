@@ -9,8 +9,3 @@ require("keymaps")
 -- Load plugins.
 require("lazyvim")
 
-
-
--- Set colorscheme.
-vim.cmd("colorscheme tokyonight-storm")
-
