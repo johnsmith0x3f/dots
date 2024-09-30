@@ -7,6 +7,7 @@ return {
 	{
 		"folke/tokyonight.nvim", priority = 1001,
 
+		-- Apply at once.
 		config = function() vim.cmd("colorscheme tokyonight-storm") end
 	}
 }
