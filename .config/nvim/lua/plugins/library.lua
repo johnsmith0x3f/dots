@@ -1,5 +1,7 @@
 -- All the dependencies goes here.
 
 return {
-	{ "nvim-lua/plenary.nvim", lazy = true },
+	{ "MunifTanjim/nui.nvim", lazy = true },
+	{ "rcarriga/nvim-notify", lazy = true },
+	{ "nvim-lua/plenary.nvim", lazy = true }
 }
