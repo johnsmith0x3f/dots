@@ -1,6 +1,7 @@
 {
   "BufferLine": { "branch": "main", "commit": "0b2fd861eee7595015b6561dade52fb060be10c4" },
   "CompetiTest": { "branch": "master", "commit": "4ef440c20eec0be407f455f5db4bfad4acb2641e" },
+  "CopilotChat.nvim": { "branch": "canary", "commit": "9333944fde3c65868818e245c73aa29eef826e9b" },
   "Lang.yuck": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" },
   "LuaLine": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
   "LuaSnip": { "branch": "master", "commit": "e808bee352d1a6fcf902ca1a71cee76e60e24071" },

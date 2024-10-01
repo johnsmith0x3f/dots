@@ -26,6 +26,21 @@ return {
 				}
 			}
 		}
+	},
+	-- Copilot Chat
+	{
+		"CopilotC-Nvim/CopilotChat.nvim", branch = "canary",
+
+		build = "make tiktoken", -- Only on MacOS or Linux
+
+		keys = {
+			{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" }
+		},
 		
+		opts = {
+			debug = true -- Enable debugging
+			-- See Configuration section for rest
+		}
+		-- See Commands section for default commands if you want to lazy load on them
 	}
 }
