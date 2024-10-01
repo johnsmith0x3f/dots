@@ -12,6 +12,19 @@ return {
 		cmd = "Copilot",
 		event = "InsertEnter",
 
-		opts = {}
+		opts = {
+			suggestion = {
+				enabled = true,
+				auto_trigger = true,
+				keymap = {
+					accept = "<C-CR>",
+					accept_word = false,
+					accept_line = false,
+					-- prev = "<C-[>",
+					-- next = "<C-]>",
+				}
+			}
+		}
+		
 	}
 }
