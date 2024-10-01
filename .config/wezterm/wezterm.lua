@@ -25,4 +25,8 @@ config.font_size = 18
 
 config.audible_bell = "Disabled"
 
+-- Key bindings.
+config.disable_default_key_bindings = true
+config.keys = {}
+
 return config
