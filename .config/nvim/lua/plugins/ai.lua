@@ -17,11 +17,12 @@ return {
 				enabled = true,
 				auto_trigger = true,
 				keymap = {
-					accept = "<C-CR>",
+					accept = "<M-CR>",
 					accept_word = false,
 					accept_line = false,
-					-- prev = "<C-[>",
-					-- next = "<C-]>",
+					prev = "<M-[>",
+					next = "<M-]>",
+					dismiss = "<C-]>"
 				}
 			}
 		}
