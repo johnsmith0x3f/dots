@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 
 local config = {}
 
@@ -25,8 +26,15 @@ config.font_size = 18
 
 config.audible_bell = "Disabled"
 
--- Key bindings.
+-- Key bindings {{{
+
+-- Disable default key bindings.
 config.disable_default_key_bindings = true
-config.keys = {}
+-- Define custom key bindings.
+config.keys = {
+	{ key = "F11", mods = "NONE", action = act.ToggleFullScreen }
+}
+
+--- }}}
 
 return config
