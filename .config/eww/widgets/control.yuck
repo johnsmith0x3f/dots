@@ -3,42 +3,40 @@
 (deflisten volume-value "scripts/volume --get-volume")
 
 (defwidget butt [icon]
-  (button :class "butts-kids"
+  (button :class "button-control-kids"
           :orientation "h"
           :onclick "notify-send fuck"
-    icon))
+    "${icon}"))
 
 (defwidget butts []
-  (box :class "butts-main"
+  (box :class "button-control-main"
        :orientation "h"
-       :space-evenly true
-       :spacing 16
-    (butt :icon "󰖩")
+       :space-evenly true :spacing 16
+    (butt :icon "󰖩 Wifi")
     (butt :icon "󰂯")
     (butt :icon "󰀝")))
 
 (defwidget volume []
-  (box :class "volume-main"
+  (box :class "volume-control-main"
        :tooltip "Volume: ${volume-value}%"
        :orientation "h"
        :space-evenly false
-       :spacing 16
     (button :style "color: ${volume-mute == "false" ? "inherit" : "#FF757F"};"
             :onclick "scripts/volume --toggle-mute"
       {volume-mute == "false" ? "󰕾" : "󰖁"})
-    (scale :class "volume-slider"
+    (scale :class "volume-control-slider"
            :orientation "h"
            :hexpand true
            :min 0 :max 100 :value volume-value
            :onchange "scripts/volume --set-volume {}")))
 
 (defwidget brightness []
-  (box :class "brightness-main"
+  (box :class "brightness-control-main"
        :orientation "h"
        :space-evenly false
     (button :onclick "notify-send 'TODO'"
       "󰃠")
-    (scale :class "brightness-slider"
+    (scale :class "brightness-control-slider"
            :orientation "h"
            :hexpand true
            :min 0 :max 100 :value 100

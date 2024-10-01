@@ -9,46 +9,45 @@
 	background-color:     #24283B;
 }
 
-.volume-main {
-	font-size:            24pt;
-	color:                #C3E88D;
-}
-.volume-slider trough {
-	border-radius:        0.2em;
-	padding:              0.1em;
-	background-color:     #3B4261;
-}
-.volume-slider highlight {
-	border-radius:        0.1em;
-	padding:              0.1em;
-	background-color:     #C3E88D;
-}
+// Buttons {{{
 
-
-
-.brightness-main {
-	font-size:            24pt;
-	color:                #FFC777;
-}
-.brightness-slider {
-  padding:              0 0 0 16px;
-}
-.brightness-slider trough {
-	border-radius:        0.2em;
-	padding:              0.1em;
-	background-color:     #3B4261;
-}
-.brightness-slider highlight {
-	border-radius:        0.1em;
-	padding:              0.1em;
-	background-color:     #FFC777;
-}
-
-.butts-main {
-  font-size:            32pt;
+.button-control-main {
+  font-size:            18pt;
   color:                #414868;
 }
-.butts-kids {
-  border-radius:        0.5em;
+.button-control-kids {
+  border-radius:        1.0em;
+	padding:              0.4em 0;
   background-color:     #7AA2F7;
 }
+
+// }}}
+
+// Sliders {{{
+
+$sliders: (
+	volume-control:       #C3E88D,
+	brightness-control:   #FFC777
+);
+
+@each $name, $color in $sliders {
+	.#{$name}-main {
+		font-size:          18pt;
+		color:              $color;
+	}
+	.#{$name}-slider {
+		padding:            0 0 0 0.6em;
+	}
+	.#{$name}-slider trough {
+		border-radius:      0.3em;
+		padding:            0.2em;
+		background-color:   #3B4261;
+	}
+	.#{$name}-slider highlight {
+		border-radius:      0.2em;
+		padding:            0.1em;
+		background-color:   $color;
+	}
+}
+
+// }}}
