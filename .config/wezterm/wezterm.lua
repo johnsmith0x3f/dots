@@ -32,6 +32,8 @@ config.audible_bell = "Disabled"
 config.disable_default_key_bindings = true
 -- Define custom key bindings.
 config.keys = {
+	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo "Clipboard" },
+	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom "Clipboard" },
 	{ key = "F11", mods = "NONE", action = act.ToggleFullScreen }
 }
 
