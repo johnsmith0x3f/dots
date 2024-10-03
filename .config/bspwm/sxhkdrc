@@ -8,7 +8,7 @@ super + Escape
 super + Return
 	$TERMINAL
 
-# bspwm hotkeys
+# bspwm Hotkeys
 
 # Quit/Restart bspwm.
 super + alt + {q,r}
@@ -40,7 +40,7 @@ super + g
 
 # Toggle pseudo_tiled/floating/fullscreen.
 super + {t,f,F}
-	bspc node -t {"~pseudo_tiled","~floating","~fullscreen"}
+	bspc node -t {~pseudo_tiled,~floating,~fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -115,7 +115,7 @@ super + r : {h,j,k,l}
 	step=20; sh "${HOME}/.config/bspwm/scripts/resize" {x -,y +,y -,x +} $step
 
 # Launch applications with rofi.
-super + space
+super + @space
 	rofi -show
 
 # Take screenshot with maim.
@@ -129,3 +129,8 @@ XF86Audio{Lower,Raise}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
 XF86Audio{Prev,Next,Play}
 	playerctl {previous,next,play-pause}
+
+
+# Right-Click Menu
+~button3
+	xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --config-file="$HOME/.config/bspwm/jgmenurc" --csv-file="$HOME/.config/bspwm/jgmenu.csv"
