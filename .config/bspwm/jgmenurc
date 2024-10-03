@@ -1,0 +1,23 @@
+
+# Restart for every instance.
+stay_alive = 0
+
+# Display at pointer position.
+position_mode = pointer
+
+# Set the font.
+font = Renogare 18px
+font_fallback = xtg
+
+# Set colors.
+color_menu_bg = #1A1B26 100
+color_norm_bg = #1A1B26 0
+color_norm_fg = #C0CAF5 100
+color_sel_bg = #2AC3DE 50
+color_sel_fg = #C0CAF5 100
+color_sep_fg = #292E42 80
+
+item_height = 27
+item_radius = 8
+
+icon_size = 24
