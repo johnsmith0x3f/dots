@@ -112,7 +112,7 @@ super + {Left,Down,Up,Right}
 
 # Resize Mode
 super + r : {h,j,k,l}
-	step=20; sh "${HOME}/.config/bspwm/scripts/resize" {x -,y +,y -,x +} $step
+	step=20; bsp-resize {x -,y +,y -,x +} $step
 
 # Launch applications with rofi.
 super + @space
@@ -120,7 +120,7 @@ super + @space
 
 # Take screenshot with maim.
 super + shift + s
-	maim --hidecursor "$HOME/Pictures/Screenshots/$(date +%F-%H%M%S).png"
+	maim --hidecursor "${HOME}/Pictures/Screenshots/$(date +%F-%H%M%S).png"
 
 # Control media with pactl and playerctl.
 XF86AudioMute
@@ -133,4 +133,4 @@ XF86Audio{Prev,Next,Play}
 
 # Right-Click Menu
 ~button3
-	xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --config-file="$HOME/.config/bspwm/jgmenurc" --csv-file="$HOME/.config/bspwm/jgmenu.csv"
+	xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --config-file="${BSPDIR}/jgmenurc" --csv-file="${BSPDIR}/jgmenu.csv"
