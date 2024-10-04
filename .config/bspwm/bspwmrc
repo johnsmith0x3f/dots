@@ -32,6 +32,9 @@ pgrep -x sxhkd || sxhkd -c "${BSPDIR}/sxhkdrc" &
 # Composite X windows with picom.
 pgrep -x picom || picom --config "${BSPDIR}/picom.conf" &
 
+# Manage clipboard with greenclip.
+pgrep -x greenclip || greenclip daemon &
+
 # Render taskbar with polybar.
 bsp-bar "${BSPTHEME}"
 
@@ -40,4 +43,5 @@ bsp-wall "${BSPDIR}/themes/tokyonight/arch.png"
 
 # Render taskbar with polybar.
 bash "${XDG_CONFIG_HOME:-$HOME/.config}/polybar/themes/tokyonight/launch.sh"
+
 
