@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if polybar --version >/dev/null; then
+	sh "${BSPDIR}/polybar/themes/${BSPTHEME}/launch.sh"
+else
+	exit 1
+fi
+

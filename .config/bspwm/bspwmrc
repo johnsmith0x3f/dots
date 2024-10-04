@@ -2,6 +2,7 @@
 
 # Set environment variables.
 export BSPDIR="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm"
+export BSMTHEME="tokyonight"
 export PATH="${BSPDIR}/scripts:${PATH}"
 
 # Set monitor numbers & names.
@@ -30,6 +31,9 @@ pgrep -x sxhkd || sxhkd -c "${BSPDIR}/sxhkdrc" &
 
 # Composite X windows with picom.
 pgrep -x picom || picom --config "${BSPDIR}/picom.conf" &
+
+# Render taskbar with polybar.
+bsp-bar "${BSPTHEME}"
 
 # Render wallpaper with feh.
 bsp-wall "${BSPDIR}/themes/tokyonight/arch.png"
