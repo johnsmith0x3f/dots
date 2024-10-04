@@ -2,7 +2,7 @@
 
 # Set environment variables.
 export BSPDIR="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm"
-export BSMTHEME="tokyonight"
+export BSPTHEME="tokyonight"
 export PATH="${BSPDIR}/scripts:${PATH}"
 
 # Set monitor numbers & names.
