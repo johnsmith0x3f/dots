@@ -32,7 +32,7 @@ pgrep -x sxhkd || sxhkd -c "${BSPDIR}/sxhkdrc" &
 pgrep -x picom || picom --config "${BSPDIR}/picom.conf" &
 
 # Render wallpaper with feh.
-feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
+feh --bg-fill --no-fehbg "${BSPDIR}/themes/tokyonight/arch.png"
 
 # Render taskbar with polybar.
 bash "${XDG_CONFIG_HOME:-$HOME/.config}/polybar/themes/tokyonight/launch.sh"
