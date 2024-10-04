@@ -6,4 +6,10 @@
 ; Widgets
 (include "widgets/closer.yuck")
 (include "widgets/control.yuck")
-(include "widgets/dashboard.yuck")
+
+(defwindow test :monitor 0
+                :wm-ignore true
+                :geometry (geometry :anchor "center center"
+                                    :width "720px" :height "720px")
+  (image :path "assets/avatar.png"
+         :image-width 300))
