@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Set environment variables.
+export BSPDIR="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm"
+export PATH="${BSPDIR}/scripts:${PATH}"
+
 # Set monitor numbers & names.
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
@@ -27,15 +31,11 @@ bspc rule -a "steam" desktop="^9" state="floating"
 
 bspc rule -a zenity state="floating"
 
-# bspc rule -a "Eww" layer="below" state="floating"
-
-dir="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm"
-
 # Map keys with sxhkd.
-pgrep -x sxhkd >/dev/null || sxhkd -c "${dir}/sxhkdrc" &
+pgrep -x sxhkd || sxhkd -c "${BSPDIR}/sxhkdrc" &
 
 # Composite X windows with picom.
-pgrep -x picom >/dev/null || picom &
+pgrep -x picom || picom --config "${BSPDIR}/picom.conf" &
 
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/wall.png"
