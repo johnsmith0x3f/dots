@@ -17,11 +17,11 @@ bspc config window_gap          10
 # Window border width.
 bspc config border_width        0
 
+# Reserve top space for polybar.
 bspc config top_padding         60
 
-# Rules.
-# bspc rule -a Rofi state="floating"
-bspc rule -a lxappearance state="floating"
+# Set bspwm rules.
+bspc rule -a "lxappearance" state="floating"
 bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
 
@@ -32,10 +32,8 @@ pgrep -x sxhkd || sxhkd -c "${BSPDIR}/sxhkdrc" &
 pgrep -x picom || picom --config "${BSPDIR}/picom.conf" &
 
 # Render wallpaper with feh.
-feh --bg-fill --no-fehbg "${BSPDIR}/themes/tokyonight/arch.png"
+bsp-wall "${BSPDIR}/themes/tokyonight/arch.png"
 
 # Render taskbar with polybar.
 bash "${XDG_CONFIG_HOME:-$HOME/.config}/polybar/themes/tokyonight/launch.sh"
 
-# Host firefox homepage with http-server.
-http-server "${XDG_CONFIG_HOME:-$HOME/.config}/firefox/homepages/Chevron"
