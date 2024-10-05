@@ -1,8 +1,12 @@
 #!/bin/sh
 
-function terminal() {
-	urxvt -e $2
+terminal() {
+	if wezterm --version >/dev/null; then
+		wezterm start -e "$SHELL"
+	else
+		exit 1
+	fi
 }
 
 case "$1" in
-	"terminal") terminal();
+	--terminal) terminal;
