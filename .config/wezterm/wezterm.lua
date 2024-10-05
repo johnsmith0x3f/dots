@@ -34,7 +34,7 @@ config.disable_default_key_bindings = true
 config.keys = {
 	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo "Clipboard" },
 	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom "Clipboard" },
-	{ key = "F11", mods = "NONE", action = act.ToggleFullScreen }
+--	{ key = "F11", mods = "NONE", action = act.ToggleFullScreen }
 }
 
 --- }}}
