@@ -1,0 +1,8 @@
+#!/bin/sh
+
+function terminal() {
+	urxvt -e $2
+}
+
+case "$1" in
+	"terminal") terminal();
