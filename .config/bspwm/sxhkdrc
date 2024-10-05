@@ -40,7 +40,7 @@ super + g
 
 # Toggle pseudo_tiled/floating/fullscreen.
 super + {t,f,F}
-	bspc node -t {~pseudo_tiled,~floating,~fullscreen}
+	bspc node -t {"~pseudo_tiled","~floating", "~fullscreen"}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
