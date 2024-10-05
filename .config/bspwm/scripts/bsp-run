@@ -10,3 +10,4 @@ terminal() {
 
 case "$1" in
 	--terminal) terminal;
+esac
