@@ -10,7 +10,7 @@ super + Escape
 
 # Run default terminal (wezterm).
 super + Return
-	$TERMINAL
+	bsp-run --terminal
 
 # Lock screen with betterlockscreen.
 super + alt + l
