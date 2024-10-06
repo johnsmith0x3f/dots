@@ -35,13 +35,9 @@ pgrep -x picom || picom --config "${BSPDIR}/picom.conf" &
 # Manage clipboard with greenclip.
 pgrep -x greenclip || greenclip daemon &
 
-# Render taskbar with polybar.
+# Render wallpaper.
+bsp-wall "${BSPDIR}/wall.png"
+
+# Render taskbar.
 bsp-bar "${BSPTHEME}"
-
-# Render wallpaper with feh.
-bsp-wall "${BSPDIR}/themes/tokyonight/arch.png"
-
-# Render taskbar with polybar.
-bash "${XDG_CONFIG_HOME:-$HOME/.config}/polybar/themes/tokyonight/launch.sh"
-
 
