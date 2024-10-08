@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if feh --version >/dev/null; then
-		feh --bg-fill --no-fehbg "$1"
-else
-		exit 1
-fi

@@ -1,7 +1,0 @@
-Terminal,               wezterm,                utilities-terminal
-Web Browser,            brave,                  internet-web-browser
-File Manager,           thunar,                 system-file-manager
-^sep()
-
-This is it Madeline,    notify-send TODO,       celeste
-Drop the Beats,         notify-send TODO,       multimedia-audio-player
