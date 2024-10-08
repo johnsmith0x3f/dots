@@ -1,0 +1,8 @@
+# Ignore all log files.
+*.log
+
+## zsh
+/.config/zsh/.histfile
+
+/.config/zsh/.antidote
+/.config/zsh/.zsh_plugins.zsh
