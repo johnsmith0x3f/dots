@@ -9,8 +9,10 @@ config.enable_tab_bar = false
 -- Colors & Appearance.
 config.color_scheme = "Tokyo Night Storm"
 
+local padding = "48px"
 config.window_padding = {
-	left = "32px", bottom = "32px", top = "32px", right = "32px", }
+	left = padding, bottom = padding, top = padding, right = padding
+}
 
 -- Fonts.
 config.font = wezterm.font_with_fallback({
