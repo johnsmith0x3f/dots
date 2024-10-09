@@ -6,24 +6,17 @@
 set $alt Mod1
 set $mod Mod4
 
-# Font for window titles.
-font pango:monospace 12
+# Disable window titles.
+font pango:monospace 0
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# No titlebars, no tiling drag needed.
-tiling_drag off
-
-# No window borders.
-default_border pixel 0px
+# No borders.
+default_border none
+default_floating_border none
 
 # Inner gaps for all windows.
 gaps inner 10px
 # Outer gaps for all windows (desktop margins).
 gaps outer 10px
-
-### Startups {{{
 
 # Start XDG autostart *.desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart.
@@ -33,17 +26,8 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# Configure display.
-#exec_always --no-startup-id xrandr --output eDP-1-1 --auto
-
 # Display wallpaper.
-exec_always --no-startup-id feh --bg-fill --no-fehbg "$HOME/.config/i3/wall.png"
-
-# Use picom as X compositor.
-exec_always --no-startup-id pgrep -x picom || picom &
-
-# Use polybar as status bar.
-exec_always --no-startup-id bash "$XDG_CONFIG_HOME/polybar/launch.sh" darktide
+exec_always --no-startup-id feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-${HOME}/.config}/i3/wall.png"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -54,13 +38,6 @@ exec --no-startup-id blueman-applet
 
 # Use iBus as input method.
 exec --no-startup-id ibus-daemon
-
-# Host firefox homepage.
-exec --no-startup-id http-server "$HOME/.config/firefox/homepages/Chevron"
-
-### }}}
-
-### Keybinds {{{
 
 # Exit i3 (logs you out of your X session), need no warnings.
 bindsym $mod+$alt+e exec i3-msg exit
@@ -125,37 +102,24 @@ bindsym $mod+Shift+l move right
 bindsym $mod+x kill
 # Toggle tiling/floating.
 bindsym $mod+f floating toggle
-# Toggle fullscreen for the focused window.
-bindsym $mod+Shift+f fullscreen toggle
-
 # Change focus between tiling/floating windows.
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+f focus mode_toggle
+# Toggle fullscreen for the focused window.
+bindsym $mod+g fullscreen toggle
+# Change container layout (stacked, tabbed, toggle split), only tabbed is needed.
+bindsym $mod+m layout toggle splitv splith tabbed
 
-
-# Change container layout (stacked, tabbed, toggle split).
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-### }}}
-
-### Modes {{{
-
-# Resize window in resize mode (you can also use the mouse for that).
-bindsym $mod+r mode "resize"
-
-mode "resize" {
-    # These bindings trigger as soon as you enter the resize mode.
-    bindsym h resize shrink width  10 px or 10 ppt
-    bindsym j resize grow   height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow   width  10 px or 10 ppt
-
-    # Back to normal: Enter or Escape or $mod+r.
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
-}
-
-### }}}
+## Resize window in resize mode (you can also use the mouse for that).
+#bindsym $mod+r mode "resize"
+#
+#mode "resize" {
+#    # These bindings trigger as soon as you enter the resize mode.
+#    bindsym h resize shrink width  20 px
+#    bindsym j resize grow   height 20 px
+#    bindsym k resize shrink height 20 px
+#    bindsym l resize grow   width  20 px
+#
+#    # Back to normal: Enter or Escape or $mod+r.
+#    bindsym Return mode "default"
+#}
 
