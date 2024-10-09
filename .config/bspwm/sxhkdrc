@@ -10,7 +10,7 @@ super + Escape
 
 # Run default terminal (wezterm).
 super + Return
-	alacritty
+	wezterm
 
 # Close/Kill a window.
 super + {x,X}
