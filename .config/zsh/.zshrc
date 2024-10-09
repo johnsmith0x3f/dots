@@ -8,9 +8,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Set alias.
+alias eza="eza --icons=auto"
 alias grep="grep --color=auto"
 alias pacman="pacman --color=auto"
 alias yay="yay --color=auto"
+
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # Install antidote.
 [ -d "${ZDOTDIR}/.antidote" ] || git clone --depth=1 "https://github.com/mattmc3/antidote.git ${ZDOTDIR}/.antidote"
