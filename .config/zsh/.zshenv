@@ -2,6 +2,9 @@
 
 # $ZDOTDIR is set to ${XDG_CONFIG_HOME:-${HOME}/.config}/zsh by default.
 
+# Add user path.
+export PATH="${HOME}/.local/bin:${PATH}"
+
 # Set default applications.
 export EDITOR="nvim"
 export TERMINAL="wezterm"
