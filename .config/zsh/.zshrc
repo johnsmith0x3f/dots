@@ -18,9 +18,15 @@ alias vi="nvim"
 alias vim="nvim"
 
 # Install antidote.
-[ -d "${ZDOTDIR}/.antidote" ] || git clone --depth=1 "https://github.com/mattmc3/antidote.git ${ZDOTDIR}/.antidote"
+[[ -d "${ZDOTDIR}/.antidote" ]] || git clone --depth=1 "https://github.com/mattmc3/antidote.git ${ZDOTDIR}/.antidote"
 # Load plugins with antidote.
 source "${ZDOTDIR}/.antidote/antidote.zsh" && antidote load ${ZDOTDIR}/.zsh_plugins.txt
+
+# Load fzf.
+source <(fzf --zsh)
+
+# Load zoxide.
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
