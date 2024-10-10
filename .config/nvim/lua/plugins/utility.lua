@@ -40,7 +40,7 @@ return {
 
 			-- Load LuaSnip snippets.
 			require("luasnip.loaders.from_lua").load({
-				paths = { "~/.config/nvim/lua/snippets/luasnip" }
+				paths = { "~/.config/nvim/lua/snippets" }
 			})
 			require("luasnip").config.set_config({
 				-- Enable autotriggered snippets.
