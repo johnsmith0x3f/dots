@@ -24,33 +24,23 @@ return {
 	},
 	-- LuaSnip
 	{
-		"L3MON4D3/LuaSnip", lazy = false,
-		
+		"L3MON4D3/LuaSnip",
+
 		config = function()
-			-- Copied. TODO.
-			vim.cmd([[
-				" Use Tab to expand and jump through snippets
-				imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-				smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+			local ls = require("luasnip")
 
-				" Use Shift-Tab to jump backwards through snippets
-				imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-				smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
-			]])
-
-			-- Load LuaSnip snippets.
-			require("luasnip.loaders.from_lua").load({
-				paths = { "~/.config/nvim/lua/snippets" }
-			})
-			require("luasnip").config.set_config({
+			-- Setup LuaSnip.
+			ls.setup({
 				-- Enable autotriggered snippets.
 				enable_autosnippets = true,
-			
-				-- Use Tab to trigger visual selection.
-				store_selection_keys = "<Tab>",
-				
+				-- Update text in the repeated node as user types.
 				update_events = { "TextChanged", "TextChangedI" }
 			})
+			-- Load LuaSnip snippets.
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
+
+			-- Map keys.
+			vim.keymap.set({ "i" }, "<C-E>", function() ls.expand() end, { silent = true })
 		end
 	}
 }
