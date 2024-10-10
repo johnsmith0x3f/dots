@@ -10,6 +10,38 @@ return {
 
 	-- }}}
 	
+	-- Alpha
+	{
+		"goolord/alpha-nvim", lazy = false,
+
+		config = function()
+			local alpha = require("alpha")
+			local dashboard = require("alpha.themes.dashboard")
+
+			dashboard.section.header.val = {
+				"                                                                       ",
+				"                                                                       ",
+				"                                                                     ",
+				"       ████ ██████           █████      ██                     ",
+				"      ███████████             █████                             ",
+				"      █████████ ███████████████████ ███   ███████████   ",
+				"     █████████  ███    █████████████ █████ ██████████████   ",
+				"    █████████ ██████████ █████████ █████ █████ ████ █████   ",
+				"  ███████████ ███    ███ █████████ █████ █████ ████ █████  ",
+				" ██████  █████████████████████ ████ █████ █████ ████ ██████ ",
+				"                                                                       ",
+				"                                                                       ",
+				"                                                                       "
+			}
+			dashboard.section.buttons.val = {
+				dashboard.button("e", "󰈔  New File", "<CMD>enew<CR> <BAR> startinsert<CR>"),
+				dashboard.button("f", "󰈞  Find File", "<CMD>Telescope find_files<CR>"),
+				dashboard.button("q", "󰅙  Quit NeoVim", "<CMD>qa<CR>")
+			}
+
+			alpha.setup(dashboard.opts)
+		end
+	},
 	-- BufferLine
 	{
 		"akinsho/bufferline.nvim", lazy = false,
