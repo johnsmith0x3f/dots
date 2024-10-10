@@ -1,0 +1,16 @@
+snippet fastread "Read numbers fast."
+	template<typename T = int>
+	inline T read() {
+		T x = 0; bool f = 1; char c = getchar();
+		while(isdigit(c)^1) f &= (c != 45), c = getchar();
+		while(isdigit(c)) x = (x<<1) + (x<<3) + (c^48), c = getchar();
+		return f ? x : -x;
+	}
+
+snippet fastwrite "Write numbers fast."
+	template<typename T = int>
+	void write(T x) {
+		if(x < 0) putchar(45), x = -x;
+		if(x > 9) write(x/10);
+		putchar(x%10^48);
+	}

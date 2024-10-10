@@ -1,0 +1,12 @@
+snippet #!
+	#!/usr/bin/env zsh
+
+snippet if
+	if $1; then
+		${0:$TM_SELECTED_TEXT}
+	fi
+
+snippet fun
+	${1:function_name}() {
+		${0:# function_body}
+	}
