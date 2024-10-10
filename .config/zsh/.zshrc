@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Set alias.
-alias eza="eza --icons=auto"
+alias ls="eza --icons=auto"
 alias grep="grep --color=auto"
 alias pacman="pacman --color=auto"
 alias yay="yay --color=auto"
