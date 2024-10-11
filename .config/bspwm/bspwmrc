@@ -23,4 +23,6 @@ bspc rule -a "steam" desktop="^9" state="floating"
 pgrep -x sxhkd || sxhkd -c "${BSPDIR}/sxhkdrc" &
 # Use picom as compositor.
 pgrep -x picom || picom --daemon &
+# Render wallpaper with feh.
+feh --bg-fill --no-fehbg "${BSPDIR}/wall.png" &
 
