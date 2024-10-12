@@ -42,6 +42,7 @@ return {
 			alpha.setup(dashboard.opts)
 		end
 	},
+
 	-- BufferLine
 	{
 		"akinsho/bufferline.nvim", lazy = false,
@@ -103,5 +104,20 @@ return {
 			tabline = {},
 			winbar = {}
 		}
+	},
+
+	-- Colorizer
+	{
+		"norcalli/nvim-colorizer.lua",
+
+		config = function()
+			require("colorizer").setup({ "*" }, {
+				RGB = true,
+				RRGGBB = true,
+				RRGGBBAA = true,
+				names = false,
+				mode = "background"
+			})
+		end
 	}
 }
