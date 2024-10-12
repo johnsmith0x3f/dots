@@ -15,7 +15,7 @@ super + Return
 	wezterm
 
 # Launch applications.
-super + Space
+super + space
 	dmenu_run
 
 # Close/Kill a window.
