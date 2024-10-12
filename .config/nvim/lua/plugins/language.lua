@@ -28,5 +28,12 @@ return {
 				}
 			})
 		end
-	}
+	},
+
+-- Language Specific {{{
+
+	-- Markdown
+	{ "OXY2DEV/markview.nvim", lazy = false }
+
+-- }}}
 }
