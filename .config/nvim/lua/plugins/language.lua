@@ -1,5 +1,5 @@
 return {
-	-- Treesitter
+-- Treesitter {{{
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = function()
@@ -29,6 +29,38 @@ return {
 			})
 		end
 	},
+-- }}}
+
+-- LSP {{{
+
+	-- Mason
+	{
+		"williamboman/mason.nvim",
+
+		config = function()
+			require("mason").setup({})
+		end
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"clangd"
+				}
+			})
+		end
+	},
+	{
+		"neovim/nvim-lspconfig",
+
+		config = function()
+			require("lspconfig").clangd.setup({})
+		end
+	},
+
+-- }}}
 
 -- Language Specific {{{
 
