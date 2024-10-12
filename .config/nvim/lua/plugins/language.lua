@@ -32,6 +32,15 @@ return {
 
 -- Language Specific {{{
 
+	-- LaTeX
+	{
+		"lervag/vimtex",
+
+		init = function()
+			vim.g.vimtex_view_method = "zathura"
+		end
+	},
+
 	-- Markdown
 	{ "OXY2DEV/markview.nvim", lazy = false }
 
