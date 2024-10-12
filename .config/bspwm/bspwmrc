@@ -1,28 +1,29 @@
 #!/bin/bash
 
 # Set environment variables.
-export BSPDIR="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm"
-export PATH="${BSPDIR}/scripts:${PATH}"
+export BSP_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm"
+export PATH="${BSP_CONFIG_HOME}/scripts:$PATH"
 
 # Set monitor numbers & names.
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
 bspc config border_width 0
-bspc config borderless_monocle  true
-bspc config gapless_monocle     false
 
 # Size of the gap that separates windows.
 bspc config window_gap 10
+# Set monocle layout options.
+bspc config borderless_monocle true
+bspc config gapless_monocle false
 
 # Set bspwm rules.
-bspc rule -a "lxappearance" state="floating"
+bspc rule -a "Lxappearance" state="floating"
 bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
 
 # Map keys with sxhkd.
-pgrep -x sxhkd || sxhkd -c "${BSPDIR}/sxhkdrc" &
+pgrep -x sxhkd || sxhkd -c "${BSP_CONFIG_HOME}/sxhkdrc" &
 # Use picom as compositor.
 pgrep -x picom || picom --daemon &
 # Render wallpaper with feh.
-feh --bg-fill --no-fehbg "${BSPDIR}/wall.png" &
+feh --bg-fill --no-fehbg "${BSP_CONFIG_HOME}/wall.png" &
 
