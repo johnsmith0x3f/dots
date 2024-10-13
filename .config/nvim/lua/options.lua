@@ -22,3 +22,10 @@ vim.opt.expandtab = false
 -- Set folds.
 vim.opt.foldmethod = "marker"
 
+
+-- Filetypes
+vim.filetype.add({
+	extension = {
+		rasi = "rasi"
+	}
+})
