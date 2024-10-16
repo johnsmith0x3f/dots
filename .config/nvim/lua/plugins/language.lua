@@ -18,7 +18,8 @@ return {
 					"markdown_inline",
 					"rasi",
 					"vim",
-					"vimdoc"
+					"vimdoc",
+					"yuck"
 				},
 				highlight = {
 					enable = true,
