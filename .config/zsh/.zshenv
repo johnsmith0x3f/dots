@@ -5,6 +5,10 @@
 # Add user path.
 export PATH="${HOME}/.local/bin:${PATH}"
 
+# Set XDG directories.
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_DATA_HOME="${HOME}/.local/share"
+
 # Set default applications.
 export EDITOR="nvim"
 export TERMINAL="wezterm"
