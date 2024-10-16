@@ -4,6 +4,8 @@
 ## mpd
 /.config/mpd/playlists
 
+/.config/mpd/database
+/.config/mpd/pid
 
 ## zsh
 /.config/zsh/.histfile
