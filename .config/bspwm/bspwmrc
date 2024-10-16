@@ -22,6 +22,6 @@ pgrep -x sxhkd || sxhkd -c "${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/sxhkdrc" &
 # Use picom as compositor.
 pgrep -x picom || picom --daemon &
 # Render wallpaper with feh.
-feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/wall.png" &
+feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/wall.png"
 # Render bar with polybar
-bash "${XDG_CONFIG_HOME:-${HOME}/.config}/polybar/themes/tokyonight/launch.sh" &
+bash "${XDG_CONFIG_HOME:-${HOME}/.config}/polybar/themes/tokyonight/launch.sh"
