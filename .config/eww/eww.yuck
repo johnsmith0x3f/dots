@@ -1,0 +1,16 @@
+(defwidget arch []
+  (label :style "font-size: 30pt; color: #1793D1;"
+         :text "󰣇"))
+
+(defwidget bar []
+  (box :class "bar-main"
+       :orientation "vertical"
+			 :space-evenly false
+	(arch)))
+
+(defwindow bar :monitor 0
+               :wm-ignore true
+               :geometry (geometry :x "8px" :y "0px"
+                                   :anchor "center left"
+                                   :width "48px" :height "98%")
+  (bar))
