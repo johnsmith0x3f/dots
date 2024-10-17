@@ -24,4 +24,5 @@ pgrep -x picom || picom --daemon &
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/wall.png"
 # Render bar with polybar
+bspc config top_padding 60
 bash "${XDG_CONFIG_HOME:-${HOME}/.config}/polybar/themes/tokyonight/launch.sh"
