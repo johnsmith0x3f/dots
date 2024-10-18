@@ -34,7 +34,7 @@ return {
 				"                                                                       "
 			}
 			dashboard.section.buttons.val = {
-				dashboard.button("e", "󰈔  New File", "<CMD>enew<CR> <BAR> startinsert<CR>"),
+				dashboard.button("e", "󰈔  New File", "<CMD>enew <BAR> startinsert<CR>"),
 				dashboard.button("f", "󰈞  Find File", "<CMD>Telescope find_files<CR>"),
 				dashboard.button("q", "󰅙  Quit NeoVim", "<CMD>qa<CR>")
 			}
