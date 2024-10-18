@@ -106,6 +106,15 @@ return {
 		}
 	},
 
+	-- Noice
+	{
+		"folke/noice.nvim",
+
+		event = "VeryLazy",
+
+		opts = {}
+	},
+
 	-- Colorizer
 	{
 		"norcalli/nvim-colorizer.lua",
