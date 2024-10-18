@@ -21,10 +21,12 @@ return {
 		"nvim-telescope/telescope.nvim", lazy = false,
 
 		keys = {
-			-- Find all.
+			-- Find all files (including hidden).
 			{ mode = "n", "<Leader>fa", "<CMD>Telescope find_files hidden=true<CR>" },
 			-- Find files.
-			{ mode = "n", "<Leader>ff", "<CMD>Telescope find_files<CR>" }
+			{ mode = "n", "<Leader>ff", function() require("telescope.builtin").find_files({}) end },
+			-- Find buffers.
+			{ mode = "n", "<Leader>fb", function() require("telescope.builtin").buffers({}) end },
 		}
 	},
 
