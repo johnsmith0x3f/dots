@@ -22,7 +22,7 @@ return {
 
 		keys = {
 			-- Find all files (including hidden).
-			{ mode = "n", "<Leader>fa", "<CMD>Telescope find_files hidden=true<CR>" },
+			{ mode = "n", "<Leader>fa", function() require("telescope.builtin").find_files({ hidden = true }) end },
 			-- Find files.
 			{ mode = "n", "<Leader>ff", function() require("telescope.builtin").find_files({}) end },
 			-- Find buffers.
