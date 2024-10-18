@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Set environment variables.
+export BSP_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm"
+export PATH="${BSP_CONFIG_HOME}/scripts:${PATH}"
+
 # Set monitor numbers & names.
 bspc monitor -d 1 2 3 4 5 6 7 8 9
 
@@ -13,16 +17,17 @@ bspc config borderless_monocle true
 bspc config gapless_monocle false
 
 # Set bspwm rules.
+bspc rule -a "Blueman-manager" state="floating"
 bspc rule -a "Lxappearance" state="floating"
 bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
 
 # Map keys with sxhkd.
-pgrep -x sxhkd || sxhkd -c "${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/sxhkdrc" &
+pgrep -x sxhkd || sxhkd -c "${BSP_CONFIG_HOME}/sxhkdrc" &
 # Use picom as compositor.
 pgrep -x picom || picom --daemon &
 # Render wallpaper with feh.
-feh --bg-fill --no-fehbg "${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/wall.png"
+feh --bg-fill --no-fehbg "${BSP_CONFIG_HOME}/wall.png"
 # Render bar with polybar
 bspc config top_padding 60
 bash "${XDG_CONFIG_HOME:-${HOME}/.config}/polybar/themes/tokyonight/launch.sh"
