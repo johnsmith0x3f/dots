@@ -1,17 +1,24 @@
+-- Pull the wezterm API.
 local wezterm = require("wezterm")
 local act = wezterm.action
 
+-- Put your configurations onto the table!
 local config = {}
 
--- No tab bar, simplicity is the best.
-config.enable_tab_bar = false
+-- Fits the interior.
+config.use_fancy_tab_bar = false
+-- No scroll bar. Keep it simple.
+config.enable_scroll_bar = false
 
--- Colors & Appearance.
+-- Use Tokyo Night colorscheme.
 config.color_scheme = "Tokyo Night Storm"
 
-local padding = "48px"
+local padding = "72px"
 config.window_padding = {
-	left = padding, bottom = padding, top = padding, right = padding
+	left = padding,
+	bottom = padding,
+	top = padding,
+	right = padding
 }
 
 -- Fonts.
@@ -22,17 +29,13 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 18
 
-config.audible_bell = "Disabled"
+-- Keymaps {{{
 
--- Key bindings {{{
-
--- Disable default key bindings.
+-- Disable default key bindings and define custom ones.
 config.disable_default_key_bindings = true
--- Define custom key bindings.
 config.keys = {
 	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo "Clipboard" },
 	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom "Clipboard" },
---	{ key = "F11", mods = "NONE", action = act.ToggleFullScreen }
 }
 
 --- }}}
