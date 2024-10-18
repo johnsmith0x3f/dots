@@ -34,8 +34,8 @@ config.font_size = 18
 -- Disable default key bindings and define custom ones.
 config.disable_default_key_bindings = true
 config.keys = {
-	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo "Clipboard" },
-	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom "Clipboard" },
+	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
+	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") }
 }
 
 --- }}}
