@@ -3,7 +3,7 @@
 # $ZDOTDIR is set to ${XDG_CONFIG_HOME:-${HOME}/.config}/zsh by default.
 
 # Add user path.
-export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/bin:${PATH}"
 
 # Set XDG directories.
 export XDG_CONFIG_HOME="${HOME}/.config"
