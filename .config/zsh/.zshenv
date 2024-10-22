@@ -3,7 +3,7 @@
 # $ZDOTDIR is set to ${XDG_CONFIG_HOME:-${HOME}/.config}/zsh by default.
 
 # Add user path.
-export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # Set XDG directories.
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -23,4 +23,4 @@ export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 
-export ZLE_RPROMPT_INDENT=0 # might cause problems, use with care
+# export ZLE_RPROMPT_INDENT=0 # might cause problems, use with care
