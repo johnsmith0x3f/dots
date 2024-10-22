@@ -13,6 +13,7 @@ config.enable_scroll_bar = false
 -- Use Tokyo Night colorscheme.
 config.color_scheme = "Tokyo Night Storm"
 
+-- Set windows padding.
 local padding = "72px"
 config.window_padding = {
 	left = padding,
