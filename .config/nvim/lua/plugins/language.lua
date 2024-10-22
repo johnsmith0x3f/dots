@@ -1,3 +1,8 @@
+local servers = {
+	"clangd",
+	"pylsp"
+}
+
 return {
 -- Treesitter {{{
 	{
@@ -47,18 +52,16 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 
 		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"clangd"
-				}
-			})
+			require("mason-lspconfig").setup({ ensure_installed = servers })
 		end
 	},
 	{
 		"neovim/nvim-lspconfig",
 
 		config = function()
-			require("lspconfig").clangd.setup({})
+			for _, lsp in pairs(servers) do
+				require("lspconfig")[lsp].setup({})
+			end
 		end
 	},
 
