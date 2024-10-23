@@ -2,15 +2,13 @@
 *.log
 
 ## mpd
-/.config/mpd/playlists
-
 /.config/mpd/database
 /.config/mpd/pid
-
+/.config/mpd/playlists
+## ncmpcpp
+/.config/ncmpcpp/lyrics
 ## zsh
-/.config/zsh/.histfile
-
 /.config/zsh/.antidote
-/.config/zsh/.zsh_plugins.zsh
-
+/.config/zsh/.histfile
 /.config/zsh/.p10k.zsh
+/.config/zsh/.zsh_plugins.zsh
