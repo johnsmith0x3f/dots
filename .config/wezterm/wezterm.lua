@@ -36,7 +36,13 @@ config.font_size = 18
 config.disable_default_key_bindings = true
 config.keys = {
 	{ key = "C", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
-	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") }
+	{ key = "V", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
+
+	-- Decrease/Increase font size.
+	{ key = "-", mods = "ALT", action = act.DecreaseFontSize },
+	{ key = "=", mods = "ALT", action = act.IncreaseFontSize },
+
+	{ key = "T", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") }
 }
 
 --- }}}
