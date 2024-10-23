@@ -51,8 +51,8 @@ return {
 			-- Goto buffer.
 			{ mode = "n", "[b", "<CMD>BufferLineCyclePrev<CR>" },
 			{ mode = "n", "]b", "<CMD>BufferLineCycleNext<CR>" },
-			{ mode = "n", "[B", "<CMD>BufferLineMovePrev<CR>" },
-			{ mode = "n", "]B", "<CMD>BufferLineMoveNext<CR>" },
+			{ mode = "n", "{B", "<CMD>BufferLineMovePrev<CR>" },
+			{ mode = "n", "}B", "<CMD>BufferLineMoveNext<CR>" },
 			{ mode = "n", "<Leader>1", "<CMD>BufferLineGoToBuffer 1<CR>" },
 			{ mode = "n", "<Leader>2", "<CMD>BufferLineGoToBuffer 2<CR>" },
 			{ mode = "n", "<Leader>3", "<CMD>BufferLineGoToBuffer 3<CR>" },
