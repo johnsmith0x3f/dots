@@ -22,5 +22,6 @@
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "telescope.nvim": { "branch": "master", "commit": "df534c3042572fb958586facd02841e10186707c" },
   "tokyonight.nvim": { "branch": "main", "commit": "2c85fad417170d4572ead7bf9fdd706057bd73d7" },
-  "vimtex": { "branch": "master", "commit": "4dd3be5cc4e8f6ee7401e303a8211efb4d91bcf6" }
+  "vimtex": { "branch": "master", "commit": "4dd3be5cc4e8f6ee7401e303a8211efb4d91bcf6" },
+  "which-key.nvim": { "branch": "main", "commit": "8badb359f7ab8711e2575ef75dfe6fbbd87e4821" }
 }
