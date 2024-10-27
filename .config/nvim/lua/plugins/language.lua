@@ -1,4 +1,5 @@
 local servers = {
+	"clangd",
 	"pylsp"
 }
 
@@ -81,7 +82,11 @@ return {
 	},
 
 	-- Markdown
-	{ "OXY2DEV/markview.nvim", lazy = false }
+	{
+		"OXY2DEV/markview.nvim",
+
+		ft = "markdown"
+	}
 
 -- }}}
 }
