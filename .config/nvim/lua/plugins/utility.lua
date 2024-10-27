@@ -61,6 +61,10 @@ return {
 			end, { silent = true })
 		end
 	},
+	-- Multicursor
+	{
+		"jake-stewart/multicursor.nvim"
+	},
 
 	-- Which Key
 	-- WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
