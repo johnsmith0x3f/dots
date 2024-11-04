@@ -23,6 +23,7 @@ bspc config gapless_monocle false
 
 # Set bspwm rules.
 bspc rule -a "Blueman-manager" state="floating"
+bspc rule -a "KeePassXC" state="floating"
 bspc rule -a "Lxappearance" state="floating"
 bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
