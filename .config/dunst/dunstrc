@@ -9,13 +9,27 @@ height = 300
 
 frame_width = 0
 
-## Icons
+## Icon
 icon_theme = "Papirus-Dark"
 enable_recursive_icon_lookup = true
+
+icon_position = "left"
 
 min_icon_size = 32
 max_icon_size = 128
 
+icon_text_padding = 12
+
+## Text
 font = "Monospace 12"
 
+markup = "full"
+
+format = "<b>%s</b>\n%b"
+
 browser = "firefox"
+
+# Set colors to match Tokyo Night scheme.
+[urgency_normal]
+background = "#24283B"
+foreground = "#C0CAF5"
