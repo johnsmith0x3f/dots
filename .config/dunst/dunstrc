@@ -1,0 +1,21 @@
+# See dunst(5) for references.
+
+[global]
+class = "Dunst"
+title = "Dunst"
+
+width = 300
+height = 300
+
+frame_width = 0
+
+## Icons
+icon_theme = "Papirus-Dark"
+enable_recursive_icon_lookup = true
+
+min_icon_size = 32
+max_icon_size = 128
+
+font = "Monospace 12"
+
+browser = "firefox"
