@@ -1,6 +1,7 @@
 # See dunst(5) for references.
 
 [global]
+## Window Property
 class = "Dunst"
 title = "Dunst"
 
@@ -14,9 +15,10 @@ icon_theme = "Papirus-Dark"
 enable_recursive_icon_lookup = true
 
 icon_position = "left"
+icon_corner_radius = 8
 
 min_icon_size = 32
-max_icon_size = 128
+max_icon_size = 64
 
 icon_text_padding = 12
 
