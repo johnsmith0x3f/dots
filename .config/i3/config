@@ -2,46 +2,39 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Set two mod keys for wider range of keymaps.
-set $alt Mod1
-set $mod Mod4
-
 # Add gaps for better distinguishing windows.
 gaps inner 10px
 gaps outer 10px
-
-# Set font for window titles.
-font pango:monospace 8
 
 # No borders. Keep it simple.
 default_border none
 default_floating_border none
 
-# Start XDG autostart .desktop files using dex. See also https://wiki.archlinux.org/index.php/XDG_Autostart.
-exec --no-startup-id dex --autostart --environment i3
+# Set font for window titles (tabbed layout).
+font pango:monospace 8
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-#exec --no-startup-id blueman-applet
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+## Start XDG autostart .desktop files using dex. See also https://wiki.archlinux.org/index.php/XDG_Autostart.
+#exec --no-startup-id dex --autostart --environment i3
+#
+## The combination of xss-lock, nm-applet and pactl is a popular choice, so
+## they are included here as an example. Modify as you see fit.
+#
+## xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+## screen before suspend. Use loginctl lock-session to lock your screen.
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#
+## NetworkManager is the most popular way to manage wireless networks on Linux,
+## and nm-applet is a desktop environment-independent system tray GUI for it.
+##exec --no-startup-id nm-applet
+##exec --no-startup-id blueman-applet
 
 
 
 ### Key Bindings
+
+# Set two mod keys for wider range of keymaps.
+set $alt Mod1
+set $mod Mod4
 
 # The lowest level of actions use the most extensive keys.
 bindsym $mod+$alt+e exec i3-msg exit
@@ -82,7 +75,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # Toggle tabbed layout. Stacking layout is similar and hence discarded.
-bindsym $mod+w layout toggle tabbed
+bindsym $mod+m layout toggle split tabbed
 
 # Launch applications with dmenu.
 bindsym $mod+space exec --no-startup-id dmenu_run
@@ -110,11 +103,16 @@ bindsym $mod+g fullscreen toggle
 # Kill focused window. "x" stands for the close button.
 bindsym $mod+x kill
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+
+
 
 ### Modes
 
