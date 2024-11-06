@@ -6,7 +6,9 @@
 set $alt Mod1
 set $mod Mod4
 
-
+# Add gaps for better distinguishing windows.
+gaps inner 10px
+gaps outer 10px
 
 # Set font for window titles.
 font pango:monospace 8
@@ -30,13 +32,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 #exec --no-startup-id nm-applet
 #exec --no-startup-id blueman-applet
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -52,45 +47,8 @@ tiling_drag modifier titlebar
 bindsym $mod+$alt+e exec i3-msg exit
 bindsym $mod+$alt+r restart
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
-# kill focused window
-bindsym $mod+x kill
-
-# Launch applications with dmenu.
-bindsym $mod+space exec --no-startup-id dmenu_run
-
-# Change focus.
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# Move focused window.
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# Set the position where new windows spawn.
-bindsym $mod+Control+h split h
-bindsym $mod+Control+v split v
-
-# Toggle floating/fullscreen.
-bindsym $mod+f floating toggle
-bindsym $mod+g fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+# Start a terminal.
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # Define names for default workspaces.
 set $ws1 "1"
@@ -102,7 +60,6 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-
 # Switch to workspace.
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -113,7 +70,6 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-
 # Move focused container to workspace.
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -124,6 +80,41 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
+
+# Toggle tabbed layout. Stacking layout is similar and hence discarded.
+bindsym $mod+w layout toggle tabbed
+
+# Launch applications with dmenu.
+bindsym $mod+space exec --no-startup-id dmenu_run
+
+# Change focus.
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# Move focused window.
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Set the position where new windows spawn.
+bindsym $mod+Control+h split h
+bindsym $mod+Control+v split v
+
+# Toggle floating. (Used more often.)
+bindsym $mod+f floating toggle
+# Toggle fullscreen. (Used less, hence loses the "f" key.)
+bindsym $mod+g fullscreen toggle
+
+# Kill focused window. "x" stands for the close button.
+bindsym $mod+x kill
+
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 
 ### Modes
 
