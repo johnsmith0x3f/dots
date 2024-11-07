@@ -2,6 +2,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
+
+### Basic Options
+
 # Add gaps for better distinguishing windows.
 gaps inner 10px
 gaps outer 10px
@@ -102,14 +106,14 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 ### Modes
 
 mode "resize" {
-        # Map keys.
-        bindsym h resize shrink width 20 px or 20 ppt
-        bindsym j resize grow height 20 px or 20 ppt
-        bindsym k resize shrink height 20 px or 20 ppt
-        bindsym l resize grow width 20 px or 20 ppt
+	# Map keys.
+	bindsym h resize shrink width 20 px or 20 ppt
+	bindsym j resize grow height 20 px or 20 ppt
+	bindsym k resize shrink height 20 px or 20 ppt
+	bindsym l resize grow width 20 px or 20 ppt
 
-        # Return to normal mode.
-        bindsym Escape mode "default"
+	# Return to normal mode.
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
