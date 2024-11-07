@@ -14,7 +14,7 @@ gaps outer 10px
 default_border none
 default_floating_border none
 
-# Set font for window titles (tabbed layout).
+# Set font for window titles.
 font pango:monospace 8
 
 
@@ -117,3 +117,9 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+
+
+### Startup Apps
+
+exec_always --no-startup-id feh --bg-fill --no-fehbg ~/.config/i3/wall.png
