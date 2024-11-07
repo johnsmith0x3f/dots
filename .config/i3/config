@@ -2,9 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-
-
-### Basic Options
+############################################## Basics ##############################################
 
 # Add gaps for better distinguishing windows.
 gaps inner 10px
@@ -17,9 +15,7 @@ default_floating_border none
 # Set font for window titles.
 font pango:monospace 8
 
-
-
-### Key Bindings
+############################################### Keys ###############################################
 
 # Set two mod keys for wider range of keymaps.
 set $alt Mod1
@@ -63,13 +59,10 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
-# Toggle tabbed layout. Stacking layout is discarded for similarity.
-bindsym $mod+m layout toggle tabbed split
-
 # Launch applications with dmenu. Rofi is bloated.
-bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id dmenu_run -b
 
-# Change focus (vim-like).
+# Change focus (vim-like keybinds).
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -92,7 +85,7 @@ bindsym $mod+g fullscreen toggle
 # Kill focused window. "x" stands for the close button.
 bindsym $mod+x kill
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# Use Mouse+$mod to drag floating windows to their wanted position.
 floating_modifier $mod
 
 # Use pactl to adjust volume in PulseAudio.
@@ -101,9 +94,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 
-
-
-### Modes
+############################################## Modes ###############################################
 
 mode "resize" {
 	# Map keys.
@@ -118,8 +109,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+############################################# Startups #############################################
 
+# Use picom as compositor.
+exec --no-starup-id picom --daemon
 
-### Startup Apps
-
+# Render wallpaper with feh. Reload on every change.
 exec_always --no-startup-id feh --bg-fill --no-fehbg ~/.config/i3/wall.png
