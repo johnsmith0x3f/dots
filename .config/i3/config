@@ -112,7 +112,7 @@ bindsym $mod+r mode "resize"
 ############################################# Startups #############################################
 
 # Use picom as compositor.
-exec --no-starup-id picom --daemon
+exec --no-starup-id picom --daemon &
 
 # Render wallpaper with feh. Reload on every change.
 exec_always --no-startup-id feh --bg-fill --no-fehbg ~/.config/i3/wall.png
