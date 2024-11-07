@@ -16,7 +16,7 @@ super + Return
 
 # Launch applications.
 super + space
-	dmenu_run
+	dmenu_run -b
 
 # Close/Kill a window.
 super + {x,X}
