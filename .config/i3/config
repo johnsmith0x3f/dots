@@ -12,9 +12,6 @@ gaps outer 10px
 default_border none
 default_floating_border none
 
-# Set font for window titles.
-font pango:monospace 8
-
 ############################################### Keys ###############################################
 
 # Set two mod keys for wider range of keymaps.
