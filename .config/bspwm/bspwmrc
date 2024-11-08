@@ -4,10 +4,10 @@
 export BSP_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm"
 export PATH="${BSP_CONFIG_HOME}/scripts:${PATH}"
 
-# Set monitor numbers & names.
+# Set desktop numbers & names, with multihead support.
 if [ $(xrandr -q | grep "\<connected\>" | wc -l) -gt 1 ]; then
 	bspc monitor "HDMI-0" -d 1 2 3 4 5 6 7 8
-	bspc monitor "eDP-1-1" -d 1
+	bspc monitor "eDP-1-1" -d 9
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9
 fi
@@ -23,7 +23,11 @@ bspc config gapless_monocle false
 
 # Set bspwm rules.
 bspc rule -a "Blueman-manager" state="floating"
+
+# KeePassXC main window on desktop 9 (secondary monitor), Auto-Type on focused desktop.
 bspc rule -a "KeePassXC" desktop="^9" state="floating"
+bspc rule -a "KeePassXC:*:Auto-Type - KeePassXC" desktop="focused" state="floating"
+
 bspc rule -a "Lxappearance" state="floating"
 bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "qBittorrent" desktop="^9" state="floating"
