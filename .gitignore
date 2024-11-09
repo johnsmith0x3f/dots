@@ -1,6 +1,9 @@
 # Ignore all log files.
 *.log
 
+# Ignore uuid files.
+.uuid
+
 ## mpd
 /.config/mpd/database
 /.config/mpd/pid
