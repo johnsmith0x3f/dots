@@ -13,5 +13,4 @@
 ## zsh
 /.config/zsh/.antidote
 /.config/zsh/.histfile
-/.config/zsh/.p10k.zsh
 /.config/zsh/.zsh_plugins.zsh
