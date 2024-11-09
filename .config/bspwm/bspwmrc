@@ -12,14 +12,14 @@ else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9
 fi
 
-# No borders. Keep it minimal.
-bspc config border_width 0
-
 # Size of the gap that separates windows.
-bspc config window_gap 10
+bspc config window_gap 8
 # Set monocle layout options.
 bspc config borderless_monocle true
 bspc config gapless_monocle false
+
+# No borders. Keep it minimal.
+bspc config border_width 0
 
 # Set bspwm rules.
 bspc rule -a "Blueman-manager" state="floating"
@@ -36,7 +36,7 @@ bspc rule -a "steam" desktop="^9" state="floating"
 # Map keys with sxhkd.
 pgrep -x sxhkd || sxhkd -c "${BSP_CONFIG_HOME}/sxhkdrc" &
 # Use picom as compositor.
-pgrep -x picom || picom --daemon &
+pgrep -x picom || picom --daemon
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${BSP_CONFIG_HOME}/wall.png"
 # Render bar with polybar
