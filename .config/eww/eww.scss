@@ -2,10 +2,21 @@
   all: unset;
 }
 
+// Colors
+$bg: #24283B;
+$bg-alt: #1A1C2C;
+$fg: #C0CAF5;
+
 .bar-main {
   border-radius: 12px;
-  font-family: "Inconsolata Bold", "FiraMono Nerd Font Mono";
+  font-family: "Inconsolata Bold", "Material Design Icons Desktop";
   font-size: 18pt;
-  color: #C0CAF5;
-  background-color: #24283B;
+  color: $fg;
+  background-color: $bg;
+}
+
+.arch-main {
+  color: #1793D1;
+  font-size: 24pt;
+  padding: 1rem 0;
 }
