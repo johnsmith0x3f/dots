@@ -9,18 +9,18 @@ workspaces() {
 	local buttons=""
 
 	for desk in $all; do
-		[[ "$desk" == "$focused" ]] && {
+		if [[ "$desk" == "$focused" ]]; then
 			icon="󰮯"
 			class="workspace-focused"
-		} || [[ "$desk" == "$occupied" ]] && {
+		elif echo "$occupied" | grep "$desk"; then
 			icon="󰊠"
 			class="workspace-occupied"
-		} || {
+		else
 			icon="󰑊"
 			class="workspace-unoccupied"
-		}
+		fi
 
-		buttons+="(button :class='$class' :onclick='bspc desktop -f $desk' '$icon')"
+		buttons+="(button :class '$class' :onclick 'bspc desktop -f $desk' '$icon')"
 	done
 
 	echo "(box :class 'workspaces-main' :orientation 'v' $buttons)"
