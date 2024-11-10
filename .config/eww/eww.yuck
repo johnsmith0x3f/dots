@@ -1,3 +1,5 @@
+; Vars
+(deflisten workspaces "bin/workspaces")
 
 ; Widgets
 (defwidget arch []
@@ -5,14 +7,18 @@
           :onclick "notify-send TODO"
     "󰣇"))
 
+(defwidget workspaces []
+	(literal :content workspaces))
+
 (defwidget bar []
   (box :class "bar-main"
        :orientation "vertical"
 			 :space-evenly false
-	(arch)))
+	(arch)
+	(workspaces)))
 
 ; Windows
-(defwindow bar :monitor 0
+(defwindow bar :monitor 1
                :wm-ignore true
                :geometry (geometry :x "8px" :y "0px"
                                    :anchor "center left"

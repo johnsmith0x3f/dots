@@ -20,3 +20,20 @@ $fg: #C0CAF5;
   font-size: 24pt;
   padding: 1rem 0;
 }
+
+.workspaces-main {
+  font-family: "Material Design Icons Desktop";
+  font-size: 18pt;
+}
+.workspace-focused {
+  color: #FFC777
+  margin: 0.5em 0;
+}
+.workspace-occupied {
+  color: #3D59A1
+  margin: 0.5em 0;
+}
+.workspace-unoccupied {
+  color: #9D7CD8
+  margin: 0.5em 0;
+}
