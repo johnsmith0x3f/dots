@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+workspaces() {
+
+	local all="$( bspc query -D --names )"
+	local focused="$( bspc query -D -d ".focused" --names )"
+	local occupied="$( bspc query -D -d ".occupied" --names )"
+
+	local buttons=""
+
+	for desk in $all; do
+		[[ "$desk" == "$focused" ]] && {
+			icon="󰮯"
+			class="workspace-focused"
+		} || [[ "$desk" == "$occupied" ]] && {
+			icon="󰊠"
+			class="workspace-occupied"
+		} || {
+			icon="󰑊"
+			class="workspace-unoccupied"
+		}
+
+		buttons+="(button :class='$class' :onclick='bspc desktop -f $desk' '$icon')"
+	done
+
+	echo "(box :class 'workspaces-main' :orientation 'v' $buttons)"
+}
+
+# Print once, then listen for changes.
+workspaces
+bspc subscribe desktop_focus | while read -r _; do
+	workspaces
+done
