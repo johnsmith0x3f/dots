@@ -13,6 +13,9 @@ frame_width = 0
 padding = 16
 horizontal_padding = 16
 
+stack_duplicates = true
+hide_duplicate_count = true
+
 ## Icon
 icon_theme = "Papirus-Dark"
 enable_recursive_icon_lookup = true
