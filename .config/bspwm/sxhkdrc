@@ -43,7 +43,7 @@ super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
 super + shift + {h,j,k,l}
 	bspc node -s {west,south,north,east}
-# Focus the next window in the current desktop.
+# Focus the next/prev window in the current desktop.
 super + {c,C}
 	bspc node -f {next,prev}.local.!hidden.window
 
@@ -76,6 +76,7 @@ XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86Audio{Lower,Raise}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
 XF86Audio{Prev,Next,Play}
 	playerctl {previous,next,play-pause}
 
