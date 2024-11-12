@@ -1,0 +1,17 @@
+#!/bin/sh
+
+note() {
+	if [ "$( pamixer --get-volume-human )" = "muted" ]; then
+		icon="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/etc/icons/mute.png"
+	else
+		icon="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/etc/icons/volume.png"
+	fi
+}
+
+if pamixer -v >/dev/null; then
+	case "$1" in
+
+	esac
+else
+	notify-send --urgency="critical" "ERROR" "pamixer not installed"
+fi
