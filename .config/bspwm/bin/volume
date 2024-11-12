@@ -1,16 +1,20 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 note() {
-	if [ "$( pamixer --get-volume-human )" = "muted" ]; then
-		icon="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/etc/icons/mute.png"
+	if [[ $( pamixer --get-mute ) == true ]]; then
+		icon="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/etc/icons/speaker-slash.png"
 	else
-		icon="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/etc/icons/volume.png"
+		icon="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/etc/icons/speaker.png"
 	fi
+
+	notify-send --icon="$icon" "Volume: $( pamixer --get-volume )"
 }
 
 if pamixer -v >/dev/null; then
 	case "$1" in
-
+		"--dec") pamixer --decrease 5; note ;;
+		"--inc") pamixer --increase 5; note ;;
+		"--tog") pamixer --toggle-mute; note ;;
 	esac
 else
 	notify-send --urgency="critical" "ERROR" "pamixer not installed"
