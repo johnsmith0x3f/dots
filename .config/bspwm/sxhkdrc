@@ -2,13 +2,13 @@
 
 
 
-# Quit/Restart bspwm.
-super + alt + {e,r}
-	bspc {quit,wm -r}
+# Quit bspwm.
+super + alt + e
+	bspc quit
 
-# Reload sxhkd configurations.
-super + Escape
-	pkill -USR1 -x sxhkd
+# Reload bspwm and sxhkd.
+super + alt + r
+	bspc wm -r; pkill -USR1 -x sxhkd
 
 # Run default terminal (wezterm).
 super + Return
@@ -18,40 +18,33 @@ super + Return
 super + space
 	dmenu_run -b
 
-# Close/Kill a window.
-super + {x,X}
-	bspc node -{c,k}
+# Focus the given desktop or send focused node to it.
+super + {1-9}
+	bspc desktop -f "^{1-9}"
+super + shift + {1-9}
+	bspc node -d "^{1-9}"
 
 # Alternate between the tiled and monocle layout.
 super + m
 	bspc desktop -l next
-
-#
-# state/flags
-#
-
-# Toggle pseudo_tiled/floating/fullscreen.
-super + {t,f,g}
-	bspc node -t {"~pseudo_tiled","~floating", "~fullscreen"}
-
-#
-# focus/swap
-#
 
 # Focus/Shift the node in the given direction.
 super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
 super + shift + {h,j,k,l}
 	bspc node -s {west,south,north,east}
+
 # Focus the next/prev window in the current desktop.
 super + {c,C}
 	bspc node -f {next,prev}.local.!hidden.window
 
-# Focus the given desktop or send focused node to it.
-super + {1-9}
-	bspc desktop -f "^{1-9}"
-super + shift + {1-9}
-	bspc node -d "^{1-9}"
+# Toggle pseudo_tiled/floating/fullscreen.
+super + {t,f,g}
+	bspc node -t {"~pseudo_tiled","~floating","~fullscreen"}
+
+# Close/Kill a window.
+super + {x,X}
+	bspc node -{c,k}
 
 #
 # move/resize
@@ -68,18 +61,16 @@ super + r : {q,e}
 	bspc node @/ --rotate {-90,90}
 
 # Take screenshot with maim.
-super + shift + s
-	maim --geometry "$(xrandr -q | grep "primary" | cut -d " " -f 4)" --hidecursor "${HOME}/Pictures/Screenshots/$(date +%F-%H%M%S).png"
+#super + shift + s
+#	maim --geometry "$(xrandr -q | grep "primary" | cut -d " " -f 4)" --hidecursor "${HOME}/Pictures/Screenshots/$(date +%F-%H%M%S).png"
 
-XF86AudioMute
-	bsp-volume --tog
-XF86Audio{Lower,Raise}Volume
-	bsp-volume {--dec,--inc}
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+	bsp-volume {decrease,increase,toggle}
 
 XF86Audio{Prev,Next,Play}
 	playerctl {previous,next,play-pause}
 
 
 # Right-Click Menu
-~button3
-	xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --config-file="${BSPDIR}/jgmenurc" --csv-file="${BSPDIR}/jgmenu.csv"
+#~button3
+#	xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --config-file="${BSPDIR}/jgmenurc" --csv-file="${BSPDIR}/jgmenu.csv"
