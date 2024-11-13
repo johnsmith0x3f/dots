@@ -71,11 +71,10 @@ super + r : {q,e}
 super + shift + s
 	maim --geometry "$(xrandr -q | grep "primary" | cut -d " " -f 4)" --hidecursor "${HOME}/Pictures/Screenshots/$(date +%F-%H%M%S).png"
 
-# Control media with pactl and playerctl.
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	bsp-volume --tog
 XF86Audio{Lower,Raise}Volume
-	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+	bsp-volume {--dec,--inc}
 
 XF86Audio{Prev,Next,Play}
 	playerctl {previous,next,play-pause}
