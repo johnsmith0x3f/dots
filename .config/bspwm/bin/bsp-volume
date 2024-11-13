@@ -12,9 +12,9 @@ note() {
 
 if pamixer -v >/dev/null; then
 	case "$1" in
-		"--dec") pamixer --decrease 5; note ;;
-		"--inc") pamixer --increase 5; note ;;
-		"--tog") pamixer --toggle-mute; note ;;
+		"decrease") pamixer --decrease 5; note ;;
+		"increase") pamixer --increase 5; note ;;
+		"toggle") pamixer --toggle-mute; note ;;
 	esac
 else
 	notify-send --urgency="critical" "ERROR" "pamixer not installed"
