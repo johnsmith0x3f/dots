@@ -7,7 +7,7 @@ note() {
 		icon="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm/etc/icons/speaker.png"
 	fi
 
-	notify-send --icon="$icon" "Volume: $( pamixer --get-volume )"
+	notify-send --hint="string:x-dunst-stack-tag:volume" --icon="$icon" "Volume" "$( pamixer --get-volume )"
 }
 
 if pamixer -v >/dev/null; then
