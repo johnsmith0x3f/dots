@@ -2,7 +2,7 @@
 
 # Set environment variables.
 export BSP_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm"
-export PATH="${BSP_CONFIG_HOME}/scripts:${PATH}"
+export PATH="${BSP_CONFIG_HOME}/bin:${PATH}"
 
 # Set desktop numbers & names, with multihead support.
 if [ $(xrandr -q | grep "\<connected\>" | wc -l) -gt 1 ]; then
