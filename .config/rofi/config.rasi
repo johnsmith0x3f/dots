@@ -9,15 +9,17 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                  [ "drun" , "run" ];
-	show-icons:            true;
-	display-drun:          "";
+	modes:                 [ "drun" , "run" ];
+	display-drun:          "󱓞";
 	display-run:           "󰞷";
-	display-filebrowser:   "󰉋";
-	display-window:        "";
-	drun-display-format:   "{name}";
-	window-format:         "{w} · {c} · {t}";
+//	show-icons:            true;
+//	display-filebrowser:   "󰉋";
+//	display-window:        "";
+//	drun-display-format:   "{name}";
+//	window-format:         "{w} · {c} · {t}";
 }
+
+// Set theme to null to force Rofi not to load builtin themes.
 @theme "/dev/null"
 
 /*****----- Global Properties -----*****/
