@@ -8,9 +8,9 @@ configuration {
 }
 
 * {
-	font:                  "JetBrains Mono Nerd Font 18";
-	background:            #24283B;
-	background-alt:        #292E42;
+	font:                  "Operator Mono 18";
+	background:            #1F2335;
+	background-alt:        #24283B;
 	foreground:            #C0CAF5;
 	selected:              #7AA2F7;
 	active:                #3D59A1;
@@ -23,7 +23,7 @@ dummy {
 }
 
 window {
-	width:                 640px;
+	width:                 720px;
 	background-color:      @background;
 }
 
@@ -33,16 +33,14 @@ mainbox {
 }
 
 inputbar {
-	padding:               144px 72px;
+	padding:               48px;
 	background-color:      transparent;
 	children:              [ "textbox-prompt", "entry", "mode-switcher" ];
 }
 
 textbox-prompt {
-	width:                 48px;
-	border-radius:         24px;
-	margin:                24px;
 	expand:                false;
+	border-radius:         100%;
 	content:               "󰍉";
 	font:                  "Material Design Icons Desktop 18";
 	text-color:            @foreground;
@@ -50,7 +48,6 @@ textbox-prompt {
 }
 
 entry {
-	expand:                false;
 	width:                 250px;
 	text-color:            @foreground;
 	background-color:      @background-alt;
