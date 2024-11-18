@@ -8,22 +8,17 @@ configuration {
 }
 
 * {
-	font:                  "Operator Mono 18";
 	background:            #1F2335;
 	background-alt:        #24283B;
 	foreground:            #C0CAF5;
-	selected:              #7AA2F7;
+	selected:              #3B4261;
 	active:                #3D59A1;
 	urgent:                #FF595E;
 }
 
-dummy {
-  expand:                true;
-  background-color:      transparent;
-}
-
 window {
 	width:                 720px;
+	font:                  "JetBrains Mono 18";
 	background-color:      @background;
 }
 
@@ -33,26 +28,31 @@ mainbox {
 }
 
 inputbar {
-	padding:               48px;
+	padding:               96px;
 	background-color:      transparent;
+	background-image:      url("~/.config/rofi/themes/assets/astronaut-facing-portal.png", width);
+	spacing:               24px;
 	children:              [ "textbox-prompt", "entry", "mode-switcher" ];
 }
 
 textbox-prompt {
 	expand:                false;
 	border-radius:         100%;
+	padding:               0 12px;
 	content:               "󰍉";
-	font:                  "Material Design Icons Desktop 18";
+	horizontal-align:      0.5;
+	vertical-align:        0.5;
+	font:                  "Material Design Icons Desktop 24";
 	text-color:            @foreground;
 	background-color:      @background-alt;
 }
 
 entry {
-	width:                 250px;
+	border-radius:         100%;
+	padding:               0 18px;
+	vertical-align:        0.5;
 	text-color:            @foreground;
 	background-color:      @background-alt;
-	placeholder:           "Search";
-	placeholder-color:     inherit;
 	cursor:                text;
 }
 
@@ -63,14 +63,14 @@ mode-switcher {
 } // children: [ "button", ..., "button" ];
 
 button {
-	width:                 48px;
-	border-radius:         24px;
-	font:                  "Material Design Icons Desktop 18";
+	width:                 64px;
+	border-radius:         32px;
+	font:                  "Material Design Icons Desktop 24";
 	background-color:      @background-alt;
 	text-color:            inherit;
 }
 button.selected {
-	background-color:      @active;
+	background-color:      @selected;
 	text-color:            inherit;
 }
 
@@ -80,48 +80,32 @@ listbox {
 	children:              [ "listview" ];
 }
 
-/*****----- Listview -----*****/
 listview {
-    enabled:                     true;
-    columns:                     1;
-    lines:                       7;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    
-    spacing:                     10px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    cursor:                      "default";
-}
+	background-color:      transparent;
+	text-color:            @foreground;
+	lines:                 6;
+	spacing:               12px;
+} // children: [ "element", ..., "element" ];
 
 element {
-    enabled:                     true;
-    spacing:                     10px;
-    padding:                     4px;
-    border-radius:               100%;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    cursor:                      pointer;
+	spacing:               12px;
+	padding:               12px;
+	border-radius:         12px;
+	background-color:      transparent;
+	text-color:            @foreground;
+	cursor:                pointer;
 }
 element.selected {
-    background-color:            @selected;
-    text-color:                  @foreground;
-}
+	background-color:      @selected;
+	text-color:            @foreground;
+} // children: [ "element-icon", "element-text" ];
+
 element-icon {
-    background-color:            transparent;
-    text-color:                  inherit;
-    size:                        32px;
-    cursor:                      inherit;
+	background-color:      transparent;
+	size:                  32px;
 }
 element-text {
-    background-color:            transparent;
-    text-color:                  inherit;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
+	background-color:      transparent;
+	text-color:            inherit;
+	vertical-align:        0.5;
 }
