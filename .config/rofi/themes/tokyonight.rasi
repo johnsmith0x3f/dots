@@ -15,10 +15,10 @@ configuration {
 	foreground:            #C0CAF5;
 	selected:              #3B4261;
 	active:                #3D59A1;
-	urgent:                #FF595E;
 
-	blue:                  #7AA2F7;
+	red:                   #FF595E;
 	green:                 #C3E88D;
+	blue:                  #7AA2F7;
 }
 
 window {
@@ -27,11 +27,12 @@ window {
 }
 
 mainbox {
-	background-color:      transparent;
-	children:              [ "mode-switcher", "inputbar", "listbox" ];
-}
-mode-switcher, inputbar, listbox {
 	padding:               24px;
+	background-color:      transparent;
+	spacing:               24px;
+	children:              [ "mode-switcher", "inputbar", "listview" ];
+}
+mode-switcher, inputbar, listview {
 	background-color:      transparent;
 }
 
@@ -57,8 +58,13 @@ inputbar {
 	spacing:               12px;
 	children:              [ "prompt", "entry" ];
 }
+prompt, entry {
+	padding:							 12px;
+}
 
 prompt {
+	border-radius:				 12px;
+	background-color:      @blue;
 }
 
 entry {
@@ -68,12 +74,7 @@ entry {
 	placeholder:           "Search";
 }
 
-listbox {
-	children:              [ "listview" ];
-}
-
 listview {
-	background-color:      transparent;
 	text-color:            @foreground;
 	spacing:               12px;
 } // children: [ "element", ..., "element" ];
@@ -87,8 +88,8 @@ element {
 	cursor:                pointer;
 }
 element.selected {
-	background-color:      @selected;
-	text-color:            @foreground;
+	background-color:      @red;
+	text-color:            @background;
 } // children: [ "element-icon", "element-text" ];
 
 element-icon {
