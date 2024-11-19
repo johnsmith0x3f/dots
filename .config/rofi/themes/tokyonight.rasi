@@ -2,8 +2,10 @@
 
 configuration {
 	modes:                 [ "drun" , "run" ];
-	display-drun:          "󱓞";
-	display-run:           "󰞷";
+	font:                  "FiraMono Nerd Font Mono 18";
+	display-drun:          "󱓞 App";
+	display-run:           "󰞷 Run";
+	drun-display-format:   "{name}";
 	show-icons:            true;
 }
 
@@ -14,46 +16,49 @@ configuration {
 	selected:              #3B4261;
 	active:                #3D59A1;
 	urgent:                #FF595E;
-}
 
-dummy { // A dummy widget for dynamic spacing.
-	expand:                true;
-	background-color:      transparent;
+	blue:                  #7AA2F7;
+	green:                 #C3E88D;
 }
 
 window {
 	height:                600px;
-	font:                  "FiraMono Nerd Font Mono 18";
 	background-color:      @background;
 }
 
 mainbox {
 	background-color:      transparent;
-	orientation:           horizontal;
-	children:              [ "imagebox", "listbox" ];
+	children:              [ "mode-switcher", "inputbar", "listbox" ];
+}
+mode-switcher, inputbar, listbox {
+	padding:               24px;
+	background-color:      transparent;
 }
 
-imagebox {
-	padding:               24px;
-	background-image:      url("~/.config/rofi/assets/portal.png", height);
-	orientation:           vertical;
-	children:              [ "inputbar", "dummy", "mode-switcher" ];
+mode-switcher {
+	spacing:               24px;
+} // children: [ "button", ..., "button" ];
+
+button {
+	padding:               12px;
+	background-color:      transparent;
+	text-color:            @foreground;
+	cursor:                pointer;
+}
+button.selected {
+	border-radius:         12px;
+	background-color:      @green;
+	text-color:            @background;
 }
 
 inputbar {
 	border-radius: 			   12px;
-	padding:               16px;
-	background-color:      @background-alt;
 	text-color:            @foreground;
 	spacing:               12px;
-	children:              [ "textbox-prompt", "entry" ];
+	children:              [ "prompt", "entry" ];
 }
 
-textbox-prompt {
-	expand:                false;
-	content:               "󰍉";
-	background-color:      @background-alt;
-	text-color:            @foreground;
+prompt {
 }
 
 entry {
@@ -63,24 +68,7 @@ entry {
 	placeholder:           "Search";
 }
 
-mode-switcher {
-	background-color:      transparent;
-	spacing:               12px;
-} // children: [ "button", ..., "button" ];
-
-button {
-	border-radius:         32px;
-	background-color:      @background-alt;
-	text-color:            @foreground;
-	cursor:                pointer;
-}
-button.selected {
-	background-color:      @selected;
-}
-
 listbox {
-	padding:               24px;
-	background-color:      transparent;
 	children:              [ "listview" ];
 }
 
