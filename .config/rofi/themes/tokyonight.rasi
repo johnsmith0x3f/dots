@@ -2,10 +2,9 @@
 
 configuration {
 	modes:                 [ "drun" , "run" ];
-	font:                  "FiraMono Nerd Font Mono 18";
-	display-drun:          "󱓞 App";
-	display-run:           "󰞷 Run";
-	drun-display-format:   "{name}";
+	font:                  "Operator Mono 18";
+	display-drun:          "󱓞";
+	display-run:           "󰞷";
 	show-icons:            true;
 }
 
@@ -19,21 +18,38 @@ configuration {
 	red:                   #FF595E;
 	green:                 #C3E88D;
 	blue:                  #7AA2F7;
+
+	background-color:      inherit;
+	text-color:            inherit;
 }
 
 window {
-	height:                600px;
+	height:                600px; // fix height to limit the number of elements
 	background-color:      @background;
+	text-color:            @foreground;
 }
 
 mainbox {
 	padding:               24px;
-	background-color:      transparent;
 	spacing:               24px;
-	children:              [ "mode-switcher", "inputbar", "listview" ];
+	children:              [ "inputbar", "listview" ];
 }
-mode-switcher, inputbar, listview {
-	background-color:      transparent;
+
+inputbar {
+	padding:               0 36px;
+	spacing:               12px;
+	children:              [ "prompt", "entry", "mode-switcher" ];
+}
+
+prompt {
+	font:                  "Material Design Icons Desktop 24";
+	vertical-align:        0.5;
+}
+
+entry {
+	vertical-align:        0.5;
+	placeholder:           "Search";
+	cursor:                text;
 }
 
 mode-switcher {
@@ -42,40 +58,14 @@ mode-switcher {
 
 button {
 	padding:               12px;
-	background-color:      transparent;
-	text-color:            @foreground;
+	font:                  "Material Design Icons Desktop 24";
 	cursor:                pointer;
 }
 button.selected {
-	border-radius:         12px;
-	background-color:      @green;
-	text-color:            @background;
-}
-
-inputbar {
-	border-radius: 			   12px;
-	text-color:            @foreground;
-	spacing:               12px;
-	children:              [ "prompt", "entry" ];
-}
-prompt, entry {
-	padding:							 12px;
-}
-
-prompt {
-	border-radius:				 12px;
-	background-color:      @blue;
-}
-
-entry {
-	background-color:      inherit;
-	text-color:            inherit;
-	cursor:                text;
-	placeholder:           "Search";
+	background-color:      @selected;
 }
 
 listview {
-	text-color:            @foreground;
 	spacing:               12px;
 } // children: [ "element", ..., "element" ];
 
@@ -88,16 +78,12 @@ element {
 	cursor:                pointer;
 }
 element.selected {
-	background-color:      @red;
-	text-color:            @background;
+	background-color:      @selected;
 } // children: [ "element-icon", "element-text" ];
 
 element-icon {
-	background-color:      transparent;
-	size:                  32px;
+	size:                  48px;
 }
 element-text {
-	background-color:      transparent;
-	text-color:            inherit;
 	vertical-align:        0.5;
 }
