@@ -16,62 +16,66 @@ configuration {
 	urgent:                #FF595E;
 }
 
+dummy { // A dummy widget for dynamic spacing.
+	expand:                true;
+	background-color:      transparent;
+}
+
 window {
-	width:                 720px;
-	font:                  "JetBrains Mono 18";
+	height:                600px;
+	font:                  "FiraMono Nerd Font Mono 18";
 	background-color:      @background;
 }
 
 mainbox {
 	background-color:      transparent;
-	children:              [ "inputbar", "listbox" ];
+	orientation:           horizontal;
+	children:              [ "imagebox", "listbox" ];
+}
+
+imagebox {
+	padding:               24px;
+	background-image:      url("~/.config/rofi/assets/portal.png", height);
+	orientation:           vertical;
+	children:              [ "inputbar", "dummy", "mode-switcher" ];
 }
 
 inputbar {
-	padding:               96px;
-	background-color:      transparent;
-	background-image:      url("~/.config/rofi/themes/assets/astronaut-facing-portal.png", width);
-	spacing:               24px;
-	children:              [ "textbox-prompt", "entry", "mode-switcher" ];
+	border-radius: 			   12px;
+	padding:               16px;
+	background-color:      @background-alt;
+	text-color:            @foreground;
+	spacing:               12px;
+	children:              [ "textbox-prompt", "entry" ];
 }
 
 textbox-prompt {
 	expand:                false;
-	border-radius:         100%;
-	padding:               0 12px;
 	content:               "󰍉";
-	horizontal-align:      0.5;
-	vertical-align:        0.5;
-	font:                  "Material Design Icons Desktop 24";
-	text-color:            @foreground;
 	background-color:      @background-alt;
+	text-color:            @foreground;
 }
 
 entry {
-	border-radius:         100%;
-	padding:               0 18px;
-	vertical-align:        0.5;
-	text-color:            @foreground;
-	background-color:      @background-alt;
+	background-color:      inherit;
+	text-color:            inherit;
 	cursor:                text;
+	placeholder:           "Search";
 }
 
 mode-switcher {
-	spacing:               12px;
 	background-color:      transparent;
-	text-color:            @foreground;
+	spacing:               12px;
 } // children: [ "button", ..., "button" ];
 
 button {
-	width:                 64px;
 	border-radius:         32px;
-	font:                  "Material Design Icons Desktop 24";
 	background-color:      @background-alt;
-	text-color:            inherit;
+	text-color:            @foreground;
+	cursor:                pointer;
 }
 button.selected {
 	background-color:      @selected;
-	text-color:            inherit;
 }
 
 listbox {
@@ -83,7 +87,6 @@ listbox {
 listview {
 	background-color:      transparent;
 	text-color:            @foreground;
-	lines:                 6;
 	spacing:               12px;
 } // children: [ "element", ..., "element" ];
 
