@@ -6,7 +6,6 @@ configuration {
 	display-drun:          "󱓞 App";
 	display-run:           "󰞷 Run";
 	display-window:        "󱂬 Win";
-	drun-display-format:   "{name}";
 	show-icons:            true;
 }
 
@@ -72,7 +71,6 @@ entry {
 listview {
 	margin:                6px 12px;
 	padding:               6px 12px;
-	columns:               4;
 	spacing:               6px;
 } // children: [ "element", ..., "element" ];
 
@@ -81,16 +79,11 @@ element {
 	padding:               12px;
 	border-radius:         12px;
 	cursor:                pointer;
-	orientation:           vertical;
 }
 element.selected {
 	background-color:      @background-alt;
 } // children: [ "element-icon", "element-text" ];
 
 element-icon {
-	size:                  64px;
-	horizontal-align:      0.5;
-}
-element-text {
-	horizontal-align:        0.5;
+	size:                  32px;
 }
