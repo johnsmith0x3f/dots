@@ -14,9 +14,9 @@ super + alt + r
 super + Return
 	wezterm
 
-# Launch applications.
+# Launch applications with rofi.
 super + space
-	dmenu_run -b
+	rofi -show
 
 # Focus the given desktop or send focused node to it.
 super + {1-9}
