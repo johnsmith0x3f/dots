@@ -18,7 +18,8 @@ bspc config window_gap 8
 # No borders. Keep it minimal.
 bspc config border_width 0
 
-# Set bspwm rules.
+# Rules {{{
+
 bspc rule -a "Blueman-manager" state="floating"
 
 # KeePassXC main window on desktop 9 (secondary monitor), the others on focused desktop.
@@ -32,12 +33,13 @@ bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "qBittorrent" desktop="^9" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
 
+# }}}
+
 # Map keys with sxhkd.
 pgrep -x sxhkd || sxhkd -c "${BSP_CONFIG_HOME}/sxhkdrc" &
 # Use picom as compositor.
-pgrep -x picom || picom --daemon
+pgrep -x picom || picom -b
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${BSP_CONFIG_HOME}/wall.png"
 # Render bar with polybar
-bspc config top_padding 64
-bash "${XDG_CONFIG_HOME:-${HOME}/.config}/polybar/themes/tokyonight/launch.sh"
+bspc config top_padding 64 && bash "${XDG_CONFIG_HOME:-${HOME}/.config}/polybar/themes/tokyonight/launch.sh"
