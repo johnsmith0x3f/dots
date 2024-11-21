@@ -6,8 +6,8 @@ export PATH="${BSP_CONFIG_HOME}/bin:${PATH}"
 
 # Set desktop numbers & names, with multihead support.
 if [ $(xrandr -q | grep "\<connected\>" | wc -l) -gt 1 ]; then
-	bspc monitor "HDMI-0" -d 1 2 3 4 5 6 7 8
-	bspc monitor "eDP-1-1" -d 9
+	bspc monitor "^1" -d 1 2 3 4 5 6 7 8
+	bspc monitor "^2" -d 9
 else
 	bspc monitor -d 1 2 3 4 5 6 7 8 9
 fi
