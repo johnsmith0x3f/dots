@@ -28,7 +28,8 @@ bspc rule -a "KeePassXC:*:Auto-Type - KeePassXC" desktop="focused" state="floati
 bspc rule -a "KeePassXC:*:KeePassXC - Browser Access Request" desktop="focused" state="floating"
 bspc rule -a "KeePassXC:*:KeePassXC - New key association request" desktop="focused" state="floating"
 
-bspc rule -a "Lxappearance" state="floating"
+bspc rule -a "TelegramDesktop" state="floating"
+
 bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "qBittorrent" desktop="^9" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
