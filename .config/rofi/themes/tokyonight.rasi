@@ -23,6 +23,7 @@ configuration {
 }
 
 window {
+	width:                 960px;
 	height:                720px; // fix height to limit the number of elements
 	background-color:      @background;
 	text-color:            @foreground;
@@ -33,36 +34,33 @@ mainbox {
 }
 
 mode-switcher {
-	margin:                12px 12px;
-	padding:               12px 48px;
+	padding:               24px 60px;
 } // children: [ "button", ..., "button" ];
 
 button {
+	border-radius:         12px;
 	padding:               12px;
 	cursor:                pointer;
 }
 button.selected {
-	border-radius:         12px;
 	background-color:      @button-bg;
 	text-color:            @background;
 }
 
 inputbar {
 	padding:               0px 36px;
-	spacing:               12px;
 	children:              [ "prompt", "entry" ];
-}
-prompt, entry {
-	padding:               6px 12px;
-	border-radius:         6px;
 }
 
 prompt {
+	border-radius:         6px;
+	padding:               6px 18px;
 	background-color:      @prompt-bg;
 	text-color:            @background;
 }
 
 entry {
+	padding:               6px 18px;
 	placeholder:           "Search";
 	placeholder-color:     @foreground-alt;
 	cursor:                text;
