@@ -6,7 +6,7 @@ class = "Dunst"
 title = "Dunst"
 
 width = (300, 600)
-height = 300
+height = (0, 300)
 origin = "top-right"
 offset = "8x64"
 
