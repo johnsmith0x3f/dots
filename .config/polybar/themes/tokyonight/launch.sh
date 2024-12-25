@@ -11,7 +11,6 @@ else
 	config="${0%/*}/config-2560x1440.ini"
 fi
 
-
 # The order matters.
 polybar -c "${config}" mbar -q &
 polybar -c "${config}" rbar -q &
