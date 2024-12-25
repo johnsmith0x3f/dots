@@ -3,12 +3,12 @@
 # Terminate running instances.
 polybar-msg cmd quit
 
-# Support 1920x1080 and 2560x1440.
+# Support 1920x and 2560x.
 width="$( xrandr -q | grep "primary" | cut -d " " -f 4 | cut -d "x" -f 1 )"
 if [[ $width -eq 1920 ]]; then
-	config="${0%/*}/config-1920x1080.ini"
+	config="${0%/*}/config-1920.ini"
 else
-	config="${0%/*}/config-2560x1440.ini"
+	config="${0%/*}/config-2560.ini"
 fi
 
 # The order matters.
