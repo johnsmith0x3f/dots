@@ -2,11 +2,15 @@ local App = require("astal.gtk3.app")
 local Variable = require("astal.variable")
 local Widget = require("astal.gtk3.widget")
 
+-- Modules {{{
+
 local function Time(format)
 	local time = Variable(""):poll(1000, function()
 
 	end)
 end
+
+-- }}}
 
 return function(monitor)
 	local Anchor = require("astal.gtk3").Astal.WindowAnchor

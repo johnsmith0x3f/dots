@@ -1,4 +1,7 @@
+@define-color bg dodgerblue;
+@define-color fg white;
+
 window.bar {
-  background-color: #00F;
-  color: #FFF;
+  background-color: @bg;
+  color: @fg;
 }
