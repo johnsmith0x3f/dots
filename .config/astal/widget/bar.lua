@@ -12,21 +12,21 @@ return function(monitor)
 	local Anchor = require("astal.gtk3").Astal.WindowAnchor
 
 	return Widget.Window({
-		title = "bar",
+		--title = "bar",
 		monitor = monitor,
+
+		class_name = "bar",
 		anchor = Anchor.TOP + Anchor.LEFT + Anchor.RIGHT,
 		exclusivity = "EXCLUSIVE",
 
 		Widget.CenterBox({
 			Widget.Box({
-				halign = "START",
 				"temp"
 			}),
 			Widget.Box({
 				"temp"
 			}),
 			Widget.Box({
-				halign = "END",
 				"temp"
 			})
 		})
