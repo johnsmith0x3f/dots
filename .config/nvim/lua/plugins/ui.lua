@@ -124,7 +124,7 @@ return {
 				RGB = true,
 				RRGGBB = true,
 				RRGGBBAA = true,
-				names = false,
+				names = true,
 				mode = "background"
 			})
 		end
