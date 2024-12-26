@@ -13,6 +13,7 @@ alias grep="grep --color=auto"
 alias pacman="pacman --color=auto"
 alias yay="yay --color=auto"
 
+# I use NeoVim btw.
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"

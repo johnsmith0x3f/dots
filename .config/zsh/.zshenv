@@ -22,6 +22,7 @@ export SAVEHIST=10000
 export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
+export GLFW_IM_MODULE=ibus
 
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
