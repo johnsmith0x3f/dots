@@ -11,7 +11,6 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 
 # Set default applications.
 export EDITOR="nvim"
-export TERMINAL="wezterm"
 
 # Save command history, 1000 is far from enough.
 export HISTFILE="${ZDOTDIR}/.histfile"
@@ -25,6 +24,6 @@ export QT_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 
 # Set this to null to avoid partial line prompts.
-export PROMPT_EOL_MARK=''
+#export PROMPT_EOL_MARK=''
 
 # export ZLE_RPROMPT_INDENT=0 # might cause problems, use with care
