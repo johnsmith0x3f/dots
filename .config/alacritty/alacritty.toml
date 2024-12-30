@@ -1,0 +1,19 @@
+[font]
+builtin_box_drawing = false
+size = 15
+
+[font.normal]
+family = "Fira Mono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "Fira Mono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "Fira Mono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "Fira Mono Nerd Font Mono"
+style = "Bold Italic"
