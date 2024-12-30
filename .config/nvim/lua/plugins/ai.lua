@@ -11,12 +11,9 @@ return {
 				enabled = true,
 				auto_trigger = true,
 				keymap = {
-					accept = "<M-CR>",
+					accept = "<C-S-CR>",
 					accept_word = false,
-					accept_line = false,
-					prev = "<M-[>",
-					next = "<M-]>",
-					dismiss = "<C-]>"
+					accept_line = false
 				}
 			}
 		}
