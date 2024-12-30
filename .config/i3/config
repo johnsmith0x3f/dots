@@ -112,7 +112,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id picom --daemon
 
 # Render wallpaper with feh. Reload on every change.
-exec_always --no-startup-id feh --bg-fill --no-fehbg "${HOME}/.config/i3/wall.png"
+exec_always --no-startup-id feh --bg-fill --no-fehbg "${HOME}/.local/share/wallpapers/astronaut.png"
 
 # Render taskbar with polybar. Manually reserve space.
 gaps top 48px
