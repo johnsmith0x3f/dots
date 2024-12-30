@@ -23,9 +23,6 @@ alias vim="nvim"
 # Load plugins with antidote.
 source "${ZDOTDIR}/.antidote/antidote.zsh" && antidote load ${ZDOTDIR}/.zsh_plugins.txt
 
-# Load fzf.
-source <(fzf --zsh)
-
 # Load zoxide.
 eval "$(zoxide init zsh)"
 
