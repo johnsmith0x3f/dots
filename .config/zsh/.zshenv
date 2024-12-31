@@ -23,6 +23,8 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export GLFW_IM_MODULE=ibus
 
+export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+
 # Set this to null to avoid partial line prompts.
 #export PROMPT_EOL_MARK=''
 
