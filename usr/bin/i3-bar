@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Quit all running polybar instances, then launch the bar for i3.
+polybar-msg cmd quit && polybar --config="${XDG_CONFIG_HOME}/polybar/themes/i3/config.ini"
