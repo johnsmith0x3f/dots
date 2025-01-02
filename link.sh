@@ -1,6 +1,4 @@
 #!/bin/sh
 
-# Stow etc (config) directory.
-stow -d ./etc -t ~/.config .
-# Stow usr (local) directory.
-stow -d ./usr -t ~/.local .
+# Stow etc (.config) and usr (.local) directory.
+stow -d ./etc -t ~/.config . && stow -d ./usr -t ~/.local .
