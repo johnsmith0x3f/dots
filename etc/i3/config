@@ -111,8 +111,7 @@ bindsym $mod+r mode "resize"
 # Use picom as compositor.
 exec_always --no-startup-id picom --daemon
 
-# Render wallpaper with feh. Reload on every change.
+# Render wallpaper.
 exec_always --no-startup-id i3-wallpaper
-
-# Render taskbar with polybar. Manually reserve space.
-exec_always --no-startup-id i3-bar
+# Render taskbar.
+exec_always --no-startup-id i3-taskbar
