@@ -17,13 +17,16 @@ default_floating_border none
 # Set two mod keys for wider range of keymaps.
 set $alt Mod1
 set $mod Mod4
+# Set default applications.
+set $terminal kitty
+set $launcher dmenu_run -b
 
 # The lowest level of actions use the most extensive keys.
 bindsym $mod+$alt+e exec i3-msg exit
 bindsym $mod+$alt+r restart
 
 # Start default terminal.
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id $terminal
 
 # Define names for default workspaces. No fancy name needed.
 set $ws1 "1"
@@ -56,8 +59,8 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
-# Launch applications with dmenu. Rofi is bloated.
-bindsym $mod+space exec --no-startup-id dmenu_run -b
+# Launch applications.
+bindsym $mod+space exec --no-startup-id $launcher
 
 # Change focus (vim-like keybinds).
 bindsym $mod+h focus left
@@ -69,6 +72,8 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+# Use Mouse+$mod to drag floating windows to their wanted position.
+floating_modifier $mod
 
 # Set the position where new windows spawn.
 bindsym $mod+Control+h split h
@@ -81,9 +86,6 @@ bindsym $mod+g fullscreen toggle
 
 # Kill focused window. "x" stands for the close button.
 bindsym $mod+x kill
-
-# Use Mouse+$mod to drag floating windows to their wanted position.
-floating_modifier $mod
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -113,5 +115,6 @@ exec_always --no-startup-id picom --daemon
 
 # Render wallpaper.
 exec_always --no-startup-id i3-wallpaper
+
 # Render taskbar.
 exec_always --no-startup-id i3-taskbar
