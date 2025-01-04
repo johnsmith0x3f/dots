@@ -1,27 +1,22 @@
 #!/bin/sh
 
 getvol() {
-	if which wpctl >/dev/null; then
-		wpctl get-volume "@DEFAULT_AUDIO_SINK@"
-	else
-		pactl get-sink-volume "@DEFAULT_SINK@"
-	fi
+	echo "1"
 }
 
 setvol() {
-
+	echo "2"
 }
 
 toggle() {
-	if which wpctl >/dev/null; then
-		wpctl set-mute "@DEFAULT_AUDIO_SINK@" toggle
-	else
+	wpctl set-mute "@DEFAULT_AUDIO_SINK@" toggle || {
+		echo "Failed with wpctl, retrying with pactl."
 		pactl set-sink-mute "@DEFAULT_SINK@" toggle
-	fi
+	}
 }
 
 case $1 in
 	get) getvol ;;
-	set) setvol $2 ;;
+	set) setvol $@ ;;
 	toggle) toggle ;;
 esac
