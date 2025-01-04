@@ -12,6 +12,10 @@ gaps outer 8px
 default_border none
 default_floating_border none
 
+############################################### Rule ###############################################
+
+for_window [class="^(KeePassXC)$"] floating enable
+
 ############################################### Keys ###############################################
 
 # Set two mod keys for wider range of keymaps.
