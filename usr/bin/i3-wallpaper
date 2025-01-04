@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # Render wallpaper with feh.
-feh --bg-fill --no-fehbg "${XDG_DATA_HOME}/share/wallpapers/astronaut-holding-jellyfish.png"
+feh --bg-fill --no-fehbg "${XDG_DATA_HOME}/wallpapers/astronaut-holding-jellyfish.png"
