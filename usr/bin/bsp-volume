@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+getvol() {
+}
+
 note() {
 	if [[ $( pamixer --get-mute ) == true ]]; then
 		icon="${BSP_CONFIG_HOME}/usr/icons/speaker-slash.png"
@@ -10,12 +13,8 @@ note() {
 	notify-send --hint="string:x-dunst-stack-tag:volume" --icon="$icon" "Volume" "$( pamixer --get-volume )"
 }
 
-if pamixer -v >/dev/null; then
-	case "$1" in
-		"decrease") pamixer --decrease 5; note ;;
-		"increase") pamixer --increase 5; note ;;
-		"toggle") pamixer --toggle-mute; note ;;
-	esac
-else
-	notify-send --urgency="critical" "ERROR" "pamixer not installed"
-fi
+case $1 in
+	dec) pamixer --decrease 5; note ;;
+	inc) pamixer --increase 5; note ;;
+	toggle) pamixer --toggle-mute; note ;;
+esac

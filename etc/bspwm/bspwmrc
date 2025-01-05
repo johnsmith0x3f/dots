@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # Set environment variables.
-export BSP_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}/bspwm"
-export PATH="${BSP_CONFIG_HOME}/bin:${PATH}"
+export BSP_CONFIG_HOME="${XDG_CONFIG_HOME}/bspwm"
 
-# Set desktop numbers & names, with multihead support.
+# Set desktop numbers & names, with dual-monitor support.
 if [ $(xrandr -q | grep "\<connected\>" | wc -l) -gt 1 ]; then
 	bspc monitor "^1" -d 1 2 3 4 5 6 7 8
 	bspc monitor "^2" -d 9
@@ -18,28 +17,17 @@ bspc config window_gap 8
 # No borders. Keep it minimal.
 bspc config border_width 0
 
-# Rules {{{
-
-bspc rule -a "Blueman-manager" state="floating"
-
-# KeePassXC main window on desktop 9 (secondary monitor), the others on focused desktop.
-bspc rule -a "KeePassXC" desktop="^9" state="floating"
-bspc rule -a "KeePassXC:*:Auto-Type - KeePassXC" desktop="focused" state="floating"
-bspc rule -a "KeePassXC:*:KeePassXC - Browser Access Request" desktop="focused" state="floating"
-bspc rule -a "KeePassXC:*:KeePassXC - New key association request" desktop="focused" state="floating"
-
+# Add rules.
+bspc rule -a "KeePassXC" state="floating"
 bspc rule -a "TelegramDesktop" state="floating"
-
 bspc rule -a "mpv" desktop="^8" state="floating"
-bspc rule -a "qBittorrent" desktop="^9" state="floating"
+bspc rule -a "qBittorrent" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
-
-# }}}
 
 # Map keys with sxhkd.
 pgrep -x sxhkd || sxhkd -c "${BSP_CONFIG_HOME}/sxhkdrc" &
 # Use picom as compositor.
-pgrep -x picom || picom -b
+pgrep -x picom || picom --daemon
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${BSP_CONFIG_HOME}/usr/wallpapers/astronaut.png"
 # Render taskbar.
