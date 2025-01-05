@@ -42,5 +42,5 @@ pgrep -x sxhkd || sxhkd -c "${BSP_CONFIG_HOME}/sxhkdrc" &
 pgrep -x picom || picom -b
 # Render wallpaper with feh.
 feh --bg-fill --no-fehbg "${BSP_CONFIG_HOME}/usr/wallpapers/astronaut.png"
-# Render bar with polybar
-bspc config top_padding 64 && bash "${XDG_CONFIG_HOME:-${HOME}/.config}/polybar/themes/tokyonight/launch.sh"
+# Render taskbar.
+bsp-taskbar
