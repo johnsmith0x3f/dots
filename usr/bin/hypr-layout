@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 layout="$( hyprctl getoption general:layout | head -n 1 | cut -d ' ' -f 2 )"
 
