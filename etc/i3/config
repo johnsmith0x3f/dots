@@ -24,10 +24,12 @@ set $mod Mod4
 # Set default applications.
 set $terminal kitty
 set $launcher dmenu_run -b
+set $lockscreen slock
 
 # The lowest level of actions use the most extensive keys.
 bindsym $mod+$alt+e exec i3-msg exit
 bindsym $mod+$alt+r restart
+bindsym $mod+$alt+l exec --no-startup-id $lockscreen
 
 # Start default terminal.
 bindsym $mod+Return exec --no-startup-id $terminal
