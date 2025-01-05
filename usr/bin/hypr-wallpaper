@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Wait for hyprpaper to load.
+sleep 1
+
 # Preload image into memory.
 hyprctl hyprpaper preload "${XDG_DATA_HOME}/wallpapers/$1"
 # Apply the preloaded image to all monitors without a set wallpaper.
