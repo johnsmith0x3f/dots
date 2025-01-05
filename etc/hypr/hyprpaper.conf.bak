@@ -1,4 +1,0 @@
-# Preload image into memory.
-preload = ~/.local/share/wallpapers/thinkpad.png
-# Apply the preloaded image to all monitors without a set wallpaper.
-wallpaper = , ~/.local/share/wallpapers/thinkpad.png
