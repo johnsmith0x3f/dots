@@ -64,13 +64,8 @@ super + r : {q,e}
 #super + shift + s
 #	maim --geometry "$(xrandr -q | grep "primary" | cut -d " " -f 4)" --hidecursor "${HOME}/Pictures/Screenshots/$(date +%F-%H%M%S).png"
 
+# Control volume and player.
 XF86Audio{LowerVolume,RaiseVolume,Mute}
-	bsp-volume {decrease,increase,toggle}
-
-XF86Audio{Prev,Next,Play}
-	playerctl {previous,next,play-pause}
-
-
-# Right-Click Menu
-#~button3
-#	xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --config-file="${BSPDIR}/jgmenurc" --csv-file="${BSPDIR}/jgmenu.csv"
+	usr-volumectl {decrease "5%",increase "5%",toggle}
+XF86Audio{Pause,Play,Prev,Next}
+	usr-playerctl {pause,play,prev,next}
