@@ -1,20 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-getvol() {
-}
-
-note() {
-	if [[ $( pamixer --get-mute ) == true ]]; then
-		icon="${BSP_CONFIG_HOME}/usr/icons/speaker-slash.png"
-	else
-		icon="${BSP_CONFIG_HOME}/usr/icons/speaker.png"
-	fi
-
-	notify-send --hint="string:x-dunst-stack-tag:volume" --icon="$icon" "Volume" "$( pamixer --get-volume )"
+() {
+	
 }
 
 case $1 in
-	dec) pamixer --decrease 5; note ;;
-	inc) pamixer --increase 5; note ;;
-	toggle) pamixer --toggle-mute; note ;;
+
+	dec) ;;
+	inc) ;;
+	toggle) ;;
 esac
