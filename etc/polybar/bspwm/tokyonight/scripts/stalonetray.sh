@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 hidden="/tmp/stalonetray.hidden.lock"
 
