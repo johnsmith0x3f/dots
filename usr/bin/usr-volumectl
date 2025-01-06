@@ -9,11 +9,15 @@ setvol() {
 }
 
 toggle() {
-	wpctl set-mute "@DEFAULT_AUDIO_SINK@" toggle || pactl set-sink-mute "@DEFAULT_SINK@" toggle
+	if [[ "$1" == "sink" ]]; then
+		wpctl set-mute "@DEFAULT_AUDIO_SINK@" toggle || pactl set-sink-mute "@DEFAULT_SINK@" toggle
+	else
+		wpctl set-mute "@DEFAULT_AUDIO_SOURCE@" toggle || pactl set-sink-mute "@DEFAULT_SOURCE@" toggle
+	fi
 }
 
 case $1 in
 	decrease) setvol - "$2" ;;
 	increase) setvol + "$2" ;;
-	toggle) toggle ;;
+	toggle) toggle $2 ;;
 esac
