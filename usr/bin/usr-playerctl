@@ -1,0 +1,23 @@
+#!/bin/bash
+
+MakePlayerD() {
+	# Use playerctl if mpd-mpris is installed.
+	if pacman -Qs mpd-mpris > /dev/null; then
+		return 1
+	fi
+
+	# Otherwise use mpc.
+	case $1 in
+		pause) mpc pause-if-playing ;;
+		play) mpc | grep "paused" && mpc play ;;
+		prev) mpc prev ;;
+		next) mpc next ;;
+	esac
+}
+
+case $1 in
+	pause) MakePlayerD pause || playerctl pause ;;
+	play) MakePlayerD play || playerctl play ;;
+	prev) MakePlayerD prev || playerctl previous ;;
+	next) MakePlayerD next || playerctl next ;;
+esac
