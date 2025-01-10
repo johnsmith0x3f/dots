@@ -2,7 +2,7 @@
 
 MakePlayerD() {
 	# Use playerctl if mpd-mpris is installed.
-	if pacman -Qs mpd-mpris > /dev/null; then
+	if which mpd-mpris > /dev/null; then
 		return 1
 	fi
 
