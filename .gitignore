@@ -5,9 +5,9 @@
 .uuid
 
 ## mpd
-/.config/mpd/database
-/.config/mpd/pid
-/.config/mpd/playlists
+/etc/mpd/database
+/etc/mpd/pid
+/etc/mpd/playlists
 ## ncmpcpp
 /.config/ncmpcpp/lyrics
 ## zsh
