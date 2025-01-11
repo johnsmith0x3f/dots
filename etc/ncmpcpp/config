@@ -1,5 +1,4 @@
-# Config for ncmpcpp, using version 0.9.2.
-# Based on https://github.com/archcraft-os/archcraft-skeleton/blob/main/archcraft-config-music/files/.ncmpcpp/config.
+# Config for ncmpcpp v0.10.1.
 
 ### References {{{
 
@@ -130,7 +129,7 @@ connected_message_on_startup = "yes"
 # Defines how long messages are supposed to be visible.
 message_delay_time = 1
 # Custom command that will be executed each time song changes.
-execute_on_song_change = "~/.config/ncmpcpp/bin/notice.sh"
+execute_on_song_change = "~/.config/ncmpcpp/scripts/notice.sh"
 # Custom command that will be executed each time player state changes.
 execute_on_player_state_change = ""
 
@@ -162,7 +161,7 @@ titles_visibility = "no"
 
 # Playlist settings.
 playlist_display_mode = "columns"
-song_columns_list_format = "(40)[yellow]{a} (60)[]{t|f:Title}"
+song_columns_list_format = "(50)[yellow]{ar} (50)[]{t|f:Title}"
 playlist_disable_highlight_delay = 2
 
 song_list_format = "{%a - }{%t}|{%f}$R{$6%l$9}"
