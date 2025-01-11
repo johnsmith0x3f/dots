@@ -1,9 +1,6 @@
 # Ignore all log files.
 *.log
 
-# Ignore uuid files.
-.uuid
-
 ## mpd
 /etc/mpd/database
 /etc/mpd/pid
