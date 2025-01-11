@@ -171,6 +171,7 @@
 #  select_item
 #  scroll_down
 
+# Like vim, so use vim-like.
 def_key "h"
 	jump_to_parent_directory
 def_key "j"
@@ -179,6 +180,16 @@ def_key "k"
 	scroll_up
 def_key "l"
 	enter_directory
+def_key "l"
+	play_item
+def_key "^"
+  move_home
+def_key "$"
+  move_end
+def_key "f"
+  page_down
+def_key "b"
+  page_up
 
 #def_key "["
 #  scroll_up_album
@@ -191,19 +202,7 @@ def_key "l"
 #
 #def_key "}"
 #  scroll_down_artist
-#
-#def_key "page_up"
-#  page_up
-#
-#def_key "page_down"
-#  page_down
-#
-#def_key "home"
-#  move_home
-#
-#def_key "end"
-#  move_end
-#
+
 #def_key "insert"
 #  select_item
 #
