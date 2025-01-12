@@ -6,7 +6,7 @@
 /etc/mpd/pid
 /etc/mpd/playlists
 ## ncmpcpp
-/.config/ncmpcpp/lyrics
+/etc/ncmpcpp/lyrics
 ## zsh
 /.config/zsh/.antidote
 /.config/zsh/.histfile
