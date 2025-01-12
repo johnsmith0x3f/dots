@@ -16,6 +16,11 @@
 	font-family: Operator Mono;
 }
 
+.blank-window {
+  /* Window behind control center and on all other monitors */
+  background-color: transparent;
+}
+
 .notification-row {
   outline: none;
 }
@@ -292,11 +297,6 @@
 .control-center .control-center-list .notification .notification-default-action:hover,
 .control-center .control-center-list .notification .notification-action:hover {
   background-color: @noti-bg-hover;
-}
-
-.blank-window {
-  /* Window behind control center and on all other monitors */
-  background-color: #FFFFFF;
 }
 
 .floating-notifications {
