@@ -129,7 +129,7 @@ connected_message_on_startup = "yes"
 # Defines how long messages are supposed to be visible.
 message_delay_time = 1
 # Custom command that will be executed each time song changes.
-execute_on_song_change = "~/.config/ncmpcpp/scripts/notice.sh"
+execute_on_song_change = ""
 # Custom command that will be executed each time player state changes.
 execute_on_player_state_change = ""
 
