@@ -2,8 +2,12 @@
 # Options {{{
 # https://zsh.sourceforge.io/Intro/intro_16.html
 
-# When there is an unmatched quote, report an error
-# instead of prompting for another line.
+# Make $dirname behave like cd $dirname.
+setopt autocd
+# Allow omitting the '$' in cd $dirname.
+setopt cdablevars
+
+# Do not allow breaking quoted string into multiple lines.
 setopt cshjunkiequotes
 
 # Do not save adjacent duplicate commands to $HISTFILE.
