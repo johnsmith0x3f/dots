@@ -7,7 +7,3 @@
 /etc/mpd/playlists
 ## ncmpcpp
 /etc/ncmpcpp/lyrics
-## zsh
-/etc/zsh/.antidote
-/etc/zsh/.histfile
-/etc/zsh/.zsh_plugins.zsh
