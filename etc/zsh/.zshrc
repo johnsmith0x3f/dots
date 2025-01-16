@@ -7,27 +7,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Set alias.
-alias ls="eza --icons=auto --group-directories-first"
-alias grep="grep --color=auto"
-alias pacman="pacman --color=auto"
-alias yay="yay --color=auto"
-
-alias f="fastfetch"
-alias fetch="fastfetch"
-
-# I use nvim btw.
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-
 # Install antidote.
 [[ -d "${ZDOTDIR}/.antidote" ]] || git clone --depth=1 "https://github.com/mattmc3/antidote.git" "${ZDOTDIR}/.antidote"
 # Load plugins with antidote.
 source "${ZDOTDIR}/.antidote/antidote.zsh" && antidote load ${ZDOTDIR}/.zsh_plugins.txt
-
-# Load zoxide.
-eval "$(zoxide init zsh)"
 
 # Source the unhidden rc file.
 source "${ZDOTDIR}/rc.zsh"
