@@ -1,6 +1,30 @@
+#!/bin/zsh
+
+# Alias {{{
+# See https://zsh.sourceforge.io/Doc/Release/Shell-Grammar.html#Aliasing for details.
+
+# I like colors.
+alias ls="eza --icons=auto --group-directories-first"
+alias grep="grep --color=auto"
+alias pacman="pacman --color=auto"
+alias yay="yay --color=auto"
+
+# I fetch a lot.
+alias f="fastfetch"
+alias fetch="fastfetch"
+
+# I use lazygit.
+alias g="lazygit"
+
+# I use nvim btw.
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+
+# }}}
 
 # Options {{{
-# See https://zsh.sourceforge.io/Intro/intro_16.html for details.
+# See https://zsh.sourceforge.io/Doc/Release/Options.html#Options for details.
 
 # Make `$dirname` behave like `cd $dirname`.
 setopt autocd
@@ -14,26 +38,14 @@ setopt histignorespace
 
 # }}}
 
-# Set alias.
-alias ls="eza --icons=auto --group-directories-first"
-alias grep="grep --color=auto"
-alias pacman="pacman --color=auto"
-alias yay="yay --color=auto"
+# Plugins {{{
 
-alias f="fastfetch"
-alias fetch="fastfetch"
-
-# I use nvim btw.
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-
-# Source plugins.
+# Source local plugins.
 for plugin in ${ZDOTDIR}/plugins/*; do
 	source "$plugin"
 done
 
-# Create plugins directory in cache if not exists.
+# Create remote plugins directory in cache if not exists.
 plugins_dir="${XDG_CACHE_HOME}/zplugins"
 [[ -d "$plugins_dir" ]] || mkdir -p "$plugins_dir"
 # Load remote plugins from GitHub.
@@ -49,3 +61,6 @@ for plugin in $plugins; do
 	# Add the plugin to fpath and source it.
 	fpath+=( "$plugins_dir/$plugin" ) && source $plugins_dir/$plugin/${plugin#*/}.*zsh*
 done
+
+# }}}
+
