@@ -1,8 +1,0 @@
-
-# Basic zsh plugins that you can't live without.
-# zsh-users/zsh-autosuggestions
-# zsh-users/zsh-syntax-highlighting
-
-# The best zsh prompt ever.
-# romkatv/powerlevel10k
-

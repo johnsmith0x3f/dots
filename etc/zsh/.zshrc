@@ -7,11 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Install antidote.
-[[ -d "${ZDOTDIR}/.antidote" ]] || git clone --depth=1 "https://github.com/mattmc3/antidote.git" "${ZDOTDIR}/.antidote"
-# Load plugins with antidote.
-source "${ZDOTDIR}/.antidote/antidote.zsh" && antidote load ${ZDOTDIR}/.zsh_plugins.txt
-
 # Source the unhidden rc file.
 source "${ZDOTDIR}/rc.zsh"
 
