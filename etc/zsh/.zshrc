@@ -13,20 +13,22 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Set default applications.
+export PAGER="/bin/less"
 export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
 
-# Save command history, 1000 is far from enough.
+# Configure command history, 1000 is far from enough.
 export HISTFILE="${XDG_CACHE_HOME}/zhistfile"
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-# Setup input method (ibus).
+# Set input method.
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export GLFW_IM_MODULE="ibus" # for kitty
 
+# Set GTK2 config file location.
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 
 # Set this to null to avoid partial line prompts.
