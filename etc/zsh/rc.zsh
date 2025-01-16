@@ -22,3 +22,14 @@ for plugin in ${ZDOTDIR}/plugins/*; do
 	source "$plugin"
 done
 
+# Create plugins directory in cache.
+plugins_dir="${XDG_CACHE_HOME}/zplugins"
+[[ -d "$plugins_dir" ]] || mkdir -p "$plugins_dir"
+# Load remote plugins from GitHub.
+plugins=( "zsh-users/zsh-syntax-highlighting" )
+for plugin in $plugins; do
+	# Clone the plugin if it does not exist.
+	[[ -d "$plugins_dir/$plugin" ]] || git clone "https://github.com/$plugin.git" "$plugins_dir/$plugin" &>"/dev/null"
+	# Add the plugin to fpath and source it.
+	fpath+=( "$plugins_dir/$plugin" ) && source "$plugins_dir/$plugin/${plugin#*/}.plugin.zsh"
+done
