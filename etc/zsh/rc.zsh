@@ -1,10 +1,10 @@
 
 # Options {{{
-# https://zsh.sourceforge.io/Intro/intro_16.html
+# See https://zsh.sourceforge.io/Intro/intro_16.html for details.
 
-# Make $dirname behave like cd $dirname.
+# Make `$dirname` behave like `cd $dirname`.
 setopt autocd
-# Allow omitting the '$' in cd $dirname.
+# Allow `cd dirname` to behave like `cd $dirname`.
 setopt cdablevars
 
 # Do not allow breaking quoted string into multiple lines.
@@ -16,3 +16,9 @@ setopt histignoredups
 setopt histignorespace
 
 # }}}
+
+# Source plugins.
+for plugin in ${ZDOTDIR}/plugins/*; do
+	source "$plugin"
+done
+

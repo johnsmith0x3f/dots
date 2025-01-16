@@ -29,10 +29,8 @@ source "${ZDOTDIR}/.antidote/antidote.zsh" && antidote load ${ZDOTDIR}/.zsh_plug
 # Load zoxide.
 eval "$(zoxide init zsh)"
 
-# Source plugins.
-for plugin in ${ZDOTDIR}/plugins/*; do
-	source "$plugin"
-done
+# Source the unhidden rc file.
+source "${ZDOTDIR}/rc.zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
