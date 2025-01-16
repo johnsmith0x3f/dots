@@ -14,7 +14,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export EDITOR="nvim"
 
 # Save command history, 1000 is far from enough.
-export HISTFILE="${ZDOTDIR}/.histfile"
+export HISTFILE="${XDG_CACHE_HOME}/zhistfile"
 export HISTSIZE=10000
 export SAVEHIST=10000
 
