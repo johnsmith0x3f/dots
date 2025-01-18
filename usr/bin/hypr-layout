@@ -1,9 +1,8 @@
 #!/bin/bash
 
-layout="$( hyprctl getoption general:layout | head -n 1 | cut -d ' ' -f 2 )"
+case $1 in
+	toggle) [[ $( hyprctl getoption general:layout ) == *"dwindle"* ]] && layout="master" || layout="dwindle" ;;
+	*) layout="$1" ;;
+esac
 
-if [[ "$layout" == "dwindle" ]]; then
-	hyprctl keyword general:layout master
-else
-	hyprctl keyword general:layout dwindle
-fi
+hyprctl keyword general:layout $layout
