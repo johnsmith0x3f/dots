@@ -107,13 +107,13 @@ return {
 	},
 
 	-- Noice
-	{
-		"folke/noice.nvim",
+	--{
+	--	"folke/noice.nvim",
 
-		event = "VeryLazy",
+	--	event = "VeryLazy",
 
-		opts = {}
-	},
+	--	opts = {}
+	--},
 
 	-- Colorizer
 	{
