@@ -6,5 +6,5 @@ return {
 	-- UI Component Library for Neovim.
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- A fancy, configurable, notification manager for NeoVim.
-	{ "rcarriga/nvim-notify", lazy = true, opts = { top_down = false } },
+	--{ "rcarriga/nvim-notify", lazy = true, opts = { top_down = false } },
 }
