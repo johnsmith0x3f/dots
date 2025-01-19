@@ -43,7 +43,7 @@ super + {c,C}
 
 # Toggle pseudo_tiled/floating/fullscreen.
 super + {f,g,p}
-	bspc node -t {"~floating","~fullscreen","~pseudo_tiled"}
+	bspc node -t {~floating,~fullscreen,~pseudo_tiled}
 
 # Close/Kill a window.
 super + {x,X}
@@ -64,7 +64,6 @@ XF86Audio{LowerVolume,RaiseVolume,Mute,MicMute}
 	usr-volumectl {decrease "5%",increase "5%",toggle sink,toggle source}
 XF86Audio{Pause,Play,Prev,Next}
 	usr-playerctl {pause,play,prev,next}
-
 # Control brightness.
 XF86MonBrightness{Down,Up}
-	brightnessctl set {"10%-","+10%"}
+	brightnessctl set {"10%-","10%+"}
