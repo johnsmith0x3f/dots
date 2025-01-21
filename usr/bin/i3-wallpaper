@@ -1,4 +1,12 @@
 #!/bin/sh
 
-# Render wallpaper with feh.
-feh --bg-fill --no-fehbg "${XDG_DATA_HOME}/wallpapers/astronaut-holding-jellyfish.png"
+# Choose the wallpaper.
+wallpaper="${XDG_DATA_HOME}/wallpapers/$1"
+
+if which feh; then
+	# Render wallpaper with feh...
+	feh --bg-fill --no-fehbg "$wallpaper"
+else
+	# or with nitrogen.
+	nitrogen --set-auto "$wallpaper"
+fi

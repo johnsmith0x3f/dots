@@ -120,7 +120,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id picom --daemon
 
 # Render wallpaper.
-exec_always --no-startup-id i3-wallpaper
+exec_always --no-startup-id i3-wallpaper "astronaut-holding-jellyfish.png"
 
 # Render taskbar.
 exec_always --no-startup-id i3-taskbar
