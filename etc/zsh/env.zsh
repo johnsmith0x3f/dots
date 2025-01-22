@@ -25,6 +25,9 @@ export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 export GLFW_IM_MODULE="ibus" # for kitty
 
+# Set Python history file location.
+export PYTHON_HISTORY="${XDG_DATA_HOME}/python/history"
+
 # Set GTK2 config file location.
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 
