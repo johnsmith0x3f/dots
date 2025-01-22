@@ -46,7 +46,7 @@ for plugin in ${ZDOTDIR}/plugins/*; do
 done
 
 # Create remote plugins directory in cache if not exists.
-plugins_dir="${XDG_CACHE_HOME}/zplugins"
+plugins_dir="${XDG_DATA_HOME}/zsh/plugins"
 [[ -d "$plugins_dir" ]] || mkdir -p "$plugins_dir"
 # Load remote plugins from GitHub.
 plugins=(
@@ -57,7 +57,7 @@ plugins=(
 )
 for plugin in $plugins; do
 	# Clone the plugin if it does not exist.
-	[[ -d "$plugins_dir/$plugin" ]] || git clone "https://github.com/$plugin.git" "$plugins_dir/$plugin" &>"/dev/null"
+	[[ -d "$plugins_dir/$plugin" ]] || git clone "https://github.com/$plugin.git" "$plugins_dir/$plugin" &>/dev/null
 	# Add the plugin to fpath and source it.
 	fpath+=( "$plugins_dir/$plugin" ) && source $plugins_dir/$plugin/${plugin#*/}.*zsh*
 done
