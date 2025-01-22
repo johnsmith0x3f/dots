@@ -15,7 +15,7 @@ export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
 
 # Configure command history, 1000 is far from enough.
-export HISTFILE="${XDG_CACHE_HOME}/zhistfile"
+export HISTFILE="${XDG_DATA_HOME}/zsh/history"
 export HISTSIZE=10000
 export SAVEHIST=10000
 
