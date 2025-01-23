@@ -55,7 +55,7 @@ super + {Left,Down,Up,Right}
 
 # Toggle resize&rotate mode.
 super + r : {h,j,k,l}
-	bsp-resize {x -,y +,y -,x +} 20
+	bsp-resize {x -20,y +20,y -20,x +20}
 super + r : {q,e}
 	bspc node @/ --rotate {-90,90}
 
