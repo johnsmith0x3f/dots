@@ -1,1 +1,7 @@
+# Use a CJK font.
 set font "WenQuanYi Micro Hei 12"
+
+# Allow inversing colors.
+map <C-i> recolor
+set recolor-darkcolor "#BDE090"
+set recolor-lightcolor "#000000"
