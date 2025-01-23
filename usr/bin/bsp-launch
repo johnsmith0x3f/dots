@@ -1,6 +1,10 @@
 #!/bin/bash
 
-function x11-wall() {
+bsp-taskbar() {
+	source "${XDG_CONFIG_HOME}/polybar/$1/scripts/launch.sh"
+}
+
+bsp-wallpaper() {
 	# Choose the wallpaper.
 	local wallpaper="${XDG_DATA_HOME}/wallpapers/$1"
 
@@ -13,12 +17,7 @@ function x11-wall() {
 	fi
 }
 
-function way-wall() {
-	echo "TODO"
-}
-
-if [[ -z "$WAYLAND_DISPLAY" ]]; then
-	x11-wall "$1";
-else
-	way-wall "$1";
-fi
+case $1 in
+	taskbar) bsp-taskbar "$2" ;;
+	wallpaper) bsp-wallpaper "$2" ;;
+esac

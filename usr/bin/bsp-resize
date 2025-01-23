@@ -1,11 +1,10 @@
 #!/bin/bash
 
 direction="$1"
-sign="$2"
-step="$3"
+delta="$2"
 
 if [[ "$direction" == "x" ]]; then
-	bspc node --resize "right" "${sign}${step}" "0" || bspc node --resize "left" "${sign}${step}" "0"
+	bspc node --resize "right" $delta 0 || bspc node --resize "left" $delta 0
 else
-	bspc node --resize "bottom" "0" "${sign}${step}" || bspc node --resize "top" "0" "${sign}${step}"
+	bspc node --resize "bottom" 0 $delta || bspc node --resize "top" 0 $delta
 fi
