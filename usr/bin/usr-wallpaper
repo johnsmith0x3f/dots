@@ -1,0 +1,24 @@
+#!/bin/bash
+
+function x11-wall() {
+	# Choose the wallpaper.
+	local wallpaper="${XDG_DATA_HOME}/wallpapers/$1"
+
+	if which feh &>/dev/null; then
+		# Render wallpaper with feh...
+		feh --bg-fill --no-fehbg "$wallpaper"
+	else
+		# or with nitrogen.
+		nitrogen --set-auto "$wallpaper"
+	fi
+}
+
+function way-wall() {
+	echo "TODO"
+}
+
+if [[ -z "$WAYLAND_DISPLAY" ]]; then
+	x11-wall "$1";
+else
+	way-wall "$1";
+fi
