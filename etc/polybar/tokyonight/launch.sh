@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Terminate running instances.
+# Quit running instances.
 polybar-msg cmd quit
 
-# Support 1920x and 2560x.
+# Support 1920x and 2560x screens.
 config="${0%/*}/config-$( xrandr -q | grep "*" | grep -Eo "(1920|2560)" ).ini"
 
 # The order matters.
