@@ -27,7 +27,7 @@ bspc rule -a "steam" desktop="^9" state="floating"
 pgrep -x sxhkd || sxhkd -c "${XDG_CONFIG_HOME}/bspwm/sxhkdrc" &
 # Use picom as compositor.
 pgrep -x picom || picom -b
-# Render wallpaper with feh.
+# Render wallpaper.
 bsp-launch wallpaper "astronaut-holding-jellyfish.png"
 # Render taskbar.
 bsp-launch taskbar "tokyonight"
