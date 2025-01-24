@@ -1,7 +1,7 @@
 # $ZDOTDIR is set to ${HOME}/.config/zsh in /etc/zsh/zshenv.
 
 # Append user path.
-export PATH="${PATH}:/${HOME}/.local/bin"
+export PATH="${PATH}:${HOME}/.local/bin"
 
 # Set XDG Base Directories.
 export XDG_CONFIG_HOME="${HOME}/.config"
