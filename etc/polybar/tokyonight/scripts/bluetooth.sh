@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-if [[ "$( systemctl is-active "bluetooth.service" )" != "active" ]]; then
+if [ "$( systemctl is-active "bluetooth.service" )" != "active" ]; then
 	echo "󰂲"; exit 1
 fi
 
@@ -9,3 +9,4 @@ if ! bluetoothctl show | grep -q "PowerState: on"; then
 fi
 
 bluetoothctl info | grep -q "Connected: yes" && echo "󰂱" || echo "󰂯"
+
