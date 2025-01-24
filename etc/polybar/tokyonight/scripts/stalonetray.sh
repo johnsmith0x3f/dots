@@ -20,7 +20,7 @@ else
 
 	polybar-msg action "#droptray.hook.1"
 	stalonetray --background="#24283B" \
-	            --geometry="1x1+$dx+64" \
+	            --geometry="1x1+$1+64" \
 	            --kludges="force_icons_size" \
 	            --slot-size=32 \
 	            --window-type="toolbar" \
