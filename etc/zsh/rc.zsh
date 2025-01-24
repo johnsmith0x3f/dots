@@ -1,4 +1,3 @@
-#!/bin/zsh
 
 # Alias {{{
 # See https://zsh.sourceforge.io/Doc/Release/Shell-Grammar.html#Aliasing for details.

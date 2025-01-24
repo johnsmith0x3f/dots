@@ -1,3 +1,4 @@
+
 # $ZDOTDIR is set to ${HOME}/.config/zsh in /etc/zsh/zshenv.
 
 # Append user path.
@@ -10,9 +11,8 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Set default applications.
-export PAGER="/bin/less"
-export EDITOR="/bin/nvim"
-export VISUAL="/bin/nvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Configure command history, 1000 is far from enough.
 export HISTFILE="${XDG_DATA_HOME}/zsh/history"
@@ -34,4 +34,3 @@ export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
 
-# export ZLE_RPROMPT_INDENT=0 # might cause problems, use with care
