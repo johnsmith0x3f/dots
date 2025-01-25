@@ -1,7 +1,7 @@
 #!/bin/bash
 
 bsp-taskbar() {
-	sh -c "${XDG_CONFIG_HOME}/polybar/$1/launch.sh"
+	bspc config top_padding 44 && sh -c "${XDG_CONFIG_HOME}/polybar/$1/launch.sh"
 }
 
 bsp-wallpaper() {
