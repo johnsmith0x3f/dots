@@ -18,7 +18,7 @@
 	(workspaces)))
 
 ; Windows
-(defwindow bar :monitor 1
+(defwindow bar :monitor 0
                :wm-ignore true
                :geometry (geometry :x "8px" :y "0px"
                                    :anchor "center left"

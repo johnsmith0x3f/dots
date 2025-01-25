@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 workspaces() {
 
@@ -12,7 +12,7 @@ workspaces() {
 		if [[ "$desk" == "$focused" ]]; then
 			icon="󰮯"
 			class="workspace-focused"
-		elif echo "$occupied" | grep "$desk"; then
+		elif echo "$occupied" | grep -q "$desk"; then
 			icon="󰊠"
 			class="workspace-occupied"
 		else
