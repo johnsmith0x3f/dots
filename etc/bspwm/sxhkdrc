@@ -37,13 +37,14 @@ super + {h,j,k,l}
 # Shift the node to given direction.
 super + shift + {h,j,k,l}
 	bspc node -s {west,south,north,east}
+
 # Focus the next/prev window in the current desktop.
 super + {c,C}
 	bspc node -f {next,prev}.local.!hidden.window
 
 # Toggle pseudo_tiled/floating/fullscreen.
 super + {f,g,p}
-	bspc node -t {~floating,~fullscreen,~pseudo_tiled}
+	bspc node -t {"~floating","~fullscreen","~pseudo_tiled"}
 
 # Close/Kill a window.
 super + {x,X}
