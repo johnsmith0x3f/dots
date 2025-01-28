@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# Tell i3 to reserve space.
-i3-msg "gaps top all set 48px"
-# Quit all running polybar instances, then launch the bar for i3.
-polybar-msg cmd quit; polybar --config="${XDG_CONFIG_HOME}/polybar/i3/config.ini"
