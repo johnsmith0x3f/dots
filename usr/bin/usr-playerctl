@@ -7,12 +7,7 @@ MakePlayerD() {
 	fi
 
 	# Otherwise use mpc.
-	case $1 in
-		pause) mpc pause-if-playing ;;
-		play) mpc | grep "paused" && mpc play ;;
-		prev) mpc prev ;;
-		next) mpc next ;;
-	esac
+	mpc --quiet "$1"
 }
 
 case $1 in
@@ -20,4 +15,5 @@ case $1 in
 	play) MakePlayerD play || playerctl play ;;
 	prev) MakePlayerD prev || playerctl previous ;;
 	next) MakePlayerD next || playerctl next ;;
+	toggle) MakePlayerD toggle || playerctl play-pause ;;
 esac
