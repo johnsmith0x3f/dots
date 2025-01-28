@@ -117,7 +117,7 @@ bindsym $mod+r mode "resize"
 ############################################# Startups #############################################
 
 # Use picom as compositor.
-exec_always --no-startup-id picom --daemon
+exec_always --no-startup-id pgrep -x picom || picom -b
 
 # Render wallpaper.
 exec_always --no-startup-id i3-wallpaper "astronaut-holding-jellyfish.png"
