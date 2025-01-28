@@ -27,15 +27,10 @@ gaps outer 8px
 default_border none
 default_floating_border none
 
-############################################## Rules ###############################################
-
-assign [class="^(mpv)$"] $ws8
-for_window [class="^(KeePassXC|blueman-applet|mpv)$"] floating enable
-
 ############################################### Keys ###############################################
 
-# The lowest level of actions use the most extensive keys.
-bindsym $mod+$alt+e exec i3-msg exit
+# Use all mods for lowest-level actions.
+bindsym $mod+$alt+e exit
 bindsym $mod+$alt+r restart
 bindsym $mod+$alt+l exec --no-startup-id slock
 
@@ -63,7 +58,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
-# Launch applications.
+# Launch application launcher.
 bindsym $mod+space exec --no-startup-id dmenu_run -b
 
 # Change focus (vim-like keybinds).
@@ -76,7 +71,7 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-# Use Mouse+$mod to drag floating windows to their wanted position.
+# Use $mod+Mouse to drag floating windows to their wanted position.
 floating_modifier $mod
 
 # Set the position where new windows spawn.
@@ -91,23 +86,33 @@ bindsym $mod+g fullscreen toggle
 # Kill focused window. "x" stands for the close button.
 bindsym $mod+x kill
 
-# Use pactl to adjust volume.
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute "@DEFAULT_SINK@" toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute "@DEFAULT_SOURCE@" toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "@DEFAULT_SINK@" -10%
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "@DEFAULT_SINK@" +10%
-# Use brightnessctl to adjust brightness.
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
+# Control players.
+bindsym XF86AudioPause exec --no-startup-id usr-playerctl toggle
+bindsym XF86AudioPlay exec --no-startup-id usr-playerctl toggle
+bindsym XF86AudioPrev exec --no-startup-id usr-playerctl prev
+bindsym XF86AudioNext exec --no-startup-id usr-playerctl next
+# Toggle mute and adjust volume.
+bindsym XF86AudioMute exec --no-startup-id usr-volumectl toggle "sink"
+bindsym XF86AudioMicMute exec --no-startup-id usr-volumectl toggle "source"
+bindsym XF86AudioLowerVolume exec --no-startup-id usr-volumectl decrease "5%"
+bindsym XF86AudioRaiseVolume exec --no-startup-id usr-volumectl increase "5%"
+# Adjust brightness.
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set "5%-"
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set "5%+"
 
 ############################################## Modes ###############################################
 
 mode "resize" {
-	# Map keys.
-	bindsym h resize shrink width 20 px or 20 ppt
-	bindsym j resize grow height 20 px or 20 ppt
-	bindsym k resize shrink height 20 px or 20 ppt
-	bindsym l resize grow width 20 px or 20 ppt
+	# Grow in chosen direction.
+	bindsym h resize grow left 20 px
+	bindsym j resize grow down 20 px
+	bindsym k resize grow up 20 px
+	bindsym l resize grow right 20 px
+	# Shrink in chosen direction.
+	bindsym Shift+h resize shrink left 20 px
+	bindsym Shift+j resize shrink down 20 px
+	bindsym Shift+k resize shrink up 20 px
+	bindsym Shift+l resize shrink right 20 px
 
 	# Return to normal mode.
 	bindsym Escape mode "default"
@@ -117,8 +122,8 @@ bindsym $mod+r mode "resize"
 
 ############################################# Startups #############################################
 
-# Draw wallpaper.
-exec_always --no-startup-id feh --bg-fill --no-fehbg "${XDG_DATA_HOME}/wallpapers/astronaut-holding-jellyfish.png"
+# Draw background.
+exec_always --no-startup-id feh --bg-fill --no-fehbg "${XDG_DATA_HOME}/wallpapers/jellynaut.png"
 
 # Start compositor.
 exec_always --no-startup-id pgrep -x picom || picom -b
