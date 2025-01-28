@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 MakePlayerD() {
 	# Use playerctl if mpd-mpris is installed.
-	if which mpd-mpris > /dev/null; then
+	if which mpd-mpris >/dev/null; then
 		return 1
 	fi
 
