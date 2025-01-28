@@ -21,18 +21,14 @@ for_window [class="^(KeePassXC)$"] floating enable
 # Set two mod keys for wider range of keymaps.
 set $alt Mod1
 set $mod Mod4
-# Set default applications.
-set $terminal kitty
-set $launcher dmenu_run -b
-set $lockscreen slock
 
 # The lowest level of actions use the most extensive keys.
 bindsym $mod+$alt+e exec i3-msg exit
 bindsym $mod+$alt+r restart
-bindsym $mod+$alt+l exec --no-startup-id $lockscreen
+bindsym $mod+$alt+l exec --no-startup-id slock
 
 # Start default terminal.
-bindsym $mod+Return exec --no-startup-id $terminal
+bindsym $mod+Return exec --no-startup-id kitty
 
 # Define names for default workspaces. No fancy name needed.
 set $ws1 "1"
@@ -66,7 +62,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # Launch applications.
-bindsym $mod+space exec --no-startup-id $launcher
+bindsym $mod+space exec --no-startup-id dmenu_run -b
 
 # Change focus (vim-like keybinds).
 bindsym $mod+h focus left
@@ -93,11 +89,14 @@ bindsym $mod+g fullscreen toggle
 # Kill focused window. "x" stands for the close button.
 bindsym $mod+x kill
 
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+# Use pactl to adjust volume.
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute "@DEFAULT_SINK@" toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute "@DEFAULT_SOURCE@" toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "@DEFAULT_SINK@" -10%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "@DEFAULT_SINK@" +10%
+# Use brightnessctl to adjust brightness.
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
 
 ############################################## Modes ###############################################
 
@@ -116,11 +115,11 @@ bindsym $mod+r mode "resize"
 
 ############################################# Startups #############################################
 
-# Use picom as compositor.
+# Draw wallpaper.
+exec_always --no-startup-id feh --bg-fill --no-fehbg "${XDG_DATA_HOME}/wallpapers/astronaut-holding-jellyfish.png"
+
+# Start compositor.
 exec_always --no-startup-id pgrep -x picom || picom -b
 
-# Render wallpaper.
-exec_always --no-startup-id i3-wallpaper "astronaut-holding-jellyfish.png"
-
 # Render taskbar.
-exec_always --no-startup-id i3-taskbar
+exec_always --no-startup-id pgrep -x polybar || polybar -r
