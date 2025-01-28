@@ -4,33 +4,11 @@
 
 ############################################## Basics ##############################################
 
-# Add gaps for better distinguishing windows.
-gaps inner 8px
-gaps outer 8px
-
-# No borders. Keep it simple.
-default_border none
-default_floating_border none
-
-############################################### Rule ###############################################
-
-for_window [class="^(KeePassXC)$"] floating enable
-
-############################################### Keys ###############################################
-
 # Set two mod keys for wider range of keymaps.
 set $alt Mod1
 set $mod Mod4
 
-# The lowest level of actions use the most extensive keys.
-bindsym $mod+$alt+e exec i3-msg exit
-bindsym $mod+$alt+r restart
-bindsym $mod+$alt+l exec --no-startup-id slock
-
-# Start default terminal.
-bindsym $mod+Return exec --no-startup-id kitty
-
-# Define names for default workspaces. No fancy name needed.
+# Define names of default workspaces. No fancy name needed.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -40,6 +18,30 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
+
+# Insert gaps.
+gaps inner 8px
+gaps outer 8px
+
+# No borders. Keep it simple.
+default_border none
+default_floating_border none
+
+############################################## Rules ###############################################
+
+assign [class="^(mpv)$"] $ws8
+for_window [class="^(KeePassXC|blueman-applet|mpv)$"] floating enable
+
+############################################### Keys ###############################################
+
+# The lowest level of actions use the most extensive keys.
+bindsym $mod+$alt+e exec i3-msg exit
+bindsym $mod+$alt+r restart
+bindsym $mod+$alt+l exec --no-startup-id slock
+
+# Start default terminal.
+bindsym $mod+Return exec --no-startup-id kitty
+
 # Switch to workspace.
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
