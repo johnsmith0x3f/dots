@@ -1,0 +1,87 @@
+// Rofi v1.7.5
+
+configuration {
+	modes:                 [ "drun" , "run", "window" ];
+	font:                  "Roboto Mono 12";
+	display-drun:          "󱓞 App";
+	display-run:           "󰞷 Run";
+	display-window:        "󱂬 Win";
+	show-icons:            true;
+}
+
+* {
+	background:            #1F2335;
+	background-alt:        #292E42;
+	foreground:            #C0CAF5;
+	foreground-alt:        #737AA2;
+
+	button-bg:             #C3E88D;
+	prompt-bg:             #7AA2F7;
+
+	background-color:      inherit;
+	text-color:            inherit;
+}
+
+window {
+	width:                 960px;
+	height:                720px; // fix height to limit the number of elements
+	background-color:      @background;
+	text-color:            @foreground;
+}
+
+mainbox {
+	children:              [ "mode-switcher", "inputbar", "listview" ];
+}
+
+mode-switcher {
+	padding:               24px 60px;
+} // children: [ "button", ..., "button" ];
+
+button {
+	border-radius:         12px;
+	padding:               12px;
+	cursor:                pointer;
+}
+button.selected {
+	background-color:      @button-bg;
+	text-color:            @background;
+}
+
+inputbar {
+	padding:               0px 36px;
+	children:              [ "prompt", "entry" ];
+}
+
+prompt {
+	border-radius:         6px;
+	padding:               6px 18px;
+	background-color:      @prompt-bg;
+	text-color:            @background;
+}
+
+entry {
+	padding:               6px 18px;
+	placeholder:           "Search";
+	placeholder-color:     @foreground-alt;
+	cursor:                text;
+}
+
+listview {
+	margin:                6px 12px;
+	padding:               6px 12px;
+	spacing:               6px;
+} // children: [ "element", ..., "element" ];
+
+element {
+	spacing:               12px;
+	padding:               12px;
+	border-radius:         12px;
+	cursor:                pointer;
+}
+element.selected {
+	background-color:      @background-alt;
+} // children: [ "element-icon", "element-text" ];
+
+element-icon {
+	size:                  32px;
+}
