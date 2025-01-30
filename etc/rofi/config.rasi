@@ -1,1 +1,73 @@
-@theme "dark"
+// Rofi v1.7.5
+
+configuration {
+	modes:                 [ "drun" , "run", "window" ];
+	font:                  "Roboto Mono 12";
+	display-drun:          "󱓞 App";
+	display-run:           "󰞷 Run";
+	display-window:        "󱂬 Win";
+	show-icons:            true;
+}
+
+// Override default theme.
+@theme "/dev/null"
+
+* {
+	background:            #101010;
+	background-alt:        #2C2C2C;
+	foreground:            #FFFFFF;
+	foreground-alt:        #5B5B5B;
+
+	background-color:      inherit;
+	text-color:            inherit;
+}
+
+window {
+	width:                 420px;
+	background-color:      @background;
+	text-color:            @foreground;
+}
+
+mainbox {
+	padding:               12px;
+	children:              [ "inputbar", "listview" ];
+}
+
+inputbar {
+	padding:               60px 12px;
+	background-image:      url("~/.local/share/wallpapers/dotdeer.png", width);
+	spacing:               12px;
+	children:              [ "prompt", "entry" ];
+}
+
+prompt {
+	border-radius:         6px;
+	padding:               6px 18px;
+	background-color:      @background-alt;
+}
+
+entry {
+	border-radius:         6px;
+	padding:               6px 18px;
+	cursor:                text;
+}
+
+listview {
+	padding:               6px 0;
+	spacing:               6px;
+	lines:                 8;
+} // children: [ "element", ..., "element" ];
+
+element {
+	border-radius:         6px;
+	padding:               6px;
+	spacing:               8px;
+	cursor:                pointer;
+}
+element.selected {
+	background-color:      @background-alt;
+} // children: [ "element-icon", "element-text" ];
+
+element-icon {
+	size:                  16px;
+}
