@@ -10,53 +10,37 @@ configuration {
 }
 
 * {
-	background:            #1F2335;
-	background-alt:        #292E42;
-	foreground:            #C0CAF5;
-	foreground-alt:        #737AA2;
-
-	button-bg:             #C3E88D;
-	prompt-bg:             #7AA2F7;
+	background:            #101010;
+	background-alt:        #2C2C2C;
+	foreground:            #FFFFFF;
+	foreground-alt:        #5B5B5B;
 
 	background-color:      inherit;
 	text-color:            inherit;
 }
 
 window {
-	width:                 960px;
-	height:                720px; // fix height to limit the number of elements
+	width:                 420px;
 	background-color:      @background;
 	text-color:            @foreground;
 }
 
 mainbox {
-	children:              [ "mode-switcher", "inputbar", "listview" ];
-}
-
-mode-switcher {
-	padding:               24px 60px;
-} // children: [ "button", ..., "button" ];
-
-button {
-	border-radius:         12px;
 	padding:               12px;
-	cursor:                pointer;
-}
-button.selected {
-	background-color:      @button-bg;
-	text-color:            @background;
+	children:              [ "inputbar", "listview" ];
 }
 
 inputbar {
-	padding:               0px 36px;
+	border-radius:         12px;
+	padding:               60px 12px;
+	background-image:      url("~/.local/share/wallpapers/dotdeer.png", width);
 	children:              [ "prompt", "entry" ];
 }
 
 prompt {
 	border-radius:         6px;
 	padding:               6px 18px;
-	background-color:      @prompt-bg;
-	text-color:            @background;
+	background-color:      @background-alt;
 }
 
 entry {
@@ -67,15 +51,14 @@ entry {
 }
 
 listview {
-	margin:                6px 12px;
-	padding:               6px 12px;
+	padding:               6px 0;
 	spacing:               6px;
 } // children: [ "element", ..., "element" ];
 
 element {
-	spacing:               12px;
-	padding:               12px;
-	border-radius:         12px;
+	spacing:               8px;
+	padding:               6px;
+	border-radius:         6px;
 	cursor:                pointer;
 }
 element.selected {
@@ -83,5 +66,5 @@ element.selected {
 } // children: [ "element-icon", "element-text" ];
 
 element-icon {
-	size:                  32px;
+	size:                  16px;
 }
