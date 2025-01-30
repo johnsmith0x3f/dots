@@ -31,9 +31,9 @@ mainbox {
 }
 
 inputbar {
-	border-radius:         12px;
 	padding:               60px 12px;
 	background-image:      url("~/.local/share/wallpapers/dotdeer.png", width);
+	spacing:               12px;
 	children:              [ "prompt", "entry" ];
 }
 
@@ -44,21 +44,21 @@ prompt {
 }
 
 entry {
+	border-radius:         6px;
 	padding:               6px 18px;
-	placeholder:           "Search";
-	placeholder-color:     @foreground-alt;
 	cursor:                text;
 }
 
 listview {
 	padding:               6px 0;
 	spacing:               6px;
+	lines:                 8;
 } // children: [ "element", ..., "element" ];
 
 element {
-	spacing:               8px;
-	padding:               6px;
 	border-radius:         6px;
+	padding:               6px;
+	spacing:               8px;
 	cursor:                pointer;
 }
 element.selected {
