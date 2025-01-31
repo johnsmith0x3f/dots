@@ -6,9 +6,9 @@ return {
 	-- One Dark Pro
 	{ "olimorris/onedarkpro.nvim", priority = 1000 },
 	-- Oxocarbon
-	{ "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
+	{ "nyoom-engineering/oxocarbon.nvim", priority = 1000, config = function() vim.cmd("colorscheme oxocarbon") end },
 	-- Tokyo Night
-	{ "folke/tokyonight.nvim", priority = 1000, config = function() vim.cmd("colorscheme tokyonight-storm") end },
+	{ "folke/tokyonight.nvim", priority = 1000 },
 
 	-- }}}
 	
