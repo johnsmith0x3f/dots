@@ -59,7 +59,7 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # Launch application launcher.
-bindsym $mod+space exec --no-startup-id dmenu_run -b
+bindsym $mod+space exec --no-startup-id rofi -show
 
 # Change focus (vim-like keybinds).
 bindsym $mod+h focus left
