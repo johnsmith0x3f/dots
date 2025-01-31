@@ -27,6 +27,11 @@ gaps outer 8px
 default_border none
 default_floating_border none
 
+########################################### Window Rules ###########################################
+
+assign [class="^(mpv)$"] $ws8
+for_window [class="^(KeePassXC|mpv|qBittorrent)$"] floating enable
+
 ############################################### Keys ###############################################
 
 # Use all mods for lowest-level actions.
