@@ -73,9 +73,9 @@ listview {
 } // children: [ "element", ..., "element" ];
 
 element {
-	spacing:               12px;
-	padding:               12px;
 	border-radius:         12px;
+	padding:               12px;
+	spacing:               12px;
 	cursor:                pointer;
 }
 element.selected {
