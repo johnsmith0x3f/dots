@@ -5,6 +5,8 @@ return {
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
 	-- One Dark Pro
 	{ "olimorris/onedarkpro.nvim", priority = 1000 },
+	-- Oxocarbon
+	{ "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
 	-- Tokyo Night
 	{ "folke/tokyonight.nvim", priority = 1000, config = function() vim.cmd("colorscheme tokyonight-storm") end },
 
