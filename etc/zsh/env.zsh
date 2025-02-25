@@ -12,7 +12,7 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Set default applications.
 export EDITOR="nvim"
-export VISUAL="nvim"
+export MANPAGER="nvim +Man!"
 
 # Configure command history, 1000 is far from enough.
 export HISTFILE="${XDG_DATA_HOME}/zsh/history"
