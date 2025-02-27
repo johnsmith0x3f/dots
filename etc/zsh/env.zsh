@@ -21,6 +21,15 @@ export SAVEHIST=10000
 
 # Clean up your $HOME!
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+export GOPATH="${XDG_DATA_HOME}/go"
+export GOMODCACHE="${XDG_CACHE_HOME}/go/mod"
+export GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
+export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
+export PYTHON_HISTORY="${XDG_STATE_HOME}/python/history"
+export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
+export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
+export WGETRC="${XDG_CONFIG_HOME}/wget/wgetrc"
+export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
 
 # Configure input method preferences.
 export XMODIFIERS="@im=ibus"
@@ -29,10 +38,6 @@ export QT_IM_MODULE="ibus"
 export GLFW_IM_MODULE="ibus" # for kitty
 
 # Set Python history file location.
-export PYTHON_HISTORY="${XDG_DATA_HOME}/python/history"
-
-# Set GTK2 config file location.
-export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
