@@ -2,13 +2,13 @@
 # $ZDOTDIR is set to ${HOME}/.config/zsh in /etc/zsh/zshenv.
 
 # Append user path.
-export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${PATH}:${HOME}/.usr/bin"
 
 # Set XDG Base Directories.
-export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CONFIG_HOME="${HOME}/.etc"
 export XDG_CACHE_HOME="${HOME}/.cache"
-export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_STATE_HOME="${HOME}/.local/state"
+export XDG_DATA_HOME="${HOME}/.usr/share"
+export XDG_STATE_HOME="${HOME}/.usr/state"
 
 # Set default applications.
 export EDITOR="nvim"
@@ -18,6 +18,9 @@ export MANPAGER="nvim +Man!"
 export HISTFILE="${XDG_DATA_HOME}/zsh/history"
 export HISTSIZE=10000
 export SAVEHIST=10000
+
+# Clean up your $HOME!
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 
 # Configure input method preferences.
 export XMODIFIERS="@im=ibus"
