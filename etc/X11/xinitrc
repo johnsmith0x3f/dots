@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Stay away from my $HOME!
+USERXSESSION="${XDG_CACHE_HOME}/X11/xsession"
+USERXSESSIONRC="${XDG_CACHE_HOME}/X11/xsessionrc"
+ALTUSERXSESSION="${XDG_CACHE_HOME}/X11/Xsession"
+ERRFILE="${XDG_CACHE_HOME}/X11/xsession-errors"
+xinitdir="/etc/X11/xinit"
+sysresources="${xinitdir}/.Xresources"
+sysmodmap="${xinitdir}/.Xmodmap"
+userresources="${XDG_CONFIG_HOME}/X11/Xresources"
+usermodmap="${XDG_CONFIG_HOME}/X11/Xmodmap"
+
+# Merge in defaults...
+for resources in {"$sysresources","$userresources"}; do
+	if [ -f "$resources" ]; then
+		if [ -x "/bin/cpp" ]; then
+			xrdb -merge "$resources"
+		else
+			xrdb -nocpp -merge "$resources"
+		fi
+	fi
+done
+# and keymaps.
+for modmap in {"$sysmodmap","$usermodmap"}; do
+	if [ -f "$modmap" ]; then
+		xmodmap "$modmap"
+	fi
+done
+# Unset the variables after use.
+unset resources modmap
+
+# Start some nice programs.
+if [ -d $xinitdir/xinitrc.d ] ; then
+	for f in "$xinitdir/xinitrc.d"/?*.sh ; do
+		[ -x "$f" ] && . "$f"
+	done
+	# Unset the variable after use.
+	unset f
+fi
