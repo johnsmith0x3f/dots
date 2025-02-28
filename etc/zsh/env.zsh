@@ -1,5 +1,4 @@
-
-# $ZDOTDIR is set to ${HOME}/.config/zsh in /etc/zsh/zshenv.
+# $ZDOTDIR is set to ${HOME}/.etc/zsh in /etc/zsh/zshenv.
 
 # Append user path.
 export PATH="${PATH}:${HOME}/.usr/bin"
@@ -30,6 +29,8 @@ export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
 export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
 export WGETRC="${XDG_CONFIG_HOME}/wget/wgetrc"
 export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
+export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
+export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
 
 # Configure input method preferences.
 export XMODIFIERS="@im=ibus"
