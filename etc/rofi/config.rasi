@@ -34,8 +34,9 @@ mainbox {
 }
 
 inputbar {
+	border-radius:         6px;
 	padding:               60px 12px;
-	background-image:      url("~/.local/share/wallpapers/dotdeer.png", width);
+	background-image:      url("~/.usr/share/wallpapers/dotdeer.png", width);
 	spacing:               12px;
 	children:              [ "prompt", "entry" ];
 }
@@ -67,7 +68,3 @@ element {
 element.selected {
 	background-color:      @background-alt;
 } // children: [ "element-icon", "element-text" ];
-
-element-icon {
-	size:                  16px;
-}
