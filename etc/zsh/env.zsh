@@ -19,6 +19,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 # Clean up your $HOME!
+export ANDROID_SDK_HOME="${XDG_DATA_HOME}/android" # seems not working
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export GOPATH="${XDG_DATA_HOME}/go"
 export GOMODCACHE="${XDG_CACHE_HOME}/go/mod"
