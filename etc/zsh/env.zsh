@@ -19,7 +19,8 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 # Clean up your $HOME!
-export ANDROID_SDK_HOME="${XDG_DATA_HOME}/android" # seems not working
+export ANDROID_SDK_HOME="${XDG_DATA_HOME}/android/SDK" # seems not working for adb
+export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export GOPATH="${XDG_DATA_HOME}/go"
 export GOMODCACHE="${XDG_CACHE_HOME}/go/mod"
@@ -38,7 +39,7 @@ export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
-export GLFW_IM_MODULE="ibus" # for kitty
+export GLFW_IM_MODULE="ibus" # for kitty, value is always ibus
 
 # Set Python history file location.
 
