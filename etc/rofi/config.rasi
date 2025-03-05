@@ -18,8 +18,10 @@ configuration {
 	foreground:            #FFFFFF;
 	foreground-alt:        #5B5B5B;
 
+	border-radius:         6px;
 	background-color:      inherit;
 	text-color:            inherit;
+	spacing:               8px;
 }
 
 window {
@@ -34,35 +36,28 @@ mainbox {
 }
 
 inputbar {
-	border-radius:         6px;
 	padding:               60px 12px;
 	background-image:      url("~/.usr/share/wallpapers/dotdeer.png", width);
-	spacing:               12px;
 	children:              [ "prompt", "entry" ];
 }
 
 prompt {
-	border-radius:         6px;
 	padding:               6px 18px;
 	background-color:      @background-alt;
 }
 
 entry {
-	border-radius:         6px;
 	padding:               6px 18px;
 	cursor:                text;
 }
 
 listview {
 	padding:               6px 0;
-	spacing:               6px;
 	lines:                 8;
 } // children: [ "element", ..., "element" ];
 
 element {
-	border-radius:         6px;
 	padding:               6px;
-	spacing:               8px;
 	cursor:                pointer;
 }
 element.selected {
