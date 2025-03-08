@@ -20,7 +20,7 @@ return {
 	},
 	-- Copilot Chat
 	{
-		"CopilotC-Nvim/CopilotChat.nvim",
+		"CopilotC-Nvim/CopilotChat.nvim", branch = "main",
 
 		build = "make tiktoken", -- only on MacOS or Linux
 
