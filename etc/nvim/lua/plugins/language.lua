@@ -1,31 +1,41 @@
+-- Lists {{{
+
+local sitters = {
+	"bash",
+	"c",
+	"cpp",
+	"ini",
+	"lua",
+	"markdown",
+	"markdown_inline",
+	"rasi",
+	"regex",
+	"ron",
+	"rust",
+	"vim",
+	"vimdoc",
+	"yuck"
+}
+
 local servers = {
 	"clangd",
 	"pylsp"
 }
 
+-- }}}
+
 return {
 -- Treesitter {{{
 	{
 		"nvim-treesitter/nvim-treesitter",
+
 		build = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 		
 		config = function()
 			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"bash",
-					"c",
-					"cpp",
-					"ini",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"rasi",
-					"vim",
-					"vimdoc",
-					"yuck"
-				},
+				ensure_installed = { sitters },
 				highlight = {
 					enable = true,
 					additional_vim_regex_highlighting = false
@@ -78,7 +88,9 @@ return {
 			vim.g.vimtex_view_method = "zathura"
 			-- Disable pop-up warnings.
 			vim.g.vimtex_quickfix_open_on_warning = 0
-		end
+		end,
+
+		ft = "tex"
 	},
 
 	-- Markdown
@@ -86,6 +98,13 @@ return {
 		"OXY2DEV/markview.nvim",
 
 		ft = "markdown"
+	},
+
+	-- Rust
+	{
+		"mrcjkb/rustaceanvim", version = "^5", lazy = false,
+
+		ft = "rust"
 	}
 
 -- }}}
