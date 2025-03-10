@@ -1,0 +1,8 @@
+# Alacritty config
+
+[font]
+normal = { family = "Comic Code", style = "Regular" }
+
+[window]
+dimensions = { columes = 80, lines = 24 }
+padding = { x = 36, y = 36 }
