@@ -1,0 +1,86 @@
+# Ghostty config
+
+# Set the colorscheme.
+theme = "tokyonight-storm"
+
+# Font {{{
+
+# Set font families.
+font-family = "Comic Code"
+# Set font features.
+font-feature = "-dlig"
+# Set font size (in pts).
+font-size = 15
+
+# Map the Nerd Font (v3.3.0) glyphs.
+# See <https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points> for details.
+## IEC Power Symbols
+font-codepoint-map = "U+23FB-U+23FE,U+2B58=FiraMono Nerd Font Mono"
+## Box Drawing
+font-codepoint-map = "U+2500-U+259F=FiraMono Nerd Font Mono"
+## Octicons
+font-codepoint-map = "U+2665,U+26A1,U+F400-U+F533=FiraMono Nerd Font Mono"
+## Heavy Angle Brackets
+font-codepoint-map = "U+276C-U+2771=FiraMono Nerd Font Mono"
+## Pomicons
+font-codepoint-map = "U+E000-U+E00A=FiraMono Nerd Font Mono"
+## Powerline Symbols + Powerline Extra Symbols
+#font-codepoint-map = "U+E0A0-U+E0A3,U+E0B0-U+E0C8,U+E0CA,U+E0CC-U+E0D7=FiraMono Nerd Font Mono"
+## Font Awesome + Font Awesome Extension
+font-codepoint-map = "U+E200-U+E2A9,U+ED00-U+F2FF=FiraMono Nerd Font Mono"
+## Weather
+font-codepoint-map = "U+E300-U+E3E3=FiraMono Nerd Font Mono"
+## Seti-UI + Custom
+font-codepoint-map = "U+E5FA-U+E6B7=FiraMono Nerd Font Mono"
+## Devicons
+font-codepoint-map = "U+E700-U+E8EF=FiraMono Nerd Font Mono"
+## Codicons
+font-codepoint-map = "U+EA60-U+EC1E=FiraMono Nerd Font Mono"
+## Progress
+font-codepoint-map = "U+EE00-U+EE0B=FiraMono Nerd Font Mono"
+## Font Logos
+font-codepoint-map = "U+F300-U+F381=FiraMono Nerd Font Mono"
+## Material Design Icons
+font-codepoint-map = "U+F0001-U+F1AF0=FiraMono Nerd Font Mono"
+
+# }}}
+
+# Window {{{
+
+# Set window shape.
+window-width = 80
+window-height = 24
+# Disable window decorations.
+window-decoration = "none"
+# Add padding areas to the window.
+window-padding-x = 36
+window-padding-y = 36
+window-padding-balance = true
+window-padding-color = "background"
+
+# }}}
+
+# Keybinds {{{
+
+# Reload ghostty config.
+keybind = "alt+ctrl+r=reload_config"
+
+# Spawn a new tab.
+keybind = "alt+t=new_tab"
+
+# Hop between tabs.
+keybind = "alt+1=goto_tab:1"
+keybind = "alt+2=goto_tab:2"
+keybind = "alt+3=goto_tab:3"
+keybind = "alt+4=goto_tab:4"
+keybind = "alt+5=goto_tab:5"
+# Go to adjacent tabs.
+keybind = "alt+j=next_tab"
+keybind = "alt+k=previous_tab"
+# Move tabs.
+keybind = "alt+shift+j=move_tab:+1"
+keybind = "alt+shift+k=move_tab:-1"
+
+# }}}
+
+# vim:ft=conf
