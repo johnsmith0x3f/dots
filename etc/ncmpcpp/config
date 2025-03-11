@@ -105,11 +105,11 @@
 ###### Directories ######
 
 # Directory for storing ncmpcpp config files.
-ncmpcpp_directory = ~/.config/ncmpcpp
+ncmpcpp_directory = "~/.etc/ncmpcpp"
 # Directory for storing downloaded lyrics.
-lyrics_directory = ~/.config/ncmpcpp/lyrics
+lyrics_directory = "~/.etc/ncmpcpp/lyrics"
 # Directory for storing music.
-mpd_music_dir = ~/Music
+mpd_music_dir = "~/Music"
 
 
 
