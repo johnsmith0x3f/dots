@@ -17,7 +17,7 @@ font-size = 15
 ## IEC Power Symbols
 font-codepoint-map = "U+23FB-U+23FE,U+2B58=FiraMono Nerd Font Mono"
 ## Box Drawing
-font-codepoint-map = "U+2500-U+259F=FiraMono Nerd Font Mono"
+#font-codepoint-map = "U+2500-U+259F=FiraMono Nerd Font Mono"
 ## Octicons
 font-codepoint-map = "U+2665,U+26A1,U+F400-U+F533=FiraMono Nerd Font Mono"
 ## Heavy Angle Brackets
