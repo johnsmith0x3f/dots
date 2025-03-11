@@ -35,14 +35,6 @@ export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
 export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
 export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
 
-# Configure input method preferences.
-export XMODIFIERS="@im=ibus"
-export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="ibus"
-export GLFW_IM_MODULE="ibus" # for kitty, value is always ibus
-
-# Set Python history file location.
-
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
 
