@@ -43,6 +43,23 @@ font-codepoint-map = "U+F300-U+F381=FiraMono Nerd Font Mono"
 ## Material Design Icons
 font-codepoint-map = "U+F0001-U+F1AF0=FiraMono Nerd Font Mono"
 
+# Map CJK glyphs.
+# See <https://symbl.cc/en/unicode/blocks> for details.
+## CJK Radicals Supplement
+font-codepoint-map = "U+2E80-U+2EFF=LXGW WenKai Mono"
+## CJK Symbols and Punctuation
+font-codepoint-map = "U+3000-U+303F=LXGW WenKai Mono"
+## CJK Compatibility
+font-codepoint-map = "U+3300-U+33FF=LXGW WenKai Mono"
+## CJK Strokes
+font-codepoint-map = "U+31C0-U+31EF=LXGW WenKai Mono"
+## CJK Unified Ideographs + Extension A
+font-codepoint-map = "U+3400-U+4DBF,U+4E00-U+9FFF=LXGW WenKai Mono"
+## CJK Compatibility Ideographs + Supplement
+font-codepoint-map = "U+F900-U+FAFF,U+2F800-U+2FA1F=LXGW WenKai Mono"
+## CJK Unified Ideographs Extension BCDEFG
+font-codepoint-map = "U+20000-U+2A6DF,U+2A700-U+2EBEF,U+30000-U+3134F=LXGW WenKai Mono"
+
 # }}}
 
 # Window {{{
@@ -62,6 +79,9 @@ window-padding-color = "background"
 
 # Keybinds {{{
 
+# Remove all the default keybinds.
+keybind = "clear"
+
 # Reload ghostty config.
 keybind = "alt+ctrl+r=reload_config"
 
@@ -80,6 +100,10 @@ keybind = "alt+k=previous_tab"
 # Move tabs.
 keybind = "alt+shift+j=move_tab:+1"
 keybind = "alt+shift+k=move_tab:-1"
+
+# Copy & Paste text.
+keybind = "ctrl+shift+c=copy_to_clipboard"
+keybind = "ctrl+shift+v=paste_from_clipboard"
 
 # }}}
 
