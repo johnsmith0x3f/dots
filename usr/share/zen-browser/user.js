@@ -242,3 +242,6 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 /****************************************************************************
  * END: BETTERFOX                                                           *
 ****************************************************************************/
+
+user_pref("zen.urlbar.replace-newtab", false);
+user_pref("zen.view.experimental-no-window-controls", true);
