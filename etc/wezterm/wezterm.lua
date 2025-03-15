@@ -14,7 +14,7 @@ config.enable_scroll_bar = false
 config.color_scheme = "Tokyo Night Storm"
 
 -- Set windows padding.
-local padding = "72px"
+local padding = "36px"
 config.window_padding = {
 	left = padding,
 	bottom = padding,
@@ -24,11 +24,11 @@ config.window_padding = {
 
 -- Fonts.
 config.font = wezterm.font_with_fallback({
-	"Operator Mono",
+	"Comic Code",
+	"LXGW WenKai Mono",
 	"FiraMono Nerd Font Mono",
-	"KingHwa_OldSong"
 })
-config.font_size = 18
+config.font_size = 15
 
 -- Keymaps {{{
 
