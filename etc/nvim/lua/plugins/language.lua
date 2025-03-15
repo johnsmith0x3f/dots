@@ -20,8 +20,13 @@ local sitters = {
 
 local servers = {
 	"clangd",
+	"lua_ls",
 	"pylsp"
 }
+local servers_install_only = {
+	"rust_analyzer"
+}
+table.move(servers, 1, #servers, #servers_install_only + 1, servers_install_only)
 
 -- }}}
 
@@ -63,7 +68,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 
 		config = function()
-			require("mason-lspconfig").setup({ ensure_installed = servers })
+			require("mason-lspconfig").setup({ ensure_installed = servers_install_only })
 		end
 	},
 	{
