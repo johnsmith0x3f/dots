@@ -27,9 +27,10 @@ return {
 		keys = {
 			{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" }
 		},
-		
+
 		opts = {
-			debug = true -- enable debugging
+			debug = true, -- enable debugging
+			model = "o3-mini"
 		}
 	}
 }
