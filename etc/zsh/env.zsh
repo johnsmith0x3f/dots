@@ -1,8 +1,5 @@
 # $ZDOTDIR is set to ${HOME}/.etc/zsh in /etc/zsh/zshenv.
 
-# Append user path.
-export PATH="${PATH}:${HOME}/.usr/bin"
-
 # Set XDG Base Directories.
 export XDG_CONFIG_HOME="${HOME}/.etc"
 export XDG_CACHE_HOME="${HOME}/.cache"
@@ -38,3 +35,13 @@ export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
 
+# Append user path.
+usr_paths=(
+	"${HOME}/.usr/bin"
+	"${XDG_DATA_HOME}/cargo/bin"
+)
+for dir in $usr_paths; do
+	[[ "${PATH}" != *"$dir"* ]] && export PATH="${PATH}:$dir"
+done
+# Unset when done.
+unset dir usr_paths
