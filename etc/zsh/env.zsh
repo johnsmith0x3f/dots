@@ -16,7 +16,14 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 
 # Clean up your $HOME!
-export ANDROID_SDK_HOME="${XDG_DATA_HOME}/android/SDK" # seems not working for adb
+export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${XDG_CONFIG_HOME}/java"
+export ANDROID_AVD_HOME="${XDG_DATA_HOME}/android/AVD"
+export ANDROID_EMULATOR_HOME="${XDG_DATA_HOME}/android" # not working
+export ANDROID_HOME="${XDG_DATA_HOME}/android/SDK"
+export ANDROID_NDK_ROOT="${XDG_DATA_HOME}/android/NDK"
+export ANDROID_SDK_HOME="${XDG_DATA_HOME}/android/SDK"
+export ANDROID_SDK_ROOT="${XDG_DATA_HOME}/android/SDK"
+export ANDROID_USER_HOME="${XDG_DATA_HOME}/android" # not working
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export GOPATH="${XDG_DATA_HOME}/go"
