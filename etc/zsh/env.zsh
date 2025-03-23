@@ -12,8 +12,8 @@ export MANPAGER="nvim +Man!"
 
 # Configure command history, 1000 is far from enough.
 export HISTFILE="${XDG_DATA_HOME}/zsh/history"
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 # Clean up your $HOME!
 export ANDROID_SDK_HOME="${XDG_DATA_HOME}/android/SDK" # seems not working for adb
