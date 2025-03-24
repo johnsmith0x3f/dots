@@ -7,16 +7,25 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // I use Vim btw.
   "vim_mode": true,
   "ui_font_size": 18,
   // Set font features for buffers.
   "buffer_font_family": "Comic Code",
   "buffer_font_fallbacks": ["LXGW WenKai Mono", "FiraMono Nerd Font Mono"],
   "buffer_font_size": 18,
+  "buffer_line_height": "standard",
   // Set colorscheme.
   "theme": {
     "mode": "system",
     "light": "One Dark",
     "dark": "One Dark"
+  },
+  "terminal": {
+    "font_family": "Comic Code",
+    "font_size": 18
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
   }
 }
