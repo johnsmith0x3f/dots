@@ -12,6 +12,7 @@ local sitters = {
 	"regex",
 	"ron",
 	"rust",
+	"tmux",
 	"typst",
 	"vim",
 	"vimdoc",
