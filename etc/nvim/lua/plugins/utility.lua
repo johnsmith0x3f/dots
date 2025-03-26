@@ -26,7 +26,7 @@ return {
 			-- Find files.
 			{ mode = "n", "<Leader>ff", function() require("telescope.builtin").find_files({}) end },
 			-- Find buffers.
-			{ mode = "n", "<Leader>fb", function() require("telescope.builtin").buffers({}) end },
+			{ mode = "n", "<Leader>lg", function() require("telescope.builtin").live_grep({}) end }, -- requires ripgrep
 		}
 	},
 
