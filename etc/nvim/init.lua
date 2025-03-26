@@ -11,4 +11,3 @@ require("lazyvim")
 
 -- Load autocmd (after).
 require("zutocmd")
-

@@ -1,6 +1,10 @@
+local colorscheme = "tokyonight-storm"
+
 return {
 	-- Colorschemes {{{
 
+	-- Catppuccin
+	{ "catppuccin/nvim", name = "catppuccin.nvim", priority = 1000 },
 	-- Gruvbox
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
 	-- One Dark Pro
@@ -8,15 +12,36 @@ return {
 	-- Oxocarbon
 	{ "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
 	-- Tokyo Night
-	{ "folke/tokyonight.nvim", priority = 1000, config = function() vim.cmd("colorscheme tokyonight-storm") end },
+	{ "folke/tokyonight.nvim", priority = 1000 },
+
+	-- Set colorscheme.
+	{ dir = vim.fn.stdpath("data") .. "/plugins/dummy.nvim", priority = 999, config = function() vim.cmd("colorscheme " .. colorscheme) end },
 
 	-- }}}
-	
+
 	-- Alpha
 	{
 		"goolord/alpha-nvim", lazy = false,
 
 		config = function()
+			-- Broken with tokyonight.
+			---- Hide the cursor on event AlphaReady.
+			--vim.api.nvim_create_autocmd("User", {
+			--	pattern = "AlphaReady",
+			--	callback = function()
+			--		vim.api.nvim_set_hl(0, "Cursor", { blend = 100 })
+			--		vim.opt.guicursor:append("a:Cursor/lCursor")
+			--	end,
+			--})
+			---- Restore the cursor on event AlphaClosed.
+			--vim.api.nvim_create_autocmd("User", {
+			--	pattern = "AlphaClosed",
+			--	callback = function()
+			--		vim.api.nvim_set_hl(0, "Cursor", { blend = 0 })
+			--		vim.opt.guicursor:remove("a:Cursor/lCursor")
+			--	end,
+			--})
+
 			local alpha = require("alpha")
 			local dashboard = require("alpha.themes.dashboard")
 
@@ -33,16 +58,17 @@ return {
 				" ██████  █████████████████████ ████ █████ █████ ████ ██████ ",
 				"                                                                       ",
 				"                                                                       ",
-				"                                                                       "
+				"                                                                       ",
 			}
 			dashboard.section.buttons.val = {
-				dashboard.button("e", "󰈔  New File", "<CMD>enew <BAR> startinsert<CR>"),
-				dashboard.button("f", "󰈞  Find File", "<CMD>Telescope find_files<CR>"),
-				dashboard.button("q", "󰅙  Quit NeoVim", "<CMD>qa<CR>")
+				dashboard.button("e", "󱇧  Edit File", "<CMD>enew <BAR> startinsert<CR>"),
+				dashboard.button("f", "󰱼  Find File", "<CMD>Telescope find_files<CR>"),
+				dashboard.button("g", "󱝴  Find Pattern", "<CMD>Telescope live_grep<CR>"),
+				dashboard.button("q", "󰅙  Quit NeoVim", "<CMD>qa<CR>"),
 			}
 
 			alpha.setup(dashboard.opts)
-		end
+		end,
 	},
 
 	-- BufferLine
@@ -59,7 +85,7 @@ return {
 			{ mode = "n", "<Leader>2", "<CMD>BufferLineGoToBuffer 2<CR>" },
 			{ mode = "n", "<Leader>3", "<CMD>BufferLineGoToBuffer 3<CR>" },
 			{ mode = "n", "<Leader>4", "<CMD>BufferLineGoToBuffer 4<CR>" },
-			{ mode = "n", "<Leader>5", "<CMD>BufferLineGoToBuffer 5<CR>" }
+			{ mode = "n", "<Leader>5", "<CMD>BufferLineGoToBuffer 5<CR>" },
 		},
 
 		opts = {
