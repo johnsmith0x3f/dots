@@ -16,18 +16,52 @@ local sitters = {
 	"typst",
 	"vim",
 	"vimdoc",
-	"yuck"
+	"yuck",
 }
 
 local servers = {
-	"clangd",
-	"lua_ls",
-	"pylsp"
+	install = {
+		"clangd",
+		"lua_ls",
+		"pylsp",
+		"rust_analyzer",
+	},
+	setup = {
+		{
+			name = "clangd",
+			opts = {},
+		},
+		{
+			name = "lua_ls",
+			opts = {
+				settings = {
+					Lua = {
+						diagnostics = {
+							-- Make the language server recognize the `vim` global.
+							globals = { "vim" },
+						},
+						runtime = {
+							-- Tell the language server the version of Lua being used.
+							version = "LuaJIT",
+						},
+						telemetry = {
+							-- Do not send telemetry data containing a randomized but unique identifier.
+							enable = false,
+						},
+						workspace = {
+							-- Make the language server recognize NeoVim runtime files.
+							library = vim.api.nvim_get_runtime_file("", true),
+						},
+					},
+				},
+			},
+		},
+		{
+			name = "pylsp",
+			opts = {},
+		},
+	},
 }
-local servers_install_only = {
-	"rust_analyzer"
-}
-table.move(servers, 1, #servers, #servers_install_only + 1, servers_install_only)
 
 -- }}}
 
@@ -39,7 +73,7 @@ return {
 		build = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
-		
+
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = { sitters },
@@ -69,15 +103,15 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 
 		config = function()
-			require("mason-lspconfig").setup({ ensure_installed = servers_install_only })
+			require("mason-lspconfig").setup({ ensure_installed = servers.install })
 		end
 	},
 	{
 		"neovim/nvim-lspconfig",
 
 		config = function()
-			for _, lsp in pairs(servers) do
-				require("lspconfig")[lsp].setup({})
+			for _, lsp in pairs(servers.setup) do
+				require("lspconfig")[lsp.name].setup(lsp.opts)
 			end
 		end
 	},
