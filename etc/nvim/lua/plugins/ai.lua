@@ -11,9 +11,9 @@ return {
 				enabled = true,
 				auto_trigger = true,
 				keymap = {
-					accept = "<C-S-CR>",
+					accept = "<M-CR>",
 					accept_word = false,
-					accept_line = false
+					accept_line = false,
 				}
 			}
 		}

@@ -86,6 +86,8 @@ return {
 			{ mode = "n", "<Leader>3", "<CMD>BufferLineGoToBuffer 3<CR>" },
 			{ mode = "n", "<Leader>4", "<CMD>BufferLineGoToBuffer 4<CR>" },
 			{ mode = "n", "<Leader>5", "<CMD>BufferLineGoToBuffer 5<CR>" },
+			-- Close buffer.
+			{ mode = "n", "<Leader>x", "<CMD>bdelete<CR>"},
 		},
 
 		opts = {
