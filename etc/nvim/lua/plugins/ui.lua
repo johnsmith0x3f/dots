@@ -24,16 +24,16 @@ return {
 		"goolord/alpha-nvim", lazy = false,
 
 		config = function()
-			-- Hide the cursor.
-			vim.cmd("highlight Cursor blend=100 | set guicursor+=a:Cursor/lCursor")
-			-- Restore the cursor on event AlphaClosed.
-			vim.api.nvim_create_autocmd("User", {
-				pattern = "AlphaClosed",
-				callback = function()
-					vim.api.nvim_set_hl(0, "Cursor", { blend = 0 })
-					vim.opt.guicursor:remove("a:Cursor/lCursor")
-				end,
-			})
+			---- Hide the cursor.
+			--vim.cmd("highlight Cursor blend=100 | set guicursor+=a:Cursor/lCursor")
+			---- Restore the cursor on event AlphaClosed.
+			--vim.api.nvim_create_autocmd("User", {
+			--	pattern = "AlphaClosed",
+			--	callback = function()
+			--		vim.api.nvim_set_hl(0, "Cursor", { blend = 0 })
+			--		vim.opt.guicursor:remove("a:Cursor/lCursor")
+			--	end,
+			--})
 
 			local alpha = require("alpha")
 			local dashboard = require("alpha.themes.dashboard")
