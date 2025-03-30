@@ -74,38 +74,19 @@ return {
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = { sitters },
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false
-				},
-				indent = {
-					enable = true
-				}
-			})
-		end
+		opts = {
+			ensure_installed = sitters,
+			highlight = { enable = true },
+			indent = { enable = true },
+		},
 	},
 -- }}}
 
 -- LSP {{{
 
 	-- Mason
-	{
-		"williamboman/mason.nvim",
-
-		config = function()
-			require("mason").setup({})
-		end
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-
-		config = function()
-			require("mason-lspconfig").setup({ ensure_installed = servers.install })
-		end
-	},
+	{ "williamboman/mason.nvim", opts = {} },
+	{ "williamboman/mason-lspconfig.nvim", opts = { ensure_installed = servers.install } },
 	{
 		"neovim/nvim-lspconfig",
 
@@ -113,7 +94,7 @@ return {
 			for _, lsp in pairs(servers.setup) do
 				require("lspconfig")[lsp.name].setup(lsp.opts)
 			end
-		end
+		end,
 	},
 
 -- }}}
@@ -131,22 +112,14 @@ return {
 			vim.g.vimtex_quickfix_open_on_warning = 0
 		end,
 
-		ft = "tex"
+		ft = "tex",
 	},
 
 	-- Markdown
-	{
-		"OXY2DEV/markview.nvim",
-
-		ft = "markdown"
-	},
+	{ "OXY2DEV/markview.nvim", ft = "markdown" },
 
 	-- Rust
-	{
-		"mrcjkb/rustaceanvim", version = "^5", lazy = false,
-
-		ft = "rust"
-	}
+	{ "mrcjkb/rustaceanvim", version = "^5", lazy = false },
 
 -- }}}
 }
