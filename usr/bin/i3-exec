@@ -1,0 +1,52 @@
+#!/bin/sh
+
+i3_init() {
+	# Start i3.
+	startx "/bin/i3"
+	# Draw wallpaper.
+	i3_wall
+}
+
+# Lock session.
+i3_lock() {
+	slock
+}
+
+# Take screenshot.
+i3_shot() {
+}
+
+# Start terminal.
+i3_term() {
+	if command -v st &> /dev/null; then
+		st
+		return 0
+	fi
+
+	kitty --hold "sh -c $2"
+}
+
+# Draw wallpaper.
+i3_wall() {
+	local wallpaper="${XDG_DATA_HOME}/wallpapers/jellynaut.png"
+
+	if command -v nitrogen &> /dev/null; then
+		nitrogen --set-auto "$wallpaper"
+		return 0
+	fi
+
+	if command -v feh &> /dev/null; then
+		feh --bg-fill --no-fehbg "$wallpaper"
+		return 0
+	fi
+
+	return 1
+}
+
+case $1 in
+	init) i3_init ;;
+	lock) i3_lock ;;
+	shot) i3_shot ;;
+	term) i3_term ;;
+	wall) i3_wall ;;
+esac
