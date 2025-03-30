@@ -4,11 +4,11 @@
 
 ############################################## Basics ##############################################
 
-# Set two mod keys for wider range of keymaps.
+# Set two mod keys for more keybinds.
 set $alt Mod1
 set $mod Mod4
 
-# Define names of default workspaces. No fancy name needed.
+# Name workspaces. No fancy name needed.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -59,7 +59,6 @@ bindsym $mod+$alt+s exec --no-startup-id shotgun -g "$( slop )" "${HOME}/Picture
 
 # Start default terminal.
 bindsym $mod+Return exec --no-startup-id kitty
-bindsym $mod+Shift+Return exec --no-startup-id kitty --class "floating"
 
 # Switch to workspace.
 bindsym $mod+1 workspace number $ws1
