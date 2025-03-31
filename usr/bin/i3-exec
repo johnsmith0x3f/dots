@@ -1,10 +1,14 @@
 #!/bin/sh
 
 i3_init() {
-	# Start i3.
-	startx "/bin/i3"
+	# Start i3 if not running.
+	pgrep -x "i3" &> "/dev/null" || startx "/bin/i3"
 	# Draw wallpaper.
-	i3_wall
+	i3_wall "$@"
+	# Run compositor.
+	i3_comp "$@"
+	# Start taskbar.
+	i3_task "$@"
 }
 
 # Lock session.
@@ -12,8 +16,37 @@ i3_lock() {
 	slock
 }
 
+# [rock]et, the common icon for app launcher.
+i3_rock() {
+	if command -v rofi &> /dev/null; then
+		rofi -show
+		return 0
+	fi
+
+	if command -v dmenu &> /dev/null; then
+		dmenu_run -b
+		return 0
+	fi
+}
+
 # Take screenshot.
 i3_shot() {
+	scrot
+}
+
+# Start taskbar.
+i3_task() {
+	if command -v tint2 &> "/dev/null"; then
+		tint2
+		return 0
+	fi
+
+	if command -v polybar &> "/dev/null"; then
+		pgrep -x "polybar" &> "/dev/null" || polybar --reload "main"
+		return 0
+	fi
+
+	return 1
 }
 
 # Start terminal.
@@ -30,12 +63,12 @@ i3_term() {
 i3_wall() {
 	local wallpaper="${XDG_DATA_HOME}/wallpapers/jellynaut.png"
 
-	if command -v nitrogen &> /dev/null; then
+	if command -v nitrogen &> "/dev/null"; then
 		nitrogen --set-auto "$wallpaper"
 		return 0
 	fi
 
-	if command -v feh &> /dev/null; then
+	if command -v feh &> "/dev/null"; then
 		feh --bg-fill --no-fehbg "$wallpaper"
 		return 0
 	fi
@@ -43,10 +76,28 @@ i3_wall() {
 	return 1
 }
 
+i3_help_me() {
+	cat <<-EOF
+	Usage: i3-exec [init|lock|rock|shot|term|wall]
+
+	Options:
+	  init  Start i3.
+	  lock  Lock session.
+	  rock  Start app launcher.
+	  shot  Take screenshot.
+	  term  Start terminal.
+	  wall  Draw wallpaper.
+	EOF
+}
+
 case $1 in
-	init) i3_init ;;
-	lock) i3_lock ;;
-	shot) i3_shot ;;
-	term) i3_term ;;
-	wall) i3_wall ;;
+	init) fun=i3_init ;;
+	lock) fun=i3_lock ;;
+	rock) fun=i3_rock ;;
+	shot) fun=i3_shot ;;
+	term) fun=i3_term ;;
+	wall) fun=i3_wall ;;
+	*) fun=i3_help_me ;;
 esac
+
+shift && $fun "$@" && unset fun
