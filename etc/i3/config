@@ -29,6 +29,8 @@ default_floating_border none
 
 ########################################### Window Rules ###########################################
 
+# Start video players on workspace 8.
+assign [class="^(.*)(?i)(mpv|vlc)$"] $ws8
 # Start game-related apps on workspace 9.
 assign [class="^(.*)(?i)(galaxy|heroic|lutris|steam)(.*)$"] $ws9
 # Start utility apps on scratchpad.
