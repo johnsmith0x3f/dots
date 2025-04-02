@@ -29,12 +29,12 @@ default_floating_border none
 
 ########################################### Window Rules ###########################################
 
-# Start video players on workspace 8.
-assign [class="^(.*)(?i)(mpv|vlc)$"] $ws8
-# Start game-related apps on workspace 9.
-assign [class="^(.*)(?i)(galaxy|heroic|lutris|steam)(.*)$"] $ws9
-# Start utility apps on scratchpad.
-for_window [class="^(KeePassXC|qBittorrent)$"] move scratchpad
+# Assign default workspaces for windows.
+# This only affect windows when they are showed. So they can be moved around.
+assign [class="(.*)(?i)(audacious|lollypop)(.*)"] $ws7
+assign [class="(.*)(?i)(kodi|mpv|smplayer|vlc)(.*)"] $ws8
+assign [class="(.*)(?i)(galaxy|heroic|lutris|steam)(.*)"] $ws9
+
 # Make Bluetooth panels start floating.
 for_window [class="^(.*)(?i)(blueberry|blueman|bluedevil)(.*)$"] floating enable
 # Make Wi-Fi panels start floating.
@@ -47,6 +47,14 @@ for_window [class="^(.*)(?i)(discord|qq|telegram|wechat)(.*)$"] floating enable
 for_window [class="^(.*)(?i)(galaxy|heroic|lutris|steam)(.*)$"] floating enable
 
 for_window [class="^(KeePassXC|mpv|qBittorrent)$"] floating enable
+
+
+# Pin some windows to the scratchpad. They will always be there.
+# Scratchpad on i3 works a bit differently. Windows do not share the same scratchpad.
+for_window [class="(.*)(?i)(keepass|nicotine|qbit)(.*)" window_type="normal"] move scratchpad
+
+# TODO
+# Add a ws0 to use as scratchpad that behaves like hyprland.
 
 ############################################### Keys ###############################################
 
