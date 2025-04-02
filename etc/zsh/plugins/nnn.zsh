@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 n() {
 	# Block nesting of nnn in subshells.
 	[ "${NNNLVL:-0}" -eq 0 ] || {

@@ -2,7 +2,8 @@
 # Alias {{{
 # See https://zsh.sourceforge.io/Doc/Release/Shell-Grammar.html#Aliasing for details.
 
-# I like colors.
+# I like better commands.
+alias cat="bat --plain --paging=never"
 alias ls="eza --icons=auto --group-directories-first"
 alias grep="grep --color=auto"
 alias pacman="pacman --color=auto"
