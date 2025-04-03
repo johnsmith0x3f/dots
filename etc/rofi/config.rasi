@@ -37,17 +37,17 @@ mainbox {
 
 inputbar {
 	padding:               60px 12px;
-	background-image:      url("~/.usr/share/wallpapers/dotdeer.png", width);
+	background-image:      url("assets/dotdeer.png", width);
 	children:              [ "prompt", "entry" ];
 }
 
 prompt {
-	padding:               6px 18px;
+	padding:               6px 12px;
 	background-color:      @background-alt;
 }
 
 entry {
-	padding:               6px 18px;
+	padding:               6px 12px;
 	cursor:                text;
 }
 
