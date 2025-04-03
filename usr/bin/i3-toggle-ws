@@ -1,0 +1,26 @@
+#!/bin/sh
+
+get_current_workspace() {
+	if command -v jq &> "/dev/null"; then
+		i3-msg -t "get_workspaces" | jq -r ".[] | select(.focused==true).name"
+	else
+		i3-msg -t "get_workspaces" | grep -o '"name".*"focused":true' | awk -F '"' '{ print $4 }'
+	fi
+}
+current_workspace="$( get_current_workspace )"
+
+# Switch back if already on target workspace.
+lockfile="/tmp/i3-toggle-ws.lock"
+if [ "$current_workspace" = "$1" ]; then
+	if [ -f "$lockfile" ]; then
+		i3-msg "workspace $( cat "$lockfile" )" && rm "$lockfile"
+		exit 0
+	fi
+	echo "Error: lockfile missing" >&2
+	exit 1
+fi
+
+# Remember current workspace.
+echo "$current_workspace" > "$lockfile"
+# Switch to target workspace.
+i3-msg "workspace $1"

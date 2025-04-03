@@ -18,6 +18,8 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
+# Set a [s]cratch[p]ad (or [sp]ecial workspace).
+set $ws0 "sp"
 
 # Insert gaps.
 gaps inner 8px
@@ -34,6 +36,7 @@ default_floating_border none
 assign [class="(.*)(?i)(audacious|lollypop)(.*)"] $ws7
 assign [class="(.*)(?i)(kodi|mpv|smplayer|vlc)(.*)"] $ws8
 assign [class="(.*)(?i)(galaxy|heroic|lutris|steam)(.*)"] $ws9
+assign [class="(.*)(?i)(keepassxc|nicotine|qbittorrent)(.*)"] $ws0
 
 # Make Bluetooth panels start floating.
 for_window [class="^(.*)(?i)(blueberry|blueman|bluedevil)(.*)$"] floating enable
@@ -71,27 +74,27 @@ bindsym $mod+$alt+s exec --no-startup-id shotgun -g "$( slop )" "${HOME}/Picture
 bindsym $mod+Return exec --no-startup-id kitty
 
 # Switch to workspace.
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 scratchpad show
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 exec --no-startup-id i3-toggle-ws $ws0
 # Move focused container to workspace.
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move scratchpad
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
 
 # Launch application launcher.
 bindsym $mod+space exec --no-startup-id rofi -show
