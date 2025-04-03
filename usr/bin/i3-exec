@@ -1,19 +1,38 @@
 #!/bin/sh
 
-i3_init() {
-	# Start i3 if not running.
-	pgrep -x "i3" &> "/dev/null" || startx "/bin/i3"
-	# Draw wallpaper.
-	i3_wall "$@"
-	# Run compositor.
-	i3_comp "$@"
-	# Start taskbar.
-	i3_task "$@"
+# Exit i3.
+i3_exit() {
+	i3-msg "exit"
+}
+
+# [rest]art (reload) i3.
+i3_rest() {
+	i3-msg "restart"
 }
 
 # Lock session.
 i3_lock() {
 	slock
+}
+
+# Take screenshot.
+i3_shot() {
+	scrot
+}
+
+# Start terminal emulator.
+i3_term() {
+	if command -v st &> /dev/null; then
+		st
+		return 0
+	fi
+
+	kitty --hold "sh -c $2"
+}
+
+# Init i3 (commands to run on startup).
+i3_init() {
+	echo "TODO"
 }
 
 # [rock]et, the common icon for app launcher.
@@ -29,11 +48,6 @@ i3_rock() {
 	fi
 }
 
-# Take screenshot.
-i3_shot() {
-	scrot
-}
-
 # Start taskbar.
 i3_task() {
 	if command -v tint2 &> "/dev/null"; then
@@ -47,16 +61,6 @@ i3_task() {
 	fi
 
 	return 1
-}
-
-# Start terminal.
-i3_term() {
-	if command -v st &> /dev/null; then
-		st
-		return 0
-	fi
-
-	kitty --hold "sh -c $2"
 }
 
 # Draw wallpaper.
@@ -76,28 +80,16 @@ i3_wall() {
 	return 1
 }
 
-i3_help_me() {
-	cat <<-EOF
-	Usage: i3-exec [init|lock|rock|shot|term|wall]
-
-	Options:
-	  init  Start i3.
-	  lock  Lock session.
-	  rock  Start app launcher.
-	  shot  Take screenshot.
-	  term  Start terminal.
-	  wall  Draw wallpaper.
-	EOF
-}
-
 case $1 in
-	init) fun=i3_init ;;
+	exit) fun=i3_exit ;;
+	rest) fun=i3_rest ;;
 	lock) fun=i3_lock ;;
-	rock) fun=i3_rock ;;
 	shot) fun=i3_shot ;;
 	term) fun=i3_term ;;
+	rock) fun=i3_rock ;;
+	init) fun=i3_init ;;
 	wall) fun=i3_wall ;;
-	*) fun=i3_help_me ;;
+	comp) fun=i3_comp ;;
 esac
 
-shift && $fun "$@" && unset fun
+$fun "${@:2}"

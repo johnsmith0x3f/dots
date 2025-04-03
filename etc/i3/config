@@ -29,6 +29,9 @@ gaps outer 8px
 default_border none
 default_floating_border none
 
+# Only change focus on clicks.
+focus_follows_mouse no
+
 ########################################### Window Rules ###########################################
 
 # Assign default workspaces for windows.
@@ -59,16 +62,15 @@ for_window [window_role="pop-up"] floating enable
 ############################################### Keys ###############################################
 
 # [e]xit i3.
-bindsym $mod+$alt+e exit
+bindsym $mod+$alt+e exec --no-startup-id i3-exec exit
 # [r]estart i3.
-bindsym $mod+$alt+r restart
+bindsym $mod+$alt+r exec --no-startup-id i3-exec rest
 # [l]ock the session.
-bindsym $mod+$alt+l exec --no-startup-id slock
+bindsym $mod+$alt+l exec --no-startup-id i3-exec lock
 # Take [s]creenshots.
-bindsym $mod+$alt+s exec --no-startup-id shotgun -g "$( slop )" "${HOME}/Pictures/Screenshots/$( date "+%y%m%d-%H%M%S" ).png"
-
+bindsym $mod+$alt+s exec --no-startup-id i3-exec shot
 # Start default terminal.
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id i3-exec term
 
 # Switch to workspace.
 bindsym $mod+1 workspace $ws1
@@ -94,7 +96,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
 # Launch application launcher.
-bindsym $mod+space exec --no-startup-id rofi -show
+bindsym $mod+space exec --no-startup-id i3-exec rock
 
 # Change focus.
 bindsym $mod+h focus left
@@ -108,8 +110,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 # Use $mod+button<1|3> to move|resize floating windows.
 floating_modifier $mod
-
-# Resize windows in resize mode.
+# Use keyboard to resize windows in resize mode.
 bindsym $mod+r mode "resize"
 
 # Set the position where new windows spawn.
@@ -125,18 +126,18 @@ bindsym $mod+g fullscreen toggle
 bindsym $mod+x kill
 
 # Adjust brightness.
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set "5%-"
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set "5%+"
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set "5%-"
 # Control players.
-bindsym XF86AudioPause exec --no-startup-id usr-playerctl toggle
-bindsym XF86AudioPlay exec --no-startup-id usr-playerctl toggle
 bindsym XF86AudioPrev exec --no-startup-id usr-playerctl prev
 bindsym XF86AudioNext exec --no-startup-id usr-playerctl next
+bindsym XF86AudioPlay exec --no-startup-id usr-playerctl toggle
+bindsym XF86AudioPause exec --no-startup-id usr-playerctl toggle
 # Toggle mute and adjust volume.
 bindsym XF86AudioMute exec --no-startup-id usr-volumectl toggle "sink"
 bindsym XF86AudioMicMute exec --no-startup-id usr-volumectl toggle "source"
-bindsym XF86AudioLowerVolume exec --no-startup-id usr-volumectl decrease "5%"
 bindsym XF86AudioRaiseVolume exec --no-startup-id usr-volumectl increase "5%"
+bindsym XF86AudioLowerVolume exec --no-startup-id usr-volumectl decrease "5%"
 
 ############################################## Modes ###############################################
 
@@ -151,21 +152,6 @@ mode "resize" {
 	bindsym Shift+j resize shrink down 20 px
 	bindsym Shift+k resize shrink up 20 px
 	bindsym Shift+l resize shrink right 20 px
-
-	# Return to normal mode.
-	bindsym Escape mode "default"
-}
-
-# Set the PATH to the output.
-set $screenshot "${HOME}/Pictures/Screenshots/%Y%m%d-%H%M%S.png"
-# Use scrot to take screenshots.
-mode "screenshot" {
-	# Capture the whole screen.
-	bindsym f exec --no-startup-id scrot $screenshot
-	# Interactively select a region to capture.
-	bindsym s exec --no-startup-id scrot -s $screenshot
-	# Capture the currently focused window.
-	bindsym u exec --no-startup-id scrot -u $screenshot
 
 	# Return to normal mode.
 	bindsym Escape mode "default"
