@@ -1,5 +1,10 @@
 # Alacritty config
 
+[general]
+import = [
+	"themes/tokyo-night-storm.toml",
+]
+
 [font]
 normal = { family = "Comic Code", style = "Regular" }
 size = 12.0
