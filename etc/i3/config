@@ -38,6 +38,8 @@ assign [class="(.*)(?i)(kodi|mpv|smplayer|vlc)(.*)"] $ws8
 assign [class="(.*)(?i)(galaxy|heroic|lutris|steam)(.*)"] $ws9
 assign [class="(.*)(?i)(keepassxc|nicotine|qbittorrent)(.*)"] $ws0
 
+# Make some windows start floating, such as.
+
 # Make Bluetooth panels start floating.
 for_window [class="^(.*)(?i)(blueberry|blueman|bluedevil)(.*)$"] floating enable
 # Make Wi-Fi panels start floating.
@@ -51,13 +53,8 @@ for_window [class="^(.*)(?i)(galaxy|heroic|lutris|steam)(.*)$"] floating enable
 
 for_window [class="^(KeePassXC|mpv|qBittorrent)$"] floating enable
 
-
-# Pin some windows to the scratchpad. They will always be there.
-# Scratchpad on i3 works a bit differently. Windows do not share the same scratchpad.
-for_window [class="(.*)(?i)(keepass|nicotine|qbit)(.*)" window_type="normal"] move scratchpad
-
-# TODO
-# Add a ws0 to use as scratchpad that behaves like hyprland.
+# Float pop-ups.
+for_window [window_role="pop-up"] floating enable
 
 ############################################### Keys ###############################################
 
