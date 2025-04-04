@@ -27,7 +27,7 @@ i3_term() {
 		return 0
 	fi
 
-	kitty --hold "sh -c $2"
+	kitty
 }
 
 # Init i3 (commands to run on startup).
