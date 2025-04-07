@@ -1,11 +1,5 @@
 # $ZDOTDIR is set to ${HOME}/.etc/zsh in /etc/zsh/zshenv.
 
-# Set XDG Base Directories.
-export XDG_CONFIG_HOME="${HOME}/.etc"
-export XDG_CACHE_HOME="${HOME}/.cache"
-export XDG_DATA_HOME="${HOME}/.usr/share"
-export XDG_STATE_HOME="${HOME}/.usr/state"
-
 # Set default applications.
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
