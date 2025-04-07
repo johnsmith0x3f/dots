@@ -42,6 +42,11 @@ export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
 
+# Use fcitx5 for input method.
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+export XMODIFIERS="@im=fcitx"
+
 # Append user path.
 usr_paths=(
 	"${HOME}/.usr/bin"
