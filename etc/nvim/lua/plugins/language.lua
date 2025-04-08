@@ -26,6 +26,7 @@ local servers = {
 		"lua_ls",
 		"pylsp",
 		"rust_analyzer",
+		"tinymist",
 	},
 	setup = {
 		{
@@ -59,6 +60,10 @@ local servers = {
 		},
 		{
 			name = "pylsp",
+			opts = {},
+		},
+		{
+			name = "tinymist",
 			opts = {},
 		},
 	},
@@ -121,6 +126,28 @@ return {
 
 	-- Rust
 	{ "mrcjkb/rustaceanvim", version = "^5", lazy = false },
+
+	-- Typst
+	{
+		"kaarmu/typst.vim",
+
+		init = function()
+			-- Use zathura as PDF viewer.
+			vim.g.typst_pdf_viewer = "zathura"
+		end,
+
+		ft = "typst",
+	},
+	--{
+	--	"chomosuke/typst-preview.nvim", version = "v1.*",
+
+	--	ft = "typst",
+	--	keys = {
+	--		{ "<leader>pt", "<CMD>TypstPreviewToggle<CR>", desc = "Preview Typst" },
+	--	},
+
+	--	opts = {},
+	--},
 
 -- }}}
 }
