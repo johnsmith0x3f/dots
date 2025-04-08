@@ -5,6 +5,7 @@ local sitters = {
 	"bash",
 	"c",
 	"cpp",
+	"hyprlang",
 	"ini",
 	"lua",
 	"markdown",
