@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
 
-# Start input method (fcitx5) daemon.
-pgrep -x "fcitx5" || fcitx5 -d
+if [[ $( hyprctl monitors all | grep -c "Monitor" ) -gt 1 ]]; then
+	hyprctl keyword monitor "eDP-1, disabled"
+	hyprctl keyword monitor "DP-1, highrr, auto, 1"
+fi
+
+# Start swww daemon and draw the wallpaper
+swww-daemon &
+swww img -t none "$XDG_DATA_HOME/wallpapers/jellynaut.png"
+
+# Start input method daemon.
+fcitx5 -d
+
+# Start hypridle daemon and hyprlock the session.
+pgrep -x "hypridle" || { hypridle && hyprlock }
