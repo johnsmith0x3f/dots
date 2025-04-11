@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Start input method (fcitx5) daemon.
+pgrep -x "fcitx5" || fcitx5 -d
