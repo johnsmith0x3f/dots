@@ -124,6 +124,21 @@ return {
 
 	-- Markdown
 	{ "OXY2DEV/markview.nvim", ft = "markdown" },
+	{
+		"iamcco/markdown-preview.nvim",
+
+		build = function()
+			-- First load the plugin.
+			vim.cmd("Lazy load markdown-preview.nvim")
+			-- Then call the plugin's install function.
+			vim.fn["mkdp#util#install"]()
+		end,
+
+		ft = "markdown",
+		keys = {
+			{ mode = "n", "<leader>pm", "<CMD>MarkdownPreviewToggle<CR>" },
+		},
+	},
 
 	-- Rust
 	{ "mrcjkb/rustaceanvim", version = "^5", lazy = false },
