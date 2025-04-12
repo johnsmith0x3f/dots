@@ -48,8 +48,12 @@ return {
 				-- Update text in the repeated node as user types.
 				update_events = { "TextChanged", "TextChangedI" }
 			})
+
+			-- Use TeX snippets in Markdown files.
+			ls.filetype_extend("markdown", { "tex" })
+
 			-- Load LuaSnip snippets.
-			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
+			require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/lua/snippets" })
 
 			-- Map keys.
 			vim.keymap.set({ "i", "s" }, "<Tab>", function()
