@@ -1,8 +1,8 @@
 #!/bin/sh
 
 MakePlayerD() {
-	# Use playerctl if mpd-mpris is installed.
-	if which mpd-mpris >/dev/null; then
+	# Use playerctl if mpd-mpris is running.
+	if systemctl --user status mpd-mpris &> "/dev/null"; then
 		return 1
 	fi
 
@@ -11,9 +11,9 @@ MakePlayerD() {
 }
 
 case $1 in
-	pause) MakePlayerD pause || playerctl pause ;;
-	play) MakePlayerD play || playerctl play ;;
 	prev) MakePlayerD prev || playerctl previous ;;
 	next) MakePlayerD next || playerctl next ;;
+	play) MakePlayerD play || playerctl play ;;
+	pause) MakePlayerD pause || playerctl pause ;;
 	toggle) MakePlayerD toggle || playerctl play-pause ;;
 esac
