@@ -141,21 +141,9 @@ return {
 	},
 
 	-- Rust
-	{ "mrcjkb/rustaceanvim", version = "^5", lazy = false },
+	--{ "mrcjkb/rustaceanvim", version = "^5", lazy = false },
 
 	-- Typst
-	--{
-	--	"kaarmu/typst.vim",
-
-	--	init = function()
-	--		-- Use zathura as PDF viewer.
-	--		vim.g.typst_pdf_viewer = "zathura"
-	--		-- Disable highlighting. Let treesitter do the work.
-	--		vim.g.typst_syntax_highlight = 0
-	--	end,
-
-	--	ft = "typst",
-	--},
 	{
 		"chomosuke/typst-preview.nvim", version = "v1.*",
 
