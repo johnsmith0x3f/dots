@@ -12,10 +12,7 @@ return {
 	-- Oxocarbon
 	{ "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
 	-- Tokyo Night
-	{ "folke/tokyonight.nvim", priority = 1000 },
-
-	-- Set colorscheme.
-	{ dir = vim.fn.stdpath("data") .. "/plugins/dummy.nvim", priority = 999, config = function() vim.cmd("colorscheme " .. colorscheme) end },
+	{ "folke/tokyonight.nvim", priority = 999, config = function() vim.cmd("colorscheme " .. colorscheme) end },
 
 	-- }}}
 
