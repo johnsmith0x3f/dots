@@ -1,3 +1,4 @@
-gtk-theme-name = "Tokyonight-Dark-Storm"
-gtk-icon-theme-name = "Papirus-Dark"
-gtk-font-name = "WenQuanYi Micro Hei 12"
+gtk-theme-name="Tokyonight-Dark-Storm"
+gtk-icon-theme-name="Papirus-Dark"
+gtk-cursor-theme-name="Bibata-Modern-Classic"
+gtk-font-name="WenQuanYi Micro Hei 12"
