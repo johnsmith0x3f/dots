@@ -39,7 +39,7 @@ focus_follows_mouse no
 assign [class="(.*)(?i)(audacious|lollypop)(.*)"] $ws7
 assign [class="(.*)(?i)(kodi|mpv|smplayer|vlc)(.*)"] $ws8
 assign [class="(.*)(?i)(galaxy|heroic|lutris|steam)(.*)"] $ws9
-assign [class="(.*)(?i)(keepassxc|nicotine|qbittorrent)(.*)" window_type="normal"] $ws0
+assign [class="(.*)(?i)(keepassxc|qbittorrent)(.*)" window_type="normal"] $ws0
 
 # Make Bluetooth panels start floating.
 for_window [class="^(.*)(?i)(blueberry|blueman|bluedevil)(.*)$"] floating enable
