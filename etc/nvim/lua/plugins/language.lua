@@ -99,7 +99,9 @@ return {
 
 		config = function()
 			for _, lsp in pairs(servers.setup) do
-				require("lspconfig")[lsp.name].setup(lsp.opts)
+				--require("lspconfig")[lsp.name].setup(lsp.opts)
+				vim.lsp.enable(lsp.name)
+				vim.lsp.config(lsp.name, lsp.opts)
 			end
 		end,
 	},
