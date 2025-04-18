@@ -9,6 +9,17 @@
 {
   // I use Vim btw.
   "vim_mode": true,
+  "cursor_shape": "bar",
+  "cursor_blink": false,
+  "relative_line_numbers": true,
+
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
   "ui_font_size": 18,
   // Set font features for buffers.
   "buffer_font_family": "Comic Code",
@@ -23,9 +34,17 @@
   },
   "terminal": {
     "font_family": "Comic Code",
-    "font_size": 18
+    "font_size": 18,
+    "line_height": "standard"
   },
   "features": {
     "edit_prediction_provider": "copilot"
+  },
+
+  // Language Settings
+  "languages": {
+    "Rust": {
+      "format_on_save": "off"
+    }
   }
 }
