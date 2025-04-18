@@ -77,10 +77,10 @@ return {
 
 		event = "VeryLazy",
 		keys = {
-			{ "<Leader>?", function() require("which-key").show({ global = false }) end }
+			{ mode = "n", "<Leader>?", function() require("which-key").show({ global = false }) end },
 		},
 
 		opts = {
 		},
-	}
+	},
 }

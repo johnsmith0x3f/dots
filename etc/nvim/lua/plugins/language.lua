@@ -97,6 +97,10 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 
+		keys = {
+			{ mode = "n", "<Leader>d", function() vim.diagnostic.open_float() end },
+		},
+
 		config = function()
 			for _, lsp in pairs(servers.setup) do
 				--require("lspconfig")[lsp.name].setup(lsp.opts)
