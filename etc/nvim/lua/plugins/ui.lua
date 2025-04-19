@@ -82,11 +82,11 @@ return {
 
 		opts = {
 			highlights = {
-				fill = { bg = "bg" }
+				fill = { bg = "bg" },
 			},
 			options = {
 				indicator = { style = "icon" },
-				separator_style = "thin"
+				separator_style = "thin",
 			}
 		}
 	},
@@ -125,15 +125,6 @@ return {
 			winbar = {}
 		}
 	},
-
-	-- Noice
-	--{
-	--	"folke/noice.nvim",
-
-	--	event = "VeryLazy",
-
-	--	opts = {}
-	--},
 
 	-- Colorizer
 	{
