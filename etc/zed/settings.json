@@ -9,6 +9,7 @@
 {
   // I use Vim btw.
   "vim_mode": true,
+
   "cursor_shape": "bar",
   "cursor_blink": false,
   "relative_line_numbers": true,

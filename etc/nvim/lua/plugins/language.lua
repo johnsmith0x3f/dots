@@ -98,7 +98,8 @@ return {
 		"neovim/nvim-lspconfig",
 
 		keys = {
-			{ mode = "n", "<Leader>d", function() vim.diagnostic.open_float() end },
+			{ mode = "n", "gd", vim.lsp.buf.definition },
+			{ mode = "n", "<Leader>d", vim.diagnostic.open_float },
 		},
 
 		config = function()
