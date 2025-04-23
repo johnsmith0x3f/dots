@@ -1,4 +1,10 @@
-function mintags() {
+function sort-tags() {
+	fd "" "$1" -e "flac" | while read -r flac; do
+		metaflac --export-tags-to=- --remove-all-tags $flac | sort | metaflac --import-tags-from=- $flac
+	done
+}
+
+function zero-tags() {
 	# Set the tags to preserve.
 	local tags="ALBUM=ALBUMARTIST=ARTIST=DATE=DISCNUMBER=GENRE=TITLE=TRACKNUMBER"
 	# Set the command to execute (as array).
