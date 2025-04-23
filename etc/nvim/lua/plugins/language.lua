@@ -115,6 +115,15 @@ return {
 
 -- Language Specific {{{
 
+	-- Dart
+	{
+		"nvim-flutter/flutter-tools.nvim", dependencies = { "nvim-lua/plenary.nvim" },
+
+		lazy = false,
+
+		opts = {},
+	},
+
 	-- LaTeX
 	{
 		"lervag/vimtex",
@@ -130,7 +139,7 @@ return {
 	},
 
 	-- Markdown
-	{ "OXY2DEV/markview.nvim", ft = "markdown" },
+	--{ "OXY2DEV/markview.nvim", ft = "markdown" },
 	{
 		"iamcco/markdown-preview.nvim",
 
