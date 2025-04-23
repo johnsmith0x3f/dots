@@ -1,5 +1,3 @@
-# Ignore all log files.
-*.log
 # Ignore all font cache files.
 .uuid
 
@@ -9,3 +7,4 @@
 /etc/mpd/playlists
 ## ncmpcpp
 /etc/ncmpcpp/lyrics
+/etc/ncmpcpp/error.log
