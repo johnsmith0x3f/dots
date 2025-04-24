@@ -45,8 +45,6 @@ export XMODIFIERS="@im=fcitx"
 usr_paths=(
 	"${HOME}/.usr/bin"
 	"${XDG_DATA_HOME}/cargo/bin"
-	"${XDG_DATA_HOME}/android/SDK/platform-tools"
-	"${XDG_DATA_HOME}/flutter/bin"
 )
 for dir in $usr_paths; do
 	[[ "${PATH}" != *"$dir"* ]] && export PATH="${PATH}:$dir"
