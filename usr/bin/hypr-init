@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
 
+# Configure monitors.
 if [[ $( hyprctl monitors all | grep -c "Monitor" ) -gt 1 ]]; then
-	hyprctl keyword monitor "eDP-1, disabled"
-	hyprctl keyword monitor "DP-1, highrr, auto, 1"
+	hyprctl keyword monitor "eDP-1, disabled" &&
+	hyprctl keyword monitor "DP-1, highrr, auto, 1" &&
+	hyprctl dispatch workspace 1
 fi
 
-# Start swww daemon and draw the wallpaper
+# Start wallpaper daemon.
 swww-daemon &
-swww img -t none "$XDG_DATA_HOME/wallpapers/jellynaut.png"
-
+# Start bittorrent daemon.
+aria2c --dir="$XDG_DATA_HOME/aria2/downloads" --enable-rpc --rpc-listen-all --quiet &
 # Start input method daemon.
 fcitx5 -d
 
-# Start hypridle daemon and hyprlock the session.
+# Draw the wallpaper.
+swww img -t none "$XDG_DATA_HOME/wallpapers/jellynaut.png"
+# Start hypridle daemon and hyprlock session.
 pgrep -x "hypridle" || { hypridle && hyprlock }
