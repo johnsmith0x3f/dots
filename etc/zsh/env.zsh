@@ -13,6 +13,7 @@ export SAVEHIST=100000
 export ANDROID_HOME="${XDG_DATA_HOME}/android/SDK"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+export GDBHISTFILE="${XDG_DATA_HOME}/gdb/history"
 export GOPATH="${XDG_DATA_HOME}/go"
 export GOMODCACHE="${XDG_CACHE_HOME}/go/mod"
 export GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"

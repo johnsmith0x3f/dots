@@ -1,0 +1,5 @@
+python
+import os
+xdg_config = os.getenv("XDG_CONFIG_HOME")
+gdb.execute("source %s/gdb/plugins/gef.py" % xdg_config)
+end
