@@ -3,8 +3,6 @@
 # Set the colorscheme.
 theme = "tokyonight-storm"
 
-mouse-scroll-multiplier = 3
-
 # Font {{{
 
 # Set font families.
