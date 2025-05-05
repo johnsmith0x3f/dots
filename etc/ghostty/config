@@ -85,9 +85,14 @@ keybind = "clear"
 # Reload ghostty config.
 keybind = "alt+ctrl+r=reload_config"
 
+# Open a new split.
+keybind = "alt+s=new_split:auto"
+# Navigate between splits.
+keybind = "alt+a=goto_split:previous"
+keybind = "alt+d=goto_split:next"
+
 # Spawn a new tab.
 keybind = "alt+t=new_tab"
-
 # Hop between tabs.
 keybind = "alt+1=goto_tab:1"
 keybind = "alt+2=goto_tab:2"
