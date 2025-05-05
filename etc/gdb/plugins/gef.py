@@ -11918,4 +11918,3 @@ if __name__ == "__main__":
     # Add a `source` post hook to force gef to recheck the registered plugins and
     # eventually load the missing one(s)
     gdb.execute("define hookpost-source\npi gef.gdb.load()\nend")
-
