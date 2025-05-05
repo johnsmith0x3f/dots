@@ -1,3 +1,5 @@
+set auto-load safe-path /
+
 python
 import os
 xdg_config = os.getenv("XDG_CONFIG_HOME")
