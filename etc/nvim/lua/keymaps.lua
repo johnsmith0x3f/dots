@@ -22,4 +22,4 @@ map("n", "<C-j>", "<C-w>j", opt)
 map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<C-l>", "<C-w>l", opt)
 
-map("n", "<leader>s", "<CMD>source<CR>")
+map("n", "<Leader>s", "<CMD>source<CR>")
