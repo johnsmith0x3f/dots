@@ -12,8 +12,11 @@ font-feature = "-dlig"
 # Set font size (in pts).
 font-size = 15
 
+
+
 # Map the Nerd Font (v3.3.0) glyphs.
 # See <https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points> for details.
+
 ## IEC Power Symbols
 font-codepoint-map = "U+23FB-U+23FE,U+2B58=FiraMono Nerd Font Mono"
 ## Box Drawing
@@ -43,22 +46,26 @@ font-codepoint-map = "U+F300-U+F381=FiraMono Nerd Font Mono"
 ## Material Design Icons
 font-codepoint-map = "U+F0001-U+F1AF0=FiraMono Nerd Font Mono"
 
+
+
 # Map CJK glyphs.
 # See <https://symbl.cc/en/unicode/blocks> for details.
 ## CJK Radicals Supplement
-font-codepoint-map = "U+2E80-U+2EFF=LXGW WenKai Mono"
+font-codepoint-map = "U+2E80-U+2EFF=ChillRoundF"
 ## CJK Symbols and Punctuation
-font-codepoint-map = "U+3000-U+303F=LXGW WenKai Mono"
+font-codepoint-map = "U+3000-U+303F=ChillRoundF"
 ## CJK Compatibility
-font-codepoint-map = "U+3300-U+33FF=LXGW WenKai Mono"
+font-codepoint-map = "U+3300-U+33FF=ChillRoundF"
 ## CJK Strokes
-font-codepoint-map = "U+31C0-U+31EF=LXGW WenKai Mono"
+font-codepoint-map = "U+31C0-U+31EF=ChillRoundF"
 ## CJK Unified Ideographs + Extension A
-font-codepoint-map = "U+3400-U+4DBF,U+4E00-U+9FFF=LXGW WenKai Mono"
+font-codepoint-map = "U+3400-U+4DBF,U+4E00-U+9FFF=ChillRoundF"
 ## CJK Compatibility Ideographs + Supplement
-font-codepoint-map = "U+F900-U+FAFF,U+2F800-U+2FA1F=LXGW WenKai Mono"
+font-codepoint-map = "U+F900-U+FAFF,U+2F800-U+2FA1F=ChillRoundF"
+## Halfwidth and Fullwidth Forms
+font-codepoint-map = "U+FF00-U+FFEF=ChillRoundF"
 ## CJK Unified Ideographs Extension BCDEFG
-font-codepoint-map = "U+20000-U+2A6DF,U+2A700-U+2EBEF,U+30000-U+3134F=LXGW WenKai Mono"
+font-codepoint-map = "U+20000-U+2A6DF,U+2A700-U+2EBEF,U+30000-U+3134F=ChillRoundF"
 
 # }}}
 
