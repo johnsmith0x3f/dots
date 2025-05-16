@@ -26,6 +26,8 @@ export WGETRC="${XDG_CONFIG_HOME}/wget/wgetrc"
 export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
 export XINITRC="${XDG_CONFIG_HOME}/X11/xinitrc"
 export XSERVERRC="${XDG_CONFIG_HOME}/X11/xserverrc"
+export PIPX_BIN_DIR="${XDG_DATA_HOME%/*}/bin"
+export PIPX_MAN_DIR="${XDG_DATA_HOME}/man"
 
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
