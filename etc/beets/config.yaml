@@ -1,8 +1,12 @@
 plugins:
+  - convert # for copying album arts
   - inline # for defining custom fields
 
 item_fields:
   disc_and_track: u'%i-%02i' % (disc, track) if disctotal > 1 else u'%02i' % (track)
+
+convert:
+  copy_album_art: yes
 
 directory: /tmp/music
 
