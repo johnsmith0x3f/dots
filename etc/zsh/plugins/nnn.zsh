@@ -9,7 +9,7 @@ n() {
 	export NNN_TMPFILE="/tmp/nnn_last"
 
 	# The command builtin allows one to alias nnn to n.
-	command nnn "$@"
+	env LC_COLLATE="C" nnn "$@"
 
 	[ ! -f "${NNN_TMPFILE}" ] || {
 		. "${NNN_TMPFILE}"
