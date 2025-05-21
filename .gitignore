@@ -8,3 +8,5 @@
 ## ncmpcpp
 /etc/ncmpcpp/lyrics
 /etc/ncmpcpp/error.log
+## nvim
+/etc/nvim/lazy-lock.json
