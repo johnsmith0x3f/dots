@@ -156,6 +156,9 @@ return {
 		},
 	},
 
+	-- RON
+	{ "ron-rs/ron.vim", ft = "ron", },
+
 	-- Rust
 	{ "mrcjkb/rustaceanvim", version = "^6", lazy = false },
 
