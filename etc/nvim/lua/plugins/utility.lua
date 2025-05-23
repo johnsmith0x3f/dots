@@ -32,6 +32,16 @@ return {
 
 -- }}}
 
+	-- Hard Time
+	-- Break bad habits, master Vim motions.
+	{
+		"m4xshen/hardtime.nvim",
+
+		dependencies = { "MunifTanjim/nui.nvim" },
+
+		opts = {},
+	},
+
 	-- LuaSnip
 	{
 		"L3MON4D3/LuaSnip",
@@ -65,9 +75,10 @@ return {
 			end, { silent = true })
 		end
 	},
+
 	-- Multicursor
 	{
-		"jake-stewart/multicursor.nvim"
+		"jake-stewart/multicursor.nvim",
 	},
 
 	-- Which Key
