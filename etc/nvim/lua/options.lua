@@ -22,6 +22,8 @@ vim.opt.expandtab = false
 -- Set folds.
 vim.opt.foldmethod = "marker"
 
+-- Allow using project-specific config files.
+vim.opt.exrc = true
 
 -- Filetypes
 vim.filetype.add({
