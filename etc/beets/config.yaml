@@ -14,7 +14,7 @@ directory: /tmp/music
 
 # Define the default file path.
 paths:
-  default: $albumartist/$year $album%aunique{}/$disc_and_track $title
+  default: $albumartist/[$year] $album%aunique{}/$disc_and_track $title
 asciify_paths: yes
 per_disc_numbering: yes
 # Replace some segments of filenames.
