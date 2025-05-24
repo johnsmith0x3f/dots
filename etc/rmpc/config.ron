@@ -4,8 +4,9 @@
 (
     address: "127.0.0.1:6600",
     password: None,
-    theme: None,
+    theme: "default",
     cache_dir: None,
+    lyrics_dir: "~/Music",
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
@@ -114,9 +115,34 @@
     tabs: [
         (
             name: "Queue",
+            borders: "ALL",
             pane: Split(
                 direction: Horizontal,
-                panes: [(size: "40%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Queue))],
+                panes: [
+                    (
+                        size: "40%",
+                        pane: Split(
+                            direction: Vertical,
+                            panes: [
+                                (
+                                    size: "80%",
+                                    borders: "ALL",
+                                    pane: Pane(AlbumArt),
+                                ),
+                                (
+                                    size: "20%",
+                                    borders: "ALL",
+                                    pane: Pane(Lyrics),
+                                ),
+                            ],
+                        ),
+                    ),
+                    (
+                        size: "60%",
+                        borders: "ALL",
+                        pane: Pane(Queue),
+                    ),
+                ],
             ),
         ),
         (
