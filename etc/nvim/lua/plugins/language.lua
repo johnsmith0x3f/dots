@@ -26,7 +26,7 @@ local servers = {
 		"clangd",
 		"lua_ls",
 		"pylsp",
-		"rust_analyzer",
+		-- "rust_analyzer",
 		"tinymist",
 	},
 	setup = {
