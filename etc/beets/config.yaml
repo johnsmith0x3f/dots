@@ -1,3 +1,6 @@
+library: "~/.cache/beets/library.db"
+directory: "~/Music/.beets"
+
 # Plugins to enable,
 # see https://beets.readthedocs.io/en/stable/plugins/index.html for details.
 plugins:
@@ -9,8 +12,6 @@ fetchart:
   sources: filesystem
 item_fields: # inline
   disc_and_track: u'%i-%02i' % (disc, track) if disctotal > 1 else u'%02i' % (track)
-
-directory: /tmp/music
 
 # Define the default file path.
 paths:
