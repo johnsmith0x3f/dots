@@ -6,13 +6,8 @@ directory: "~/Music/.beets"
 # Plugins to enable,
 # see https://beets.readthedocs.io/en/stable/plugins/index.html for details.
 plugins:
-  - advancedrewrite
   - fetchart
   - hook
-
-advancedrewrite:
-  - match: "’"
-    replacements: 
 
 fetchart:
   auto: yes # auto-fetch during import
