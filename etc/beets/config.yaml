@@ -18,10 +18,10 @@ fetchart:
   sources: filesystem itunes coverart albumart # sources to look for, local first
   high_resolution: yes # storage is cheap, fetch highest resolution possible
 
-#hook:
-#  hooks:
-#    - event: import
-#      command: echo "{paths}"
+hook:
+  hooks:
+    - event: album_imported
+      command: beetx zero "{album.path}"
 
 # }}}
 
