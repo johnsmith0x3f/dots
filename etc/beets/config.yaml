@@ -1,23 +1,39 @@
 library: "~/.cache/beets/library.db"
 directory: "~/Music/.beets"
 
+# Plugins {{{
+
 # Plugins to enable,
 # see https://beets.readthedocs.io/en/stable/plugins/index.html for details.
 plugins:
-  - fetchart # for importing covers
-  - inline # for defining custom fields
-# Configurations for each plugins.
+  - advancedrewrite
+  - fetchart
+  - hook
+
+advancedrewrite:
+  - match: "’"
+    replacements: 
+
 fetchart:
-  minwidth: 1000
-  sources: filesystem
-item_fields: # inline
-  disc_and_track: u'%i-%02i' % (disc, track) if disctotal > 1 else u'%02i' % (track)
+  auto: yes # auto-fetch during import
+  cautious: yes # pick those with correct filenames only
+  cover_names: cover front # names that are considered "correct"
+  minwidth: 1000 # only accept 1000px and higher resolution
+  enforce_ratio: yes # only accept width:height=1:1 ratio
+  sources: filesystem itunes coverart albumart # sources to look for, local first
+  high_resolution: yes # storage is cheap, fetch highest resolution possible
+
+hook:
+  hooks:
+    - event: import
+      command: echo "{paths}"
+
+# }}}
 
 # Define the default file path.
 paths:
-  default: $albumartist/[$year] $album%aunique{}/$disc_and_track $title
+  default: $albumartist/[$originalyear] $album%aunique{}/$track $title
 asciify_paths: yes
-per_disc_numbering: yes
 # Replace some segments of filenames.
 replace:
   '_': ''
