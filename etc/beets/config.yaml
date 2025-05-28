@@ -18,16 +18,16 @@ fetchart:
   sources: filesystem itunes coverart albumart # sources to look for, local first
   high_resolution: yes # storage is cheap, fetch highest resolution possible
 
-hook:
-  hooks:
-    - event: import
-      command: echo "{paths}"
+#hook:
+#  hooks:
+#    - event: import
+#      command: echo "{paths}"
 
 # }}}
 
 # Define the default file path.
 paths:
-  default: $albumartist/[$originalyear] $album%aunique{}/$track $title
+  default: $albumartist/[$original_year] $album%aunique{}/$track $title
 asciify_paths: yes
 # Replace some segments of filenames.
 replace:
