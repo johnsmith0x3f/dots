@@ -1,9 +1,3 @@
-function sort-tags() {
-	fd ".*" "$1" -e "flac" | while read -r flac; do
-		metaflac --export-tags-to=- --remove-all-tags $flac | sort | metaflac --import-tags-from=- $flac
-	done
-}
-
 function beetx() {
 	type fd &> "/dev/null" || {
 		echo "Please install fd (https://github.com/sharkdp/fd)."
@@ -11,8 +5,17 @@ function beetx() {
 	}
 
 	case $1 in
+		sort) __beetx_sort "$2" ;;
 		zero) __beetx_zero "$2" ;;
 	esac
+}
+
+function __beetx_sort() {
+	fd ".*" --extension "flac" "$1" | while read -r flac; do
+		metaflac --export-tags-to=- --remove-all-tags "$flac" |
+		sort |
+		metaflac --import-tags-from=- "$flac"
+	done
 }
 
 function __beetx_zero() {
@@ -35,6 +38,4 @@ function __beetx_zero() {
 	# Tags are necessary, but not all tags are. So we remove all but wanted tags.
 	local args=( "metaflac" "--remove-all-tags-except=${(j|=|)tags}" "{}" ";" )
 	fd ".*" --extension "flac" "$1" --exec-batch "${args[@]}"
-
-	# TODO: Sort the tags when done.
 }
