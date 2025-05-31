@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Configure monitors.
-if [[ $( hyprctl monitors all | grep -c "Monitor" ) -gt 1 ]]; then
+if [[ $( hyprctl monitors | grep -c "Monitor" ) -gt 1 ]]; then
 	hyprctl keyword monitor "eDP-1, disabled" &&
 	hyprctl keyword monitor "DP-1, highrr, auto, 1" &&
 	hyprctl dispatch workspace 1
@@ -17,4 +17,4 @@ fcitx5 -d
 # Draw the wallpaper.
 swww img -t none "$XDG_DATA_HOME/wallpapers/jellynaut.png"
 # Start hypridle daemon and hyprlock session.
-pgrep -x "hypridle" || { hypridle && hyprlock }
+pgrep -x "hypridle" || hypridle &
