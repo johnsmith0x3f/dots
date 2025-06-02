@@ -18,15 +18,14 @@ function __beetx_quot() {
 		# First replace the tags.
 		metaflac --export-tags-to=- --remove-all-tags "$file" | sed "s/’/'/g" | metaflac --import-tags-from=- "$file"
 		# Then rename the FLAC files.
-		mv -v "$file" "${file//’/'}"
+		[[ "$file" == "${file//’/'}" ]] || mv -v "$file" "${file//’/'}"
 	done
 }
 
 function __beetx_sort() {
-	fd ".*" --extension "flac" "$1" | while read -r flac; do
-		metaflac --export-tags-to=- --remove-all-tags "$flac" |
-		sort |
-		metaflac --import-tags-from=- "$flac"
+	fd ".*" --extension "flac" "$1" | while read -r file; do
+		# Sort the tags by lexicographical order.
+		metaflac --export-tags-to=- --remove-all-tags "$file" | sort | metaflac --import-tags-from=- "$file"
 	done
 }
 
