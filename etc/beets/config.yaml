@@ -18,17 +18,37 @@ fetchart:
   sources: filesystem itunes coverart albumart # sources to look for, local first
   high_resolution: yes # storage is cheap, fetch highest resolution possible
 
-hook:
-  hooks:
-    - event: album_imported
-      command: beetx zero "{album.path}"
+#hook:
+#  hooks:
+#    - event: album_imported
+#      command: beetx zero "{album.path}"
 
 # }}}
+
+# Ignore some bad paths, this including the infamous SVI directories
+# that Windows shit everywhere it can, and the 'lost+found' directory created by fsck.
+ignore: [ "System Volume Information", "lost+found" ]
+ignore_hidden: yes
+
+# Replace some characters in path and sadly, not in metadata.
+replace:
+  "_": ""
+
+# Use a single counter for multi-disc releases,
+# the actual per-disc numbering will be stored in metadata.
+per_disc_numbering: no
+
+# Handle different releases with the same names by same artists.
+# Check the release years and labels, for both albums (including EPs) and singletons.
+aunique:
+  keys: albumartist album
+  disambiguators: albumtype year label albumdisambig
+  bracket: "()"
+sunique:
+  keys: artist title
+  disambiguators: year label trackdisambig
+  bracket: "()"
 
 # Define the default file path.
 paths:
   default: $albumartist/[$original_year] $album%aunique{}/$track $title
-asciify_paths: yes
-# Replace some segments of filenames.
-replace:
-  '_': ''
