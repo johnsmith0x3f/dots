@@ -5,9 +5,21 @@ function beetx() {
 	}
 
 	case $1 in
+		quot) __beetx_quot "$2" ;;
 		sort) __beetx_sort "$2" ;;
 		zero) __beetx_zero "$2" ;;
 	esac
+}
+
+function __beetx_quot() {
+	# Find all FLAC files recursively in the given directory
+	# and replace the Unicode quotes with ASCII ones in both filenames and tags.
+	fd ".*" --extension "flac" "$1" | while read -r file; do
+		# First replace the tags.
+		metaflac --export-tags-to=- --remove-all-tags "$file" | sed "s/’/'/g" | metaflac --import-tags-from=- "$file"
+		# Then rename the FLAC files.
+		mv -v "$file" "${file//’/'}"
+	done
 }
 
 function __beetx_sort() {

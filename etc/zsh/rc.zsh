@@ -41,7 +41,7 @@ setopt histignorespace
 # Plugins {{{
 
 # Source local plugins.
-for plugin in ${ZDOTDIR}/plugins/*; do
+for plugin in $ZDOTDIR/plugins/*; do
 	source "$plugin"
 done
 
