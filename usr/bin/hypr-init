@@ -9,8 +9,6 @@ fi
 
 # Start wallpaper daemon.
 swww-daemon &
-# Start bittorrent daemon.
-aria2c --dir="$XDG_DATA_HOME/aria2/downloads" --enable-rpc --rpc-listen-all --quiet &
 # Start input method daemon.
 fcitx5 -d
 
