@@ -5,9 +5,10 @@ directory: "~/Music/.beets"
 
 # Plugins to enable,
 # see https://beets.readthedocs.io/en/stable/plugins/index.html for details.
-plugins:
-  - fetchart
-  - hook
+plugins: [
+  "fetchart",
+  "hook",
+]
 
 fetchart:
   auto: yes # auto-fetch during import
@@ -18,10 +19,10 @@ fetchart:
   sources: filesystem itunes coverart albumart # sources to look for, local first
   high_resolution: yes # storage is cheap, fetch highest resolution possible
 
-#hook:
-#  hooks:
-#    - event: album_imported
-#      command: beetx zero "{album.path}"
+hook:
+  hooks:
+    - event: album_imported
+      command: echo "{album.path}"
 
 # }}}
 
@@ -33,10 +34,6 @@ ignore_hidden: yes
 # Replace some characters in path and sadly, not in metadata.
 replace:
   "_": ""
-
-# Use a single counter for multi-disc releases,
-# the actual per-disc numbering will be stored in metadata.
-per_disc_numbering: no
 
 # Handle different releases with the same names by same artists.
 # Check the release years and labels, for both albums (including EPs) and singletons.
