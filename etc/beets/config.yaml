@@ -49,3 +49,6 @@ sunique:
 # Define the default file path.
 paths:
   default: $albumartist/[$original_year] $album%aunique{}/$track $title
+
+import:
+  move: yes # move files instead of copying
