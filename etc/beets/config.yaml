@@ -8,6 +8,7 @@ directory: "~/Music/.beets"
 plugins: [
   "fetchart",
   "hook",
+  "rewrite",
 ]
 
 fetchart:
@@ -23,6 +24,12 @@ hook:
   hooks:
     - event: album_imported
       command: echo "{album.path}"
+
+rewrite:
+  artist .*Art Blakey.*: Art Blakey
+  artist .*Oscar Peterson.*: Oscar Peterson
+  artist .*Prince.*Revolution.*: Prince
+  artist .*Velvet Underground.*: Velvet Underground
 
 # }}}
 
