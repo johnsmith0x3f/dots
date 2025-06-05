@@ -8,11 +8,9 @@ directory: "~/Music/.beets"
 plugins: [
   "fetchart",
   "hook",
-  "rewrite",
 ]
 
 fetchart:
-  auto: yes # auto-fetch during import
   cautious: yes # pick those with correct filenames only
   cover_names: cover front # names that are considered "correct"
   minwidth: 1000 # only accept 1000px and higher resolution
@@ -24,12 +22,6 @@ hook:
   hooks:
     - event: album_imported
       command: echo "{album.path}"
-
-rewrite:
-  artist .*Art Blakey.*: Art Blakey
-  artist .*Oscar Peterson.*: Oscar Peterson
-  artist .*Prince.*Revolution.*: Prince
-  artist .*Velvet Underground.*: Velvet Underground
 
 # }}}
 
