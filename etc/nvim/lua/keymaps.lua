@@ -6,11 +6,11 @@ vim.g.maplocalleader = ";"
 local map = vim.keymap.set
 local opt = { noremap = true, silent = true }
 
--- Prevent bad habits like using the arrow keys for movement.
-map({ "n", "x" }, "<Left>",  "<CMD>echo 'Use h'<CR>")
-map({ "n", "x" }, "<Down>",  "<CMD>echo 'Use j'<CR>")
-map({ "n", "x" }, "<Up>",    "<CMD>echo 'Use k'<CR>")
-map({ "n", "x" }, "<Right>", "<CMD>echo 'Use l'<CR>")
+---- Prevent bad habits like using the arrow keys for movement. Turned off for GZ.
+--map({ "n", "x" }, "<Left>",  "<CMD>echo 'Use h'<CR>")
+--map({ "n", "x" }, "<Down>",  "<CMD>echo 'Use j'<CR>")
+--map({ "n", "x" }, "<Up>",    "<CMD>echo 'Use k'<CR>")
+--map({ "n", "x" }, "<Right>", "<CMD>echo 'Use l'<CR>")
 
 -- Better line navigations.
 map({ "n", "x" }, "j", "gj", opt);
