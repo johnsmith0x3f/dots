@@ -80,18 +80,4 @@ return {
 	{
 		"jake-stewart/multicursor.nvim",
 	},
-
-	-- Which Key
-	-- WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
-	{
-		"folke/which-key.nvim",
-
-		event = "VeryLazy",
-		keys = {
-			{ mode = "n", "<Leader>?", function() require("which-key").show({ global = false }) end },
-		},
-
-		opts = {
-		},
-	},
 }
