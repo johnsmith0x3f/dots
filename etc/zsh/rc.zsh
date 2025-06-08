@@ -11,10 +11,17 @@ alias yay="yay --color=auto"
 
 # I fetch a lot.
 alias f="fastfetch"
-alias fetch="fastfetch"
 
 # I use lazygit.
 alias g="lazygit"
+# I also use plain git.
+alias ga="git add" # my barbaric yawp over the files of the commits
+alias gaa="git add --all" # yawp harder to commit all the files
+alias gb="git branch"
+alias gbc="git checkout -b" # branch then checkout
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gr="git remote"
 
 # I use nvim btw.
 alias v="nvim"
