@@ -26,15 +26,17 @@ hook:
 # Use this to group some related artists together.
 substitute:
   # Art Blakey
-  "(The )?Art Blakey.*": "Art Blakey"
+  "^(The )?Art Blakey (&|Quartet|Quintet).*": "Art Blakey"
+  # Bill Evans
+  "^(The )?Bill Evans (Trio|Quintet).*": "Bill Evans"
   # Oscar Peterson
-  "(The )?Oscar Peterson (Trio|Quartet)": "Oscar Peterson"
+  "^(The )?Oscar Peterson (Trio|Quartet).*": "Oscar Peterson"
   # Prince
-  ".*(Prince.*Revolution).*": "Prince"
+  "^(Prince)?.*Revolution.*": "Prince"
   # RAH Band
-  "The RAH Band|Richard Hewson": "RAH Band"
+  "^(The RAH Band|Richard Hewson)": "RAH Band"
   # Velvet Underground
-  "(The )?Velvet Underground( & Nico)?": "Velvet Underground"
+  "^(The )?Velvet Underground( & Nico)?": "Velvet Underground"
 
 # Ignore some bad paths, this including the infamous SVI directories
 # that Windows shit everywhere it can, and the 'lost+found' directory created by fsck.
