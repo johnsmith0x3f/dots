@@ -12,7 +12,22 @@ return {
 	-- Oxocarbon
 	{ "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
 	-- Tokyo Night
-	{ "folke/tokyonight.nvim", priority = 999, config = function() vim.cmd("colorscheme " .. colorscheme) end },
+	{
+		"folke/tokyonight.nvim", priority = 999,
+
+		config = function()
+			require("tokyonight").setup({
+				plugins = {
+					alpha = true,
+					bufferline = true,
+					copilot = true,
+					telescope = true,
+				},
+			})
+
+			vim.cmd.colorscheme(colorscheme)
+		end,
+	},
 
 	-- }}}
 
@@ -76,6 +91,10 @@ return {
 			{ mode = "n", "<Leader>3", "<CMD>BufferLineGoToBuffer 3<CR>" },
 			{ mode = "n", "<Leader>4", "<CMD>BufferLineGoToBuffer 4<CR>" },
 			{ mode = "n", "<Leader>5", "<CMD>BufferLineGoToBuffer 5<CR>" },
+			{ mode = "n", "<Leader>6", "<CMD>BufferLineGoToBuffer 6<CR>" },
+			{ mode = "n", "<Leader>7", "<CMD>BufferLineGoToBuffer 7<CR>" },
+			{ mode = "n", "<Leader>8", "<CMD>BufferLineGoToBuffer 8<CR>" },
+			{ mode = "n", "<Leader>9", "<CMD>BufferLineGoToBuffer 9<CR>" },
 			-- Close buffer.
 			{ mode = "n", "<Leader>x", "<CMD>bdelete<CR>"},
 		},
