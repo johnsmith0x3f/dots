@@ -64,6 +64,8 @@ return {
 
 			-- Load LuaSnip snippets.
 			require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/lua/snippets" })
+			-- Load SnipMate snippets.
+			require("luasnip.loaders.from_snipmate").load({ paths = vim.fn.stdpath("config") .. "/lua/snippets" })
 
 			-- Map keys.
 			vim.keymap.set({ "i", "s" }, "<Tab>", function()

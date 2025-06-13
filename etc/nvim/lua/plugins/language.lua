@@ -117,7 +117,9 @@ return {
 
 	-- Dart
 	{
-		"nvim-flutter/flutter-tools.nvim", dependencies = { "nvim-lua/plenary.nvim" },
+		"nvim-flutter/flutter-tools.nvim",
+
+		dependencies = { "nvim-lua/plenary.nvim" },
 
 		lazy = false,
 
