@@ -15,6 +15,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- Dart
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "dart" },
+	callback = function()
+		vim.opt.tabstop = 2
+		vim.opt.expandtab = true
+	end,
+})
+
 -- Python
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "python" },
