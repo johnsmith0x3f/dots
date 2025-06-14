@@ -22,6 +22,7 @@ alias gbc="git checkout -b" # branch then checkout
 alias gc="git commit"
 alias gca="git commit --amend"
 alias gr="git remote"
+alias gs="git status"
 
 # I use nvim btw.
 alias v="nvim"
