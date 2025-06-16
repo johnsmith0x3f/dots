@@ -173,7 +173,9 @@ return {
 			{ mode = "n", "<leader>pt", "<CMD>TypstPreviewToggle<CR>" },
 		},
 
-		opts = {},
+		opts = {
+			invert_colors = "auto",
+		},
 	},
 
 -- }}}
