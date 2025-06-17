@@ -47,6 +47,8 @@ ignore_hidden: yes
 replace:
   "_": ""
 
+asciify_paths: yes
+
 # Handle different releases with the same names by same artists.
 # Check the release years and labels, for both albums (including EPs) and singletons.
 aunique:
@@ -60,7 +62,9 @@ sunique:
 
 # Define the default file path.
 paths:
-  default: %substitute{$albumartist}/[$original_year] $album%aunique{}/$track $title
+  default: "%substitute{$albumartist}/[$original_year] $album%aunique{}/$track $title"
+  singleton: "%substitute{$artist}/Singles/[$original_year] $title/$title"
+  comp: "#VariousArtists/[$original_year] $album%aunique{}/$track $title"
 
 import:
   move: yes # move files instead of copying
