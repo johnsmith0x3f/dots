@@ -23,10 +23,17 @@ return {
 		keys = {
 			-- Find all files (including hidden).
 			{ mode = "n", "<Leader>fa", function() require("telescope.builtin").find_files({ hidden = true }) end },
+			-- Find buffers.
+			{ mode = "n", "<Leader>fb", function() require("telescope.builtin").buffers({}) end },
 			-- Find files.
 			{ mode = "n", "<Leader>ff", function() require("telescope.builtin").find_files({}) end },
-			-- Find buffers.
-			{ mode = "n", "<Leader>lg", function() require("telescope.builtin").live_grep({}) end }, -- requires ripgrep
+			-- Find (grep) contents, requires ripgrep.
+			{ mode = "n", "<Leader>fg", function() require("telescope.builtin").live_grep({}) end },
+
+			-- Find references using LSP.
+			{ mode = "n", "<Leader>lr", function() require("telescope.builtin").lsp_references({}) end },
+			-- Find definitions using LSP.
+			{ mode = "n", "<Leader>ld", function() require("telescope.builtin").lsp_definitions({}) end },
 		}
 	},
 
