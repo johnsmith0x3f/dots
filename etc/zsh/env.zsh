@@ -1,7 +1,8 @@
 # $ZDOTDIR is set to ${HOME}/.etc/zsh in /etc/zsh/zshenv.
 
-# Set default applications.
+# Use NeoVim as default editor.
 export EDITOR="nvim"
+# Use NeoVim as default man-pager.
 export MANPAGER="nvim +Man!"
 
 # Configure command history, 1000 is far from enough.
