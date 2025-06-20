@@ -21,6 +21,9 @@ alias gb="git branch"
 alias gbc="git checkout -b" # branch then checkout
 alias gc="git commit"
 alias gca="git commit --amend"
+alias gf="git fetch"
+alias gpl="git pull"
+alias gps="git push"
 alias gr="git remote"
 alias gs="git status"
 
