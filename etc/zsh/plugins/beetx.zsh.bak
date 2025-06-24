@@ -1,4 +1,4 @@
-function beetx() {
+function beets() {
 	type fd &> "/dev/null" || {
 		echo "Please install fd (https://github.com/sharkdp/fd)."
 		return 1
