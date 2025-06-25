@@ -17,11 +17,6 @@ fetchart:
   sources: filesystem itunes coverart albumart # sources to look for, local first
   high_resolution: yes # storage is cheap, fetch highest resolution possible
 
-hook:
-  hooks:
-    - event: album_imported
-      command: echo "{album.path}"
-
 # Substitute some patterns in certain fields.
 # Use this to group some related artists together.
 substitute:
@@ -47,8 +42,6 @@ ignore_hidden: yes
 replace:
   "_": ""
 
-asciify_paths: yes
-
 # Handle different releases with the same names by same artists.
 # Check the release years and labels, for both albums (including EPs) and singletons.
 aunique:
@@ -63,7 +56,7 @@ sunique:
 # Define the default file path.
 paths:
   default: "%substitute{$albumartist}/[$original_year] $album%aunique{}/$track $title"
-  singleton: "%substitute{$artist}/Singles/[$original_year] $title/$title"
+  singleton: "%substitute{$artist}/Singles/[$original_year] $title/$track $title"
   comp: "#VariousArtists/[$original_year] $album%aunique{}/$track $title"
 
 import:

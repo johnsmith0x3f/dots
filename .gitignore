@@ -1,6 +1,8 @@
 # Ignore all font cache files.
 .uuid
 
+## beets
+/etc/beets/state.pickle
 ## mpd
 /etc/mpd/database
 /etc/mpd/pid
