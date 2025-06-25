@@ -1,47 +1,45 @@
 #!/usr/bin/env bash
 
-# Functions {{{
-
-# Mash duplicate tags into one.
-_beetx_mash() {
-	for flac in $1/*.flac; do
-
-	done
-}
-
-# Replace Unicode quotes with ASCII ones.
-_beetx_quot() {
-}
-
-# Remove cover arts and unnecessary tags.
-_beetx_zero() {
-	[[ -d "$1" ]] || return
-
-	tags=(
-		"ALBUM"
-		"ALBUMARTIST"
-		"ARTIST"
-		"DATE"
-		"DISCNUMBER"
-		"GENRE"
-		"TITLE"
-		"TRACKNUMBER"
-	)
-
-	for flac in $1/*.flac; do
-		metaflac --remove --block-type="PICTURE" "$flac"
-		metaflac --remove-all-tags-except="$( IFS="="; echo "${tags[*]}" )" "$flac"
-
-		for tag in $( IFS="\n"; echo "${tags[*]}" ); do
-			metaflac --show-tag="$tag"
-		done
-	done
-}
-
-# }}}
-
 # Requires metaflac.
-type metaflac &> "/dev/null" || return 1
+type metaflac > "/dev/null" || return 1
+
+# Zero stands for "zero manual tasks".
+_beetx_zero() {
+	# Nested for integration with find.
+	zero() {
+		# Remove embedded arts and unwanted tags.
+		local -a tags=(
+			"ALBUM"
+			"ALBUMARTIST"
+			"ARTIST"
+			"DATE"
+			"DISCNUMBER"
+			"GENRE"
+			"TITLE"
+			"TRACKNUMBER"
+		)
+		metaflac --remove --block-type="PICTURE" "$1"
+		metaflac --remove-all-tags-except="$( IFS="="; echo "${tags[*]}" )" "$1"
+
+		# Mash tags of the same field into one string.
+		for tag in "${tags[@]}"; do
+			metaflac --show-tag="$tag" "$1" | tr "\n" " " | sed "s/ $tag=/; /g"
+		done | metaflac --remove-all-tags --import-tags-from="-" "$1"
+
+		# Replace Unicode quotes with ASCII ones in metadata.
+		metaflac --show-all-tags "$1" | sed -E "s/‘|’/'/g" |
+		metaflac --remove-all-tags --import-tags-from="-" "$1"
+
+		# Export the function for integration.
+	} && export -f zero
+
+	# Use `fd` if available, otherwise fall back to `find`.
+	if type fd > "/dev/null"; then
+		fd ".*" --extension "flac" "$1" --exec bash -c 'zero "$1"' _ "{}" \;
+	else
+		find "$1" -name "*.flac" -type "f" -exec bash -c 'zero "$1"' _ "{}" \;
+	fi
+}
 
 case $1 in
 	zero) _beetx_zero "$2" ;;

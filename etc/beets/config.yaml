@@ -17,6 +17,11 @@ fetchart:
   sources: filesystem itunes coverart albumart # sources to look for, local first
   high_resolution: yes # storage is cheap, fetch highest resolution possible
 
+hook:
+  hooks:
+    - event: album_imported
+      command: beetx zero "{album.path}"
+
 # Substitute some patterns in certain fields.
 # Use this to group some related artists together.
 substitute:
@@ -41,6 +46,7 @@ ignore_hidden: yes
 # Replace some characters in path and sadly, not in metadata.
 replace:
   "_": ""
+  "’": "'"
 
 # Handle different releases with the same names by same artists.
 # Check the release years and labels, for both albums (including EPs) and singletons.
@@ -59,5 +65,5 @@ paths:
   singleton: "%substitute{$artist}/Singles/[$original_year] $title/$track $title"
   comp: "#VariousArtists/[$original_year] $album%aunique{}/$track $title"
 
-import:
-  move: yes # move files instead of copying
+# import:
+#   move: yes # move files instead of copying
