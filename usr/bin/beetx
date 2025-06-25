@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# Functions {{{
+
+# Mash duplicate tags into one.
+_beetx_mash() {
+	for flac in $1/*.flac; do
+
+	done
+}
+
+# Replace Unicode quotes with ASCII ones.
+_beetx_quot() {
+}
+
+# Remove cover arts and unnecessary tags.
+_beetx_zero() {
+	[[ -d "$1" ]] || return
+
+	tags=(
+		"ALBUM"
+		"ALBUMARTIST"
+		"ARTIST"
+		"DATE"
+		"DISCNUMBER"
+		"GENRE"
+		"TITLE"
+		"TRACKNUMBER"
+	)
+
+	for flac in $1/*.flac; do
+		metaflac --remove --block-type="PICTURE" "$flac"
+		metaflac --remove-all-tags-except="$( IFS="="; echo "${tags[*]}" )" "$flac"
+
+		for tag in $( IFS="\n"; echo "${tags[*]}" ); do
+			metaflac --show-tag="$tag"
+		done
+	done
+}
+
+# }}}
+
+# Requires metaflac.
+type metaflac &> "/dev/null" || return 1
+
+case $1 in
+	zero) _beetx_zero "$2" ;;
+esac
