@@ -1,6 +1,3 @@
-library: "~/.cache/beets/library.db"
-directory: "~/Music/.beets"
-
 # Plugins to enable,
 # see https://beets.readthedocs.io/en/stable/plugins/index.html for details.
 plugins: [
