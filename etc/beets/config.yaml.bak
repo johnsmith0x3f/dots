@@ -1,0 +1,72 @@
+# Plugins to enable,
+# see https://beets.readthedocs.io/en/stable/plugins/index.html for details.
+plugins: [
+  "fetchart", # for copying arts
+  "filetote", # for copying lrcs
+  "hook",
+  # "lastgenre",
+  "substitute",
+]
+
+fetchart:
+  cautious: yes # pick those with correct filenames only
+  cover_names: cover folder front # names that are considered "correct"
+  minwidth: 1000 # only accept 1000px and higher resolution
+  enforce_ratio: yes # only accept width:height=1:1 ratio
+  sources: filesystem itunes coverart albumart # sources to look for
+  high_resolution: yes # storage is cheap, fetch highest resolution possible
+
+filetote:
+  pairing:
+    enabled: true # import "name.*" files along with "name.music_ext"
+
+hook:
+  hooks:
+    - event: album_imported
+      command: beetx zero "{album.path}"
+
+# Substitute some patterns in certain fields.
+# Use this to group some related artists together.
+substitute:
+  # Art Blakey
+  "^(The )?Art Blakey (&|Quartet|Quintet).*": "Art Blakey"
+  # Bill Evans
+  "^(The )?Bill Evans (Trio|Quintet).*": "Bill Evans"
+  # Oscar Peterson
+  "^(The )?Oscar Peterson (Trio|Quartet).*": "Oscar Peterson"
+  # Prince
+  "^(Prince)?.*Revolution.*": "Prince"
+  # RAH Band
+  "^(The RAH Band|Richard Hewson)": "RAH Band"
+  # Velvet Underground
+  "^(The )?Velvet Underground( & Nico)?": "Velvet Underground"
+
+# Ignore some bad paths, this including the infamous SVI directories
+# that Windows shit everywhere it can, and the 'lost+found' directory created by fsck.
+ignore: [ "System Volume Information", "lost+found" ]
+ignore_hidden: yes
+
+# Replace some characters in path and sadly, not in metadata.
+replace:
+  "_": ""
+  "’": "'"
+
+# Handle different releases with the same names by same artists.
+# Check the release years and labels, for both albums (including EPs) and singletons.
+aunique:
+  keys: albumartist album
+  disambiguators: albumtype year label albumdisambig
+  bracket: "()"
+sunique:
+  keys: artist title
+  disambiguators: year label trackdisambig
+  bracket: "()"
+
+# Define the default file path.
+paths:
+  default: "%substitute{$albumartist}/[$original_year] $album%aunique{}/$track $title"
+  singleton: "%substitute{$artist}/Singles/[$original_year] $title/$track $title"
+  comp: "#VariousArtists/[$original_year] $album%aunique{}/$track $title"
+
+# import:
+#   move: yes # move files instead of copying
