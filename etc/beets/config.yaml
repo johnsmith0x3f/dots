@@ -4,18 +4,24 @@ directory: "~/Music/.beets"
 # Plugins to enable,
 # see https://beets.readthedocs.io/en/stable/plugins/index.html for details.
 plugins: [
-  "fetchart",
+  "fetchart", # for copying arts
+  "filetote", # for copying lrcs
   "hook",
+  # "lastgenre",
   "substitute",
 ]
 
 fetchart:
   cautious: yes # pick those with correct filenames only
-  cover_names: cover front # names that are considered "correct"
+  cover_names: cover folder front # names that are considered "correct"
   minwidth: 1000 # only accept 1000px and higher resolution
   enforce_ratio: yes # only accept width:height=1:1 ratio
-  sources: filesystem itunes coverart albumart # sources to look for, local first
+  sources: filesystem itunes coverart albumart # sources to look for
   high_resolution: yes # storage is cheap, fetch highest resolution possible
+
+filetote:
+  pairing:
+    enabled: true # import "name.*" files along with "name.music_ext"
 
 hook:
   hooks:
