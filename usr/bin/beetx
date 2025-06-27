@@ -23,7 +23,7 @@ _beetx_zero() {
 
 		# Mash tags of the same field into one string.
 		for tag in "${tags[@]}"; do
-			metaflac --show-tag="$tag" "$1" | tr "\n" " " | sed "s/ $tag=/; /g"
+			metaflac --show-tag="$tag" "$1" | paste -d " " -s | sed "s/ $tag=/; /g"
 		done | metaflac --remove-all-tags --import-tags-from="-" "$1"
 
 		# Replace Unicode quotes with ASCII ones in metadata.
