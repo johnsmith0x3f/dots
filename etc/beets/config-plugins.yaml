@@ -1,6 +1,7 @@
 plugins: [
   "fetchart",
   "filetote",
+  "hook",
 ]
 
 fetchart:
@@ -21,3 +22,8 @@ filetote:
   paths:
     ext:.cue: "$albumpath/$album" # rename cuesheets
     ext:.log: "$albumpath/$album" # rename log files
+
+hook:
+  hooks:
+    - event: album_imported
+      command: beet-imported "{album.path}" # run cleanup script after import
