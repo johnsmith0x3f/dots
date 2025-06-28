@@ -1,4 +1,4 @@
-include: "config-plugins.yaml"
+include: [ "config-plugins.yaml" ]
 
 # Set the directory hierarchy.
 paths:
