@@ -1,3 +1,5 @@
+include: "config-plugins.yaml"
+
 # Set the directory hierarchy.
 paths:
   default: "$albumartist/[$original_year] $album%aunique{}/$track $title"
