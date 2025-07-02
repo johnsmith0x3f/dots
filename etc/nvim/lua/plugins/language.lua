@@ -21,55 +21,6 @@ local sitters = {
 	"yuck",
 }
 
-local servers = {
-	install = {
-		"clangd",
-		"lua_ls",
-		"pylsp",
-		-- "rust_analyzer",
-		"tinymist",
-	},
-	setup = {
-		{
-			name = "clangd",
-			opts = {},
-		},
-		{
-			name = "lua_ls",
-			opts = {
-				settings = {
-					Lua = {
-						diagnostics = {
-							-- Make the language server recognize the `vim` global.
-							globals = { "vim" },
-						},
-						runtime = {
-							-- Tell the language server the version of Lua being used.
-							version = "LuaJIT",
-						},
-						telemetry = {
-							-- Do not send telemetry data containing a randomized but unique identifier.
-							enable = false,
-						},
-						workspace = {
-							-- Make the language server recognize NeoVim runtime files.
-							library = vim.api.nvim_get_runtime_file("", true),
-						},
-					},
-				},
-			},
-		},
-		{
-			name = "pylsp",
-			opts = {},
-		},
-		{
-			name = "tinymist",
-			opts = {},
-		},
-	},
-}
-
 -- }}}
 
 return {
@@ -93,23 +44,8 @@ return {
 
 	-- Mason
 	{ "williamboman/mason.nvim", opts = {} },
-	{ "williamboman/mason-lspconfig.nvim", opts = { ensure_installed = servers.install } },
-	{
-		"neovim/nvim-lspconfig",
-
-		keys = {
-			{ mode = "n", "gd", vim.lsp.buf.definition },
-			{ mode = "n", "<Leader>d", vim.diagnostic.open_float },
-		},
-
-		config = function()
-			for _, lsp in pairs(servers.setup) do
-				--require("lspconfig")[lsp.name].setup(lsp.opts)
-				vim.lsp.enable(lsp.name)
-				vim.lsp.config(lsp.name, lsp.opts)
-			end
-		end,
-	},
+	-- Mason LSP Config (auto-install and enable LSP servers)
+	{ "williamboman/mason-lspconfig.nvim" }, -- see "options.lua"
 
 -- }}}
 

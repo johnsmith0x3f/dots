@@ -31,3 +31,23 @@ vim.filetype.add({
 		rasi = "rasi"
 	}
 })
+
+-- Define the LSP setup function.
+local function setup_lsp()
+	-- Look for LSP config files in standard RTP.
+	local dir = vim.fn.stdpath("config") .. "/lsp"
+	-- Return early if the directory does not exist.
+	if not vim.fn.isdirectory(dir) then return end
+
+	-- Initialize a table to hold LSP server names.
+	local servers = {}
+	-- Get all LSP server names from the runtime path.
+	for _, f in pairs(vim.fn.readdir(dir)) do
+		local server_name = vim.fn.fnamemodify(f, ":t:r")
+		table.insert(servers, server_name)
+	end
+	-- Enable the LSP servers.
+	require("mason-lspconfig").setup({ ensure_installed = servers })
+end
+-- Call the setup function to set up LSP servers.
+setup_lsp()
