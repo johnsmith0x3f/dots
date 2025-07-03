@@ -41,21 +41,10 @@ assign [class="(.*)(?i)(kodi|mpv|smplayer|vlc)(.*)"] $ws8
 assign [class="(.*)(?i)(galaxy|heroic|lutris|steam)(.*)"] $ws9
 assign [class="(.*)(?i)(keepassxc|qbittorrent)(.*)" window_type="normal"] $ws0
 
-# Make Bluetooth panels start floating.
-for_window [class="^(.*)(?i)(blueberry|blueman|bluedevil)(.*)$"] floating enable
-# Make Wi-Fi panels start floating.
-for_window [class="^(.*)(?i)(iwgtk|nm-applet|nm-connect)(.*)$"] floating enable
-# Make theme-managers start floating.
-for_window [class="^(.*)(?i)(gnome-tweaks|lxappearance)(.*)$"] floating enable
-# Make chat apps start floating.
-for_window [class="^(.*)(?i)(discord|qq|telegram|wechat)(.*)$"] floating enable
-# Make game-related apps start floating.
-for_window [class="^(.*)(?i)(galaxy|heroic|lutris|steam)(.*)$"] floating enable
-
-for_window [class="^(KeePassXC|mpv|qBittorrent)$"] floating enable
-
-# Float pop-ups.
-for_window [window_role="pop-up"] floating enable
+# Float all windows,
+for_window [all] floating enable
+# except for these ones.
+for_window [class=".*(?i)(kitty|ghostty).*"] floating disable
 
 ############################################### Keys ###############################################
 
