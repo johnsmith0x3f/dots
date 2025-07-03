@@ -22,4 +22,7 @@ map("n", "<C-j>", "<C-w>j", opt)
 map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<C-l>", "<C-w>l", opt)
 
+-- Open diagnostics in a floating window.
+map("n", "<Leader>d", vim.diagnostic.open_float, opt)
+
 map("n", "<Leader>s", "<CMD>source<CR>")
