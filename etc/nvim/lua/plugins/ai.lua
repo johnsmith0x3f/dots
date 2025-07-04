@@ -30,7 +30,7 @@ return {
 
 		opts = {
 			debug = true, -- enable debugging
-			model = "o3-mini"
+			model = "claude-sonnet-4"
 		}
 	}
 }
