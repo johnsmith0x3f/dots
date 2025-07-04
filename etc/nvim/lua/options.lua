@@ -19,6 +19,9 @@ vim.opt.shiftwidth = 0
 -- Do not use spaces instead of tabs when indenting.
 vim.opt.expandtab = false
 
+-- Split to right by default.
+vim.opt.splitright = true
+
 -- Set folds.
 vim.opt.foldmethod = "marker"
 
