@@ -15,7 +15,7 @@ return {
 		pylsp = {
 			plugins = {
 				pycodestyle = {
-					ignore = { "E501" }, -- Ignore line length limit.
+					ignore = { "E401", "E501" }, -- Ignore line length limit.
 				},
 			},
 		},
