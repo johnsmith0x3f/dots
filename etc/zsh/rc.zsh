@@ -1,4 +1,9 @@
 
+# Edit current command with $EDITOR.
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Alias {{{
 # See https://zsh.sourceforge.io/Doc/Release/Shell-Grammar.html#Aliasing for details.
 
@@ -62,7 +67,7 @@ for plugin in $ZDOTDIR/plugins/*.zsh; do
 	source "$plugin"
 done
 
-# Create remote plugins directory in cache if not exists.
+# Create remote plugins directory.
 plugins_dir="${XDG_DATA_HOME}/zsh/plugins"
 [[ -d "$plugins_dir" ]] || mkdir -p "$plugins_dir"
 # Load remote plugins from GitHub.
@@ -74,14 +79,13 @@ plugins=(
 )
 for plugin in $plugins; do
 	# Clone the plugin if it does not exist.
-	[[ -d "$plugins_dir/$plugin" ]] || git clone "https://github.com/$plugin.git" "$plugins_dir/$plugin" &>/dev/null
+	if [[ ! -d "$plugins_dir/$plugin" ]]; then
+		echo "\x1B[1;32mPlugin $plugin not installed, cloning...\x1B[0m"
+		git clone -q "https://github.com/$plugin.git" "$plugins_dir/$plugin"
+		echo "\x1B[1;32mDone.\x1B[0m"
+	fi
 	# Add the plugin to fpath and source it.
 	fpath+=( "$plugins_dir/$plugin" ) && source $plugins_dir/$plugin/${plugin#*/}.*zsh*
 done
 
 # }}}
-
-# Edit current command with $EDITOR.
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
