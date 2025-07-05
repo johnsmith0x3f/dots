@@ -1,43 +1,43 @@
-
--- Lists {{{
-
-local sitters = {
-	"bash",
-	"c",
-	"cpp",
-	"hyprlang",
-	"ini",
-	"lua",
-	"markdown",
-	"markdown_inline",
-	"rasi",
-	"regex",
-	"ron",
-	"rust",
-	"tmux",
-	"typst",
-	"vim",
-	"vimdoc",
-	"yuck",
-}
-
--- }}}
-
 return {
 -- Treesitter {{{
-	{
-		"nvim-treesitter/nvim-treesitter",
 
+	{
+		url = "https://github.com/nvim-treesitter/nvim-treesitter.git",
+		branch = "master",
+
+		-- Set build commands.
 		build = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 
+		-- Configure setup options.
 		opts = {
-			ensure_installed = sitters,
-			highlight = { enable = true },
-			indent = { enable = true },
+			ensure_installed = {
+				"bash",
+				"c",
+				"cpp",
+				"dockerfile",
+				"hyprlang",
+				"ini",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"rasi",
+				"regex",
+				"ron",
+				"rust",
+				"sway",
+				"tmux",
+				"toml",
+				"typst",
+				"vim",
+				"vimdoc",
+				"yuck",
+				"zathurarc",
+			},
 		},
 	},
+
 -- }}}
 
 -- LSP {{{
