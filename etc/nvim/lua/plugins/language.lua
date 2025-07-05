@@ -43,9 +43,30 @@ return {
 -- LSP {{{
 
 	-- Mason
-	{ "williamboman/mason.nvim", opts = {} },
-	-- Mason LSP Config (auto-install and enable LSP servers)
-	{ "williamboman/mason-lspconfig.nvim" }, -- see "options.lua"
+	--- Easily install and manage LSP servers, DAP servers, linters, and formatters.
+	{
+		url = "https://github.com/mason-org/mason.nvim.git",
+		opts = {},
+	},
+	-- Mason LSP Config
+	--- Extension to mason.nvim that makes it easier to use.
+	{
+		url = "https://github.com/mason-org/mason-lspconfig.nvim.git",
+		config = function()
+			local dir = vim.fn.stdpath("config") .. "/lsp"
+			if not vim.fn.isdirectory(dir) then
+				return
+			end
+
+			local servers = {}
+			for _, f in pairs(vim.fn.readdir(dir)) do
+				local server_name = vim.fn.fnamemodify(f, ":t:r")
+				table.insert(servers, server_name)
+			end
+
+			require("mason-lspconfig").setup({ ensure_installed = servers })
+		end,
+	},
 
 -- }}}
 
