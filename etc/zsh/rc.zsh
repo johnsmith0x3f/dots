@@ -11,8 +11,6 @@ bindkey -M vicmd v edit-command-line
 alias cat="bat --plain --paging=never"
 alias ls="eza --icons=auto --group-directories-first"
 alias grep="grep --color=auto"
-alias pacman="pacman --color=auto"
-alias yay="yay --color=auto"
 
 # I fetch a lot.
 alias f="fastfetch"
