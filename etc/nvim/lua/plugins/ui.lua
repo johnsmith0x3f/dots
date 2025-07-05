@@ -119,7 +119,7 @@ return {
 				component_separators = { left = "", right = "" },
 				secton_separators = { left = "", right = "" },
 				disabled_filetypes = {
-					statusline = {},
+					statusline = { "Avante", "AvanteInput", "AvanteSelectedFiles" },
 					winbar = {}
 				},
 				ignore_focus = { "NvimTree" }
@@ -141,7 +141,7 @@ return {
 				}
 			},
 			tabline = {},
-			winbar = {}
+			winbar = {},
 		}
 	},
 
@@ -158,5 +158,13 @@ return {
 				mode = "background"
 			})
 		end
-	}
+	},
+
+	-- TODO Comments
+	--- Highlight, list and search for todo comments in your projects.
+	{
+		url = "https://github.com/folke/todo-comments.nvim.git",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
+	},
 }
