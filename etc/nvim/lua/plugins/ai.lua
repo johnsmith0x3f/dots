@@ -27,76 +27,64 @@ return {
 		end,
 	},
 
-	-- Copilot Chat
-	--- Chat with GitHub Copilot in NeoVim.
-	{
-		url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
-		branch = "main",
 
-		-- Check dependencies.
-		dependencies = {
-			{ "zbirenbaum/copilot.lua" }, -- for copilot integrations
-			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-			{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "copilot-chat" } } }, -- for better rendering
-		},
-
-		-- Set build commands.
-		build = function()
-			if vim.fn.has("win32") then
-				return "powershell Write-Output 'Only on Linux or MacOS'"
-			else
-				return "make tiktoken"
-			end
-		end,
-
-		-- Configure keybinds.
-		keys = {
-			{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" },
-		},
-
-		-- Configure setup options.
-		opts = {
-			model = "claude-sonnet-4",
-			agent = "copilot",
-		},
-	},
-
-	-- -- Avante
-	-- --- Use your Neovim like using Cursor AI IDE!
+	-- -- Copilot Chat
+	-- --- Chat with GitHub Copilot in NeoVim.  NOTE: Use avante.nvim instead.
 	-- {
-	-- 	url = "https://github.com/yetone/avante.nvim",
-	-- 	version = false,
+	-- 	url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
+	-- 	branch = "main",
 	--
 	-- 	-- Check dependencies.
 	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		-- Dependencies below are optional.
-	-- 		"nvim-telescope/telescope.nvim", -- for file picker
-	-- 		"nvim-tree/nvim-web-devicons", -- for icons
-	-- 		"zbirenbaum/copilot.lua", -- for copilot
-	-- 		{
-	-- 			-- For rendering Markdown.
-	-- 			url = "https://github.com/MeanderingProgrammer/render-markdown.nvim", ft = { "Avante" },
-	-- 			opts = { file_types = { "Avante" } },
-	-- 		},
+	-- 		{ "zbirenbaum/copilot.lua" }, -- for copilot integrations
+	-- 		{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+	-- 		{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "copilot-chat" } } }, -- for better rendering
 	-- 	},
 	--
-	-- 	-- Runs on setup.
-	-- 	-- build = function()
-	-- 	-- 	if vim.fn.has("win32") == 1 then
-	-- 	-- 		return "powershell Write-Output 'Use Linux!'" -- fuck Windows
-	-- 	-- 	else
-	-- 	-- 		return "make"
-	-- 	-- 	end
-	-- 	-- end,
-	-- 	build = "make",
+	-- 	-- Set build commands.
+	-- 	build = function()
+	-- 		if vim.fn.has("win32") then
+	-- 			return "powershell Write-Output 'Only on Linux or MacOS'"
+	-- 		else
+	-- 			return "make tiktoken"
+	-- 		end
+	-- 	end,
 	--
-	-- 	-- Set options.
-	-- 	---@module "avante"
-	-- 	---@type avante.Config
-	-- 	opts = { provider = "copilot" },
+	-- 	-- Configure keybinds.
+	-- 	keys = {
+	-- 		{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" },
+	-- 	},
+	--
+	-- 	-- Call setup with options.
+	-- 	opts = {
+	-- 		model = "claude-sonnet-4",
+	-- 		agent = "copilot",
+	-- 	},
 	-- },
+
+	-- Avante
+	--- Use your Neovim like using Cursor AI IDE!
+	{
+		url = "https://github.com/yetone/avante.nvim",
+		version = false,
+
+		-- Check dependencies.
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "MunifTanjim/nui.nvim" },
+			-- Dependencies below are optional.
+			{ "nvim-telescope/telescope.nvim" }, -- for file picker
+			{ "nvim-tree/nvim-web-devicons" }, -- for icons
+			{ "zbirenbaum/copilot.lua" }, -- for copilot
+			{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "Avante" } } }, -- for rendering Markdown
+		},
+
+		-- Set build commands.
+		build = "make", -- on Linux and MacOS only
+
+		-- Call setup with options.
+		opts = { provider = "copilot" },
+	},
 
 	-- -- CodeCompanion
 	-- --- AI-powered coding, seamlessly in NeoVim.
@@ -104,32 +92,19 @@ return {
 	-- 	url = "https://github.com/olimorris/codecompanion.nvim.git",
 	-- 	branch = "main",
 	--
+	-- 	-- Check dependencies.
 	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 		{
-	-- 			url = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git", ft = { "codecompanion" },
-	-- 			opts = { -- stole styles from the author "olimorris"
-	-- 				filetype = {
-	-- 					codecompanion = {
-	-- 						html = {
-	-- 							tag = {
-	-- 								buf = { icon = " ", highlight = "CodeCompanionChatIcon" },
-	-- 								file = { icon = " ", highlight = "CodeCompanionChatIcon" },
-	-- 								group = { icon = " ", highlight = "CodeCompanionChatIcon" },
-	-- 								help = { icon = "󰘥 ", highlight = "CodeCompanionChatIcon" },
-	-- 								image = { icon = " ", highlight = "CodeCompanionChatIcon" },
-	-- 								symbols = { icon = " ", highlight = "CodeCompanionChatIcon" },
-	-- 								tool = { icon = "󰯠 ", highlight = "CodeCompanionChatIcon" },
-	-- 								url = { icon = "󰌹 ", highlight = "CodeCompanionChatIcon" },
-	-- 							},
-	-- 						},
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 		},
+	-- 		{ "nvim-lua/plenary.nvim", },
+	-- 		{ "nvim-treesitter/nvim-treesitter", },
+	-- 		{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "codecompanion" } } },
 	-- 	},
 	--
+	-- 	-- Configure keybinds.
+	-- 	keys = {
+	-- 		{ mode = "n", "<Leader>cc", "<CMD>CodeCompanionChat Toggle<CR>" },
+	-- 	},
+	--
+	-- 	-- Call setup with options.
 	-- 	opts = {},
 	-- },
 }
