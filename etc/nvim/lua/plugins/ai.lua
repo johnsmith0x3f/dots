@@ -27,38 +27,39 @@ return {
 		end,
 	},
 
-	-- -- Copilot Chat
-	-- --- Chat with GitHub Copilot in NeoVim.
-	-- {
-	-- 	url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
-	-- 	branch = "main",
-	--
-	-- 	dependencies = {
-	-- 		{ "zbirenbaum/copilot.lua" }, -- for copilot integrations
-	-- 		{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-	-- 	},
-	--
-	-- 	build = "make tiktoken", -- only on MacOS or Linux
-	--
-	-- 	keys = {
-	-- 		{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" },
-	-- 	},
-	--
-	-- 	opts = {
-	-- 		debug = true, -- enable debugging
-	-- 		model = "claude-sonnet-4",
-	--
-	-- 		-- Add some custom prompts.
-	-- 		prompts = {
-	-- 			-- Pirate Speak
-	-- 			Arrgh = {
-	-- 				prompt = "You are fascinated by pirates, so please respond in pirate speak.",
-	-- 				description = "Drink up me hearties!",
-	-- 			},
-	-- 		},
-	-- 	},
-	--
-	-- },
+	-- Copilot Chat
+	--- Chat with GitHub Copilot in NeoVim.
+	{
+		url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
+		branch = "main",
+
+		-- Check dependencies.
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" }, -- for copilot integrations
+			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+			{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "copilot-chat" } } }, -- for better rendering
+		},
+
+		-- Set build commands.
+		build = function()
+			if vim.fn.has("win32") then
+				return "powershell Write-Output 'Only on Linux or MacOS'"
+			else
+				return "make tiktoken"
+			end
+		end,
+
+		-- Configure keybinds.
+		keys = {
+			{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" },
+		},
+
+		-- Configure setup options.
+		opts = {
+			model = "claude-sonnet-4",
+			agent = "copilot",
+		},
+	},
 
 	-- -- Avante
 	-- --- Use your Neovim like using Cursor AI IDE!
