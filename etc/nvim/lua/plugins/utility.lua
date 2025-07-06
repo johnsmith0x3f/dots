@@ -1,52 +1,10 @@
 return {
--- File Management {{{
-
-	-- Oil
-	-- Split windows and the project drawer go together like oil and vinegar.
-	{
-		"stevearc/oil.nvim",
-
-		keys = {
-			{ mode = "n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory." }}
-		},
-
-		---@module "oil"
-		---@type oil.SetupOpts
-		opts = {}
-	},
-
-	-- Telescope
-	-- Gaze deeply into unknown regions using the power of the moon.
-	{
-		"nvim-telescope/telescope.nvim", lazy = false,
-
-		keys = {
-			-- Find all files (including hidden).
-			{ mode = "n", "<Leader>fa", function() require("telescope.builtin").find_files({ hidden = true }) end },
-			-- Find buffers.
-			{ mode = "n", "<Leader>fb", function() require("telescope.builtin").buffers({}) end },
-			-- Find files.
-			{ mode = "n", "<Leader>ff", function() require("telescope.builtin").find_files({}) end },
-			-- Find (grep) contents, requires ripgrep.
-			{ mode = "n", "<Leader>fg", function() require("telescope.builtin").live_grep({}) end },
-
-			-- Find references using LSP.
-			{ mode = "n", "<Leader>lr", function() require("telescope.builtin").lsp_references({}) end },
-			-- Find definitions using LSP.
-			{ mode = "n", "<Leader>ld", function() require("telescope.builtin").lsp_definitions({}) end },
-		}
-	},
-
--- }}}
-
 	-- Hard Time
-	-- Break bad habits, master Vim motions.
+	--- Break bad habits, master Vim motions.
 	{
-		"m4xshen/hardtime.nvim",
-
+		url = "https://github.com/m4xshen/hardtime.nvim",
 		dependencies = { "MunifTanjim/nui.nvim" },
-
-		opts = {},
+		opts = { disable_mouse = false }, -- I betrayed Vim philosophy
 	},
 
 	-- LuaSnip
@@ -85,8 +43,55 @@ return {
 		end
 	},
 
-	-- Multicursor
+	-- Oil
+	--- Split windows and the project drawer go together like oil and vinegar.
 	{
-		"jake-stewart/multicursor.nvim",
+		url = "https://github.com/stevearc/oil.nvim", lazy = false, -- replace netrw
+
+		-- Check dependencies.
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+
+		-- Configure keybinds.
+		keys = { { mode = "n", "-", "<CMD>Oil<CR>" } },
+
+		-- Call setup with options.
+		opts = {},
 	},
+
+	-- Telescope
+	--- Gaze deeply into unknown regions using the power of the moon.
+	{
+		url = "https://github.com/nvim-telescope/telescope.nvim",
+		branch = "master",
+
+		-- Check dependencies.
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
+
+		-- Configure Keybinds.
+		keys = {
+			-- Find all (including hidden) files.
+			{ mode = "n", "<Leader>fa", function() require("telescope.builtin").find_files({ hidden = true }) end },
+			-- Find buffers.
+			{ mode = "n", "<Leader>fb", function() require("telescope.builtin").buffers({}) end },
+			-- Find files.
+			{ mode = "n", "<Leader>ff", function() require("telescope.builtin").find_files({}) end },
+			-- Find (grep) contents, requires ripgrep.
+			{ mode = "n", "<Leader>fg", function() require("telescope.builtin").live_grep({}) end },
+
+			-- Find references using LSP.
+			{ mode = "n", "<Leader>lr", function() require("telescope.builtin").lsp_references({}) end },
+			-- Find definitions using LSP.
+			{ mode = "n", "<Leader>ld", function() require("telescope.builtin").lsp_definitions({}) end },
+		},
+
+		-- Call setup with options.
+		opts = {},
+	},
+
+	-- -- Multicursor
+	-- {
+	-- 	"jake-stewart/multicursor.nvim",
+	-- },
 }
