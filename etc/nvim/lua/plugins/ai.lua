@@ -29,7 +29,7 @@ return {
 
 
 	-- -- Copilot Chat
-	-- --- Chat with GitHub Copilot in NeoVim.  NOTE: Use avante.nvim instead.
+	-- --- Chat with GitHub Copilot in NeoVim.  NOTE: Use codecompanion.nvim instead.
 	-- {
 	-- 	url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
 	-- 	branch = "main",
@@ -62,6 +62,28 @@ return {
 	-- 	},
 	-- },
 
+	-- -- CodeCompanion
+	-- --- AI-powered coding, seamlessly in NeoVim.  NOTE: Use avante.nvim instead.
+	-- {
+	-- 	url = "https://github.com/olimorris/codecompanion.nvim.git",
+	-- 	branch = "main",
+	--
+	-- 	-- Check dependencies.
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim", },
+	-- 		{ "nvim-treesitter/nvim-treesitter", },
+	-- 		{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "codecompanion" } } },
+	-- 	},
+	--
+	-- 	-- Configure keybinds.
+	-- 	keys = {
+	-- 		{ mode = "n", "<Leader>cc", "<CMD>CodeCompanionChat Toggle<CR>" },
+	-- 	},
+	--
+	-- 	-- Call setup with options.
+	-- 	opts = {},
+	-- },
+
 	-- Avante
 	--- Use your Neovim like using Cursor AI IDE!
 	{
@@ -85,26 +107,4 @@ return {
 		-- Call setup with options.
 		opts = { provider = "copilot" },
 	},
-
-	-- -- CodeCompanion
-	-- --- AI-powered coding, seamlessly in NeoVim.
-	-- {
-	-- 	url = "https://github.com/olimorris/codecompanion.nvim.git",
-	-- 	branch = "main",
-	--
-	-- 	-- Check dependencies.
-	-- 	dependencies = {
-	-- 		{ "nvim-lua/plenary.nvim", },
-	-- 		{ "nvim-treesitter/nvim-treesitter", },
-	-- 		{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "codecompanion" } } },
-	-- 	},
-	--
-	-- 	-- Configure keybinds.
-	-- 	keys = {
-	-- 		{ mode = "n", "<Leader>cc", "<CMD>CodeCompanionChat Toggle<CR>" },
-	-- 	},
-	--
-	-- 	-- Call setup with options.
-	-- 	opts = {},
-	-- },
 }

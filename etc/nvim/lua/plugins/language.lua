@@ -10,7 +10,7 @@ return {
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 
-		-- Configure setup options.
+		-- Call setup with options.
 		opts = {
 			ensure_installed = {
 				"bash",
@@ -22,6 +22,7 @@ return {
 				"lua",
 				"markdown",
 				"markdown_inline",
+				"qmljs",
 				"rasi",
 				"regex",
 				"ron",
@@ -44,14 +45,18 @@ return {
 
 	-- Mason
 	--- Easily install and manage LSP servers, DAP servers, linters, and formatters.
-	{
-		url = "https://github.com/mason-org/mason.nvim.git",
-		opts = {},
-	},
-	-- Mason LSP Config
+	-- Mason & Mason LSP Config
 	--- Extension to mason.nvim that makes it easier to use.
 	{
-		url = "https://github.com/mason-org/mason-lspconfig.nvim.git",
+		url = "https://github.com/mason-org/mason-lspconfig.nvim",
+		branch = "main",
+
+		-- Check dependencies.
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+		},
+
+		-- Run setup commands.
 		config = function()
 			local dir = vim.fn.stdpath("config") .. "/lsp"
 			if not vim.fn.isdirectory(dir) then
