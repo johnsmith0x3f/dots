@@ -43,9 +43,8 @@ return {
 
 -- LSP {{{
 
-	-- Mason
-	--- Easily install and manage LSP servers, DAP servers, linters, and formatters.
 	-- Mason & Mason LSP Config
+	--- Easily install and manage LSP servers, DAP servers, linters, and formatters.
 	--- Extension to mason.nvim that makes it easier to use.
 	{
 		url = "https://github.com/mason-org/mason-lspconfig.nvim",
@@ -54,6 +53,7 @@ return {
 		-- Check dependencies.
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
+			{ "neovim/nvim-lspconfig" },
 		},
 
 		-- Run setup commands.
@@ -69,7 +69,9 @@ return {
 				table.insert(servers, server_name)
 			end
 
-			require("mason-lspconfig").setup({ ensure_installed = servers })
+			require("mason-lspconfig").setup({ ensure_installed = servers, automatic_enable = false })
+			-- Manually enable the servers, for mason-lspconfig sometimes fails for not-yet-supported servers.
+			vim.lsp.enable(servers)
 		end,
 	},
 
