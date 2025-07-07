@@ -27,7 +27,6 @@ return {
 		end,
 	},
 
-
 	-- -- Copilot Chat
 	-- --- Chat with GitHub Copilot in NeoVim.  NOTE: Use codecompanion.nvim instead.
 	-- {
@@ -105,6 +104,14 @@ return {
 		build = "make", -- on Linux and MacOS only
 
 		-- Call setup with options.
-		opts = { provider = "copilot" },
+		opts = {
+			provider = "copilot",
+			providers = {
+				---@type AvanteSupportedProvider
+				copilot = {
+					model = "claude-sonnet-4",
+				}
+			},
+		},
 	},
 }
