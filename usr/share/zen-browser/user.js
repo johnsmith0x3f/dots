@@ -243,5 +243,13 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
  * END: BETTERFOX                                                           *
 ****************************************************************************/
 
+// Do not replace New Tab with Search Bar prompt.
 user_pref("zen.urlbar.replace-newtab", false);
+
+// Disable the top toolbar.
+// See https://docs.zen-browser.app/user-manual/bookmarks#bookmarks-toolbar-and-bookmarks-menu for details.
+user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("zen.view.experimental-no-window-controls", true);
+
+// Allow manually setting the HEX value in the theme editor.
+user_pref("zen.theme.gradient.show-custom-colors", true);
