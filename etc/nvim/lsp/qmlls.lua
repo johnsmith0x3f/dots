@@ -1,6 +1,6 @@
 return {
 	-- Command and arguments to start the server.
-  cmd = { "qmlls" },
+  cmd = { "qmlls", "-E" },
 	-- Filetypes to automatically attach to.
   filetypes = { "qml", "qmljs" },
 	-- Markers indicating the "root directory" of the project.
