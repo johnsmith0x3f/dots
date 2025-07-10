@@ -1,15 +1,10 @@
+// import QtQuick
 import Quickshell
 
+import "modules/bar"
+
 ShellRoot {
-	PanelWindow {
-		id: bar
-
-		anchors {
-			top: true
-			left: true
-			right: true
-		}
-
-		implicitHeight: 48
+	Bar {
+		thickness: 48
 	}
 }
