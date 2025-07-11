@@ -4,7 +4,7 @@
 if [[ $( hyprctl monitors | grep -c "Monitor" ) -gt 1 ]]; then
 	hyprctl keyword monitor "eDP-1, disabled" &&
 	hyprctl keyword monitor "DP-1, highrr, auto, 1" &&
-	hyprctl dispatch workspace 1
+	hyprctl dispatch "workspace 1"
 fi
 
 # Start wallpaper daemon.
