@@ -24,9 +24,6 @@ return {
 				update_events = { "TextChanged", "TextChangedI" }
 			})
 
-			-- Use TeX snippets in Markdown files.
-			ls.filetype_extend("markdown", { "tex" })
-
 			-- Load LuaSnip snippets.
 			require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/lua/snippets" })
 			-- Load SnipMate snippets.
