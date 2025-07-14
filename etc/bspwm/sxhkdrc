@@ -42,7 +42,7 @@ super + shift + {h,j,k,l}
 super + {c,C}
 	bspc node -f {next,prev}.local.!hidden.window
 
-# Toggle pseudo_tiled/floating/fullscreen.
+# Toggle floating/fullscreen/pseudo_tiled.
 super + {f,g,p}
 	bspc node -t {"~floating","~fullscreen","~pseudo_tiled"}
 

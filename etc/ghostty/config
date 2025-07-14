@@ -12,8 +12,6 @@ font-feature = "-dlig"
 # Set font size (in pts).
 font-size = 15
 
-
-
 # Map the Nerd Font (v3.3.0) glyphs.
 # See <https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points> for details.
 
