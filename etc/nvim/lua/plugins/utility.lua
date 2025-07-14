@@ -7,6 +7,25 @@ return {
 		opts = { disable_mouse = false }, -- I betrayed Vim philosophy
 	},
 
+	-- Blink Completion
+	--- Performant, batteries-included completion plugin for NeoVim.
+	{
+		url = "https://github.com/Saghen/blink.cmp",
+		version = "1.*",
+
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+			sources = {
+				default = { "buffer", "lsp", "path", "snippets" },
+			},
+		},
+		opts_extend = { "sources.default" },
+	},
+
 	-- LuaSnip
 	{
 		"L3MON4D3/LuaSnip",
