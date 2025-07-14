@@ -1,4 +1,4 @@
-# include: [ "config-plugins.yaml" ]
+################################ General Config ################################
 
 # Replace certain patterns.
 # This only affects filenames, for metadata, see the "importreplace" plugin.
@@ -36,6 +36,7 @@ plugins: [
   "hook",
   "importreplace",
   "inline",
+  "lastgenre",
   "substitute",
 ]
 
@@ -78,6 +79,10 @@ importreplace:
 item_fields:
   aybum: f"[{original_year}] {album}"
   tytle: f"[{original_year}] {title}"
+
+lastgenre:
+  count: 5 # number of genres to fetch
+  separator: "; " # separator for multiple genres
 
 substitute:
   "^(.*?)(,| &| and).*": '\1' # save as first artist
