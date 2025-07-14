@@ -10,6 +10,10 @@ replace:
   '[\u2018-\u201B]': "'" # replace Unicode single quotes with ASCII ones
   '[\u201C-\u201F]': '"' # replace Unicode double quotes with ASCII ones
 
+# Convert all non-ASCII characters in paths to ASCII equivalents.
+# This does not affect metadata. CJK names should be manually handled.
+asciify_paths: yes
+
 # Handle different releases with the same names by same artists.
 # Check the release years and labels, for both albums (EPs) and singletons.
 aunique:
