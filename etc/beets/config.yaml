@@ -61,7 +61,11 @@ filetote:
   ]
   pairing:
     enabled: true # import "name.*" files along with "name.music_ext"
+    extensions: [
+      ".lrc" # import lyrics
+    ]
   paths:
+    paired_ext:.lrc: "$albumpath/$medianame_new" # rename lyrics
     ext:.cue: "$albumpath/$album" # rename cuesheets
     ext:.log: "$albumpath/$album" # rename log files
 
