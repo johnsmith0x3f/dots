@@ -1,7 +1,83 @@
-include: [ "config-plugins.yaml" ]
+# include: [ "config-plugins.yaml" ]
+
+# Replace certain patterns.
+# This only affects filenames, for metadata, see the "importreplace" plugin.
+replace:
+  '^(\.|\s)+|(\.|\s)+$': "" # trim padding dots and spaces
+  '[\x00-\x1F\x2F\x5C]': "" # ignore non-printables and path separators
+  '[\x22\x2A\x3A\x3C\x3E\x3F\x7C]': "" # ignore illegal characters in Windows
+  '[\u2010-\u2015]': "-" # replace Unicode dashes with ASCII ones
+  '[\u2018-\u201B]': "'" # replace Unicode single quotes with ASCII ones
+  '[\u201C-\u201F]': '"' # replace Unicode double quotes with ASCII ones
+
+# Handle different releases with the same names by same artists.
+# Check the release years and labels, for both albums (EPs) and singletons.
+aunique:
+  keys: albumartist album
+  disambiguators: albumtype year label albumdisambig
+  bracket: "()"
+sunique:
+  keys: artist title
+  disambiguators: year label trackdisambig
+  bracket: "()"
 
 # Set the directory hierarchy.
+# Prepend special categories with '#' for sorting and viewing.
 paths:
-  default: "$albumartist/[$original_year] $album%aunique{}/$track $title"
-  singleton: "$artist/#Singles/[$original_year] $title/$track $title"
-  comp: "#VariousArtists/[$original_year] $album%aunique{}/$track $title"
+  default: "%substitute{$albumartist}/$aybum%aunique{}/$track $title"
+  singleton: "%substitute{$artist}/#Singles/$tytle%sunique{}/$track $title"
+  comp: "#VariousArtists/$aybum%aunique{}/$track $title"
+
+################################ Plugins Config ################################
+
+plugins: [
+  "fetchart",
+  "filetote",
+  "hook",
+  "importreplace",
+  "inline",
+  "substitute",
+]
+
+# Retrieve album art images from various sources.
+fetchart:
+  cautious: yes # pick those with "correct" filenames only
+  cover_names: album cover folder front # names considered "correct"
+  minwidth: 1000 # only accept 1000px and higher resolution
+  enforce_ratio: yes # only accept width:height=1:1 ratio
+  sources: filesystem coverart itunes albumart # sources to look for
+  high_resolution: yes # storage is cheap, fetch highest resolution possible
+
+# Move non-music extra files, attachments, and artifacts during imports.
+filetote:
+  extensions: [
+    ".cue", # import cuesheets
+    ".log", # import log files
+  ]
+  pairing:
+    enabled: true # import "name.*" files along with "name.music_ext"
+  paths:
+    ext:.cue: "$albumpath/$album" # rename cuesheets
+    ext:.log: "$albumpath/$album" # rename log files
+
+# Run commands in response to events.
+hook:
+  hooks:
+    - event: album_imported
+      command: beet-prune "{album.path}" # clean up embedded arts and tags
+
+importreplace:
+  replacements:
+    - item_fields: album albumartist artist title
+      replace:
+        '[\u2010-\u2015]': "-" # replace Unicode dashes with ASCII ones
+        '[\u2018-\u201B]': "'" # replace Unicode single quotes with ASCII ones
+        '[\u201C-\u201F]': '"' # replace Unicode double quotes with ASCII ones
+        ' (feat|ft)\. ': "; " # replace "feat" and "ft" with actual separators
+
+item_fields:
+  aybum: f"[{original_year}] {album}"
+  tytle: f"[{original_year}] {title}"
+
+substitute:
+  "^(.*?)(,| &| and).*": '\1' # save as first artist
