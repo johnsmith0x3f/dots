@@ -24,3 +24,7 @@ require("lazy").setup({
 		sources = { "lazy" }
 	}
 })
+
+-- Prepend Vim's runtimepath.
+-- Must be done after lazy.nvim is set up, since it resets rtp by default.
+vim.opt.rtp:prepend("/usr/share/vim/vimfiles")
