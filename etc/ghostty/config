@@ -1,71 +1,12 @@
-# Ghostty config
+# Ghostty Configuration (Handmade by @johnsmith0x3f)
+# Reference = https://ghostty.org/docs/config/reference
+
+font-family = "Maple Mono NFMono CN"
+font-feature = "-calt, +cv01, +cv02"
+font-size = 15
 
 # Set the colorscheme.
 theme = "tokyonight-storm"
-
-# Font {{{
-
-# Set font families.
-font-family = "Comic Code"
-# Set font features.
-font-feature = "-dlig"
-# Set font size (in pts).
-font-size = 15
-
-# Map the Nerd Font (v3.3.0) glyphs.
-# See <https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points> for details.
-
-## IEC Power Symbols
-font-codepoint-map = "U+23FB-U+23FE,U+2B58=FiraMono Nerd Font Mono"
-## Box Drawing
-#font-codepoint-map = "U+2500-U+259F=FiraMono Nerd Font Mono"
-## Octicons
-font-codepoint-map = "U+2665,U+26A1,U+F400-U+F533=FiraMono Nerd Font Mono"
-## Heavy Angle Brackets
-font-codepoint-map = "U+276C-U+2771=FiraMono Nerd Font Mono"
-## Pomicons
-font-codepoint-map = "U+E000-U+E00A=FiraMono Nerd Font Mono"
-## Powerline Symbols + Powerline Extra Symbols
-#font-codepoint-map = "U+E0A0-U+E0A3,U+E0B0-U+E0C8,U+E0CA,U+E0CC-U+E0D7=FiraMono Nerd Font Mono"
-## Font Awesome + Font Awesome Extension
-font-codepoint-map = "U+E200-U+E2A9,U+ED00-U+F2FF=FiraMono Nerd Font Mono"
-## Weather
-font-codepoint-map = "U+E300-U+E3E3=FiraMono Nerd Font Mono"
-## Seti-UI + Custom
-font-codepoint-map = "U+E5FA-U+E6B7=FiraMono Nerd Font Mono"
-## Devicons
-font-codepoint-map = "U+E700-U+E8EF=FiraMono Nerd Font Mono"
-## Codicons
-font-codepoint-map = "U+EA60-U+EC1E=FiraMono Nerd Font Mono"
-## Progress
-font-codepoint-map = "U+EE00-U+EE0B=FiraMono Nerd Font Mono"
-## Font Logos
-font-codepoint-map = "U+F300-U+F381=FiraMono Nerd Font Mono"
-## Material Design Icons
-font-codepoint-map = "U+F0001-U+F1AF0=FiraMono Nerd Font Mono"
-
-
-
-# Map CJK glyphs.
-# See <https://symbl.cc/en/unicode/blocks> for details.
-## CJK Radicals Supplement
-font-codepoint-map = "U+2E80-U+2EFF=ChillRoundF"
-## CJK Symbols and Punctuation
-font-codepoint-map = "U+3000-U+303F=ChillRoundF"
-## CJK Compatibility
-font-codepoint-map = "U+3300-U+33FF=ChillRoundF"
-## CJK Strokes
-font-codepoint-map = "U+31C0-U+31EF=ChillRoundF"
-## CJK Unified Ideographs + Extension A
-font-codepoint-map = "U+3400-U+4DBF,U+4E00-U+9FFF=ChillRoundF"
-## CJK Compatibility Ideographs + Supplement
-font-codepoint-map = "U+F900-U+FAFF,U+2F800-U+2FA1F=ChillRoundF"
-## Halfwidth and Fullwidth Forms
-font-codepoint-map = "U+FF00-U+FFEF=ChillRoundF"
-## CJK Unified Ideographs Extension BCDEFG
-font-codepoint-map = "U+20000-U+2A6DF,U+2A700-U+2EBEF,U+30000-U+3134F=ChillRoundF"
-
-# }}}
 
 # Window {{{
 
@@ -122,4 +63,4 @@ keybind = "ctrl+shift+v=paste_from_clipboard"
 
 # }}}
 
-# vim:ft=conf
+# vim:ft=ghostty
