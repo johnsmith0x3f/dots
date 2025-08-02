@@ -1,20 +1,11 @@
 return {
-	-- Hard Time
-	--- Break bad habits, master Vim motions.
-	{
-		url = "https://github.com/m4xshen/hardtime.nvim",
-		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = { disable_mouse = false }, -- I betrayed Vim philosophy
-	},
-
 	-- Blink Completion
 	--- Performant, batteries-included completion plugin for NeoVim.
 	{
 		url = "https://github.com/Saghen/blink.cmp",
 		version = "1.*",
 
-		---@module 'blink.cmp'
-		---@type blink.cmp.Config
+		-- Call setup with options.
 		opts = {
 			appearance = {
 				nerd_font_variant = "mono",
@@ -24,6 +15,21 @@ return {
 			},
 		},
 		opts_extend = { "sources.default" },
+	},
+
+	-- GitSigns
+	-- Git integration for buffers.
+	{
+		url = "https://github.com/lewis6991/gitsigns.nvim",
+		opts = {},
+	},
+
+	-- HardTime
+	--- Break bad habits, master Vim motions.
+	{
+		url = "https://github.com/m4xshen/hardtime.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = { disable_mouse = false }, -- I betrayed Vim philosophy
 	},
 
 	-- LuaSnip
