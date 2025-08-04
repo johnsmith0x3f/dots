@@ -41,6 +41,9 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+# I use Zed (sometimes) btw.
+alias zed="zeditor"
+
 # }}}
 
 # Options {{{
