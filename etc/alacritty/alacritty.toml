@@ -6,7 +6,7 @@ import = [
 ]
 
 [font]
-normal = { family = "Comic Code", style = "Regular" }
+normal = { family = "Maple Mono NFMono CN", style = "Regular" }
 size = 15.0
 
 [window]

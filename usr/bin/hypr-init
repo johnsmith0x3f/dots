@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# Dynamic monitor configuration.
-if [[ $( hyprctl monitors all | grep -c "Monitor" ) > 1 ]]; then
-	hyprctl keyword monitor "eDP-1, disabled" &&
-	hyprctl keyword monitor "DP-1, highrr, auto, 1" &&
-	hyprctl dispatch "workspace 1"
-fi
+# # Dynamic monitor configuration.
+# if [[ $( hyprctl monitors all | grep -c "Monitor" ) > 1 ]]; then
+# 	hyprctl keyword monitor "eDP-1, disabled" &&
+# 	hyprctl keyword monitor "DP-1, highrr, auto, 1" &&
+# 	hyprctl dispatch "workspace 1"
+# fi
 
 # Start wallpaper daemon.
 swww-daemon &
