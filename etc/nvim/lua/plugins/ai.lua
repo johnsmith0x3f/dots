@@ -27,39 +27,39 @@ return {
 		end,
 	},
 
-	-- -- Copilot Chat
-	-- --- Chat with GitHub Copilot in NeoVim.  NOTE: Use codecompanion.nvim instead.
-	-- {
-	-- 	url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
-	-- 	branch = "main",
-	--
-	-- 	-- Check dependencies.
-	-- 	dependencies = {
-	-- 		{ "zbirenbaum/copilot.lua" }, -- for copilot integrations
-	-- 		{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-	-- 		{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "copilot-chat" } } }, -- for better rendering
-	-- 	},
-	--
-	-- 	-- Set build commands.
-	-- 	build = function()
-	-- 		if vim.fn.has("win32") then
-	-- 			return "powershell Write-Output 'Only on Linux or MacOS'"
-	-- 		else
-	-- 			return "make tiktoken"
-	-- 		end
-	-- 	end,
-	--
-	-- 	-- Configure keybinds.
-	-- 	keys = {
-	-- 		{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" },
-	-- 	},
-	--
-	-- 	-- Call setup with options.
-	-- 	opts = {
-	-- 		model = "claude-sonnet-4",
-	-- 		agent = "copilot",
-	-- 	},
-	-- },
+	-- Copilot Chat
+	--- Chat with GitHub Copilot in NeoVim.  NOTE: Use codecompanion.nvim instead.
+	{
+		url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
+		branch = "main",
+
+		-- Check dependencies.
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" }, -- for copilot integrations
+			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+			{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "copilot-chat" } } }, -- for better rendering
+		},
+
+		-- Set build commands.
+		build = function()
+			if vim.fn.has("win32") then
+				return "powershell Write-Output 'Only on Linux or MacOS'"
+			else
+				return "make tiktoken"
+			end
+		end,
+
+		-- Configure keybinds.
+		keys = {
+			{ mode = "n", "<Leader>cc", "<CMD>CopilotChatToggle<CR>" },
+		},
+
+		-- Call setup with options.
+		opts = {
+			model = "claude-sonnet-4",
+			agent = "copilot",
+		},
+	},
 
 	-- -- CodeCompanion
 	-- --- AI-powered coding, seamlessly in NeoVim.  NOTE: Use avante.nvim instead.
@@ -83,35 +83,35 @@ return {
 	-- 	opts = {},
 	-- },
 
-	-- Avante
-	--- Use your Neovim like using Cursor AI IDE!
-	{
-		url = "https://github.com/yetone/avante.nvim",
-		version = false,
-
-		-- Check dependencies.
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "MunifTanjim/nui.nvim" },
-			-- Dependencies below are optional.
-			{ "nvim-telescope/telescope.nvim" }, -- for file picker
-			{ "nvim-tree/nvim-web-devicons" }, -- for icons
-			{ "zbirenbaum/copilot.lua" }, -- for copilot
-			{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "Avante" } } }, -- for rendering Markdown
-		},
-
-		-- Set build commands.
-		build = "make", -- on Linux and MacOS only
-
-		-- Call setup with options.
-		opts = {
-			provider = "copilot",
-			providers = {
-				---@type AvanteSupportedProvider
-				copilot = {
-					model = "claude-sonnet-4",
-				}
-			},
-		},
-	},
+	-- -- Avante
+	-- --- Use your Neovim like using Cursor AI IDE!
+	-- {
+	-- 	url = "https://github.com/yetone/avante.nvim",
+	-- 	version = false,
+	--
+	-- 	-- Check dependencies.
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 		{ "MunifTanjim/nui.nvim" },
+	-- 		-- Dependencies below are optional.
+	-- 		{ "nvim-telescope/telescope.nvim" }, -- for file picker
+	-- 		{ "nvim-tree/nvim-web-devicons" }, -- for icons
+	-- 		{ "zbirenbaum/copilot.lua" }, -- for copilot
+	-- 		{ "MeanderingProgrammer/render-markdown.nvim", opts = { file_types = { "Avante" } } }, -- for rendering Markdown
+	-- 	},
+	--
+	-- 	-- Set build commands.
+	-- 	build = "make", -- on Linux and MacOS only
+	--
+	-- 	-- Call setup with options.
+	-- 	opts = {
+	-- 		provider = "copilot",
+	-- 		providers = {
+	-- 			---@type AvanteSupportedProvider
+	-- 			copilot = {
+	-- 				model = "claude-sonnet-4",
+	-- 			}
+	-- 		},
+	-- 	},
+	-- },
 }
