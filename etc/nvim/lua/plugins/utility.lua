@@ -91,6 +91,8 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 		},
 
+		lazy = false,
+
 		-- Configure Keybinds.
 		keys = {
 			-- Find all (including hidden) files.
