@@ -1,8 +1,0 @@
-[
-  {
-    "context": "Editor && vim_mode==normal",
-    "bindings": {
-      "shift shift": "file_finder::Toggle"
-    }
-  }
-]
