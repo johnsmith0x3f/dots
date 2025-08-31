@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = "main"
+
+[user]
+	name = "John Smith"
+	email = "johnsmith0x3f@gmail.com"
+
+# vim:ft=gitconfig
