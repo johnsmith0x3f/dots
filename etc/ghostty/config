@@ -1,0 +1,21 @@
+# Ghostty Configuration (handmade by @johnsmith0x3f)
+# Reference = https://ghostty.org/docs/config/reference
+
+font-family = "Maple Mono NFMono CN"
+font-feature = "-calt, +cv01, +cv02"
+font-size = 15
+
+theme = "tokyonight-storm"
+
+keybind = "clear"
+keybind = "alt+ctrl+e=quit"
+keybind = "alt+ctrl+r=reload_config"
+keybind = "ctrl+shift+c=copy_to_clipboard"
+keybind = "ctrl+shift+v=paste_from_clipboard"
+
+window-padding-x = 36
+window-padding-y = 36
+window-height = 24
+window-width = 80
+
+# vim:ft=ghostty
