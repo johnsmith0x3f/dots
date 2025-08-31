@@ -1,14 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-## Set cursor in root window (desktop).
-#xsetroot -cursor_name "left_ptr"
-
-# Set desktop numbers & names, with dual-monitor support.
-if [[ $( xrandr -q | grep -c " connected " ) -gt 1 ]]; then
+if [[ $( xrandr | grep -c " connected " ) > 1 ]]; then
 	bspc monitor "^1" -d 1 2 3 4 5 6 7 8
 	bspc monitor "^2" -d 9
 else
-	bspc monitor -d 1 2 3 4 5 6 7 8 9
+	bspc monitor "^1" -d 1 2 3 4 5 6 7 8 9
 fi
 
 # Add gaps between windows.
@@ -23,11 +19,5 @@ bspc rule -a "mpv" desktop="^8" state="floating"
 bspc rule -a "qBittorrent" state="floating"
 bspc rule -a "steam" desktop="^9" state="floating"
 
-# Map keys with sxhkd.
-pgrep -x sxhkd || sxhkd -c "${XDG_CONFIG_HOME}/bspwm/sxhkdrc" &
-# Use picom as compositor.
-pgrep -x picom || picom -b
-# Render wallpaper.
-bsp-launch wallpaper "astronaut-holding-jellyfish.png"
-# Render taskbar.
-bsp-launch taskbar "tokyonight"
+pgrep -x "sxhkd" || sxhkd &
+pgrep -x "picom" || picom &
