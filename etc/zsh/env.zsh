@@ -1,4 +1,10 @@
-# $ZDOTDIR is set to ${HOME}/.etc/zsh in /etc/zsh/zshenv.
+
+# If not already set, explicitly set XDG Base Directories as default.
+# See https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories for details.
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # Use NeoVim as default editor.
 export EDITOR="nvim"
