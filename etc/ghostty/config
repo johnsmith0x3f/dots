@@ -15,6 +15,7 @@ keybind = "ctrl+shift+v=paste_from_clipboard"
 
 window-padding-x = 36
 window-padding-y = 36
+window-decoration = "none"
 window-height = 24
 window-width = 80
 
