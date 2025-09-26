@@ -5,7 +5,7 @@ font-family = "Maple Mono NFMono CN"
 font-feature = "-calt, +cv01, +cv02"
 font-size = 15
 
-theme = "tokyonight-storm"
+theme = "TokyoNight Storm"
 
 keybind = "clear"
 keybind = "alt+ctrl+e=quit"
