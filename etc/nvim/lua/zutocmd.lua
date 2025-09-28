@@ -41,3 +41,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		vim.keymap.set({ "n", "i" }, "<F5>", "<CMD>write <Bar> terminal python %<CR>")
 	end,
 })
+
+-- Rust
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "rust" },
+	callback = function()
+		vim.opt_local.tabstop = 4
+		vim.keymap.set({ "n", "i" }, "<F5>", "<CMD>write<Bar>terminal rustc -o %:r.out % && ./%:r.out<CR>")
+	end,
+})
