@@ -130,11 +130,27 @@ return {
 
 	-- Typst
 	{
-		"chomosuke/typst-preview.nvim", version = "v1.*",
+		url = "https://github.com/chomosuke/typst-preview.nvim",
+		version = "1.*",
 
 		ft = "typst",
 		keys = {
-			{ mode = "n", "<leader>pt", "<CMD>TypstPreviewToggle<CR>" },
+			{ mode = "n", "<Leader>pt", "<CMD>TypstPreviewToggle<CR>" },
+			{ mode = "n", "<Leader>td", function()
+				vim.cmd("TypstPreviewStop")
+
+				_G.typst_dark_mode = not _G.typst_dark_mode
+				local new_invert_setting = _G.typst_dark_mode and "always" or "never"
+
+				local opts = require("typst-preview.config")
+				local new_opts = vim.tbl_deep_extend("force", opts, {
+					invert_colors = new_invert_setting,
+				})
+				require("typst-preview").setup(new_opts)
+
+				vim.defer_fn(function() vim.cmd("TypstPreviewToggle") end, 100)
+				vim.notify("Typst Preview: invert_colors set to " .. new_invert_setting)
+			end, { buffer = true } },
 		},
 
 		opts = {
