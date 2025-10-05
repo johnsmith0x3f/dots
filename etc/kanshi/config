@@ -1,0 +1,8 @@
+profile {
+	output eDP-1
+}
+
+profile {
+	output eDP-1 disable
+	output DP-1 mode 2560x1440@180.00Hz
+}
