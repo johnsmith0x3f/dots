@@ -42,10 +42,10 @@ export PIPX_MAN_DIR="${XDG_DATA_HOME}/man"
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
 
-# Use fcitx5 for input method.
-export GTK_IM_MODULE="fcitx"
-export QT_IM_MODULE="fcitx"
-export XMODIFIERS="@im=fcitx"
+# # Use fcitx5 for input method.
+# export GTK_IM_MODULE="fcitx"
+# export QT_IM_MODULE="fcitx"
+# export XMODIFIERS="@im=fcitx"
 
 # Append user path.
 usr_paths=(
