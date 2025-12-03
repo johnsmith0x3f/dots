@@ -1,3 +1,5 @@
+set font "Sarasa UI SC 9"
+
 # Tokyonight color theme for Zathura, copied from folke@github.
 # Swaps Foreground for Background to get a light version if the user prefers.
 #
