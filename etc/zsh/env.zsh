@@ -28,6 +28,7 @@ export GTK_RC_FILES="${XDG_CONFIG_HOME}/gtk-1.0/gtkrc"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export PYTHON_HISTORY="${XDG_STATE_HOME}/python/history"
 export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
 export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
@@ -41,11 +42,6 @@ export PIPX_MAN_DIR="${XDG_DATA_HOME}/man"
 
 # Set this to null to avoid partial line prompts.
 export PROMPT_EOL_MARK=''
-
-# # Use fcitx5 for input method.
-# export GTK_IM_MODULE="fcitx"
-# export QT_IM_MODULE="fcitx"
-# export XMODIFIERS="@im=fcitx"
 
 # Append user path.
 usr_paths=(
