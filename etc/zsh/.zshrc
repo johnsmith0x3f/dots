@@ -9,4 +9,8 @@ fi
 source "${ZDOTDIR}/rc.zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.etc/zsh/.p10k.zsh.
-[[ ! -f ~/.etc/zsh/.p10k.zsh ]] || source ~/.etc/zsh/.p10k.zsh
+if zmodload "/zsh/terminfo" && (( terminfo[colors] >= 256 )); then
+	[[ ! -f ~/.etc/zsh/.p10k.zsh ]] || source ~/.etc/zsh/.p10k.zsh
+else
+	[[ ! -f ~/.etc/zsh/.p10k-portable.zsh ]] || source ~/.etc/zsh/.p10k-portable.zsh
+fi
